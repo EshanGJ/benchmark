@@ -1,0 +1,133 @@
+{
+  "paper_title": "Grade 08 - English - Monthly Evaluation Paper - No. 05",
+  "questions": [
+    {
+      "test_number": "01",
+      "instruction": "Circle the silent letters.",
+      "question_type": "Grammar",
+      "student_answers": {
+        "1": "hour (h circled)",
+        "2": "dhal (h circled)",
+        "3": "wrap (w circled)",
+        "4": "know (k circled)",
+        "5": "nestle (t circled)",
+        "6": "column (n circled)",
+        "7": "listen (t circled)",
+        "8": "knee (k circled)",
+        "9": "castle (t circled)",
+        "10": "whistle (t circled)",
+        "11": "aisle (s circled)",
+        "12": "knuckle (k circled)"
+      }
+    },
+    {
+      "test_number": "02",
+      "instruction": "Write five sentences about this picture.",
+      "question_type": "Picture Questions",
+      "student_answers": {
+        "1": "There see the threes in the",
+        "2": "There sah Mevan in the",
+        "3": "[Empty]",
+        "4": "There there in the doy's are plain ball in the Tren",
+        "5": "there in the hous.."
+      }
+    },
+    {
+      "test_number": "03",
+      "instruction": "Write the plural form of the collective nouns.",
+      "question_type": "Grammar",
+      "student_answers": {
+        "1": "berd of elephants.",
+        "2": "groups of boys.",
+        "3": "bags of rice",
+        "4": "packs of cards.",
+        "5": "bunch of keys."
+      }
+    },
+    {
+      "test_number": "04",
+      "instruction": "Choose the right word from the pair above to fill each space.",
+      "question_type": "Fill in the Blanks",
+      "student_answers": {
+        "1": "was / was",
+        "2": "were / were",
+        "3": "is / are",
+        "4": "was / was",
+        "5": "is / are"
+      }
+    },
+    {
+      "test_number": "05",
+      "instruction": "Fill in the blanks using prepositions (off, before, behind, in, on, under, across, over, into, near).",
+      "question_type": "Fill in the Blanks",
+      "student_answers": {
+        "1": "be for (before)",
+        "2": "into",
+        "3": "over",
+        "4": "under",
+        "5": "bebin (behind)",
+        "6": "a cross (across)",
+        "7": "in",
+        "8": "near",
+        "9": "before",
+        "10": "behind"
+      }
+    },
+    {
+      "test_number": "06",
+      "instruction": "Underline the ADJECTIVES in the following sentences.",
+      "question_type": "Grammar",
+      "student_answers": "Note: The student has underlined words like 'big', 'red', 'clever', 'small', 'yellow', 'kind', 'useful', 'warm', 'cold', 'new', 'green', 'strong', 'fierce', 'large', 'busy', 'small', 'sweet'."
+    },
+    {
+      "test_number": "07",
+      "instruction": "Read the following sentences and circle the incorrect pronouns used. Write the correct pronoun in the space given.",
+      "question_type": "Grammar",
+      "student_answers": {
+        "1": "them",
+        "2": "yours",
+        "3": "My",
+        "4": "their",
+        "5": "hers",
+        "6": "her's",
+        "7": "her",
+        "8": "her",
+        "9": "Our",
+        "10": "mine"
+      }
+    },
+    {
+      "test_number": "08",
+      "instruction": "Make sentences using the following prepositions (around, through, along, into, down).",
+      "question_type": "Writing",
+      "student_answers": "[No written text visible in the scan for this section]"
+    },
+    {
+      "test_number": "09",
+      "instruction": "Change the following information into a set of instructions.",
+      "question_type": "Grammar",
+      "student_answers": {
+        "1": "Don't biting your nails.",
+        "5": "Don't eat or drink very hot food."
+      }
+    },
+    {
+      "test_number": "10",
+      "instruction": "Fill in the blanks with two of the given letters.",
+      "question_type": "Fill in the Blanks",
+      "student_answers": {
+        "1": "wheelbarrow (e, e)",
+        "2": "Honesty (o, e)",
+        "3": "mosquitoes (i, o)",
+        "4": "carbohydrates (a, o)",
+        "5": "gymnasium (y, i)"
+      }
+    },
+    {
+      "test_number": "11",
+      "instruction": "Write an essay for 75 words about 'The importance of teachers'.",
+      "question_type": "Writing",
+      "student_answers": "[No written text visible in the scan for this section]"
+    }
+  ]
+}
