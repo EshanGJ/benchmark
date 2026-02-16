@@ -1,0 +1,6 @@
+include README.md
+include LICENSE
+include GUIDE.md
+recursive-include fonix_ocr_bench *.py
+global-exclude __pycache__
+global-exclude *.py[co]
