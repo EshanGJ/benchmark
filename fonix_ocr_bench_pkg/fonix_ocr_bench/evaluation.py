@@ -1,6 +1,15 @@
 from .utils import word_diff
 
 class Evaluator:
+    QUESTION_TYPE_LABELS = {
+        "QA": "Question Answering",
+        "FITB": "Fill In The Blanks",
+        "W": "Writing/Essay",
+        "U": "Underline",
+        "C": "Circling",
+        "M": "Matching"
+    }
+
     def __init__(self):
         pass
 
@@ -31,6 +40,20 @@ class Evaluator:
         
         replaced_word_pairs = []
         inserted_words = []
+
+        # Question type metrics
+        question_type_metrics = {} # qtype -> {fabricated, crossed, illegible, gt_words, hallu_words}
+        
+        def update_qtype_metric(qtype, field, count=1):
+            if qtype not in question_type_metrics:
+                question_type_metrics[qtype] = {
+                    "fabricated": 0,
+                    "crossed": 0,
+                    "illegible": 0,
+                    "gt_words": 0,
+                    "hallu_words": 0
+                }
+            question_type_metrics[qtype][field] += count
         
         # Create lookup dictionaries
         gt_questions = {q["test_number"]: q for q in gt.get("questions", [])}
@@ -41,6 +64,7 @@ class Evaluator:
                 continue
             
             predq = pred_questions[tnum]
+            qtype = gtq.get("question_type", "Unknown")
             
             gt_ans = gtq.get("student_answers", "")
             pred_ans = predq.get("student_answers", "")
@@ -50,6 +74,7 @@ class Evaluator:
                 # Fabricated hallucination: AI reads text where there is none
                 if gt_ans == "" and pred_ans != "":
                     fabricated_hallucinations += 1
+                    update_qtype_metric(qtype, "fabricated")
                 
                 # Word-level hallucination for essays
                 if isinstance(pred_ans, str) and gt_ans.strip() != "":
@@ -63,6 +88,7 @@ class Evaluator:
                                 "pred_words": prw
                             })
                             total_hallucinated_words += 1
+                            update_qtype_metric(qtype, "hallu_words")
                         
                         elif tag == "insert" and prw != "":
                             inserted_words.append({
@@ -70,8 +96,11 @@ class Evaluator:
                                 "words": prw
                             })
                             total_hallucinated_words += 1
+                            update_qtype_metric(qtype, "hallu_words")
                     
-                    total_gt_words += len(gt_ans.split())
+                    word_count = len(gt_ans.split())
+                    total_gt_words += word_count
+                    update_qtype_metric(qtype, "gt_words", word_count)
                 
                 continue
             
@@ -81,6 +110,7 @@ class Evaluator:
                 # 1. Fabricated hallucination
                 if gtqa["answer"] == "" and predqa.get("answer", "") != "":
                     fabricated_hallucinations += 1
+                    update_qtype_metric(qtype, "fabricated")
                 
                 # 2. Crossed-out text hallucination
                 # If GT has crossed_out_text, and prediction includes those words
@@ -89,6 +119,7 @@ class Evaluator:
                     for crossed_word in gtqa["crossedout_text"]:
                         if crossed_word.lower() in pred_answer_lower:
                             crossed_out_hallucinations += 1
+                            update_qtype_metric(qtype, "crossed")
                 
                 # 3. Illegibility hallucination
                 gt_illegible = str(gtqa.get("is_illigible", "")).lower()
@@ -98,6 +129,7 @@ class Evaluator:
                     # If AI claims it's readable (is_illigible="true") or provides text
                     if pred_illegible == "true" or predqa.get("answer", "") != "":
                         illegibility_hallucinations += 1
+                        update_qtype_metric(qtype, "illegible")
                 
                 # 4. Word-level hallucination (for readable text)
                 if gtqa["answer"] != "" and predqa.get("answer", "") != "":
@@ -112,6 +144,7 @@ class Evaluator:
                                 "pred_words": prw
                             })
                             total_hallucinated_words += 1
+                            update_qtype_metric(qtype, "hallu_words")
                         
                         elif tag == "insert" and prw != "":
                             inserted_words.append({
@@ -120,8 +153,11 @@ class Evaluator:
                                 "words": prw
                             })
                             total_hallucinated_words += 1
+                            update_qtype_metric(qtype, "hallu_words")
                     
-                    total_gt_words += len(gtqa["answer"].split())
+                    word_count = len(gtqa["answer"].split())
+                    total_gt_words += word_count
+                    update_qtype_metric(qtype, "gt_words", word_count)
         
         # -------- Calculate rates --------
         hallucination_rate = (
@@ -155,6 +191,7 @@ class Evaluator:
             "total_hallucinated_words": total_hallucinated_words,
             "total_gt_words": total_gt_words,
             "replaced_word_pairs": replaced_word_pairs,
-            "inserted_words": inserted_words
+            "inserted_words": inserted_words,
+            "question_type_metrics": question_type_metrics
         }
 

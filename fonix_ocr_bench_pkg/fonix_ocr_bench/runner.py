@@ -165,6 +165,8 @@ class BenchmarkRunner:
                 "fabricated_hallucination_rate": eval_metrics.get("fabricated_hallucination_rate"),
                 "crossed_out_hallucination_rate": eval_metrics.get("crossed_out_hallucination_rate"),
                 "illegibility_hallucination_rate": eval_metrics.get("illegibility_hallucination_rate"),
+                "question_type_metrics": eval_metrics.get("question_type_metrics"),
+                "refined_question_type_metrics": refined_metrics.get("question_type_metrics"),
                 "cost": sample_cost,
                 "recognition_time": sample_recognition_time
             }
@@ -230,6 +232,40 @@ class BenchmarkRunner:
                     total_benchmark_cost += result_entry["cost"]
                     total_recognition_time += result_entry["recognition_time"]
 
+        # Aggregate question type metrics
+        question_type_summary = {}
+        refined_question_type_summary = {}
+        
+        for result in summary_results:
+            # Original
+            qtype_metrics = result.get("question_type_metrics", {})
+            for qtype, metrics in qtype_metrics.items():
+                if qtype not in question_type_summary:
+                    question_type_summary[qtype] = {
+                        "fabricated": 0, "crossed": 0, "illegible": 0, "gt_words": 0, "hallu_words": 0
+                    }
+                for field in ["fabricated", "crossed", "illegible", "gt_words", "hallu_words"]:
+                    question_type_summary[qtype][field] += metrics.get(field, 0)
+            
+            # Refined
+            ref_qtype_metrics = result.get("refined_question_type_metrics", {})
+            for qtype, metrics in ref_qtype_metrics.items():
+                if qtype not in refined_question_type_summary:
+                    refined_question_type_summary[qtype] = {
+                        "fabricated": 0, "crossed": 0, "illegible": 0, "gt_words": 0, "hallu_words": 0
+                    }
+                for field in ["fabricated", "crossed", "illegible", "gt_words", "hallu_words"]:
+                    refined_question_type_summary[qtype][field] += metrics.get(field, 0)
+        
+        # Calculate rates for each summary
+        for summary in [question_type_summary, refined_question_type_summary]:
+            for qtype, metrics in summary.items():
+                gt_words = metrics["gt_words"]
+                metrics["hallucination_rate"] = metrics["hallu_words"] / gt_words if gt_words > 0 else 0
+                metrics["fabricated_rate"] = metrics["fabricated"] / gt_words if gt_words > 0 else 0
+                metrics["crossed_rate"] = metrics["crossed"] / gt_words if gt_words > 0 else 0
+                metrics["illegible_rate"] = metrics["illegible"] / gt_words if gt_words > 0 else 0
+
         # Save Summary
         logger.info(f"Saving summary to {run_dir}/summary.json")
         summary_json = {
@@ -242,6 +278,8 @@ class BenchmarkRunner:
             "average_fabricated_hallucination_rate": sum(r["fabricated_hallucination_rate"] for r in summary_results) / len(summary_results) if summary_results else 0,
             "average_crossed_out_hallucination_rate": sum(r["crossed_out_hallucination_rate"] for r in summary_results) / len(summary_results) if summary_results else 0,
             "average_illegibility_hallucination_rate": sum(r["illegibility_hallucination_rate"] for r in summary_results) / len(summary_results) if summary_results else 0,
+            "question_type_summary": question_type_summary,
+            "refined_question_type_summary": refined_question_type_summary,
             "results": summary_results
         }
         with open(run_dir / "summary.json", "w", encoding='utf-8') as f:

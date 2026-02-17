@@ -14,6 +14,26 @@ def test_report():
         "average_fabricated_hallucination_rate": 0.015,
         "average_crossed_out_hallucination_rate": 0.005,
         "average_illegibility_hallucination_rate": 0.008,
+        "question_type_summary": {
+            "QA": {
+                "fabricated": 1, "crossed": 0, "illegible": 1, "gt_words": 100, "hallu_words": 5,
+                "hallucination_rate": 0.05, "fabricated_rate": 0.01, "crossed_rate": 0.0, "illegible_rate": 0.01
+            },
+            "FITB": {
+                "fabricated": 0, "crossed": 1, "illegible": 0, "gt_words": 50, "hallu_words": 2,
+                "hallucination_rate": 0.04, "fabricated_rate": 0.0, "crossed_rate": 0.02, "illegible_rate": 0.0
+            }
+        },
+        "refined_question_type_summary": {
+            "QA": {
+                "fabricated": 1, "crossed": 0, "illegible": 1, "gt_words": 100, "hallu_words": 3,
+                "hallucination_rate": 0.03, "fabricated_rate": 0.01, "crossed_rate": 0.0, "illegible_rate": 0.01
+            },
+            "FITB": {
+                "fabricated": 0, "crossed": 1, "illegible": 0, "gt_words": 50, "hallu_words": 1,
+                "hallucination_rate": 0.02, "fabricated_rate": 0.0, "crossed_rate": 0.02, "illegible_rate": 0.0
+            }
+        },
         "results": [] 
     }
     
@@ -70,7 +90,14 @@ def test_report():
             checks = [
                 "Avg Cost", "Avg Fabricated", "Avg Crossed-out", "Avg Illegibility",
                 "Fabricated", "Crossed-out", "Illegibility", # Table headers
-                "0.0260" # Avg cost value
+                "0.0260", # Avg cost value
+                "Performance by Question Type",
+                "Question Type Breakdown",
+                "Question Answering",
+                "Fill In The Blanks",
+                "text-decoration: line-through;", # Strikethrough for original rates
+                "Refined Rate (%)",
+                "Original Rate (%)"
             ]
             for check in checks:
                 if check in content:

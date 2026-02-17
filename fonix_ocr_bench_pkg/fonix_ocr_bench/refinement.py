@@ -12,14 +12,14 @@ class Refiner:
         Refines the evaluation results using the model.
         """
         prompt = f"""
-Here there is the hallucination report but the word level error is progamatically calculated. So, the some of the predictions which are not semms to be  a hallucination is categorized as word level error, then the word level hallucination rate is got increased. So, I need you to correct the Word-level hallucination rate and DETAILED WORD-LEVEL ERRORS.
+Here there is the hallucination report but the word level error is progamatically calculated. So, the some of the predictions which are not semms to be  a hallucination is categorized as word level error, then the word level hallucination rate is got increased. So, I need you to correct the Word-level hallucination rate, DETAILED WORD-LEVEL ERRORS, and the question_type_metrics.
 
 REPORT:
 ```
 {json.dumps(evaluation_results, indent=4)}
 ```
 
-Output should be same as given REPORT but with correct word level hallucination rate and DETAILED WORD-LEVEL ERRORS.
+Output should be same as given REPORT but with corrected word level hallucination rates (both global and in question_type_metrics) and DETAILED WORD-LEVEL ERRORS.
 Only output the corrected report in json format nothing else.
 """
         
