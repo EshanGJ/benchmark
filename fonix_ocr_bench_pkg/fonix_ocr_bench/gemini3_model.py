@@ -3,8 +3,9 @@ import pathlib
 from google import genai
 from google.genai import types
 from .model_interface import ModelInterface, PredictionResult
+from .logger import logger
 
-class GeminiModel(ModelInterface):
+class Gemini3Model(ModelInterface):
     def __init__(self, api_key: str, model_name: str = "gemini-3-flash-preview", exchange_rate: float = 310.13):
         self.api_key = api_key
         self.model_name = model_name
@@ -17,14 +18,16 @@ class GeminiModel(ModelInterface):
         self.top_p = 0.95
         self.media_resolution = types.MediaResolution.MEDIA_RESOLUTION_HIGH
 
-    def call(self, prompt: str, system_instruction: str, image_path: str = None) -> PredictionResult:
+    def call(self, prompt: str, system_instruction: str, image_path: str = None, image_bytes: bytes = None) -> PredictionResult:
         """
         Calls Gemini model matching dev.ipynb implementation.
         """
+        logger.debug(f"Calling Gemini ({self.model_name}) with prompt length: {len(prompt)}")
+        parts = [types.Part(text=prompt)]
+        
         if image_path is not None:
             filepath = pathlib.Path(image_path)
-            parts = [
-                types.Part(text=prompt),
+            parts.append(
                 types.Part(
                     inline_data=types.Blob(
                         mime_type="application/pdf",
@@ -32,9 +35,17 @@ class GeminiModel(ModelInterface):
                     ),
                     media_resolution={"level": self.media_resolution}
                 )
-            ]
-        else:
-            parts = [types.Part(text=prompt)]
+            )
+        elif image_bytes is not None:
+            parts.append(
+                types.Part(
+                    inline_data=types.Blob(
+                        mime_type="image/png",  # Defaulting to PNG for individual pages
+                        data=image_bytes,
+                    ),
+                    media_resolution={"level": self.media_resolution}
+                )
+            )
 
         response = self.client.models.generate_content(
             model=self.model_name,
@@ -46,6 +57,7 @@ class GeminiModel(ModelInterface):
             ),
             contents=[types.Content(parts=parts)]
         )
+        logger.debug("Gemini response received")
         
         return PredictionResult(
             text=response.text,

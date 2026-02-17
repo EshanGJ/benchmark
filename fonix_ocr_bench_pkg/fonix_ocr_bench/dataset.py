@@ -2,6 +2,7 @@ import json
 import os
 import pathlib
 from typing import List, Dict, Tuple
+from .logger import logger
 
 class BenchmarkDataset:
     def __init__(self, data_dir: str):
@@ -40,12 +41,13 @@ class BenchmarkDataset:
                             f"Please fix the JSON syntax error before running the benchmark.\n"
                             f"{'='*70}"
                         )
+                        logger.error(f"Malformed JSON in {json_path}")
                         raise ValueError(error_msg) from e
         
-        print(f"Loaded {len(samples)} samples from {self.data_dir}")
+        logger.info(f"Loaded {len(samples)} samples from {self.data_dir}")
         if len(samples) == 0:
-            print(f"WARNING: No PDF/JSON pairs found in {self.data_dir}")
-            print(f"Searched in directories: {[str(d) for d in search_dirs]}")
+            logger.warning(f"No PDF/JSON pairs found in {self.data_dir}")
+            logger.debug(f"Searched in directories: {[str(d) for d in search_dirs]}")
         
         return samples
 
@@ -80,28 +82,9 @@ class BenchmarkDataset:
                 elif isinstance(v, (dict, list)):
                     new_data[k] = self._clean_structure(v)
                 else:
-                    # Keep other keys like 'test_number', 'instruction', 'question_type' as is?
-                    # The user prompt example shows 'test_number', 'instruction', 'question_type' preserved with values.
-                    # But "values of each key of the json should be empty but should specify the type of the value"
-                    # User example:
-                    # "test_number": "01",
-                    # "instruction": "Fill in the blanks using the letters a-g.",
-                    # "question_type": "Fill in the blanks",
-                    # "student_answers": { "1": { "answer": "", "is_illigible": "" } ... }
-                    
-                    # So metadata keys are kept, student answer values are emptied.
-                    # How to distinguish?
-                    # The structure seems to depend on keys.
-                    # 'paper_title' -> empty
-                    # 'questions' -> list of dicts
-                    # Inside question: 'test_number', 'instruction', 'question_type' -> KEEP VALUES?
-                    # The user example CLEARLY keeps 'test_number', 'instruction', 'question_type'.
-                    # It empties 'student_answers' values (answer, is_illigible) and 'paper_title'.
-                    
                     new_data[k] = v
             return new_data
         elif isinstance(data, list):
             return [self._clean_structure(item) for item in data]
         else:
             return data
-

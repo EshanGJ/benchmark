@@ -128,11 +128,29 @@ class Evaluator:
             total_hallucinated_words / total_gt_words
             if total_gt_words > 0 else 0
         )
+        
+        fabricated_hallucination_rate = (
+            fabricated_hallucinations / total_gt_words
+            if total_gt_words > 0 else 0
+        )
+        
+        crossed_out_hallucination_rate = (
+            crossed_out_hallucinations / total_gt_words
+            if total_gt_words > 0 else 0
+        )
+        
+        illegibility_hallucination_rate = (
+            illegibility_hallucinations / total_gt_words
+            if total_gt_words > 0 else 0
+        )
 
         return {
             "fabricated_hallucinations": fabricated_hallucinations,
+            "fabricated_hallucination_rate": fabricated_hallucination_rate,
             "crossed_out_hallucinations": crossed_out_hallucinations,
+            "crossed_out_hallucination_rate": crossed_out_hallucination_rate,
             "illegibility_hallucinations": illegibility_hallucinations,
+            "illegibility_hallucination_rate": illegibility_hallucination_rate,
             "word_level_hallucination_rate": hallucination_rate,
             "total_hallucinated_words": total_hallucinated_words,
             "total_gt_words": total_gt_words,

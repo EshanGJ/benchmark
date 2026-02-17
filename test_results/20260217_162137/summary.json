@@ -1,0 +1,12 @@
+{
+    "total_cost": 0.0,
+    "average_cost": 0.0,
+    "total_recognition_time": 0.0,
+    "average_recognition_time": 0.0,
+    "average_word_level_hallucination_rate": 0,
+    "average_refined_word_level_hallucination_rate": 0,
+    "average_fabricated_hallucination_rate": 0,
+    "average_crossed_out_hallucination_rate": 0,
+    "average_illegibility_hallucination_rate": 0,
+    "results": []
+}
