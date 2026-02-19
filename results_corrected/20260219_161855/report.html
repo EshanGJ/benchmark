@@ -1,0 +1,2566 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OCR Benchmark Dashboard</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <style>
+            
+    :root {
+        --primary: #2563eb;
+        --primary-light: #dbeafe;
+        --secondary: #64748b;
+        --success: #22c55e;
+        --warning: #f59e0b;
+        --danger: #ef4444;
+        --bg: #f8fafc;
+        --card-bg: #ffffff;
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+        --border: #e2e8f0;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background-color: var(--bg);
+        color: var(--text-main);
+        margin: 0;
+        padding: 0;
+        line-height: 1.5;
+    }
+    .header {
+        background: white;
+        padding: 2rem;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 2rem;
+    }
+    .header h1 { margin: 0; font-size: 1.875rem; font-weight: 700; color: var(--text-main); }
+    .header p { margin: 0.5rem 0 0; color: var(--text-muted); font-size: 0.875rem; }
+
+    .container { max-width: 1400px; margin: 0 auto; padding: 0 2rem 4rem; }
+
+    .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+    
+    .stat-card {
+        background: var(--card-bg);
+        padding: 1.5rem;
+        border-radius: 1rem;
+        border: 1px solid var(--border);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+    }
+    .stat-icon {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+    .stat-icon.blue { background: var(--primary); }
+    .stat-icon.green { background: var(--success); }
+    .stat-icon.orange { background: var(--warning); }
+    .stat-icon.red { background: var(--danger); }
+    .stat-icon.purple { background: #8b5cf6; }
+
+    .stat-info { display: flex; flex-direction: column; }
+    .stat-label { font-size: 0.875rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.025em; }
+    .stat-value { font-size: 1.5rem; font-weight: 700; color: var(--text-main); }
+
+    .dashboard-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+    .card { background: var(--card-bg); border-radius: 1rem; border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .card-header { padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+    .card-title { font-size: 1.125rem; font-weight: 600; margin: 0; }
+    .card-body { padding: 1.5rem; }
+
+    .chart-container { position: relative; height: 300px; width: 100%; }
+
+    table { width: 100%; border-collapse: separate; border-spacing: 0; }
+    th { background: #f1f5f9; padding: 0.75rem 1rem; text-align: left; font-size: 0.75rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); }
+    td { padding: 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background-color: #f8fafc; }
+
+    .badge { padding: 0.25rem 0.625rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; display: inline-flex; align-items: center; }
+    .badge-success { background: #dcfce7; color: #166534; }
+    .badge-warning { background: #fef9c3; color: #854d0e; }
+    .badge-danger { background: #fee2e2; color: #991b1b; }
+    .badge-neutral { background: #f1f5f9; color: #475569; }
+
+    .progress-bar-container { width: 100%; height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden; margin-top: 4px; }
+    .progress-bar { height: 100%; border-radius: 4px; transition: width 0.3s ease; }
+
+    details { margin-top: 0.5rem; }
+    summary { font-size: 0.875rem; color: var(--primary); cursor: pointer; font-weight: 500; }
+    summary:hover { text-decoration: underline; }
+    
+    .diff-list { font-size: 0.875rem; margin-top: 0.75rem; }
+    .diff-item { background: #f8fafc; border-radius: 0.5rem; padding: 0.75rem; margin-bottom: 0.5rem; border-left: 3px solid var(--primary); }
+    .diff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem; }
+    .diff-label { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; margin-bottom: 0.25rem; }
+    .diff-val { font-family: 'JetBrains Mono', 'Courier New', monospace; font-size: 0.8125rem; word-break: break-all; }
+    .val-gt { color: #059669; }
+    .val-pred { color: #dc2626; }
+
+    pre { background: #1e293b; color: #e2e8f0; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; font-size: 0.75rem; }
+
+    @media (max-width: 1024px) {
+        .dashboard-layout { grid-template-columns: 1fr; }
+    }
+    
+        </style>
+    </head>
+    <body>
+        <div id="dashboard-root">
+            
+    <div class="header">
+        <h1>OCR Benchmark Dashboard</h1>
+        <p>Execution Summary • <strong>2026-02-19 16:20:46</strong></p>
+    </div>
+
+    <div class="container">
+        <div class="grid-4" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));">
+            <div class="stat-card">
+                <div class="stat-icon blue"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+                <div class="stat-info">
+                    <span class="stat-label">Total Cost</span>
+                    <span class="stat-value">$0.133</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon blue" style="background: var(--secondary)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+                <div class="stat-info">
+                    <span class="stat-label">Avg Cost</span>
+                    <span class="stat-value">$0.0222</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon purple"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+                <div class="stat-info">
+                    <span class="stat-label">Total Time</span>
+                    <span class="stat-value">296.9s</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon purple" style="background: var(--secondary)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+                <div class="stat-info">
+                    <span class="stat-label">Avg Time</span>
+                    <span class="stat-value">49.48s</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon orange"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div>
+                <div class="stat-info">
+                    <span class="stat-label">Avg Hallucination</span>
+                    <span class="stat-value">14.31%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon orange" style="background: var(--primary)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div>
+                <div class="stat-info">
+                    <span class="stat-label">Avg Refined</span>
+                    <span class="stat-value">7.49%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon red"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div>
+                <div class="stat-info">
+                    <span class="stat-label">Avg Fabricated</span>
+                    <span class="stat-value">0.09%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon green"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div>
+                <div class="stat-info">
+                    <span class="stat-label">Avg Crossed-out</span>
+                    <span class="stat-value">2.06%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon orange" style="background: #e67e22;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div>
+                <div class="stat-info">
+                    <span class="stat-label">Avg Illegibility</span>
+                    <span class="stat-value">0.36%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon green" style="background: #a855f7;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></div>
+                <div class="stat-info">
+                    <span class="stat-label">Samples Tested</span>
+                    <span class="stat-value">6</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-layout">
+            <div class="card">
+                <div class="card-header"><h3 class="card-title">Hallucination Rates per Sample (%)</h3></div>
+                <div class="card-body">
+                    <div class="chart-container">
+                        <canvas id="halluChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header"><h3 class="card-title">Performance by Question Type (%)</h3></div>
+                <div class="card-body">
+                    <div class="chart-container">
+                        <canvas id="qtypeChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header"><h3 class="card-title">Cost vs Speed Distribution</h3></div>
+                <div class="card-body">
+                    <div class="chart-container">
+                        <canvas id="scatterChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="margin-bottom: 2rem;">
+            <div class="card-header"><h3 class="card-title">Question Type Breakdown</h3></div>
+            <div class="card-body" style="padding: 0;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Question Type</th>
+                            <th>Hallucination Rate</th>
+                            <th>Fabricated</th>
+                            <th>Crossed-out</th>
+                            <th>Illegibility</th>
+                            <th>GT Words</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+            <tr>
+                <td><strong>Underline</strong> <small style="color: var(--text-muted)">(U)</small></td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span class="badge badge-danger">23.8%</span>
+                        <small style="color: var(--text-muted); text-decoration: line-through;">31.0%</small>
+                    </div>
+                </td>
+                <td>0 (0.0%)</td>
+                <td>0 (0.0%)</td>
+                <td>0 (0.0%)</td>
+                <td>84</td>
+            </tr>
+            
+            <tr>
+                <td><strong>Fill In The Blanks</strong> <small style="color: var(--text-muted)">(FITB)</small></td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span class="badge badge-warning">6.0%</span>
+                        <small style="color: var(--text-muted); text-decoration: line-through;">13.9%</small>
+                    </div>
+                </td>
+                <td>1 (0.6%)</td>
+                <td>1 (0.6%)</td>
+                <td>7 (4.2%)</td>
+                <td>166</td>
+            </tr>
+            
+            <tr>
+                <td><strong>Writing/Essay</strong> <small style="color: var(--text-muted)">(W)</small></td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span class="badge badge-warning">6.4%</span>
+                        <small style="color: var(--text-muted); text-decoration: line-through;">12.3%</small>
+                    </div>
+                </td>
+                <td>0 (0.0%)</td>
+                <td>49 (2.3%)</td>
+                <td>1 (0.0%)</td>
+                <td>2169</td>
+            </tr>
+            
+            <tr>
+                <td><strong>Question Answering</strong> <small style="color: var(--text-muted)">(QA)</small></td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span class="badge badge-danger">15.5%</span>
+                        <small style="color: var(--text-muted); text-decoration: line-through;">51.7%</small>
+                    </div>
+                </td>
+                <td>1 (1.7%)</td>
+                <td>0 (0.0%)</td>
+                <td>0 (0.0%)</td>
+                <td>58</td>
+            </tr>
+            
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header"><h3 class="card-title">Detailed Execution Results</h3></div>
+            <div class="card-body" style="padding: 0;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 250px">Sample</th>
+                            <th>Hallucination Metrics</th>
+                            <th style="width: 150px">Efficiency</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+    
+        <tr>
+            <td>
+                <div style="font-weight: 600;">2.pdf</div>
+                <div style="font-size: 0.75rem; color: #64748b;">Original: 5.8%</div>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <span class="badge badge-success">1.4%</span>
+                    <div class="progress-bar-container" style="flex: 1">
+                        <div class="progress-bar" style="width: 1.440922190201729%; background: #22c55e"></div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 0.5rem; font-size: 0.75rem; color: #64748b;">
+                    <span>Fab: 0.3%</span>
+                    <span>Cross: 1.2%</span>
+                    <span>Illeg: 0.9%</span>
+                </div>
+            </td>
+            <td>
+                <div style="font-weight: 600;">$0.0260</div>
+                <div style="font-size: 0.75rem; color: #64748b;">49.16s</div>
+            </td>
+            <td><details><summary>Review Discrepancies</summary><div class='diff-list'>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['leading,']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['leads']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 09 (1)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['grew']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['growing']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 09 (2)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['4/5A']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['24/5A']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 14</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['project.']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['project', '&']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 14</div>
+                    </div>
+                    <div class="diff-item" style="border-left-color: #f59e0b;">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Unexpected Insertion</div>
+                        <div class="diff-val val-pred">['steped']</div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div><h4 style='font-size: 0.875rem'>Raw Output</h4><pre><code>{
+  "paper_title": "Year End Evaluation - 2025",
+  "questions": [
+    {
+      "test_number": "09",
+      "instruction": "Answer all the questions",
+      "question_type": "U",
+      "student_answers": {
+        "1": {
+          "answer": "leads",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "growing",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "valuable",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "obedience",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "Lastly",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "10",
+      "instruction": "Read the text given below and fill in the blanks with the correct form of the verb given within the brackets.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "were soaked",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "decided",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "was hiding",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "was taken",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "had learned",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "11",
+      "instruction": "Fill in the blanks of the following passage with the words given in the box. There is one extra word.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "believe",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "safe",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "truth",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "truthful",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "it",
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "people",
+          "is_legible": "true"
+        },
+        "7": {
+          "answer": "but",
+          "is_legible": "true"
+        },
+        "8": {
+          "answer": "later",
+          "is_legible": "true"
+        },
+        "9": {
+          "answer": "good",
+          "is_legible": "true"
+        },
+        "10": {
+          "answer": "better",
+          "is_legible": "true"
+        },
+        "11": {
+          "answer": "we",
+          "is_legible": "true"
+        },
+        "12": {
+          "answer": "thing",
+          "is_legible": "true"
+        },
+        "13": {
+          "answer": "or",
+          "is_legible": "true"
+        },
+        "14": {
+          "answer": "people",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "12",
+      "instruction": "Underline the correct verb phrase within brackets.",
+      "question_type": "U",
+      "student_answers": {
+        "1": {
+          "answer": "will stay",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "don't go",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "hadn't overslept",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "had won",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "deliver",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "13",
+      "instruction": "Read the following extracts of different types of hobbies and match them with the headings given below. Write the relevant letter of the heading in the box given against each extract. There is one extra heading.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "C",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "F",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "A",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "G",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "B",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "14",
+      "instruction": "Write only one of the following. Use the space provided.",
+      "question_type": "W",
+      "student_answers": {
+        "answer": "24/5A Hena Road,\nMount lavinia,\n10. 11. 2026\nDear Debora,\nwe did a community project at school today. All of us did it well The project is a science project we did about the respiratory system. The purpose we did the project was to remember and recall every and what we have learnt for the exams me and 3 girls joined and did the project & I felt so nervous while doing the project I was actually scared to do it, but after doing it I felt little brave and strong. I hope you read this letter.\nfaithfully Nifra",
+        "is_legible": "true"
+      }
+    },
+    {
+      "test_number": "15",
+      "instruction": "Read the following text and answer the questions given below.",
+      "question_type": "QA",
+      "student_answers": {
+        "1": {
+          "1": {
+            "answer": "True",
+            "is_legible": "true"
+          },
+          "2": {
+            "answer": "False",
+            "is_legible": "true"
+          },
+          "3": {
+            "answer": "False",
+            "is_legible": "true"
+          },
+          "4": {
+            "answer": "True",
+            "is_legible": "true"
+          }
+        },
+        "2": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "3": {
+          "answer": "d",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "c",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "father",
+          "is_legible": "true"
+        },
+        "6": {
+          "1": {
+            "answer": "ii",
+            "is_legible": "true"
+          },
+          "2": {
+            "answer": "ii",
+            "is_legible": "true"
+          }
+        }
+      }
+    },
+    {
+      "test_number": "16",
+      "instruction": "Write on one of the following topics. Use about 200 words",
+      "question_type": "W",
+      "student_answers": {
+        "answer": "on the road and a cat suddenly jumped into me and I really got scared at the moment and then I actually started laughing aloud people on the road were looking at me and was whispering inside, is he mad or what? I did not mind them actually I couldn't stop laughing because of that stupid cat while walking I met my friend and I told the incident to him also he started laughing with me together, and then we went to his house and was talking about his funny stories and I was sharing mine too. I was telling my friend again and both started laughing again and again. Actually I couldn't forget the incident at the moment. And then I told my friend that am leaving and I left his place and was walking to my house, while walking I steped slipped and fell on the road and I got up and started laughing again because I slipped and fell down. And I will never forget this day. I went home and told my parents this incident and they scolded me why are you laughing for this? I replied mom its just a joke and was laughing again.",
+        "is_legible": "true"
+      }
+    }
+  ]
+}</code></pre></div></details></td>
+        </tr>
+        
+        <tr>
+            <td>
+                <div style="font-weight: 600;">6.pdf</div>
+                <div style="font-size: 0.75rem; color: #64748b;">Original: 8.1%</div>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <span class="badge badge-warning">3.3%</span>
+                    <div class="progress-bar-container" style="flex: 1">
+                        <div class="progress-bar" style="width: 3.2994923857868024%; background: #f59e0b"></div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 0.5rem; font-size: 0.75rem; color: #64748b;">
+                    <span>Fab: 0.0%</span>
+                    <span>Cross: 1.5%</span>
+                    <span>Illeg: 0.0%</span>
+                </div>
+            </td>
+            <td>
+                <div style="font-weight: 600;">$0.0214</div>
+                <div style="font-size: 0.75rem; color: #64748b;">50.91s</div>
+            </td>
+            <td><details><summary>Review Discrepancies</summary><div class='diff-list'>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['schooled']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['schosled']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 14</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['F1']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['FI']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['.']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['of', 'FI.']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['maclearn']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['maclern']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['because', 'lando']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['becaus', 'land']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['crashing']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['carashing']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['hilarious']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['halarious']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['F1']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['FI']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">["leclre's"]</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">["Lecre's"]</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['unforgettable.']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['unforgetable']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div>
+                    <div class="diff-item" style="border-left-color: #f59e0b;">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Unexpected Insertion</div>
+                        <div class="diff-val val-pred">['and']</div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div><h4 style='font-size: 0.875rem'>Raw Output</h4><pre><code>{
+  "paper_title": "English Language - Year End Evaluation - 2025",
+  "questions": [
+    {
+      "test_number": "09",
+      "instruction": "Answer all the questions",
+      "question_type": "U",
+      "student_answers": {
+        "1": {
+          "answer": "leads",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "grew",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "valuable",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "obedience",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "Lastly",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "10",
+      "instruction": "Read the text given below and fill in the blanks with the correct form of the verb given within the brackets.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "were soaking",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "decided",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "was hiding",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "was taken",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "had learnt",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "11",
+      "instruction": "Fill in the blanks of the following passage with the words given in the box. There is one extra word.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "believe",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "safe",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "truth",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "responsible",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "it",
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "people",
+          "is_legible": "true"
+        },
+        "7": {
+          "answer": "but",
+          "is_legible": "true"
+        },
+        "8": {
+          "answer": "later",
+          "is_legible": "true"
+        },
+        "9": {
+          "answer": "thankful",
+          "is_legible": "true"
+        },
+        "10": {
+          "answer": "better",
+          "is_legible": "true"
+        },
+        "11": {
+          "answer": "we",
+          "is_legible": "true"
+        },
+        "12": {
+          "answer": "thing",
+          "is_legible": "true"
+        },
+        "13": {
+          "answer": "or",
+          "is_legible": "true"
+        },
+        "14": {
+          "answer": "problem",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "12",
+      "instruction": "Underline the correct verb phrase within brackets.",
+      "question_type": "U",
+      "student_answers": {
+        "1": {
+          "answer": "will stay",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "don't go",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "hadn't overslept",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "had won",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "deliver",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "13",
+      "instruction": "Read the following extracts of different types of hobbies and match them with the headings given below. Write the relevant letter of the heading in the box given against each extract. There is one extra heading.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "C",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "F",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "A",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "G",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "B",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "14",
+      "instruction": "Write only one of the following. Use the space provided.",
+      "question_type": "W",
+      "student_answers": {
+        "answer": "19, Rupasinghe Rd, Nedimala Rd, Hill street mount lavania. Dear Max, Hi, How are you. Hope your doing good. I wanted share my experience about my school Community Project. The project was about to make a creative innovation and testing it. I made a 'arc reactor' for my project. It's function was supplying pure unlimited energy AR. Me and Amaan and Murshid helped me in the project. Without their help it was never possible. That creation was top notch and we won the best creative inovation award without a doubt and schosled every other competitor. I want to show the 'arc reactor' to you let's meet on Sunday. Bye! Thank you Your best friend",
+        "is_legible": "true"
+      }
+    },
+    {
+      "test_number": "15",
+      "instruction": "Read the following text and answer the questions given below.",
+      "question_type": "QA",
+      "student_answers": {
+        "1": {
+          "1": {
+            "answer": "True",
+            "is_legible": "true"
+          },
+          "2": {
+            "answer": "False",
+            "is_legible": "true"
+          },
+          "3": {
+            "answer": "False",
+            "is_legible": "true"
+          },
+          "4": {
+            "answer": "True",
+            "is_legible": "true"
+          }
+        },
+        "2": {
+          "answer": "b",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "d",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "d",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "father",
+          "is_legible": "true"
+        },
+        "6": {
+          "1": {
+            "answer": "ii",
+            "is_legible": "true"
+          },
+          "2": {
+            "answer": "iii",
+            "is_legible": "true"
+          }
+        }
+      }
+    },
+    {
+      "test_number": "16",
+      "instruction": "Write on one of the following topics. Use about 200 words",
+      "question_type": "W",
+      "student_answers": {
+        "answer": "in the streets of monaco and I was in a hurry to go and watch the FI Italian Grand Prix happening at 6:00 pm. As I did arrive in time and it was lights out, away we go and the race went on. The Italian Grand prix 2025. It was the most funniest Race in the history of FI. The funniest part which left all the fans and me in unbearable laughter was maclern swaping Cars just becaus land Norris had a slow pit stop and was too funny and other funny part was liam lawson and Isack Hadjar carashing into each other landing on top of each other's car upside down. That was halarious and too funny that fans were dying out of laughter. It will be rembered as the most funniest race in FI history. Also after Max Verstappen won and went on to the podium for celebration. Lando Norris unintentionally broke Charles Lecre's trophy while opening a bottle which fell and that also was a funny part for the fans but for him it was mistake. After crashing out from laughing all day me and my friends left the stadium and still we didn't stop laughing as it was too funny and couldn't stop laughing about it I mean whenever that incident comes to my mind even now I still laugh aloud. That Saturday evening was unforgetable",
+        "is_legible": "true"
+      }
+    }
+  ]
+}</code></pre></div></details></td>
+        </tr>
+        
+        <tr>
+            <td>
+                <div style="font-weight: 600;">1.pdf</div>
+                <div style="font-size: 0.75rem; color: #64748b;">Original: 30.3%</div>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <span class="badge badge-danger">19.0%</span>
+                    <div class="progress-bar-container" style="flex: 1">
+                        <div class="progress-bar" style="width: 18.99736147757256%; background: #ef4444"></div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 0.5rem; font-size: 0.75rem; color: #64748b;">
+                    <span>Fab: 0.3%</span>
+                    <span>Cross: 2.6%</span>
+                    <span>Illeg: 0.0%</span>
+                </div>
+            </td>
+            <td>
+                <div style="font-weight: 600;">$0.0195</div>
+                <div style="font-size: 0.75rem; color: #64748b;">47.48s</div>
+            </td>
+            <td><details><summary>Review Discrepancies</summary><div class='diff-list'>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['leads']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['3']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 09 (1)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['growing,']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['1']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 09 (2)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['valuable']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['3']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 09 (3)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['obedience']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['1']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 09 (4)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['Lastly']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['2']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 09 (5)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['or']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['of']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 11 (8)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['will', 'stay']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['3']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 12 (1)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">["don't", 'go,']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['1']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 12 (2)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">["hadn't", 'overslept']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['2']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 12 (3)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['had', 'won']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['1']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 12 (4)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['deliver']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['3']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 12 (5)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['the']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['graph']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 14</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['sheet']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['Street']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['class.']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['class', 'Then']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['group', 'of']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['group.', 'That', 'day', 'is']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['friend']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['OF', 'One', 'the', 'Frend']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['takes']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['lates']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div>
+                    <div class="diff-item" style="border-left-color: #f59e0b;">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Unexpected Insertion</div>
+                        <div class="diff-val val-pred">['News', 'from', 'Tv', 'channels']</div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 14</div>
+                    </div>
+                    <div class="diff-item" style="border-left-color: #f59e0b;">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Unexpected Insertion</div>
+                        <div class="diff-val val-pred">['which', 'is', 'near', 'my', 'home']</div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div>
+                    <div class="diff-item" style="border-left-color: #f59e0b;">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Unexpected Insertion</div>
+                        <div class="diff-val val-pred">['and', 'this', 'was', 'time', '.', 'It', 'started', 'to', 'happen', '.', 'After', 'leaving', 'the', 'Mosque', '.', 'There', 'was', 'a', 'huge', 'fight', 'which', 'was', 'happending', 'outside', 'the', 'Mosque', 'between', '2', 'Beggers', 'Fighting', 'For', 'a']</div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div>
+                    <div class="diff-item" style="border-left-color: #f59e0b;">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Unexpected Insertion</div>
+                        <div class="diff-val val-pred">['It', 'friend', 'et', 'return', 'These', 'Fun', 'He', 'pranked', 'made']</div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div><h4 style='font-size: 0.875rem'>Raw Output</h4><pre><code>{
+  "paper_title": "Year End Evaluation - 2025",
+  "questions": [
+    {
+      "test_number": "09",
+      "instruction": "Read the text and underline the most suitable word given within each bracket.",
+      "question_type": "U",
+      "student_answers": {
+        "1": {
+          "answer": "3",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "1",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "3",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "1",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "2",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "10",
+      "instruction": "Read the text given below and fill in the blanks with the correct form of the verb given within the brackets.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "were soaked",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "decided",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "was hiding",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "was taken",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "had learn",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "11",
+      "instruction": "Fill in the blanks of the following passage with the words given in the box. There is one extra word.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "be live",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "good",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "truth",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "truthful",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "problem",
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "people",
+          "is_legible": "true"
+        },
+        "7": {
+          "answer": "but",
+          "is_legible": "true"
+        },
+        "8": {
+          "answer": "of",
+          "is_legible": "true"
+        },
+        "9": {
+          "answer": "responsible",
+          "is_legible": "true"
+        },
+        "10": {
+          "answer": "better",
+          "is_legible": "true"
+        },
+        "11": {
+          "answer": "we",
+          "is_legible": "true"
+        },
+        "12": {
+          "answer": "thing",
+          "is_legible": "true"
+        },
+        "13": {
+          "answer": "later",
+          "is_legible": "true"
+        },
+        "14": {
+          "answer": "It",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "12",
+      "instruction": "Underline the correct verb phrase within brackets.",
+      "question_type": "U",
+      "student_answers": {
+        "1": {
+          "answer": "3",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "1",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "2",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "1",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "3",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "13",
+      "instruction": "Read the following extracts of different types of hobbies and match them with the headings given below. Write the relevant letter of the heading in the box given against each extract. There is one extra heading.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "C",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "F",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "A",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "G",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "B",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "14",
+      "instruction": "Write only one of the following. Use the space provided.",
+      "question_type": "W",
+      "student_answers": {
+        "answer": "The following bar graph shows that the Students of Gr 11 in Prince collage that how they find current News they are ; Messaging apps, U tube News Websites, Tv channels and Social Media . \n the \n According to graph bar graph The Most number of Students find News through U tube and the least ^ number OF Student find News through News websites. Or Tv Channels . And ^ equal number of Students Find News through News websites And Tv channels . \n According to the bar graph, Number of Students who find news through Social Media is more than the students who Finds from Tv channels . News from Tv channels",
+        "is_legible": "true"
+      }
+    },
+    {
+      "test_number": "15",
+      "instruction": "Read the following text and answer the questions given below.",
+      "question_type": "QA",
+      "student_answers": {
+        "1": {
+          "1": {
+            "answer": "True",
+            "is_legible": "true"
+          },
+          "2": {
+            "answer": "False",
+            "is_legible": "true"
+          },
+          "3": {
+            "answer": "False",
+            "is_legible": "true"
+          },
+          "4": {
+            "answer": "True",
+            "is_legible": "true"
+          }
+        },
+        "2": {
+          "answer": "b",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "d",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "b",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "father",
+          "is_legible": "true"
+        },
+        "6": {
+          "1": {
+            "answer": "ii",
+            "is_legible": "true"
+          },
+          "2": {
+            "answer": "iii",
+            "is_legible": "true"
+          }
+        }
+      }
+    },
+    {
+      "test_number": "16",
+      "instruction": "Write on one of the following topics. Use about 200 words.",
+      "question_type": "W",
+      "student_answers": {
+        "answer": "I was eating an ice cream and walking Along Street after Finishing my class Then Because I was too early going home I went to the beach which is near my home and Spend some times with Some friends I Met in the beach . And it was 6 then I went to pray and this was time . It started to happen . After leaving the Mosque . There was a huge fight which was happending outside the Mosque between 2 Beggers Fighting For a then my friends Came to meet me & After I was praying. We were talking All the time Among the group. That day is one OF One the Frend that was his birthday . So we planned him a big Treat to him. So each OF us put Money and we bought a cake and Secretly. we bought some Snow Sprays . Later we . Celebrate d his birthday . we cut the Cakes and the snow Spray we bought we all applied it on his Face and it It was really Fun, my friends face became a Face of a snow man . It was really Fun. But because my friend friend who lates Jokes et seriously he became mad like nothing. He left us on there. But even after left one OF my friend who was hiding he at once Crashed to his Face and Sprayed the Full bottle on his Face again. But he didnt go mad at all this time. So in return the we were very happy . These Fun I took my Absolute Fun. He Then he also pranked pranked us that he got made mad For Fun !",
+        "is_legible": "true"
+      }
+    }
+  ]
+}</code></pre></div></details></td>
+        </tr>
+        
+        <tr>
+            <td>
+                <div style="font-weight: 600;">4.pdf</div>
+                <div style="font-size: 0.75rem; color: #64748b;">Original: 16.7%</div>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <span class="badge badge-warning">9.7%</span>
+                    <div class="progress-bar-container" style="flex: 1">
+                        <div class="progress-bar" style="width: 9.685230024213075%; background: #f59e0b"></div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 0.5rem; font-size: 0.75rem; color: #64748b;">
+                    <span>Fab: 0.0%</span>
+                    <span>Cross: 4.4%</span>
+                    <span>Illeg: 0.0%</span>
+                </div>
+            </td>
+            <td>
+                <div style="font-weight: 600;">$0.0224</div>
+                <div style="font-size: 0.75rem; color: #64748b;">48.93s</div>
+            </td>
+            <td><details><summary>Review Discrepancies</summary><div class='diff-list'>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['groups']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['groups.', 'Messaging', 'apps,', 'U', 'Tube,', 'News', 'website,', 'TV', 'channels', 'and', 'Social', 'media.']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 14</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['d']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['c']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 15 (3)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['d']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['b']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 15 (4)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['present,']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['present', 'techno']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['humans.']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['humans', 'to', 'be', 'used', 'by', 'them.']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['e']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['education', 'and', 'comm']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['messege', 'messages.']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['messages,', 'this', 'small', 'but', 'very', 'useful', 'telephone']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div>
+                    <div class="diff-item" style="border-left-color: #f59e0b;">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Unexpected Insertion</div>
+                        <div class="diff-val val-pred">['students']</div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 14</div>
+                    </div>
+                    <div class="diff-item" style="border-left-color: #f59e0b;">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Unexpected Insertion</div>
+                        <div class="diff-val val-pred">['for']</div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 14</div>
+                    </div>
+                    <div class="diff-item" style="border-left-color: #f59e0b;">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Unexpected Insertion</div>
+                        <div class="diff-val val-pred">['used', 'by', 'humans']</div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div>
+                    <div class="diff-item" style="border-left-color: #f59e0b;">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Unexpected Insertion</div>
+                        <div class="diff-val val-pred">['with']</div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div>
+                    <div class="diff-item" style="border-left-color: #f59e0b;">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Unexpected Insertion</div>
+                        <div class="diff-val val-pred">['their']</div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div>
+                    <div class="diff-item" style="border-left-color: #f59e0b;">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Unexpected Insertion</div>
+                        <div class="diff-val val-pred">['try']</div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div><h4 style='font-size: 0.875rem'>Raw Output</h4><pre><code>{
+  "paper_title": "English Language - Year End Evaluation - 2025",
+  "questions": [
+    {
+      "test_number": "09",
+      "instruction": "Answer all the questions",
+      "question_type": "U",
+      "student_answers": {
+        "1": {
+          "answer": "lead",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "growing",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "valuable",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "obedient",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "Lastly",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "10",
+      "instruction": "Read the text given below and fill in the blanks with the correct form of the verb given within the brackets.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "were soaked",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "decided",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "was hiding",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "was taken",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "had learnt",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "11",
+      "instruction": "Fill in the blanks of the following passage with the words given in the box. There is one extra word.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "believe",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "safe",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "truth",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "responsible",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "it",
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "people",
+          "is_legible": "true"
+        },
+        "7": {
+          "answer": "but",
+          "is_legible": "true"
+        },
+        "8": {
+          "answer": "later",
+          "is_legible": "true"
+        },
+        "9": {
+          "answer": "Truthful",
+          "is_legible": "true"
+        },
+        "10": {
+          "answer": "better",
+          "is_legible": "true"
+        },
+        "11": {
+          "answer": "we",
+          "is_legible": "true"
+        },
+        "12": {
+          "answer": "thing",
+          "is_legible": "true"
+        },
+        "13": {
+          "answer": "or",
+          "is_legible": "true"
+        },
+        "14": {
+          "answer": "people",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "12",
+      "instruction": "Underline the correct verb phrase within brackets.",
+      "question_type": "U",
+      "student_answers": {
+        "1": {
+          "answer": "will stay",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "don't go",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "hadn't overslept",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "would win",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "deliver",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "13",
+      "instruction": "Read the following extracts of different types of hobbies and match them with the headings given below. Write the relevant letter of the heading in the box given against each extract. There is one extra heading.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "C",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "F",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "A",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "G",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "B",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "14",
+      "instruction": "Write only one of the following. Use the space provided.",
+      "question_type": "W",
+      "student_answers": {
+        "answer": "The above bar chart represents how the students grade 11 students of Prince College find current news. The bar graph has been categorized into five groups. Messaging apps, U Tube, News website, TV channels and Social media. According to the graph we can identify that U Tube is the most popular platform which the students find current news. Messaging apps are the second most popular platform with 30%. of students using them which is 10% less used than U Tube. Both News websites and TV channels are the least used platforms with just 5% of students using them. Student use Social media more than both News websites and TV channels. With that we can conclude that U Tube is the most popular platform and both News websites and News channels as the least popular platform which students find for current news.",
+        "is_legible": "true"
+      }
+    },
+    {
+      "test_number": "15",
+      "instruction": "Read the following text and answer the questions given below.",
+      "question_type": "QA",
+      "student_answers": {
+        "1": {
+          "1": {
+            "answer": "False",
+            "is_legible": "true"
+          },
+          "2": {
+            "answer": "False",
+            "is_legible": "true"
+          },
+          "3": {
+            "answer": "False",
+            "is_legible": "true"
+          },
+          "4": {
+            "answer": "True",
+            "is_legible": "true"
+          }
+        },
+        "2": {
+          "answer": "b",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "c",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "b",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "Father",
+          "is_legible": "true"
+        },
+        "6": {
+          "1": {
+            "answer": "ii",
+            "is_legible": "true"
+          },
+          "2": {
+            "answer": "i",
+            "is_legible": "true"
+          }
+        }
+      }
+    },
+    {
+      "test_number": "16",
+      "instruction": "Write on one of the following topics. Use about 200 words",
+      "question_type": "W",
+      "student_answers": {
+        "answer": "Role of technology in our daily life. At the present techno the world uses technology in almost all types of industries. Technology is used by humans developed and used by humans to be used by them. Humans have invented millions of different things using technology. A we are living in the technologically advanced period of the world in it's entire history, one of the important ways technology is being used for is education and comm in the communication sector. After the invention of the telephone by Alexander Graham Bell, the telephone has evolved throughout the history with as technology got advanced. The modern day smart phone can is a tiny powerhouse which can do almost anything. From taking calls, to texting messages, this small but very useful telephone and many more. The smart phone helps us to communicate with anyone from anywhere in the world. There are many and disadvantages that come and challenges that comes with technology as well. People using technology in for bad doings and using technology to hack into other people's personal information and and their belongings. This has lead to lots of problems and people are becoming more and more less safe using their smart phones as they are worried their personal information and might be stolen as well. This is the biggest challenge that the people who developed these smart phones and these technology are try trying to tackle. Technology isn't perfect but as time passes and technology evolves. Surely it'll reach for perfection.",
+        "is_legible": "true"
+      }
+    }
+  ]
+}</code></pre></div></details></td>
+        </tr>
+        
+        <tr>
+            <td>
+                <div style="font-weight: 600;">5.pdf</div>
+                <div style="font-size: 0.75rem; color: #64748b;">Original: 6.9%</div>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <span class="badge badge-success">0.9%</span>
+                    <div class="progress-bar-container" style="flex: 1">
+                        <div class="progress-bar" style="width: 0.9107468123861567%; background: #22c55e"></div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 0.5rem; font-size: 0.75rem; color: #64748b;">
+                    <span>Fab: 0.0%</span>
+                    <span>Cross: 0.9%</span>
+                    <span>Illeg: 0.0%</span>
+                </div>
+            </td>
+            <td>
+                <div style="font-weight: 600;">$0.0233</div>
+                <div style="font-size: 0.75rem; color: #64748b;">54.64s</div>
+            </td>
+            <td><details><summary>Review Discrepancies</summary><div class='diff-list'>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['growing,']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['valued']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 09 (2)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['valuable']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['growth']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 09 (3)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['c']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['b']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 15 (4)</div>
+                    </div>
+                    <div class="diff-item" style="border-left-color: #f59e0b;">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Unexpected Insertion</div>
+                        <div class="diff-val val-pred">['watch']</div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 14</div>
+                    </div>
+                    <div class="diff-item" style="border-left-color: #f59e0b;">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Unexpected Insertion</div>
+                        <div class="diff-val val-pred">['Hon']</div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div><h4 style='font-size: 0.875rem'>Raw Output</h4><pre><code>{
+  "paper_title": "Year End Evaluation - 2025 - Grade 11 - English Language - Western Province",
+  "questions": [
+    {
+      "test_number": "09",
+      "instruction": "Answer all the questions",
+      "question_type": "U",
+      "student_answers": {
+        "1": {
+          "answer": "leads",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "valued",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "growth",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "obedience",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "Lastly",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "10",
+      "instruction": "Read the text given below and fill in the blanks with the correct form of the verb given within the brackets.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "soaked",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "decided",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "has been hiding",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "was taken",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "learned",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "11",
+      "instruction": "Fill in the blanks of the following passage with the words given in the box. There is one extra word.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "belive",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "safe",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "truth",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "thruthfull",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "it",
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "good",
+          "is_legible": "true"
+        },
+        "7": {
+          "answer": "but",
+          "is_legible": "true"
+        },
+        "8": {
+          "answer": "later",
+          "is_legible": "true"
+        },
+        "9": {
+          "answer": "responsible",
+          "is_legible": "true"
+        },
+        "10": {
+          "answer": "better",
+          "is_legible": "true"
+        },
+        "11": {
+          "answer": "we",
+          "is_legible": "true"
+        },
+        "12": {
+          "answer": "thing",
+          "is_legible": "true"
+        },
+        "13": {
+          "answer": "or",
+          "is_legible": "true"
+        },
+        "14": {
+          "answer": "people",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "12",
+      "instruction": "Underline the correct verb phrase within brackets.",
+      "question_type": "U",
+      "student_answers": {
+        "1": {
+          "answer": "will stay",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "hadn't gone",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "hadn't overslept",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "would win",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "deliver",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "13",
+      "instruction": "Read the following extracts of different types of hobbies and match them with the headings given below. Write the relevant letter of the heading in the box given against each extract. There is one extra heading.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "C",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "f",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "A",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "G",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "B",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "14",
+      "instruction": "Write only one of the following. Use the space provided.",
+      "question_type": "W",
+      "student_answers": {
+        "answer": "The above bar chart shows how Gr. 11 students of prince collrage find current news. Most of the student watch find new by U Tube percent wise 40%. 5% of the students find current new by TV channels. Equal number of students find news by TV chanels and New websites. Students find current news by massaging apps is more than social media. which is 20%. students find current news using massaging apps less than U tube.\nIt is seen that most of the students prefer U tube and finding new by news webcites and TV channels has been decreased.",
+        "is_legible": "true"
+      }
+    },
+    {
+      "test_number": "15",
+      "instruction": "Read the following text and answer the questions given below.",
+      "question_type": "QA",
+      "student_answers": {
+        "1": {
+          "1": {
+            "answer": "True",
+            "is_legible": "true"
+          },
+          "2": {
+            "answer": "True",
+            "is_legible": "true"
+          },
+          "3": {
+            "answer": "False",
+            "is_legible": "true"
+          },
+          "4": {
+            "answer": "True",
+            "is_legible": "true"
+          }
+        },
+        "2": {
+          "answer": "b",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "d",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "b",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "father",
+          "is_legible": "true"
+        },
+        "6": {
+          "1": {
+            "answer": "iii",
+            "is_legible": "true"
+          },
+          "2": {
+            "answer": "i",
+            "is_legible": "true"
+          }
+        }
+      }
+    },
+    {
+      "test_number": "16",
+      "instruction": "Write on one of the following topics. Use about 200 words",
+      "question_type": "W",
+      "student_answers": {
+        "answer": "I was walking alone the road and I met my old friend sasindhi who was my neibor 7 years before. And I said Hi sasindhi How are you. she replied me I'm good. Hon Who are you. I was shocked because she was my best friend in my childhood days. I missed her so much but she didn't even smile at me. I was so disspointed and without replying her I went home. And my mother asked me to wash my clothes. As usual I told I'll wash my clothes later but this time mama strictly told me to wash my clothes so I took all my clothes and went near the washing machine and put all my clothes to the washing machine I was sreaching for detergent powder. Mama told It is in the washroom. I opened the wash room. A girl came inside the wash room and huged me. I got scard I soon pushed her and ran to the hall. My mama was laughing at me. I was so angry and scremed suddenly that girl who hugged me came from the kitchen and I saw her face she was my childho friend sasindhi. I nicely scolded her and told mama what happer in the road. And without listening to sasindhi or Mama I went the room and locked the door. I started to weep. After 2 hours I opened the door and went to the hall. To girls were sitting they both were looking the same. I asked mama What is this are you? playing with me. Am I a joke for you. I was asking many quatis like this. Mama told little wait allow others to talk. I told now what you want to talk tell. she told ! She pointed at one girl and told this is not sasindhi this is her twin sister, kasundhi. And she pointed the other girl and told this is Sasindhi. It was such a embracing movement for me infront of Sasindhi's parents and sit sister. I can only remember about sasindhi but not about her sister who was in Anuradhapura. And the one who I saw met in the road was kasundhi. The one who hugged me was sasindhi. I asked sorry from everyone and all of them started to laught and Mama told Sasid will stay with us for this Holidays.",
+        "is_legible": "true"
+      }
+    }
+  ]
+}</code></pre></div></details></td>
+        </tr>
+        
+        <tr>
+            <td>
+                <div style="font-weight: 600;">3.pdf</div>
+                <div style="font-size: 0.75rem; color: #64748b;">Original: 18.0%</div>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <span class="badge badge-danger">10.6%</span>
+                    <div class="progress-bar-container" style="flex: 1">
+                        <div class="progress-bar" style="width: 10.632911392405063%; background: #ef4444"></div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 0.5rem; font-size: 0.75rem; color: #64748b;">
+                    <span>Fab: 0.0%</span>
+                    <span>Cross: 1.8%</span>
+                    <span>Illeg: 1.3%</span>
+                </div>
+            </td>
+            <td>
+                <div style="font-weight: 600;">$0.0202</div>
+                <div style="font-size: 0.75rem; color: #64748b;">45.75s</div>
+            </td>
+            <td><details><summary>Review Discrepancies</summary><div class='diff-list'>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['leading,']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['leads']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 09 (1)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['Lavinia']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['Lavania']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 14</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['classmate', 'everyone']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['class', 'mate', 'every', 'ome']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 14</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['empty']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['emthy']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 14</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['ii']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['iii']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 15 (6.2)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['to', 'him', 'the']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['the', 'to', 'him.']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['friends', '.']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['friends.', '3', 'friends.']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['matter', '.', 'They', 'got', 'to']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['matter.', 'They', 'got', 'and']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['on']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['om']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['manage', 'to', 'cover', '.', 'He', 'put']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['manager', 'to', 'cover.', 'He', 'took']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['whent', 'to', 'his', 'home', '.']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['when', 'it', 'to', 'his', 'home.']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div>
+                    <div class="diff-item" style="border-left-color: #f59e0b;">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Unexpected Insertion</div>
+                        <div class="diff-val val-pred">['science', 'project']</div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 14</div>
+                    </div>
+                    <div class="diff-item" style="border-left-color: #f59e0b;">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Unexpected Insertion</div>
+                        <div class="diff-val val-pred">['why', 'you', 'you']</div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 14</div>
+                    </div>
+                    <div class="diff-item" style="border-left-color: #f59e0b;">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Unexpected Insertion</div>
+                        <div class="diff-val val-pred">['Abdul', 'Rahman']</div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 14</div>
+                    </div>
+                    <div class="diff-item" style="border-left-color: #f59e0b;">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Unexpected Insertion</div>
+                        <div class="diff-val val-pred">['my']</div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div>
+                    <div class="diff-item" style="border-left-color: #f59e0b;">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Unexpected Insertion</div>
+                        <div class="diff-val val-pred">['at', 'first']</div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div>
+                    <div class="diff-item" style="border-left-color: #f59e0b;">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Unexpected Insertion</div>
+                        <div class="diff-val val-pred">['pants.', 'When', 'they']</div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div>
+                    <div class="diff-item" style="border-left-color: #f59e0b;">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Unexpected Insertion</div>
+                        <div class="diff-val val-pred">['pant']</div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 16</div>
+                    </div><h4 style='font-size: 0.875rem'>Raw Output</h4><pre><code>{
+  "paper_title": "Western Province - Year End Evaluation - 2025 - English Language - Grade 11 - Paper II",
+  "questions": [
+    {
+      "test_number": "09",
+      "instruction": "Read the text and underline the most suitable word given within each bracket.",
+      "question_type": "U",
+      "student_answers": {
+        "1": {
+          "answer": "leads",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "growing",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "valuable",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "obedience",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "Lastly",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "10",
+      "instruction": "Read the text given below and fill in the blanks with the correct form of the verb given within the brackets.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "were soaking",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "decided",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "was hiding",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "was taken",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "learned",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "11",
+      "instruction": "Fill in the blanks of the following passage with the words given in the box. There is one extra word.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "believe",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "safe",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "truth",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "responsible",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "It",
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "people",
+          "is_legible": "true"
+        },
+        "7": {
+          "answer": "but",
+          "is_legible": "true"
+        },
+        "8": {
+          "answer": "later",
+          "is_legible": "true"
+        },
+        "9": {
+          "answer": "truthful",
+          "is_legible": "true"
+        },
+        "10": {
+          "answer": "better",
+          "is_legible": "true"
+        },
+        "11": {
+          "answer": "we",
+          "is_legible": "true"
+        },
+        "12": {
+          "answer": "thing",
+          "is_legible": "true"
+        },
+        "13": {
+          "answer": "or",
+          "is_legible": "true"
+        },
+        "14": {
+          "answer": "problem",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "12",
+      "instruction": "Underline the correct verb phrase within brackets.",
+      "question_type": "U",
+      "student_answers": {
+        "1": {
+          "answer": "will stay",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "don't go",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "hadn't overslept",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "would win",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "deliver",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "13",
+      "instruction": "Read the following extracts of different types of hobbies and match them with the headings given below. Write the relevant letter of the heading in the box given against each extract. There is one extra heading.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "C",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "F",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "A",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "G",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "B",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "14",
+      "instruction": "Write only one of the following. Use the space provided.",
+      "question_type": "W",
+      "student_answers": {
+        "answer": "No.113 3rd stage\nBadowita\nmount Lavania\n\nDear Sam\n\nHi, How are you? I hope you are doing good. I wanted to share science project the community project did at school Project is solar panal\n\nWe did this project to our school to minimize electricity bill in oure school we planed this long time ago and finally we started this project\n\nOur class mate every ome joined this project except you To honest it boring without why you you I got know that you got sick get well soon without you class seems to be emthy and boring\nso get well soon\nTank you\nYour faithful\nAbdul Rahman",
+        "is_legible": "true"
+      }
+    },
+    {
+      "test_number": "15",
+      "instruction": "Read the following text and answer the questions given below.",
+      "question_type": "QA",
+      "student_answers": {
+        "1": {
+          "1": {
+            "answer": "True",
+            "is_legible": "true"
+          },
+          "2": {
+            "answer": "False",
+            "is_legible": "true"
+          },
+          "3": {
+            "answer": "False",
+            "is_legible": "true"
+          },
+          "4": {
+            "answer": "True",
+            "is_legible": "true"
+          }
+        },
+        "2": {
+          "answer": "b",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "d",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "d",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "father",
+          "is_legible": "true"
+        },
+        "6": {
+          "1": {
+            "answer": "ii",
+            "is_legible": "true"
+          },
+          "2": {
+            "answer": "iii",
+            "is_legible": "true"
+          }
+        }
+      }
+    },
+    {
+      "test_number": "16",
+      "instruction": "Write on one of the following topics. Use about 200 words",
+      "question_type": "W",
+      "student_answers": {
+        "answer": "in the street I saw person getting shots by 3 boy. When I was getting near when I seeing it was my friend Sumhan. I ran near the to him. 3 boy ran away. Then I picked up my sumhan and asked him why did they hit you. He didn't replay at first he did replay I got angry and gave a shot to him. Then he started to replay that he said when going shop he have his friends brother. He has started tease him. Because he has got hair fall. He got angry and he has call his 3 friends. 3 friends. They have come and they have what's the matter the brother have said the matter. They got and gather and put a plan to hit him and insult him. As they put plan they did it. They have got gather and start to beat him and torn his pants. When they pants are tearing pants I so and ran and I came Sumhan is on anger om that 3 boy he stood up and asked a pant clothing or anything to cover him pants. So I gave my tissue paper to cover. He took tissue paper and how ever he manager to cover. He took pick me when it to his home. His mother got shocked to see asked what happened he said every thing. After his mother hearing this his mother also started to beat him.",
+        "is_legible": "true"
+      }
+    }
+  ]
+}</code></pre></div></details></td>
+        </tr>
+        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+        </div>
+
+        <script>
+            // Hallucination Bar Chart
+            const ctxHallu = document.getElementById('halluChart').getContext('2d');
+            new Chart(ctxHallu, {
+                type: 'bar',
+                data: {
+                    labels: ["2.pdf", "6.pdf", "1.pdf", "4.pdf", "5.pdf", "3.pdf"],
+                    datasets: [
+                        {
+                            label: 'Refined Rate (%)',
+                            data: [1.440922190201729, 3.2994923857868024, 18.99736147757256, 9.685230024213075, 0.9107468123861567, 10.632911392405063],
+                            backgroundColor: '#3b82f6',
+                            borderRadius: 6
+                        },
+                        {
+                            label: 'Original Rate (%)',
+                            data: [5.763688760806916, 8.121827411167512, 30.343007915567284, 16.707021791767556, 6.9216757741347905, 17.974683544303797],
+                            backgroundColor: '#94a3b8',
+                            borderRadius: 6,
+                            hidden: true
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: true, position: 'top' } },
+                    scales: {
+                        y: { beginAtZero: true, grid: { borderDash: [5, 5] } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+
+            // Question Type Bar Chart
+            const ctxQType = document.getElementById('qtypeChart').getContext('2d');
+            new Chart(ctxQType, {
+                type: 'bar',
+                data: {
+                    labels: ["Underline", "Fill In The Blanks", "Writing/Essay", "Question Answering"],
+                    datasets: [
+                        {
+                            label: 'Refined Rate (%)',
+                            data: [23.809523809523807, 6.024096385542169, 6.36237897648686, 15.517241379310345],
+                            backgroundColor: '#10b981',
+                            borderRadius: 6
+                        },
+                        {
+                            label: 'Original Rate (%)',
+                            data: [30.952380952380953, 13.855421686746988, 12.263715998155831, 51.724137931034484],
+                            backgroundColor: '#94a3b8',
+                            borderRadius: 6,
+                            hidden: true
+                        }
+                    ]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: true, position: 'top' } },
+                    scales: {
+                        x: { beginAtZero: true, grid: { borderDash: [5, 5] } },
+                        y: { grid: { display: false } }
+                    }
+                }
+            });
+
+            // Scatter Chart (Cost vs Time)
+            const ctxScatter = document.getElementById('scatterChart').getContext('2d');
+            new Chart(ctxScatter, {
+                type: 'scatter',
+                data: {
+                    datasets: [{
+                        label: 'Samples',
+                        data: [{"x": 49.159509897232056, "y": 0.0260425}, {"x": 50.913968324661255, "y": 0.021416499999999998}, {"x": 47.47951006889343, "y": 0.019505500000000002}, {"x": 48.92897868156433, "y": 0.022448500000000003}, {"x": 54.63787508010864, "y": 0.0233395}, {"x": 45.74569654464722, "y": 0.0202405}],
+                        backgroundColor: '#8b5cf6',
+                        pointRadius: 6,
+                        pointHoverRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: { title: { display: true, text: 'Recognition Time (s)' }, grid: { borderDash: [5, 5] } },
+                        y: { title: { display: true, text: 'Cost ($)' }, grid: { borderDash: [5, 5] } }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: (context) => {
+                                    const names = ["2.pdf", "6.pdf", "1.pdf", "4.pdf", "5.pdf", "3.pdf"];
+                                    return names[context.dataIndex] + ': ' + context.parsed.x + 's, $' + context.parsed.y;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+    </body>
+    </html>
+    

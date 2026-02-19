@@ -1,0 +1,996 @@
+{
+    "pdf_name": "set_13_1.pdf",
+    "metrics": {
+        "fabricated_hallucinations": 0,
+        "fabricated_hallucination_rate": 0.0,
+        "crossed_out_hallucinations": 10,
+        "crossed_out_hallucination_rate": 0.026385224274406333,
+        "illegibility_hallucinations": 0,
+        "illegibility_hallucination_rate": 0.0,
+        "word_level_hallucination_rate": 0.23746701846965698,
+        "total_hallucinated_words": 90,
+        "total_gt_words": 379,
+        "replaced_word_pairs": [
+            {
+                "question": "09",
+                "sub_question": "2",
+                "gt_words": [
+                    "growing,"
+                ],
+                "pred_words": [
+                    "growing"
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "1",
+                "gt_words": [
+                    "Soalced"
+                ],
+                "pred_words": [
+                    "soaked"
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "2",
+                "gt_words": [
+                    "decidled"
+                ],
+                "pred_words": [
+                    "decided"
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "5",
+                "gt_words": [
+                    "leam"
+                ],
+                "pred_words": [
+                    "learn"
+                ]
+            },
+            {
+                "question": "11",
+                "sub_question": "1",
+                "gt_words": [
+                    "belive"
+                ],
+                "pred_words": [
+                    "be",
+                    "live"
+                ]
+            },
+            {
+                "question": "11",
+                "sub_question": "4",
+                "gt_words": [
+                    "triuth",
+                    "ful,:"
+                ],
+                "pred_words": [
+                    "thuthful"
+                ]
+            },
+            {
+                "question": "11",
+                "sub_question": "5",
+                "gt_words": [
+                    "problem."
+                ],
+                "pred_words": [
+                    "problem"
+                ]
+            },
+            {
+                "question": "12",
+                "sub_question": "2",
+                "gt_words": [
+                    "go,"
+                ],
+                "pred_words": [
+                    "go"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "News,"
+                ],
+                "pred_words": [
+                    "News"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "tube,"
+                ],
+                "pred_words": [
+                    "tube"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "Media.According"
+                ],
+                "pred_words": [
+                    "Media.",
+                    "According"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "channels",
+                    "."
+                ],
+                "pred_words": [
+                    "channels."
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "channels",
+                    "."
+                ],
+                "pred_words": [
+                    "channels."
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "graph",
+                    ","
+                ],
+                "pred_words": [
+                    "graph,"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    ".News"
+                ],
+                "pred_words": [
+                    "from",
+                    "Tv",
+                    "channels.",
+                    "News"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.1",
+                "gt_words": [
+                    "T"
+                ],
+                "pred_words": [
+                    "True"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.2",
+                "gt_words": [
+                    "F"
+                ],
+                "pred_words": [
+                    "False"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.3",
+                "gt_words": [
+                    "F"
+                ],
+                "pred_words": [
+                    "False"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.4",
+                "gt_words": [
+                    "T"
+                ],
+                "pred_words": [
+                    "True"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "6.1",
+                "gt_words": [
+                    "(ii)"
+                ],
+                "pred_words": [
+                    "ii"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "6.2",
+                "gt_words": [
+                    "(iii)"
+                ],
+                "pred_words": [
+                    "iii"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "I"
+                ],
+                "pred_words": [
+                    "It"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "sheet"
+                ],
+                "pred_words": [
+                    "Street"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "group",
+                    "of"
+                ],
+                "pred_words": [
+                    "group.",
+                    "That",
+                    "day",
+                    "is"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "Secretly."
+                ],
+                "pred_words": [
+                    "Secretly"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "Sprays",
+                    "."
+                ],
+                "pred_words": [
+                    "Sprays."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "we.",
+                    "Celebrated",
+                    "his",
+                    "birthday",
+                    "."
+                ],
+                "pred_words": [
+                    "we",
+                    "Celebrate",
+                    "d",
+                    "his",
+                    "birthday."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "takes"
+                ],
+                "pred_words": [
+                    "hates"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "hiding,"
+                ],
+                "pred_words": [
+                    "hiding"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "didn't"
+                ],
+                "pred_words": [
+                    "didnt"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "happy",
+                    "."
+                ],
+                "pred_words": [
+                    "happy.",
+                    "These",
+                    "Fun"
+                ]
+            }
+        ],
+        "inserted_words": [
+            {
+                "question": "14",
+                "sub_question": "",
+                "words": [
+                    "the"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "Then"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "which",
+                    "is",
+                    "near",
+                    "my",
+                    "home"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "6"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "and",
+                    "this",
+                    "was",
+                    "time.",
+                    "It",
+                    "started",
+                    "to",
+                    "happen.",
+                    "After",
+                    "leaving",
+                    "the",
+                    "Mosque.",
+                    "There",
+                    "was",
+                    "a",
+                    "huge",
+                    "fight",
+                    "which",
+                    "was",
+                    "happening",
+                    "outside",
+                    "the",
+                    "Mosque",
+                    "between",
+                    "Beggers",
+                    "Fighting",
+                    "For",
+                    "a"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "&"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "of",
+                    "the"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "friend"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "&"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "return"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "He"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "pranked"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "made"
+                ]
+            }
+        ],
+        "question_type_metrics": {
+            "U": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 14,
+                "hallu_words": 2
+            },
+            "FITB": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 29,
+                "hallu_words": 7
+            },
+            "W": {
+                "fabricated": 0,
+                "crossed": 10,
+                "illegible": 0,
+                "gt_words": 327,
+                "hallu_words": 75
+            },
+            "QA": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 9,
+                "hallu_words": 6
+            }
+        }
+    },
+    "refined_metrics": {
+        "fabricated_hallucinations": 0,
+        "fabricated_hallucination_rate": 0.0,
+        "crossed_out_hallucinations": 10,
+        "crossed_out_hallucination_rate": 0.026385224274406333,
+        "illegibility_hallucinations": 0,
+        "illegibility_hallucination_rate": 0.0,
+        "word_level_hallucination_rate": 0.14775725593667546,
+        "total_hallucinated_words": 56,
+        "total_gt_words": 379,
+        "replaced_word_pairs": [
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    ".News"
+                ],
+                "pred_words": [
+                    "from",
+                    "Tv",
+                    "channels.",
+                    "News"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "I"
+                ],
+                "pred_words": [
+                    "It"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "sheet"
+                ],
+                "pred_words": [
+                    "Street"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "group",
+                    "of"
+                ],
+                "pred_words": [
+                    "group.",
+                    "That",
+                    "day",
+                    "is"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "takes"
+                ],
+                "pred_words": [
+                    "hates"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "happy",
+                    "."
+                ],
+                "pred_words": [
+                    "happy.",
+                    "These",
+                    "Fun"
+                ]
+            }
+        ],
+        "inserted_words": [
+            {
+                "question": "14",
+                "sub_question": "",
+                "words": [
+                    "the"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "Then"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "which",
+                    "is",
+                    "near",
+                    "my",
+                    "home"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "6"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "and",
+                    "this",
+                    "was",
+                    "time.",
+                    "It",
+                    "started",
+                    "to",
+                    "happen.",
+                    "After",
+                    "leaving",
+                    "the",
+                    "Mosque.",
+                    "There",
+                    "was",
+                    "a",
+                    "huge",
+                    "fight",
+                    "which",
+                    "was",
+                    "happening",
+                    "outside",
+                    "the",
+                    "Mosque",
+                    "between",
+                    "Beggers",
+                    "Fighting",
+                    "For",
+                    "a"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "&"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "of",
+                    "the"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "friend"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "&"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "return"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "He"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "pranked"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "made"
+                ]
+            }
+        ],
+        "question_type_metrics": {
+            "U": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 14,
+                "hallu_words": 0
+            },
+            "FITB": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 29,
+                "hallu_words": 0
+            },
+            "W": {
+                "fabricated": 0,
+                "crossed": 10,
+                "illegible": 0,
+                "gt_words": 327,
+                "hallu_words": 52
+            },
+            "QA": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 9,
+                "hallu_words": 4
+            }
+        }
+    },
+    "usage": {
+        "prompt_tokens": 10529,
+        "candidate_tokens": 2241,
+        "thought_tokens": 6043
+    },
+    "cost": 0.030116499999999997,
+    "recognition_time": 65.5470654964447,
+    "prediction": {
+        "paper_title": "Year End Evaluation - 2025",
+        "questions": [
+            {
+                "test_number": "09",
+                "instruction": "Answer all the questions.",
+                "question_type": "U",
+                "student_answers": {
+                    "1": {
+                        "answer": "leads",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "growing",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "valuable",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "obedience",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "Lastly",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "10",
+                "instruction": "Read the text given below and fill in the blanks with the correct form of the verb given within the brackets.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "were soaked",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "decided",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "was hiding",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "was taken",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "had learn",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "11",
+                "instruction": "Fill in the blanks of the following passage with the words given in the box. There is one extra word.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "be live",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "good",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "truth",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "thuthful",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "problem",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "people",
+                        "is_legible": "true"
+                    },
+                    "7": {
+                        "answer": "but",
+                        "is_legible": "true"
+                    },
+                    "8": {
+                        "answer": "Or",
+                        "is_legible": "true"
+                    },
+                    "9": {
+                        "answer": "responsible",
+                        "is_legible": "true"
+                    },
+                    "10": {
+                        "answer": "better",
+                        "is_legible": "true"
+                    },
+                    "11": {
+                        "answer": "we",
+                        "is_legible": "true"
+                    },
+                    "12": {
+                        "answer": "thing",
+                        "is_legible": "true"
+                    },
+                    "13": {
+                        "answer": "later",
+                        "is_legible": "true"
+                    },
+                    "14": {
+                        "answer": "It",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "12",
+                "instruction": "Underline the correct verb phrase within brackets.",
+                "question_type": "U",
+                "student_answers": {
+                    "1": {
+                        "answer": "will stay",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "don't go",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "hadn't overslept",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "had won",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "deliver",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "13",
+                "instruction": "Read the following extracts of different types of hobbies and match them with the headings given below. Write the relevant letter of the heading in the box given against each extract. There is one extra heading.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "C",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "F",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "A",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "G",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "B",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "14",
+                "instruction": "Write only one of the following. Use the space provided.",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "The following bar graph shows that the Students of Gr 11 in Prince collage that how they find current News they are ; Messaging apps, U tube News Websites, Tv channels and Social Media. According to the the bar graph The Most number of Students find News through U tube and the least number of Student find News through News websites or Tv channels. And equal number of Students find News through News websites and Tv channels. According to the bar graph, Number of Students who find news through Social Media is more than the students who finds from Tv channels. News from Tv channels",
+                    "is_legible": "true"
+                }
+            },
+            {
+                "test_number": "15",
+                "instruction": "Read the following text and answer the questions given below.",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "1": {
+                            "answer": "True",
+                            "is_legible": "true"
+                        },
+                        "2": {
+                            "answer": "False",
+                            "is_legible": "true"
+                        },
+                        "3": {
+                            "answer": "False",
+                            "is_legible": "true"
+                        },
+                        "4": {
+                            "answer": "True",
+                            "is_legible": "true"
+                        }
+                    },
+                    "2": {
+                        "answer": "b",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "d",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "answer": "father",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "1": {
+                            "answer": "ii",
+                            "is_legible": "true"
+                        },
+                        "2": {
+                            "answer": "iii",
+                            "is_legible": "true"
+                        }
+                    }
+                }
+            },
+            {
+                "test_number": "16",
+                "instruction": "Write on one of the following topics. Use about 200 words.",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "It was eating an ice cream and walking Along Street after finishing my class. Then Because I was too early going home I went to the beach which is near my home and Spend some times with Some friends I Met in the beach. And it was 6 6 then I went to pray and this was time. It started to happen. After leaving the Mosque. There was a huge fight which was happening outside the Mosque between Beggers Fighting For a then my friends Came to meet me & After I was praying. We were talking All the time Among the group. That day is one of the friend that was his birthday. So we planned him a big Treat to him. So each of us put Money and we bought a cake and Secretly we bought some Snow Sprays. Later we Celebrate d his birthday. we cut the Cakes and the Snow Spray we bought we all applied it on his Face and it was really Fun, my friends Face became a Face of a snow man. It was really Fun. But because my friend friend who hates Jokes & seriously he became mad like nothing. He left us on there. But even after left one of my friend who was hiding he at once crashed to his Face and sprayed the full bottle on his Face again. But he didnt go mad at all this time. So in return the we were very happy. These Fun I took my Absolute Fun. He then he also pranked pranked us that he got made mad For Fun!",
+                    "is_legible": "true"
+                }
+            }
+        ]
+    }
+}

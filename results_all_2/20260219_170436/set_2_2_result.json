@@ -1,0 +1,950 @@
+{
+    "pdf_name": "set_2_2.pdf",
+    "metrics": {
+        "fabricated_hallucinations": 0,
+        "fabricated_hallucination_rate": 0.0,
+        "crossed_out_hallucinations": 0,
+        "crossed_out_hallucination_rate": 0.0,
+        "illegibility_hallucinations": 0,
+        "illegibility_hallucination_rate": 0.0,
+        "word_level_hallucination_rate": 0.3178294573643411,
+        "total_hallucinated_words": 41,
+        "total_gt_words": 129,
+        "replaced_word_pairs": [
+            {
+                "question": "1",
+                "sub_question": "3",
+                "gt_words": [
+                    "b"
+                ],
+                "pred_words": [
+                    "f"
+                ]
+            },
+            {
+                "question": "1",
+                "sub_question": "4",
+                "gt_words": [
+                    "f"
+                ],
+                "pred_words": [
+                    "a"
+                ]
+            },
+            {
+                "question": "1",
+                "sub_question": "5",
+                "gt_words": [
+                    "a"
+                ],
+                "pred_words": [
+                    "b"
+                ]
+            },
+            {
+                "question": "4",
+                "sub_question": "4",
+                "gt_words": [
+                    "worked"
+                ],
+                "pred_words": [
+                    "work"
+                ]
+            },
+            {
+                "question": "4",
+                "sub_question": "5",
+                "gt_words": [
+                    "came"
+                ],
+                "pred_words": [
+                    "come"
+                ]
+            },
+            {
+                "question": "7",
+                "sub_question": "4",
+                "gt_words": [
+                    "b"
+                ],
+                "pred_words": [
+                    "a"
+                ]
+            },
+            {
+                "question": "7",
+                "sub_question": "5",
+                "gt_words": [
+                    "b"
+                ],
+                "pred_words": [
+                    "a"
+                ]
+            },
+            {
+                "question": "9",
+                "sub_question": "3",
+                "gt_words": [
+                    "mystify"
+                ],
+                "pred_words": [
+                    "mysteriously"
+                ]
+            },
+            {
+                "question": "11",
+                "sub_question": "3",
+                "gt_words": [
+                    "road",
+                    "way"
+                ],
+                "pred_words": [
+                    "road-way"
+                ]
+            },
+            {
+                "question": "11",
+                "sub_question": "8",
+                "gt_words": [
+                    "photogrphy"
+                ],
+                "pred_words": [
+                    "photography"
+                ]
+            },
+            {
+                "question": "11",
+                "sub_question": "14",
+                "gt_words": [
+                    "advertisment"
+                ],
+                "pred_words": [
+                    "advertisement"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "b",
+                "gt_words": [
+                    "2022."
+                ],
+                "pred_words": [
+                    "2022",
+                    "."
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "b",
+                "gt_words": [
+                    "metal,",
+                    "Glass,",
+                    "Other<"
+                ],
+                "pred_words": [
+                    "metal",
+                    ",",
+                    "Glass",
+                    ",",
+                    "other",
+                    ","
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "b",
+                "gt_words": [
+                    "materials,",
+                    "paper"
+                ],
+                "pred_words": [
+                    "materials",
+                    ",",
+                    "pepar"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "b",
+                "gt_words": [
+                    "cardboord.According"
+                ],
+                "pred_words": [
+                    "cardboord",
+                    ".",
+                    "According"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "b",
+                "gt_words": [
+                    "maore",
+                    "presentage"
+                ],
+                "pred_words": [
+                    "more",
+                    "ppresentage"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "b",
+                "gt_words": [
+                    "graden"
+                ],
+                "pred_words": [
+                    "garden"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "b",
+                "gt_words": [
+                    "46%."
+                ],
+                "pred_words": [
+                    "46%",
+                    "."
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "b",
+                "gt_words": [
+                    "mhich"
+                ],
+                "pred_words": [
+                    "which"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "b",
+                "gt_words": [
+                    "presetage"
+                ],
+                "pred_words": [
+                    "presentage"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.1",
+                "gt_words": [
+                    "f"
+                ],
+                "pred_words": [
+                    "True"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.2",
+                "gt_words": [
+                    "t"
+                ],
+                "pred_words": [
+                    "False"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.3",
+                "gt_words": [
+                    "f"
+                ],
+                "pred_words": [
+                    "True"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.4",
+                "gt_words": [
+                    "t"
+                ],
+                "pred_words": [
+                    "True"
+                ]
+            }
+        ],
+        "inserted_words": [
+            {
+                "question": "14",
+                "sub_question": "b",
+                "words": [
+                    "meta"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "b",
+                "words": [
+                    "."
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "b",
+                "words": [
+                    "."
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "b",
+                "words": [
+                    "."
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "b",
+                "words": [
+                    "."
+                ]
+            }
+        ],
+        "question_type_metrics": {
+            "FITB": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 44,
+                "hallu_words": 6
+            },
+            "U": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 10,
+                "hallu_words": 4
+            },
+            "W": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 71,
+                "hallu_words": 27
+            },
+            "QA": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 4,
+                "hallu_words": 4
+            }
+        }
+    },
+    "refined_metrics": {
+        "fabricated_hallucinations": 0,
+        "fabricated_hallucination_rate": 0.0,
+        "crossed_out_hallucinations": 0,
+        "crossed_out_hallucination_rate": 0.0,
+        "illegibility_hallucinations": 0,
+        "illegibility_hallucination_rate": 0.0,
+        "word_level_hallucination_rate": 0.06201550387596899,
+        "total_hallucinated_words": 8,
+        "total_gt_words": 129,
+        "replaced_word_pairs": [
+            {
+                "question": "1",
+                "sub_question": "3",
+                "gt_words": [
+                    "b"
+                ],
+                "pred_words": [
+                    "f"
+                ]
+            },
+            {
+                "question": "1",
+                "sub_question": "4",
+                "gt_words": [
+                    "f"
+                ],
+                "pred_words": [
+                    "a"
+                ]
+            },
+            {
+                "question": "1",
+                "sub_question": "5",
+                "gt_words": [
+                    "a"
+                ],
+                "pred_words": [
+                    "b"
+                ]
+            },
+            {
+                "question": "7",
+                "sub_question": "4",
+                "gt_words": [
+                    "b"
+                ],
+                "pred_words": [
+                    "a"
+                ]
+            },
+            {
+                "question": "7",
+                "sub_question": "5",
+                "gt_words": [
+                    "b"
+                ],
+                "pred_words": [
+                    "a"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.1",
+                "gt_words": [
+                    "f"
+                ],
+                "pred_words": [
+                    "True"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.2",
+                "gt_words": [
+                    "t"
+                ],
+                "pred_words": [
+                    "False"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.3",
+                "gt_words": [
+                    "f"
+                ],
+                "pred_words": [
+                    "True"
+                ]
+            }
+        ],
+        "inserted_words": [],
+        "question_type_metrics": {
+            "FITB": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 44,
+                "hallu_words": 5
+            },
+            "U": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 10,
+                "hallu_words": 0
+            },
+            "W": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 71,
+                "hallu_words": 0
+            },
+            "QA": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 4,
+                "hallu_words": 3
+            }
+        }
+    },
+    "usage": {
+        "prompt_tokens": 16562,
+        "candidate_tokens": 3682,
+        "thought_tokens": 8542
+    },
+    "cost": 0.04495300000000001,
+    "recognition_time": 78.22828674316406,
+    "prediction": {
+        "paper_title": "SECOND TERM EVALUATION - 2023 GRADE 11 ENGLISH LANGUAGE - I / II",
+        "questions": [
+            {
+                "test_number": "1",
+                "instruction": "Select the correct response from column B to the statement or question in column A and write the letter of the response in the given space. The first one is done for you.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "c",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "d",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "f",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "a",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "b",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "e",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "2",
+                "instruction": ".Fill in the blanks in the invitation below. Use the words given in the box. Write the letter of the correct word in the blank. One is done for you.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "B",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "D",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "A",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "f",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "c",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "E",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "3",
+                "instruction": "Study the picture and fill in the blanks in the text given below. Use only one word in each blank.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "cleaning",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "dust-pan",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "apron",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "book-rack",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "curtains",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "window-sill",
+                        "is_legible": "true"
+                    },
+                    "7": {
+                        "answer": "table",
+                        "is_legible": "true"
+                    },
+                    "8": {
+                        "answer": "beautiful",
+                        "is_legible": "true"
+                    },
+                    "9": {
+                        "answer": "floor",
+                        "is_legible": "true"
+                    },
+                    "10": {
+                        "answer": "watering can",
+                        "is_legible": "true"
+                    },
+                    "11": {
+                        "answer": "cleaning",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "4",
+                "instruction": "Underline the most suitable word given within brackets to fill in each blank.",
+                "question_type": "U",
+                "student_answers": {
+                    "1": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "2": {
+                        "answer": "leaves",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "packed",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "work",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "come",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "finishes",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "5",
+                "instruction": "Read the following dialogue and fill in the blanks in the newspaper bulletin given below.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "2": {
+                        "answer": "killed",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "Cleaner",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "head",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "vehicle",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "coroner",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "6",
+                "instruction": "Your friend Upulka is going abroad for higher studies this weekend. You are unable to see her before her departure. Write a note to be sent to her with a small present. Use about 40-50 words.",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "",
+                    "is_legible": ""
+                }
+            },
+            {
+                "test_number": "7",
+                "instruction": "Read the story given below and answer the questions.",
+                "question_type": "U",
+                "student_answers": {
+                    "1": {
+                        "answer": "a",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "b",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "b",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "a",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "a",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "8",
+                "instruction": "Write a paragraph on one of the given topics.",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "",
+                    "is_legible": ""
+                }
+            },
+            {
+                "test_number": "9",
+                "instruction": "Read the text and underline the most suitable word given within brackets.",
+                "question_type": "W",
+                "student_answers": {
+                    "1": {
+                        "answer": "difficulties",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "education",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "mysteriously",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "believable",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "responsible",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "10",
+                "instruction": "Complete the following passage using the correct form of the verb given within each bracket.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "2": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "3": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "answer": "",
+                        "is_legible": ""
+                    }
+                }
+            },
+            {
+                "test_number": "11",
+                "instruction": "Fill in the blanks with the words given in the box. There is one extra word.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "work",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "evening",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "road-way",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "office",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "story",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "beach",
+                        "is_legible": "true"
+                    },
+                    "7": {
+                        "answer": "impatient",
+                        "is_legible": "true"
+                    },
+                    "8": {
+                        "answer": "photography",
+                        "is_legible": "true"
+                    },
+                    "9": {
+                        "answer": "armchairs",
+                        "is_legible": "true"
+                    },
+                    "10": {
+                        "answer": "heard",
+                        "is_legible": "true"
+                    },
+                    "11": {
+                        "answer": "librarian",
+                        "is_legible": "true"
+                    },
+                    "12": {
+                        "answer": "adventure",
+                        "is_legible": "true"
+                    },
+                    "13": {
+                        "answer": "overseas",
+                        "is_legible": "true"
+                    },
+                    "14": {
+                        "answer": "advertisement",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "12",
+                "instruction": "Complete the following passage using the most appropriate form of the verb given within brackets.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "2": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "3": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "answer": "",
+                        "is_legible": ""
+                    }
+                }
+            },
+            {
+                "test_number": "13",
+                "instruction": "Read the poem and answer the questions given.",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "2": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "3": {
+                        "1": {
+                            "answer": "",
+                            "is_legible": ""
+                        },
+                        "2": {
+                            "answer": "",
+                            "is_legible": ""
+                        }
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "answer": "",
+                        "is_legible": ""
+                    }
+                }
+            },
+            {
+                "test_number": "14",
+                "instruction": "You are the secretary of the Environmental Society of your school. You have planned to launch programme called Keep the City Clean in your area with all the members of the society.Write a letter to get the permission from the authority of the municipal council, to remove the unnecessary posters and advertisements in the area. Use about 100 words. or The following pie chart shows the percentage of household waste in 2022. Study it and write a description of it. Use about 100 words. The following words will help you.",
+                "question_type": "W",
+                "student_answers": {
+                    "a": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "b": {
+                        "answer": "The pie chart shows the presentage of household waste in 2022 . It is meta presentage of metal , Glass , other , food and garden materials , pepar and cardboord . According to the har more ppresentage of food and garden materials which is 46% . The lowest presentage of matel which is 06% . the equal presentage of plastic and Glass . which is 08% . The most presentage is pepar and cardbord which is 21% .",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "15",
+                "instruction": "Read the following text and answer the questions given below.",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "1": {
+                            "answer": "True",
+                            "is_legible": "true"
+                        },
+                        "2": {
+                            "answer": "False",
+                            "is_legible": "true"
+                        },
+                        "3": {
+                            "answer": "True",
+                            "is_legible": "true"
+                        },
+                        "4": {
+                            "answer": "True",
+                            "is_legible": "true"
+                        }
+                    },
+                    "2": {
+                        "a": {
+                            "answer": "",
+                            "is_legible": ""
+                        },
+                        "b": {
+                            "answer": "",
+                            "is_legible": ""
+                        }
+                    },
+                    "3": {
+                        "a": {
+                            "answer": "",
+                            "is_legible": ""
+                        },
+                        "b": {
+                            "answer": "",
+                            "is_legible": ""
+                        }
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "answer": "",
+                        "is_legible": ""
+                    }
+                }
+            },
+            {
+                "test_number": "16",
+                "instruction": "",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "",
+                    "is_legible": ""
+                }
+            }
+        ]
+    }
+}

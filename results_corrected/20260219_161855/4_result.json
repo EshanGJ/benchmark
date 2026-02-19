@@ -1,0 +1,882 @@
+{
+    "pdf_name": "4.pdf",
+    "metrics": {
+        "fabricated_hallucinations": 0,
+        "fabricated_hallucination_rate": 0.0,
+        "crossed_out_hallucinations": 18,
+        "crossed_out_hallucination_rate": 0.043583535108958835,
+        "illegibility_hallucinations": 0,
+        "illegibility_hallucination_rate": 0.0,
+        "word_level_hallucination_rate": 0.16707021791767554,
+        "total_hallucinated_words": 69,
+        "total_gt_words": 413,
+        "replaced_word_pairs": [
+            {
+                "question": "09",
+                "sub_question": "1",
+                "gt_words": [
+                    "leads"
+                ],
+                "pred_words": [
+                    "lead"
+                ]
+            },
+            {
+                "question": "09",
+                "sub_question": "2",
+                "gt_words": [
+                    "growing,"
+                ],
+                "pred_words": [
+                    "growing"
+                ]
+            },
+            {
+                "question": "09",
+                "sub_question": "4",
+                "gt_words": [
+                    "obedience,"
+                ],
+                "pred_words": [
+                    "obedient"
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "1",
+                "gt_words": [
+                    "soked"
+                ],
+                "pred_words": [
+                    "soaked"
+                ]
+            },
+            {
+                "question": "11",
+                "sub_question": "1",
+                "gt_words": [
+                    "belive"
+                ],
+                "pred_words": [
+                    "believe"
+                ]
+            },
+            {
+                "question": "12",
+                "sub_question": "2",
+                "gt_words": [
+                    "go,"
+                ],
+                "pred_words": [
+                    "go"
+                ]
+            },
+            {
+                "question": "12",
+                "sub_question": "4",
+                "gt_words": [
+                    "win,"
+                ],
+                "pred_words": [
+                    "win"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "groups"
+                ],
+                "pred_words": [
+                    "groups.",
+                    "Messaging",
+                    "apps,",
+                    "U",
+                    "Tube,",
+                    "News",
+                    "website,",
+                    "TV",
+                    "channels",
+                    "and",
+                    "Social",
+                    "media."
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "UTube"
+                ],
+                "pred_words": [
+                    "U",
+                    "Tube"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "30%"
+                ],
+                "pred_words": [
+                    "30%."
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "UTube."
+                ],
+                "pred_words": [
+                    "U",
+                    "Tube."
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "UTube"
+                ],
+                "pred_words": [
+                    "U",
+                    "Tube"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.1",
+                "gt_words": [
+                    "F"
+                ],
+                "pred_words": [
+                    "False"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.2",
+                "gt_words": [
+                    "F"
+                ],
+                "pred_words": [
+                    "False"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.3",
+                "gt_words": [
+                    "F"
+                ],
+                "pred_words": [
+                    "False"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.4",
+                "gt_words": [
+                    "T"
+                ],
+                "pred_words": [
+                    "True"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "3",
+                "gt_words": [
+                    "d"
+                ],
+                "pred_words": [
+                    "c"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "4",
+                "gt_words": [
+                    "d"
+                ],
+                "pred_words": [
+                    "b"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "day",
+                    "to",
+                    "day"
+                ],
+                "pred_words": [
+                    "daily"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "present,"
+                ],
+                "pred_words": [
+                    "present",
+                    "techno"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "humans."
+                ],
+                "pred_words": [
+                    "humans",
+                    "to",
+                    "be",
+                    "used",
+                    "by",
+                    "them."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "advanc"
+                ],
+                "pred_words": [
+                    "advanced"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "it\u2019s"
+                ],
+                "pred_words": [
+                    "it's"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "e"
+                ],
+                "pred_words": [
+                    "education",
+                    "and",
+                    "comm"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "power",
+                    "house"
+                ],
+                "pred_words": [
+                    "powerhouse"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "messege",
+                    "messages."
+                ],
+                "pred_words": [
+                    "messages,",
+                    "this",
+                    "small",
+                    "but",
+                    "very",
+                    "useful",
+                    "telephone"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "phon"
+                ],
+                "pred_words": [
+                    "phone"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "dissadvantages"
+                ],
+                "pred_words": [
+                    "disadvantages"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "using.technology"
+                ],
+                "pred_words": [
+                    "using",
+                    "technology"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "a"
+                ],
+                "pred_words": [
+                    "and"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "problems."
+                ],
+                "pred_words": [
+                    "problems"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "evolves,"
+                ],
+                "pred_words": [
+                    "evolves."
+                ]
+            }
+        ],
+        "inserted_words": [
+            {
+                "question": "14",
+                "sub_question": "",
+                "words": [
+                    "students"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "words": [
+                    "for"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "used",
+                    "by",
+                    "humans"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "with"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "their"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "try"
+                ]
+            }
+        ],
+        "question_type_metrics": {
+            "U": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 14,
+                "hallu_words": 5
+            },
+            "FITB": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 28,
+                "hallu_words": 2
+            },
+            "W": {
+                "fabricated": 0,
+                "crossed": 18,
+                "illegible": 0,
+                "gt_words": 361,
+                "hallu_words": 56
+            },
+            "QA": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 10,
+                "hallu_words": 6
+            }
+        }
+    },
+    "refined_metrics": {
+        "fabricated_hallucinations": 0,
+        "fabricated_hallucination_rate": 0.0,
+        "crossed_out_hallucinations": 18,
+        "crossed_out_hallucination_rate": 0.043583535108958835,
+        "illegibility_hallucinations": 0,
+        "illegibility_hallucination_rate": 0.0,
+        "word_level_hallucination_rate": 0.09685230024213075,
+        "total_hallucinated_words": 40,
+        "total_gt_words": 413,
+        "replaced_word_pairs": [
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "groups"
+                ],
+                "pred_words": [
+                    "groups.",
+                    "Messaging",
+                    "apps,",
+                    "U",
+                    "Tube,",
+                    "News",
+                    "website,",
+                    "TV",
+                    "channels",
+                    "and",
+                    "Social",
+                    "media."
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "3",
+                "gt_words": [
+                    "d"
+                ],
+                "pred_words": [
+                    "c"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "4",
+                "gt_words": [
+                    "d"
+                ],
+                "pred_words": [
+                    "b"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "present,"
+                ],
+                "pred_words": [
+                    "present",
+                    "techno"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "humans."
+                ],
+                "pred_words": [
+                    "humans",
+                    "to",
+                    "be",
+                    "used",
+                    "by",
+                    "them."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "e"
+                ],
+                "pred_words": [
+                    "education",
+                    "and",
+                    "comm"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "messege",
+                    "messages."
+                ],
+                "pred_words": [
+                    "messages,",
+                    "this",
+                    "small",
+                    "but",
+                    "very",
+                    "useful",
+                    "telephone"
+                ]
+            }
+        ],
+        "inserted_words": [
+            {
+                "question": "14",
+                "sub_question": "",
+                "words": [
+                    "students"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "words": [
+                    "for"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "used",
+                    "by",
+                    "humans"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "with"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "their"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "try"
+                ]
+            }
+        ],
+        "question_type_metrics": {
+            "U": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 14,
+                "hallu_words": 14
+            },
+            "FITB": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 28,
+                "hallu_words": 0
+            },
+            "W": {
+                "fabricated": 0,
+                "crossed": 18,
+                "illegible": 0,
+                "gt_words": 361,
+                "hallu_words": 24
+            },
+            "QA": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 10,
+                "hallu_words": 2
+            }
+        }
+    },
+    "usage": {
+        "prompt_tokens": 10529,
+        "candidate_tokens": 2275,
+        "thought_tokens": 3453
+    },
+    "cost": 0.022448500000000003,
+    "recognition_time": 48.92897868156433,
+    "prediction": {
+        "paper_title": "English Language - Year End Evaluation - 2025",
+        "questions": [
+            {
+                "test_number": "09",
+                "instruction": "Answer all the questions",
+                "question_type": "U",
+                "student_answers": {
+                    "1": {
+                        "answer": "lead",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "growing",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "valuable",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "obedient",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "Lastly",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "10",
+                "instruction": "Read the text given below and fill in the blanks with the correct form of the verb given within the brackets.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "were soaked",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "decided",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "was hiding",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "was taken",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "had learnt",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "11",
+                "instruction": "Fill in the blanks of the following passage with the words given in the box. There is one extra word.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "believe",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "safe",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "truth",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "responsible",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "it",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "people",
+                        "is_legible": "true"
+                    },
+                    "7": {
+                        "answer": "but",
+                        "is_legible": "true"
+                    },
+                    "8": {
+                        "answer": "later",
+                        "is_legible": "true"
+                    },
+                    "9": {
+                        "answer": "Truthful",
+                        "is_legible": "true"
+                    },
+                    "10": {
+                        "answer": "better",
+                        "is_legible": "true"
+                    },
+                    "11": {
+                        "answer": "we",
+                        "is_legible": "true"
+                    },
+                    "12": {
+                        "answer": "thing",
+                        "is_legible": "true"
+                    },
+                    "13": {
+                        "answer": "or",
+                        "is_legible": "true"
+                    },
+                    "14": {
+                        "answer": "people",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "12",
+                "instruction": "Underline the correct verb phrase within brackets.",
+                "question_type": "U",
+                "student_answers": {
+                    "1": {
+                        "answer": "will stay",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "don't go",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "hadn't overslept",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "would win",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "deliver",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "13",
+                "instruction": "Read the following extracts of different types of hobbies and match them with the headings given below. Write the relevant letter of the heading in the box given against each extract. There is one extra heading.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "C",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "F",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "A",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "G",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "B",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "14",
+                "instruction": "Write only one of the following. Use the space provided.",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "The above bar chart represents how the students grade 11 students of Prince College find current news. The bar graph has been categorized into five groups. Messaging apps, U Tube, News website, TV channels and Social media. According to the graph we can identify that U Tube is the most popular platform which the students find current news. Messaging apps are the second most popular platform with 30%. of students using them which is 10% less used than U Tube. Both News websites and TV channels are the least used platforms with just 5% of students using them. Student use Social media more than both News websites and TV channels. With that we can conclude that U Tube is the most popular platform and both News websites and News channels as the least popular platform which students find for current news.",
+                    "is_legible": "true"
+                }
+            },
+            {
+                "test_number": "15",
+                "instruction": "Read the following text and answer the questions given below.",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "1": {
+                            "answer": "False",
+                            "is_legible": "true"
+                        },
+                        "2": {
+                            "answer": "False",
+                            "is_legible": "true"
+                        },
+                        "3": {
+                            "answer": "False",
+                            "is_legible": "true"
+                        },
+                        "4": {
+                            "answer": "True",
+                            "is_legible": "true"
+                        }
+                    },
+                    "2": {
+                        "answer": "b",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "c",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "b",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "Father",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "1": {
+                            "answer": "ii",
+                            "is_legible": "true"
+                        },
+                        "2": {
+                            "answer": "i",
+                            "is_legible": "true"
+                        }
+                    }
+                }
+            },
+            {
+                "test_number": "16",
+                "instruction": "Write on one of the following topics. Use about 200 words",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "Role of technology in our daily life. At the present techno the world uses technology in almost all types of industries. Technology is used by humans developed and used by humans to be used by them. Humans have invented millions of different things using technology. A we are living in the technologically advanced period of the world in it's entire history, one of the important ways technology is being used for is education and comm in the communication sector. After the invention of the telephone by Alexander Graham Bell, the telephone has evolved throughout the history with as technology got advanced. The modern day smart phone can is a tiny powerhouse which can do almost anything. From taking calls, to texting messages, this small but very useful telephone and many more. The smart phone helps us to communicate with anyone from anywhere in the world. There are many and disadvantages that come and challenges that comes with technology as well. People using technology in for bad doings and using technology to hack into other people's personal information and and their belongings. This has lead to lots of problems and people are becoming more and more less safe using their smart phones as they are worried their personal information and might be stolen as well. This is the biggest challenge that the people who developed these smart phones and these technology are try trying to tackle. Technology isn't perfect but as time passes and technology evolves. Surely it'll reach for perfection.",
+                    "is_legible": "true"
+                }
+            }
+        ]
+    }
+}

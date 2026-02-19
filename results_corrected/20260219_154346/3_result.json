@@ -1,0 +1,759 @@
+{
+    "pdf_name": "3.pdf",
+    "metrics": {
+        "fabricated_hallucinations": 7,
+        "fabricated_hallucination_rate": 0.07216494845360824,
+        "crossed_out_hallucinations": 4,
+        "crossed_out_hallucination_rate": 0.041237113402061855,
+        "illegibility_hallucinations": 13,
+        "illegibility_hallucination_rate": 0.13402061855670103,
+        "word_level_hallucination_rate": 0.17525773195876287,
+        "total_hallucinated_words": 17,
+        "total_gt_words": 97,
+        "replaced_word_pairs": [
+            {
+                "question": "01",
+                "sub_question": "6",
+                "gt_words": [
+                    "a",
+                    "g",
+                    "e"
+                ],
+                "pred_words": [
+                    "age"
+                ]
+            },
+            {
+                "question": "03",
+                "sub_question": "3",
+                "gt_words": [
+                    "girl"
+                ],
+                "pred_words": [
+                    "fruit"
+                ]
+            },
+            {
+                "question": "04",
+                "sub_question": "3",
+                "gt_words": [
+                    "c"
+                ],
+                "pred_words": [
+                    "a"
+                ]
+            },
+            {
+                "question": "04",
+                "sub_question": "4",
+                "gt_words": [
+                    "d"
+                ],
+                "pred_words": [
+                    "e"
+                ]
+            },
+            {
+                "question": "04",
+                "sub_question": "5",
+                "gt_words": [
+                    "e"
+                ],
+                "pred_words": [
+                    "d"
+                ]
+            },
+            {
+                "question": "04",
+                "sub_question": "6",
+                "gt_words": [
+                    "f"
+                ],
+                "pred_words": [
+                    "c"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "Contyy"
+                ],
+                "pred_words": [
+                    "contry"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "kind"
+                ],
+                "pred_words": [
+                    "king",
+                    "kind."
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "vetry"
+                ],
+                "pred_words": [
+                    "very"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "falls,"
+                ],
+                "pred_words": [
+                    "falls"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "much."
+                ],
+                "pred_words": [
+                    "mush."
+                ]
+            }
+        ],
+        "inserted_words": [
+            {
+                "question": "02",
+                "sub_question": "6",
+                "words": [
+                    "will"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "words": [
+                    "a"
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "2",
+                "words": [
+                    "that"
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "2",
+                "words": [
+                    "we"
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "2",
+                "words": [
+                    "our"
+                ]
+            }
+        ],
+        "question_type_metrics": {
+            "FITB": {
+                "fabricated": 1,
+                "crossed": 0,
+                "illegible": 2,
+                "gt_words": 23,
+                "hallu_words": 6
+            },
+            "U": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 5,
+                "gt_words": 11,
+                "hallu_words": 1
+            },
+            "QA": {
+                "fabricated": 6,
+                "crossed": 0,
+                "illegible": 6,
+                "gt_words": 9,
+                "hallu_words": 0
+            },
+            "W": {
+                "fabricated": 0,
+                "crossed": 4,
+                "illegible": 0,
+                "gt_words": 54,
+                "hallu_words": 10
+            }
+        }
+    },
+    "refined_metrics": {
+        "fabricated_hallucinations": 7,
+        "fabricated_hallucination_rate": 0.07216494845360824,
+        "crossed_out_hallucinations": 4,
+        "crossed_out_hallucination_rate": 0.041237113402061855,
+        "illegibility_hallucinations": 13,
+        "illegibility_hallucination_rate": 0.13402061855670103,
+        "word_level_hallucination_rate": 0.12371134020618557,
+        "total_hallucinated_words": 12,
+        "total_gt_words": 97,
+        "replaced_word_pairs": [
+            {
+                "question": "03",
+                "sub_question": "3",
+                "gt_words": [
+                    "girl"
+                ],
+                "pred_words": [
+                    "fruit"
+                ]
+            },
+            {
+                "question": "04",
+                "sub_question": "3",
+                "gt_words": [
+                    "c"
+                ],
+                "pred_words": [
+                    "a"
+                ]
+            },
+            {
+                "question": "04",
+                "sub_question": "4",
+                "gt_words": [
+                    "d"
+                ],
+                "pred_words": [
+                    "e"
+                ]
+            },
+            {
+                "question": "04",
+                "sub_question": "5",
+                "gt_words": [
+                    "e"
+                ],
+                "pred_words": [
+                    "d"
+                ]
+            },
+            {
+                "question": "04",
+                "sub_question": "6",
+                "gt_words": [
+                    "f"
+                ],
+                "pred_words": [
+                    "c"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "kind"
+                ],
+                "pred_words": [
+                    "king"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "much."
+                ],
+                "pred_words": [
+                    "mush."
+                ]
+            }
+        ],
+        "inserted_words": [
+            {
+                "question": "02",
+                "sub_question": "6",
+                "words": [
+                    "will"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "words": [
+                    "a"
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "2",
+                "words": [
+                    "that"
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "2",
+                "words": [
+                    "we"
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "2",
+                "words": [
+                    "our"
+                ]
+            }
+        ],
+        "question_type_metrics": {
+            "FITB": {
+                "fabricated": 1,
+                "crossed": 0,
+                "illegible": 2,
+                "gt_words": 23,
+                "hallu_words": 6
+            },
+            "U": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 5,
+                "gt_words": 11,
+                "hallu_words": 3
+            },
+            "QA": {
+                "fabricated": 6,
+                "crossed": 0,
+                "illegible": 6,
+                "gt_words": 9,
+                "hallu_words": 0
+            },
+            "W": {
+                "fabricated": 0,
+                "crossed": 4,
+                "illegible": 0,
+                "gt_words": 54,
+                "hallu_words": 3
+            }
+        }
+    },
+    "usage": {
+        "prompt_tokens": 11342,
+        "candidate_tokens": 2793,
+        "thought_tokens": 4095
+    },
+    "cost": 0.026335,
+    "recognition_time": 71.39016556739807,
+    "prediction": {
+        "paper_title": "Grade 10 - English - First Term Evaluation - 2018",
+        "questions": [
+            {
+                "test_number": "01",
+                "instruction": "Fill in the blanks",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "d",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "f",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "g",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "a",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "e",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "age",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "02",
+                "instruction": "Underline the correct answer",
+                "question_type": "U",
+                "student_answers": {
+                    "1": {
+                        "answer": "didn't",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "was",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "suffering",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "is",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "asked",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "will visit",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "03",
+                "instruction": "Fill in the blanks",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "beech",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "3": {
+                        "answer": "fruit",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "6": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "7": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "8": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "9": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "10": {
+                        "answer": "",
+                        "is_legible": ""
+                    }
+                }
+            },
+            {
+                "test_number": "04",
+                "instruction": "Write correct letter in the lank provided",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "b",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "f",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "a",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "e",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "d",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "c",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "05",
+                "instruction": "Fill in the blanks",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "heritage club",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "Colombo Museum",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "permission",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "water",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "?",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "maingate",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "06",
+                "instruction": "",
+                "question_type": "W",
+                "student_answers": ""
+            },
+            {
+                "test_number": "07",
+                "instruction": "Answer the question",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "answer": "Henry",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "Mrs. Brown",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "Henry still didn't hear",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "answer": "a",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "08",
+                "instruction": "write on following tics",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "My Contry\nMy contry is a Sri Lanka. It is a iland. My contry is a very beutiful. My contry's people is very king kind. My contry has a very proud history. It has a water falls rivers and daams. It is very bentiful. I Love my Contry very mush.",
+                    "is_legible": "true"
+                }
+            },
+            {
+                "test_number": "9",
+                "instruction": "Underline",
+                "question_type": "U",
+                "student_answers": {
+                    "1": {
+                        "answer": "immediately",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "transplant",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "conditioned",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "donate",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "contact",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "10",
+                "instruction": "reported speech",
+                "question_type": "W",
+                "student_answers": {
+                    "2": {
+                        "answer": "that we said that we mist our bus",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "6": {
+                        "answer": "",
+                        "is_legible": ""
+                    }
+                }
+            },
+            {
+                "test_number": "11",
+                "instruction": "Fill in the blanks",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "2": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "3": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "6": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "7": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "8": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "9": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "10": {
+                        "answer": "",
+                        "is_legible": ""
+                    }
+                }
+            },
+            {
+                "test_number": "12",
+                "instruction": "",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "answer": "a",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "3": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "a": {
+                            "answer": "",
+                            "is_legible": ""
+                        },
+                        "b": {
+                            "answer": "",
+                            "is_legible": ""
+                        }
+                    }
+                }
+            },
+            {
+                "test_number": "13",
+                "instruction": "Answer the question",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "i": {
+                            "answer": "",
+                            "is_legible": ""
+                        },
+                        "ii": {
+                            "answer": "",
+                            "is_legible": ""
+                        }
+                    },
+                    "2": {
+                        "i": {
+                            "answer": "?",
+                            "is_legible": "true"
+                        },
+                        "ii": {
+                            "answer": "?",
+                            "is_legible": "true"
+                        }
+                    },
+                    "3": {
+                        "i": {
+                            "answer": "?",
+                            "is_legible": "true"
+                        },
+                        "ii": {
+                            "answer": "?",
+                            "is_legible": "true"
+                        }
+                    },
+                    "4": {
+                        "answer": "?",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "?",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "",
+                "instruction": "",
+                "question_type": "",
+                "student_answers": {
+                    "answer": "",
+                    "is_legible": ""
+                }
+            }
+        ]
+    }
+}

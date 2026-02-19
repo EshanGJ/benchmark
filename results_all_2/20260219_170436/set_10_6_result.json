@@ -1,0 +1,970 @@
+{
+    "pdf_name": "set_10_6.pdf",
+    "metrics": {
+        "fabricated_hallucinations": 4,
+        "fabricated_hallucination_rate": 0.029850746268656716,
+        "crossed_out_hallucinations": 1,
+        "crossed_out_hallucination_rate": 0.007462686567164179,
+        "illegibility_hallucinations": 4,
+        "illegibility_hallucination_rate": 0.029850746268656716,
+        "word_level_hallucination_rate": 0.29850746268656714,
+        "total_hallucinated_words": 40,
+        "total_gt_words": 134,
+        "replaced_word_pairs": [
+            {
+                "question": "03",
+                "sub_question": "1",
+                "gt_words": [
+                    "Sbow"
+                ],
+                "pred_words": [
+                    "Show"
+                ]
+            },
+            {
+                "question": "03",
+                "sub_question": "2",
+                "gt_words": [
+                    "annivesary"
+                ],
+                "pred_words": [
+                    "anniversary"
+                ]
+            },
+            {
+                "question": "03",
+                "sub_question": "4",
+                "gt_words": [
+                    "7,30"
+                ],
+                "pred_words": [
+                    "7.30"
+                ]
+            },
+            {
+                "question": "05",
+                "sub_question": "1",
+                "gt_words": [
+                    "Shani"
+                ],
+                "pred_words": [
+                    "morning"
+                ]
+            },
+            {
+                "question": "07",
+                "sub_question": "1",
+                "gt_words": [
+                    "Hippopatamuses"
+                ],
+                "pred_words": [
+                    "Hippopotamuse"
+                ]
+            },
+            {
+                "question": "09",
+                "sub_question": "1",
+                "gt_words": [
+                    "Joyfully"
+                ],
+                "pred_words": [
+                    "2"
+                ]
+            },
+            {
+                "question": "09",
+                "sub_question": "2",
+                "gt_words": [
+                    "badly"
+                ],
+                "pred_words": [
+                    "3"
+                ]
+            },
+            {
+                "question": "09",
+                "sub_question": "3",
+                "gt_words": [
+                    "completely"
+                ],
+                "pred_words": [
+                    "1"
+                ]
+            },
+            {
+                "question": "09",
+                "sub_question": "4",
+                "gt_words": [
+                    "fast"
+                ],
+                "pred_words": [
+                    "1"
+                ]
+            },
+            {
+                "question": "09",
+                "sub_question": "5",
+                "gt_words": [
+                    "well"
+                ],
+                "pred_words": [
+                    "2"
+                ]
+            },
+            {
+                "question": "12",
+                "sub_question": "3",
+                "gt_words": [
+                    "wormth"
+                ],
+                "pred_words": [
+                    "warmth"
+                ]
+            },
+            {
+                "question": "12",
+                "sub_question": "10",
+                "gt_words": [
+                    "education"
+                ],
+                "pred_words": [
+                    "educations"
+                ]
+            },
+            {
+                "question": "13",
+                "sub_question": "3",
+                "gt_words": [
+                    "oflif,",
+                    "oflife,"
+                ],
+                "pred_words": [
+                    "of",
+                    "lif"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "pei",
+                    "chaat"
+                ],
+                "pred_words": [
+                    "pie",
+                    "chart"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "result"
+                ],
+                "pred_words": [
+                    "results"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "survey"
+                ],
+                "pred_words": [
+                    "survery"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "student"
+                ],
+                "pred_words": [
+                    "students"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "hey"
+                ],
+                "pred_words": [
+                    "they"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "visit."
+                ],
+                "pred_words": [
+                    "visit"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "Nuwaraeliya,",
+                    "Anuradhapra,",
+                    "Kandy",
+                    "Sigiriya,",
+                    "Tricomalee"
+                ],
+                "pred_words": [
+                    "Nuwara",
+                    "eliya.",
+                    "Anuradpura,",
+                    "kandy,",
+                    "sigriya.",
+                    "Trincomalee."
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "pei"
+                ],
+                "pred_words": [
+                    "pie"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "Nuwaraeliya"
+                ],
+                "pred_words": [
+                    "Nuwara",
+                    "eliya"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "30%"
+                ],
+                "pred_words": [
+                    "30%."
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "prentage"
+                ],
+                "pred_words": [
+                    "presentage"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "Tricomalee"
+                ],
+                "pred_words": [
+                    "Trincomalee"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "5%"
+                ],
+                "pred_words": [
+                    "5%."
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "presnetage"
+                ],
+                "pred_words": [
+                    "presentage"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "Anurdhapura",
+                    "ans"
+                ],
+                "pred_words": [
+                    "Anuradhapura",
+                    "and"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "22%"
+                ],
+                "pred_words": [
+                    "25%."
+                ]
+            }
+        ],
+        "inserted_words": [
+            {
+                "question": "13",
+                "sub_question": "3",
+                "words": [
+                    "of",
+                    "life"
+                ]
+            }
+        ],
+        "question_type_metrics": {
+            "FITB": {
+                "fabricated": 2,
+                "crossed": 0,
+                "illegible": 2,
+                "gt_words": 62,
+                "hallu_words": 6
+            },
+            "QA": {
+                "fabricated": 2,
+                "crossed": 0,
+                "illegible": 2,
+                "gt_words": 7,
+                "hallu_words": 5
+            },
+            "U": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 5,
+                "hallu_words": 5
+            },
+            "W": {
+                "fabricated": 0,
+                "crossed": 1,
+                "illegible": 0,
+                "gt_words": 60,
+                "hallu_words": 24
+            }
+        }
+    },
+    "refined_metrics": {
+        "fabricated_hallucinations": 4,
+        "fabricated_hallucination_rate": 0.029850746268656716,
+        "crossed_out_hallucinations": 1,
+        "crossed_out_hallucination_rate": 0.007462686567164179,
+        "illegibility_hallucinations": 4,
+        "illegibility_hallucination_rate": 0.029850746268656716,
+        "word_level_hallucination_rate": 0.05223880597014925,
+        "total_hallucinated_words": 7,
+        "total_gt_words": 134,
+        "replaced_word_pairs": [
+            {
+                "question": "05",
+                "sub_question": "1",
+                "gt_words": [
+                    "Shani"
+                ],
+                "pred_words": [
+                    "morning"
+                ]
+            },
+            {
+                "question": "09",
+                "sub_question": "1",
+                "gt_words": [
+                    "Joyfully"
+                ],
+                "pred_words": [
+                    "2"
+                ]
+            },
+            {
+                "question": "09",
+                "sub_question": "2",
+                "gt_words": [
+                    "badly"
+                ],
+                "pred_words": [
+                    "3"
+                ]
+            },
+            {
+                "question": "09",
+                "sub_question": "3",
+                "gt_words": [
+                    "completely"
+                ],
+                "pred_words": [
+                    "1"
+                ]
+            },
+            {
+                "question": "09",
+                "sub_question": "4",
+                "gt_words": [
+                    "fast"
+                ],
+                "pred_words": [
+                    "1"
+                ]
+            },
+            {
+                "question": "09",
+                "sub_question": "5",
+                "gt_words": [
+                    "well"
+                ],
+                "pred_words": [
+                    "2"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "22%"
+                ],
+                "pred_words": [
+                    "25%."
+                ]
+            }
+        ],
+        "inserted_words": [],
+        "question_type_metrics": {
+            "FITB": {
+                "fabricated": 2,
+                "crossed": 0,
+                "illegible": 2,
+                "gt_words": 62,
+                "hallu_words": 1
+            },
+            "QA": {
+                "fabricated": 2,
+                "crossed": 0,
+                "illegible": 2,
+                "gt_words": 7,
+                "hallu_words": 0
+            },
+            "U": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 5,
+                "hallu_words": 5
+            },
+            "W": {
+                "fabricated": 0,
+                "crossed": 1,
+                "illegible": 0,
+                "gt_words": 60,
+                "hallu_words": 1
+            }
+        }
+    },
+    "usage": {
+        "prompt_tokens": 14313,
+        "candidate_tokens": 3616,
+        "thought_tokens": 5984
+    },
+    "cost": 0.0359565,
+    "recognition_time": 61.95357036590576,
+    "prediction": {
+        "paper_title": "Second Term Test Evaluation - 2019 English Language Paper I & II",
+        "questions": [
+            {
+                "test_number": "01",
+                "instruction": "Complete the dialogue using the words given in the box. Write the correct letter in the blank. The first one is done for you.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "during",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "Excellent",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "encouraged",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "quiz",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "get",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "sources",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "02",
+                "instruction": "Following are some exercises you do. Complete the blanks with the most suitable words given in the box. The first one is done for you.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "Stand on",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "Release",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "Hold",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "Bend down",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "Warm up",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "Stretch out",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "03",
+                "instruction": "Read the announcement and complete the following.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "Cultural Show",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "celebrate the 50th anniversary",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "Subavi Hall in the school",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "10th Sunday from 7.30 pm",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "commemorate",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "04",
+                "instruction": "Study the picture and complete the text appropriately. First one is done for you.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "children",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "around",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "kept",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "librarian",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "in front of",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "window",
+                        "is_legible": "true"
+                    },
+                    "7": {
+                        "answer": "girl",
+                        "is_legible": "true"
+                    },
+                    "8": {
+                        "answer": "Vacant",
+                        "is_legible": "true"
+                    },
+                    "9": {
+                        "answer": "borrow",
+                        "is_legible": "true"
+                    },
+                    "10": {
+                        "answer": "reading",
+                        "is_legible": "true"
+                    },
+                    "11": {
+                        "answer": "book shelf",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "05",
+                "instruction": "Read the telephone conversation and complete the massage given below.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "morning",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "there",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "attending",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "6": {
+                        "answer": "",
+                        "is_legible": ""
+                    }
+                }
+            },
+            {
+                "test_number": "06",
+                "instruction": "Health society of your school is going to have a Medical camp. Design a banner to be put up at the school gate to inform the public. Use about 50-60 words.",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "",
+                    "is_legible": ""
+                }
+            },
+            {
+                "test_number": "07",
+                "instruction": "Read this text and answer the questions.",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "answer": "Hippopotamuse",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "3": {
+                        "1": {
+                            "answer": "sinks",
+                            "is_legible": "true"
+                        },
+                        "2": {
+                            "answer": "close",
+                            "is_legible": "true"
+                        }
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "answer": "",
+                        "is_legible": ""
+                    }
+                }
+            },
+            {
+                "test_number": "08",
+                "instruction": "Write a paragraph on one of the following. Use about 50-60 words",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "",
+                    "is_legible": ""
+                }
+            },
+            {
+                "test_number": "09",
+                "instruction": "Underline the suitable word given in the brackets.",
+                "question_type": "U",
+                "student_answers": {
+                    "1": {
+                        "answer": "2",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "3",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "1",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "1",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "2",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "10",
+                "instruction": "Rewrite the sentences in the passive voice. An example is given.",
+                "question_type": "W",
+                "student_answers": {
+                    "1": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "2": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "3": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "answer": "",
+                        "is_legible": ""
+                    }
+                }
+            },
+            {
+                "test_number": "11",
+                "instruction": "Select the word from the box which has similar meaning to the word / phrase given in the bracket. Write them in the blanks.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "2": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "3": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "answer": "",
+                        "is_legible": ""
+                    }
+                }
+            },
+            {
+                "test_number": "12",
+                "instruction": "Fill in the blanks with the words given in the box. First one is done for you.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "role",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "3": {
+                        "answer": "warmth it",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "them",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "6": {
+                        "answer": "given",
+                        "is_legible": "true"
+                    },
+                    "7": {
+                        "answer": "this",
+                        "is_legible": "true"
+                    },
+                    "8": {
+                        "answer": "young",
+                        "is_legible": "true"
+                    },
+                    "9": {
+                        "answer": "resulting",
+                        "is_legible": "true"
+                    },
+                    "10": {
+                        "answer": "educations",
+                        "is_legible": "true"
+                    },
+                    "11": {
+                        "answer": "showed",
+                        "is_legible": "true"
+                    },
+                    "12": {
+                        "answer": "isolation new",
+                        "is_legible": "true"
+                    },
+                    "13": {
+                        "answer": "they",
+                        "is_legible": "true"
+                    },
+                    "14": {
+                        "answer": "showed",
+                        "is_legible": "true"
+                    },
+                    "15": {
+                        "answer": "",
+                        "is_legible": ""
+                    }
+                }
+            },
+            {
+                "test_number": "13",
+                "instruction": "Read the poem and answer the question given below.",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "answer": "silver Rain",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "3": {
+                        "answer": "of lif of life of life",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "1": {
+                            "answer": "",
+                            "is_legible": ""
+                        },
+                        "2": {
+                            "answer": "",
+                            "is_legible": ""
+                        }
+                    }
+                }
+            },
+            {
+                "test_number": "14",
+                "instruction": "Write on one of the following. Use about 100 words.",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "The shows the pie chart is results of a survery conducted among 100 grade 10 students about the places they like to visit It is Nuwara eliya. Anuradpura, kandy, sigriya. Trincomalee. According to the pie chart most presentage is Nuwara eliya which is 30%. the lowest presentage is Trincomalee which is 5%. the equal presentage is Anuradhapura and kandy which is 25%.",
+                    "is_legible": "true"
+                }
+            },
+            {
+                "test_number": "15",
+                "instruction": "Read the passage and answer the questions.",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "1": {
+                            "answer": "",
+                            "is_legible": ""
+                        },
+                        "2": {
+                            "answer": "",
+                            "is_legible": ""
+                        },
+                        "3": {
+                            "answer": "",
+                            "is_legible": ""
+                        },
+                        "4": {
+                            "answer": "",
+                            "is_legible": ""
+                        }
+                    },
+                    "2": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "3": {
+                        "1": {
+                            "answer": "",
+                            "is_legible": ""
+                        },
+                        "2": {
+                            "answer": "",
+                            "is_legible": ""
+                        }
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "1": {
+                            "answer": "",
+                            "is_legible": ""
+                        },
+                        "2": {
+                            "answer": "",
+                            "is_legible": ""
+                        }
+                    },
+                    "6": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "7": {
+                        "answer": "",
+                        "is_legible": ""
+                    }
+                }
+            },
+            {
+                "test_number": "16",
+                "instruction": "Write on one of the following. Use about 200 words.",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "",
+                    "is_legible": ""
+                }
+            }
+        ]
+    }
+}

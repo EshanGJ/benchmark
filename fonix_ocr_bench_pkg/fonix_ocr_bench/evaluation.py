@@ -87,16 +87,16 @@ class Evaluator:
                                 "gt_words": gtw,
                                 "pred_words": prw
                             })
-                            total_hallucinated_words += 1
-                            update_qtype_metric(qtype, "hallu_words")
+                            total_hallucinated_words += len(prw)
+                            update_qtype_metric(qtype, "hallu_words", len(prw))
                         
-                        elif tag == "insert" and prw != "":
+                        elif tag == "insert" and prw:
                             inserted_words.append({
                                 "question": tnum,
                                 "words": prw
                             })
-                            total_hallucinated_words += 1
-                            update_qtype_metric(qtype, "hallu_words")
+                            total_hallucinated_words += len(prw)
+                            update_qtype_metric(qtype, "hallu_words", len(prw))
                     
                     word_count = len(gt_ans.split())
                     total_gt_words += word_count
@@ -122,12 +122,12 @@ class Evaluator:
                             update_qtype_metric(qtype, "crossed")
                 
                 # 3. Illegibility hallucination
-                gt_illegible = str(gtqa.get("is_illigible", "")).lower()
-                pred_illegible = str(predqa.get("is_illigible", "")).lower()
+                gt_legible = str(gtqa.get("is_legible", "")).lower()
+                pred_legible = str(predqa.get("is_legible", "")).lower()
                 
-                if gt_illegible in ["false", ""] and gtqa["answer"] == "":
-                    # If AI claims it's readable (is_illigible="true") or provides text
-                    if pred_illegible == "true" or predqa.get("answer", "") != "":
+                if gt_legible not in ["true"]:
+                    # GT answer is blank/illegible; if AI claims it's legible or provides text, it hallucinated
+                    if pred_legible == "true" or predqa.get("answer", "") != "":
                         illegibility_hallucinations += 1
                         update_qtype_metric(qtype, "illegible")
                 
@@ -143,17 +143,17 @@ class Evaluator:
                                 "gt_words": gtw,
                                 "pred_words": prw
                             })
-                            total_hallucinated_words += 1
-                            update_qtype_metric(qtype, "hallu_words")
+                            total_hallucinated_words += len(prw)
+                            update_qtype_metric(qtype, "hallu_words", len(prw))
                         
-                        elif tag == "insert" and prw != "":
+                        elif tag == "insert" and prw:
                             inserted_words.append({
                                 "question": tnum,
                                 "sub_question": sub_path,
                                 "words": prw
                             })
-                            total_hallucinated_words += 1
-                            update_qtype_metric(qtype, "hallu_words")
+                            total_hallucinated_words += len(prw)
+                            update_qtype_metric(qtype, "hallu_words", len(prw))
                     
                     word_count = len(gtqa["answer"].split())
                     total_gt_words += word_count

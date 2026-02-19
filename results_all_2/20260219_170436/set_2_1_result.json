@@ -1,0 +1,688 @@
+{
+    "pdf_name": "set_2_1.pdf",
+    "metrics": {
+        "fabricated_hallucinations": 46,
+        "fabricated_hallucination_rate": 0.4144144144144144,
+        "crossed_out_hallucinations": 0,
+        "crossed_out_hallucination_rate": 0.0,
+        "illegibility_hallucinations": 46,
+        "illegibility_hallucination_rate": 0.4144144144144144,
+        "word_level_hallucination_rate": 0.10810810810810811,
+        "total_hallucinated_words": 12,
+        "total_gt_words": 111,
+        "replaced_word_pairs": [
+            {
+                "question": "5",
+                "sub_question": "3",
+                "gt_words": [
+                    "deaner"
+                ],
+                "pred_words": [
+                    "cleaner"
+                ]
+            },
+            {
+                "question": "5",
+                "sub_question": "5",
+                "gt_words": [
+                    "vehical"
+                ],
+                "pred_words": [
+                    "vehicle"
+                ]
+            },
+            {
+                "question": "5",
+                "sub_question": "6",
+                "gt_words": [
+                    "corner"
+                ],
+                "pred_words": [
+                    "coroner"
+                ]
+            },
+            {
+                "question": "6",
+                "sub_question": "",
+                "gt_words": [
+                    "Upnlka,"
+                ],
+                "pred_words": [
+                    "Upulka,"
+                ]
+            },
+            {
+                "question": "6",
+                "sub_question": "",
+                "gt_words": [
+                    "opportinity"
+                ],
+                "pred_words": [
+                    "opportunity"
+                ]
+            },
+            {
+                "question": "6",
+                "sub_question": "",
+                "gt_words": [
+                    "stduy",
+                    "aboad."
+                ],
+                "pred_words": [
+                    "study",
+                    "abroad."
+                ]
+            },
+            {
+                "question": "6",
+                "sub_question": "",
+                "gt_words": [
+                    "I;m"
+                ],
+                "pred_words": [
+                    "I'm"
+                ]
+            },
+            {
+                "question": "6",
+                "sub_question": "",
+                "gt_words": [
+                    "depature"
+                ],
+                "pred_words": [
+                    "departure"
+                ]
+            },
+            {
+                "question": "6",
+                "sub_question": "",
+                "gt_words": [
+                    "s"
+                ],
+                "pred_words": [
+                    "as"
+                ]
+            },
+            {
+                "question": "6",
+                "sub_question": "",
+                "gt_words": [
+                    "Pleae"
+                ],
+                "pred_words": [
+                    "Please"
+                ]
+            },
+            {
+                "question": "6",
+                "sub_question": "",
+                "gt_words": [
+                    "Nadeja"
+                ],
+                "pred_words": [
+                    "Nadeeja."
+                ]
+            }
+        ],
+        "inserted_words": [],
+        "question_type_metrics": {
+            "FITB": {
+                "fabricated": 24,
+                "crossed": 0,
+                "illegible": 24,
+                "gt_words": 29,
+                "hallu_words": 3
+            },
+            "U": {
+                "fabricated": 1,
+                "crossed": 0,
+                "illegible": 1,
+                "gt_words": 10,
+                "hallu_words": 0
+            },
+            "W": {
+                "fabricated": 5,
+                "crossed": 0,
+                "illegible": 5,
+                "gt_words": 72,
+                "hallu_words": 9
+            },
+            "QA": {
+                "fabricated": 16,
+                "crossed": 0,
+                "illegible": 16,
+                "gt_words": 0,
+                "hallu_words": 0
+            }
+        }
+    },
+    "refined_metrics": {
+        "fabricated_hallucinations": 46,
+        "fabricated_hallucination_rate": 0.4144144144144144,
+        "crossed_out_hallucinations": 0,
+        "crossed_out_hallucination_rate": 0.0,
+        "illegibility_hallucinations": 46,
+        "illegibility_hallucination_rate": 0.4144144144144144,
+        "word_level_hallucination_rate": 0.0,
+        "total_hallucinated_words": 0,
+        "total_gt_words": 111,
+        "replaced_word_pairs": [],
+        "inserted_words": [],
+        "question_type_metrics": {
+            "FITB": {
+                "fabricated": 24,
+                "crossed": 0,
+                "illegible": 24,
+                "gt_words": 29,
+                "hallu_words": 0
+            },
+            "U": {
+                "fabricated": 1,
+                "crossed": 0,
+                "illegible": 1,
+                "gt_words": 10,
+                "hallu_words": 0
+            },
+            "W": {
+                "fabricated": 5,
+                "crossed": 0,
+                "illegible": 5,
+                "gt_words": 72,
+                "hallu_words": 0
+            },
+            "QA": {
+                "fabricated": 16,
+                "crossed": 0,
+                "illegible": 16,
+                "gt_words": 0,
+                "hallu_words": 0
+            }
+        }
+    },
+    "usage": {
+        "prompt_tokens": 15259,
+        "candidate_tokens": 3853,
+        "thought_tokens": 5956
+    },
+    "cost": 0.0370565,
+    "recognition_time": 62.68912482261658,
+    "prediction": {
+        "paper_title": "SECOND TERM EVALUATION - 2023 GRADE 11 ENGLISH LANGUAGE",
+        "questions": [
+            {
+                "test_number": "1",
+                "instruction": "Select the correct response from column B to the statement or question in column A and write the letter of the response in the given space. The first one is done for you.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "c",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "d",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "f",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "a",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "b",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "e",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "2",
+                "instruction": "Fill in the blanks in the invitation below. Use the words given in the box. Write the letter of the correct word in the blank. One is done for you.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "B",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "D",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "A",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "F",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "C",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "E",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "3",
+                "instruction": "Study the picture and fill in the blanks in the text given below. Use only one word in each blank.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "cleaning",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "apron",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "floor",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "sweeping",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "dust-pan",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "book-rack",
+                        "is_legible": "true"
+                    },
+                    "7": {
+                        "answer": "books",
+                        "is_legible": "true"
+                    },
+                    "8": {
+                        "answer": "table",
+                        "is_legible": "true"
+                    },
+                    "9": {
+                        "answer": "window-sill",
+                        "is_legible": "true"
+                    },
+                    "10": {
+                        "answer": "watering",
+                        "is_legible": "true"
+                    },
+                    "11": {
+                        "answer": "beautiful",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "4",
+                "instruction": "Underline the most suitable word given within brackets to fill in each blank. ",
+                "question_type": "U",
+                "student_answers": {
+                    "1": {
+                        "answer": "is",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "leaves",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "packed",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "working",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "comes",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "finishes",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "5",
+                "instruction": "Read the following dialogue and fill in the blanks in the newspaper bulletin given below.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "collided",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "killed",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "cleaner",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "head",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "vehicle",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "coroner",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "6",
+                "instruction": "Your friend Upulka is going abroad for higher studies this weekend. You are unable to see her before her departure. Write a note to be sent to her with a small present. Use about 40-50 words.",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "Dear Upulka,\nI am so happy to hear about your opportunity to study abroad. This is an exciting new chapter and meet you will do great. I'm really sorry that I couldn't meet you before your departure but I wanted to send you this small gift as a taken of my best wishes. Please accept it with my love wishing you sucess and happiness in your studies and beyond.\nYour faithfully\nNadeeja.",
+                    "is_legible": "true"
+                }
+            },
+            {
+                "test_number": "7",
+                "instruction": "Read the story given below and answer the questions.",
+                "question_type": "U",
+                "student_answers": {
+                    "1": {
+                        "answer": "a",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "c",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "b",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "a",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "c",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "8",
+                "instruction": "Write a paragraph on one of the given topics. Use about 50 - 60 words.",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "",
+                    "is_legible": ""
+                }
+            },
+            {
+                "test_number": "9",
+                "instruction": "Read the text and underline the most suitable word given within brackets.",
+                "question_type": "W",
+                "student_answers": {
+                    "1": {
+                        "answer": "difficulty",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "?",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "D",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "believe",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "responsible",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "10",
+                "instruction": "Complete the following passage using the correct form of the verb given within each bracket.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "saw",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "said",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "was",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "said",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "took",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "11",
+                "instruction": "Fill in the blanks with the words given in the box. There is one extra word.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "?",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "office",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "?",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "heard",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "impatient",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "advertisement",
+                        "is_legible": "true"
+                    },
+                    "7": {
+                        "answer": "work",
+                        "is_legible": "true"
+                    },
+                    "8": {
+                        "answer": "?",
+                        "is_legible": "true"
+                    },
+                    "9": {
+                        "answer": "?",
+                        "is_legible": "true"
+                    },
+                    "10": {
+                        "answer": "photography",
+                        "is_legible": "true"
+                    },
+                    "11": {
+                        "answer": "?",
+                        "is_legible": "true"
+                    },
+                    "12": {
+                        "answer": "?",
+                        "is_legible": "true"
+                    },
+                    "13": {
+                        "answer": "story",
+                        "is_legible": "true"
+                    },
+                    "14": {
+                        "answer": "beach",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "12",
+                "instruction": "Complete the following passage using the most appropriate form of the verb given within brackets.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "is situated",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "is visited",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "give up",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "get",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "is",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "13",
+                "instruction": "Read the poem and answer the questions given.",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "answer": "The poet subbed his toes & tripped and fell . He also got injured in many places like his hip , knee and back .",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "The poet was comming in from play, likely at school or outside",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "1": {
+                            "answer": "Lip-hip , Chin-skin",
+                            "is_legible": "true"
+                        },
+                        "2": {
+                            "answer": "Rotten day, Total wreck",
+                            "is_legible": "true"
+                        }
+                    },
+                    "4": {
+                        "answer": "that he should tie his shoes when the teacher tells him to.",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "Toes , lip , knee , Back .",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "14",
+                "instruction": "(a) You are the secretary of the Environmental Society of your school. You have planned to launch programme called \"Keep the City Clean\" in your area with all the members of the society. Write a letter to get the permission from the authority of the municipal council, to remove the unnecessary posters and advertisements in the area. Use about 100 words. or (b) The following pie chart shows the percentage of household waste in 2022. Study it and write a description of it. Use about 100 words. The following words will help you.",
+                "question_type": "W",
+                "student_answers": {
+                    "a": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "b": {
+                        "answer": "",
+                        "is_legible": ""
+                    }
+                }
+            },
+            {
+                "test_number": "15",
+                "instruction": "Read the following text and answer the questions given below.",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "1": {
+                            "answer": "True",
+                            "is_legible": "true"
+                        },
+                        "2": {
+                            "answer": "False",
+                            "is_legible": "true"
+                        },
+                        "3": {
+                            "answer": "False",
+                            "is_legible": "true"
+                        },
+                        "4": {
+                            "answer": "True",
+                            "is_legible": "true"
+                        }
+                    },
+                    "2": {
+                        "a": {
+                            "answer": "respect",
+                            "is_legible": "true"
+                        },
+                        "b": {
+                            "answer": "Definitely",
+                            "is_legible": "true"
+                        }
+                    },
+                    "3": {
+                        "a": {
+                            "answer": "favourite colour",
+                            "is_legible": "true"
+                        },
+                        "b": {
+                            "answer": "The people",
+                            "is_legible": "true"
+                        }
+                    },
+                    "4": {
+                        "answer": "c",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "It is associated with bad luck",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "16",
+                "instruction": "Write on one of the following topics. Use about 200 words.",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "",
+                    "is_legible": ""
+                }
+            }
+        ]
+    }
+}

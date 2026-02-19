@@ -17,7 +17,7 @@ dotenv.load_dotenv()
 SYSTEM_INSTRUCTION = "You are a experienced annotater who can identify student answers for a student's paper and complete the given JSON."
 PROMPT_TEMPLATE = """
 1. Read the uploaded document and extarct the answers and reshape according to the following structure.
-2. For is is_illigible use "true" if the answer is redable and not empty otherwise "false". If empty, keep blank is_illigible: ""
+2. For is is_legible use "true" if the answer is redable and not empty otherwise "false". If empty, keep blank is_legible: ""
 
 Here is the Sturcture that you should complete:
 ```

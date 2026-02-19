@@ -1,0 +1,602 @@
+{
+    "pdf_name": "5.pdf",
+    "metrics": {
+        "fabricated_hallucinations": 9,
+        "fabricated_hallucination_rate": 0.13636363636363635,
+        "crossed_out_hallucinations": 5,
+        "crossed_out_hallucination_rate": 0.07575757575757576,
+        "illegibility_hallucinations": 10,
+        "illegibility_hallucination_rate": 0.15151515151515152,
+        "word_level_hallucination_rate": 0.19696969696969696,
+        "total_hallucinated_words": 13,
+        "total_gt_words": 66,
+        "replaced_word_pairs": [
+            {
+                "question": "02",
+                "sub_question": "5",
+                "gt_words": [
+                    "asks"
+                ],
+                "pred_words": [
+                    "asked"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "members"
+                ],
+                "pred_words": [
+                    "members."
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "mother"
+                ],
+                "pred_words": [
+                    "mother."
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "family"
+                ],
+                "pred_words": [
+                    "family."
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "nearest"
+                ],
+                "pred_words": [
+                    "nearest,"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "birth."
+                ],
+                "pred_words": [
+                    "my",
+                    "birth",
+                    "she",
+                    "is",
+                    "always",
+                    "in",
+                    "my"
+                ]
+            }
+        ],
+        "inserted_words": [
+            {
+                "question": "11",
+                "sub_question": "10",
+                "words": [
+                    "consi"
+                ]
+            }
+        ],
+        "question_type_metrics": {
+            "FITB": {
+                "fabricated": 3,
+                "crossed": 1,
+                "illegible": 4,
+                "gt_words": 19,
+                "hallu_words": 1
+            },
+            "U": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 6,
+                "hallu_words": 1
+            },
+            "W": {
+                "fabricated": 0,
+                "crossed": 4,
+                "illegible": 0,
+                "gt_words": 41,
+                "hallu_words": 11
+            },
+            "QA": {
+                "fabricated": 6,
+                "crossed": 0,
+                "illegible": 6,
+                "gt_words": 0,
+                "hallu_words": 0
+            }
+        }
+    },
+    "refined_metrics": {
+        "fabricated_hallucinations": 9,
+        "fabricated_hallucination_rate": 0.13636363636363635,
+        "crossed_out_hallucinations": 5,
+        "crossed_out_hallucination_rate": 0.07575757575757576,
+        "illegibility_hallucinations": 10,
+        "illegibility_hallucination_rate": 0.15151515151515152,
+        "word_level_hallucination_rate": 0.12121212121212122,
+        "total_hallucinated_words": 8,
+        "total_gt_words": 66,
+        "replaced_word_pairs": [
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "birth."
+                ],
+                "pred_words": [
+                    "my",
+                    "birth",
+                    "she",
+                    "is",
+                    "always",
+                    "in",
+                    "my"
+                ]
+            }
+        ],
+        "inserted_words": [
+            {
+                "question": "11",
+                "sub_question": "10",
+                "words": [
+                    "consi"
+                ]
+            }
+        ],
+        "question_type_metrics": {
+            "FITB": {
+                "fabricated": 3,
+                "crossed": 1,
+                "illegible": 4,
+                "gt_words": 19,
+                "hallu_words": 1
+            },
+            "U": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 6,
+                "hallu_words": 0
+            },
+            "W": {
+                "fabricated": 0,
+                "crossed": 4,
+                "illegible": 0,
+                "gt_words": 41,
+                "hallu_words": 7
+            },
+            "QA": {
+                "fabricated": 6,
+                "crossed": 0,
+                "illegible": 6,
+                "gt_words": 0,
+                "hallu_words": 0
+            }
+        }
+    },
+    "usage": {
+        "prompt_tokens": 11417,
+        "candidate_tokens": 2925,
+        "thought_tokens": 6473
+    },
+    "cost": 0.0339025,
+    "recognition_time": 95.71047687530518,
+    "prediction": {
+        "paper_title": "Grade 10 - English Language - First Term Evaluation - 2018",
+        "questions": [
+            {
+                "test_number": "01",
+                "instruction": "Fill in the blanks in the following dialogue. Use the words given in the box. There is one extra word. The first one is done for you.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "d",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "e",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "c",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "g",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "a",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "f",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "02",
+                "instruction": "Underline the correct answer . The first one is done for you.",
+                "question_type": "U",
+                "student_answers": {
+                    "1": {
+                        "answer": "didn't",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "was",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "suffering",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "was",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "asked",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "visit",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "03",
+                "instruction": "Study the picture and fill in the blanks in the text given below. Use only one word in each blank.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "2": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "3": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "6": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "7": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "8": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "9": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "10": {
+                        "answer": "",
+                        "is_legible": ""
+                    }
+                }
+            },
+            {
+                "test_number": "04",
+                "instruction": "Match the extracts with the headings. Write the correct letter in the blank provided. The first one is done for you.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "b",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "c",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "a",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "e",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "d",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "f",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "05",
+                "instruction": "Read the following notice and complete the dialogue. Use only one word in each blank. The first one is done for you.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "2": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "3": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "6": {
+                        "answer": "",
+                        "is_legible": ""
+                    }
+                }
+            },
+            {
+                "test_number": "06",
+                "instruction": "You are going on a trip and you want to borrow your friend's camera. Write a note asking him to lend you his camera. Use about 50 words.",
+                "question_type": "W",
+                "student_answers": ""
+            },
+            {
+                "test_number": "07",
+                "instruction": "Read the following text and answer the questions.",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "2": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "3": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "answer": "",
+                        "is_legible": ""
+                    }
+                }
+            },
+            {
+                "test_number": "08",
+                "instruction": "Write on one of the following topics. Use about 40-50 words.",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "The person I like most. I love all my family members. But the lovelies of all is my mother. I love her most in our family. I rather worship her she is the nearest, dearest and closest to me from my birth she is always in my",
+                    "is_legible": "true"
+                }
+            },
+            {
+                "test_number": "9",
+                "instruction": "Complete the paragraph selecting a word. Underline the correct words within brackets.",
+                "question_type": "U",
+                "student_answers": {
+                    "1": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "2": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "3": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "answer": "",
+                        "is_legible": ""
+                    }
+                }
+            },
+            {
+                "test_number": "10",
+                "instruction": "Write the following utterances in the reported speech. One is done for you.",
+                "question_type": "W",
+                "student_answers": {
+                    "2": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "3": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "6": {
+                        "answer": "",
+                        "is_legible": ""
+                    }
+                }
+            },
+            {
+                "test_number": "11",
+                "instruction": "Fill in the blanks with the words given within the box.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "bean",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "?",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "rice",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "the",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "sacred",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "plant",
+                        "is_legible": "true"
+                    },
+                    "7": {
+                        "answer": "rich",
+                        "is_legible": "true"
+                    },
+                    "8": {
+                        "answer": "which",
+                        "is_legible": "true"
+                    },
+                    "9": {
+                        "answer": "?",
+                        "is_legible": "true"
+                    },
+                    "10": {
+                        "answer": "consi of",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "12",
+                "instruction": "Read the poem and answer the questions.",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "2": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "3": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "a": {
+                            "answer": "",
+                            "is_legible": ""
+                        },
+                        "b": {
+                            "answer": "",
+                            "is_legible": ""
+                        }
+                    }
+                }
+            },
+            {
+                "test_number": "13",
+                "instruction": "Read the passage and answer the questions.",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "i": {
+                            "answer": "",
+                            "is_legible": ""
+                        },
+                        "ii": {
+                            "answer": "",
+                            "is_legible": ""
+                        }
+                    },
+                    "2": {
+                        "i": {
+                            "answer": "?",
+                            "is_legible": "true"
+                        },
+                        "ii": {
+                            "answer": "?",
+                            "is_legible": "true"
+                        }
+                    },
+                    "3": {
+                        "i": {
+                            "answer": "?",
+                            "is_legible": "true"
+                        },
+                        "ii": {
+                            "answer": "?",
+                            "is_legible": "true"
+                        }
+                    },
+                    "4": {
+                        "answer": "?",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "?",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "14",
+                "instruction": "Write on one of the following. Use 150-200 words.",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "",
+                    "is_legible": ""
+                }
+            }
+        ]
+    }
+}

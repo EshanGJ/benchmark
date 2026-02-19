@@ -1,0 +1,579 @@
+{
+    "pdf_name": "set_7_1.pdf",
+    "metrics": {
+        "fabricated_hallucinations": 1,
+        "fabricated_hallucination_rate": 0.009009009009009009,
+        "crossed_out_hallucinations": 0,
+        "crossed_out_hallucination_rate": 0.0,
+        "illegibility_hallucinations": 2,
+        "illegibility_hallucination_rate": 0.018018018018018018,
+        "word_level_hallucination_rate": 0.06306306306306306,
+        "total_hallucinated_words": 7,
+        "total_gt_words": 111,
+        "replaced_word_pairs": [
+            {
+                "question": "07",
+                "sub_question": "1.1",
+                "gt_words": [
+                    "women:",
+                    ",",
+                    "men:"
+                ],
+                "pred_words": [
+                    "woman"
+                ]
+            },
+            {
+                "question": "07",
+                "sub_question": "1.2",
+                "gt_words": [
+                    "mother:",
+                    ",",
+                    "father:"
+                ],
+                "pred_words": [
+                    "mother"
+                ]
+            },
+            {
+                "question": "07",
+                "sub_question": "1.3",
+                "gt_words": [
+                    "she:",
+                    ",",
+                    "he:"
+                ],
+                "pred_words": [
+                    "she"
+                ]
+            },
+            {
+                "question": "07",
+                "sub_question": "1.4",
+                "gt_words": [
+                    "sister:",
+                    ",",
+                    "brother:"
+                ],
+                "pred_words": [
+                    "sister"
+                ]
+            },
+            {
+                "question": "09",
+                "sub_question": "1",
+                "gt_words": [
+                    "famouse"
+                ],
+                "pred_words": [
+                    "famous"
+                ]
+            },
+            {
+                "question": "11",
+                "sub_question": "",
+                "gt_words": [
+                    "cooking.we"
+                ],
+                "pred_words": [
+                    "cooking.",
+                    "we"
+                ]
+            }
+        ],
+        "inserted_words": [],
+        "question_type_metrics": {
+            "W": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 1,
+                "gt_words": 59,
+                "hallu_words": 2
+            },
+            "FITB": {
+                "fabricated": 1,
+                "crossed": 0,
+                "illegible": 1,
+                "gt_words": 43,
+                "hallu_words": 5
+            },
+            "U": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 9,
+                "hallu_words": 0
+            }
+        }
+    },
+    "refined_metrics": {
+        "fabricated_hallucinations": 1,
+        "fabricated_hallucination_rate": 0.009009009009009009,
+        "crossed_out_hallucinations": 0,
+        "crossed_out_hallucination_rate": 0.0,
+        "illegibility_hallucinations": 2,
+        "illegibility_hallucination_rate": 0.018018018018018018,
+        "word_level_hallucination_rate": 0.036036036036036036,
+        "total_hallucinated_words": 4,
+        "total_gt_words": 111,
+        "replaced_word_pairs": [
+            {
+                "question": "07",
+                "sub_question": "1.1",
+                "gt_words": [
+                    "women:",
+                    ",",
+                    "men:"
+                ],
+                "pred_words": [
+                    "woman"
+                ]
+            },
+            {
+                "question": "07",
+                "sub_question": "1.2",
+                "gt_words": [
+                    "mother:",
+                    ",",
+                    "father:"
+                ],
+                "pred_words": [
+                    "mother"
+                ]
+            },
+            {
+                "question": "07",
+                "sub_question": "1.3",
+                "gt_words": [
+                    "she:",
+                    ",",
+                    "he:"
+                ],
+                "pred_words": [
+                    "she"
+                ]
+            },
+            {
+                "question": "07",
+                "sub_question": "1.4",
+                "gt_words": [
+                    "sister:",
+                    ",",
+                    "brother:"
+                ],
+                "pred_words": [
+                    "sister"
+                ]
+            }
+        ],
+        "inserted_words": [],
+        "question_type_metrics": {
+            "W": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 1,
+                "gt_words": 59,
+                "hallu_words": 0
+            },
+            "FITB": {
+                "fabricated": 1,
+                "crossed": 0,
+                "illegible": 1,
+                "gt_words": 43,
+                "hallu_words": 4
+            },
+            "U": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 9,
+                "hallu_words": 0
+            }
+        }
+    },
+    "usage": {
+        "prompt_tokens": 6912,
+        "candidate_tokens": 2677,
+        "thought_tokens": 4317
+    },
+    "cost": 0.024438,
+    "recognition_time": 46.08968472480774,
+    "prediction": {
+        "paper_title": "Grade 08 - English Monthly Evaluation Paper Unit 6 - When we are together",
+        "questions": [
+            {
+                "test_number": "01",
+                "instruction": "Write in passive voice",
+                "question_type": "W",
+                "student_answers": {
+                    "1": {
+                        "answer": "The bell ring by the girl",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "3": {
+                        "answer": "Our exercises correct by the teacher",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "A big business control by The lady",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "The clouds away blow by The wind",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "The clouds away",
+                        "is_legible": "true"
+                    },
+                    "7": {
+                        "answer": "The bell",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "02",
+                "instruction": "Read the conversation between a doctor and a patient. Complete the blanks using the responses given in the box. Write the letter of the correct answer on the line. One is done for you.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "c",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "b",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "d",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "e",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "f",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "a",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "03",
+                "instruction": "Underline the correct answer.",
+                "question_type": "U",
+                "student_answers": {
+                    "1": {
+                        "answer": "are made",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "bought",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "are worn",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "are grown",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "are imported",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "04",
+                "instruction": "Write the verb in present simple.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "Selled",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "3": {
+                        "answer": "priced",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "answer": "cleaned up",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "05",
+                "instruction": "Write the verb in present simple.",
+                "question_type": "W",
+                "student_answers": {
+                    "1": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "2": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "3": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "answer": "",
+                        "is_legible": ""
+                    }
+                }
+            },
+            {
+                "test_number": "06",
+                "instruction": "Read poem and answer the queston given below",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "2": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "3": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "1": {
+                            "answer": "",
+                            "is_legible": ""
+                        },
+                        "2": {
+                            "answer": "",
+                            "is_legible": ""
+                        }
+                    }
+                }
+            },
+            {
+                "test_number": "07",
+                "instruction": "Write four nouns in the masculine gender and four in feminine gender.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "1": {
+                            "answer": "woman",
+                            "is_legible": "true"
+                        },
+                        "2": {
+                            "answer": "mother",
+                            "is_legible": "true"
+                        },
+                        "3": {
+                            "answer": "she",
+                            "is_legible": "true"
+                        },
+                        "4": {
+                            "answer": "sister",
+                            "is_legible": "true"
+                        }
+                    },
+                    "2": {
+                        "1": {
+                            "answer": "we",
+                            "is_legible": "true"
+                        },
+                        "2": {
+                            "answer": "They",
+                            "is_legible": "true"
+                        },
+                        "3": {
+                            "answer": "they",
+                            "is_legible": "true"
+                        },
+                        "4": {
+                            "answer": "they",
+                            "is_legible": "true"
+                        },
+                        "5": {
+                            "answer": "",
+                            "is_legible": ""
+                        },
+                        "6": {
+                            "answer": "",
+                            "is_legible": ""
+                        }
+                    }
+                }
+            },
+            {
+                "test_number": "08",
+                "instruction": "",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "2": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "3": {
+                        "answer": "England",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "answer": "The merchant of venice",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "shakespeare's",
+                        "is_legible": "true"
+                    },
+                    "7": {
+                        "answer": "38",
+                        "is_legible": "true"
+                    },
+                    "8": {
+                        "answer": "",
+                        "is_legible": ""
+                    }
+                }
+            },
+            {
+                "test_number": "09",
+                "instruction": "Complete the following text usung the word given in the box",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "famous",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "3": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "6": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "7": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "8": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "9": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "10": {
+                        "answer": "",
+                        "is_legible": ""
+                    }
+                }
+            },
+            {
+                "test_number": "10",
+                "instruction": "Complete with haven't got or hasn't got.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "2": {
+                        "answer": "haven't got",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "4": {
+                        "answer": "hasn't",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "6": {
+                        "answer": "haven't got",
+                        "is_legible": "true"
+                    },
+                    "7": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "8": {
+                        "answer": "hasn't got",
+                        "is_legible": "true"
+                    },
+                    "9": {
+                        "answer": "haven't got",
+                        "is_legible": "true"
+                    },
+                    "10": {
+                        "answer": "hasn't got",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "11",
+                "instruction": "Write an essay about Water",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "we riqure in water drinking, washing, cooking. we get water frome rain. my con has water fall, river and many more. As children we shut lern to save water.",
+                    "is_legible": "true"
+                }
+            }
+        ]
+    }
+}

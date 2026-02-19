@@ -1,0 +1,2915 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OCR Benchmark Dashboard</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <style>
+            
+    :root {
+        --primary: #2563eb;
+        --primary-light: #dbeafe;
+        --secondary: #64748b;
+        --success: #22c55e;
+        --warning: #f59e0b;
+        --danger: #ef4444;
+        --bg: #f8fafc;
+        --card-bg: #ffffff;
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+        --border: #e2e8f0;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background-color: var(--bg);
+        color: var(--text-main);
+        margin: 0;
+        padding: 0;
+        line-height: 1.5;
+    }
+    .header {
+        background: white;
+        padding: 2rem;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 2rem;
+    }
+    .header h1 { margin: 0; font-size: 1.875rem; font-weight: 700; color: var(--text-main); }
+    .header p { margin: 0.5rem 0 0; color: var(--text-muted); font-size: 0.875rem; }
+
+    .container { max-width: 1400px; margin: 0 auto; padding: 0 2rem 4rem; }
+
+    .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+    
+    .stat-card {
+        background: var(--card-bg);
+        padding: 1.5rem;
+        border-radius: 1rem;
+        border: 1px solid var(--border);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+    }
+    .stat-icon {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+    .stat-icon.blue { background: var(--primary); }
+    .stat-icon.green { background: var(--success); }
+    .stat-icon.orange { background: var(--warning); }
+    .stat-icon.red { background: var(--danger); }
+    .stat-icon.purple { background: #8b5cf6; }
+
+    .stat-info { display: flex; flex-direction: column; }
+    .stat-label { font-size: 0.875rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.025em; }
+    .stat-value { font-size: 1.5rem; font-weight: 700; color: var(--text-main); }
+
+    .dashboard-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+    .card { background: var(--card-bg); border-radius: 1rem; border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .card-header { padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+    .card-title { font-size: 1.125rem; font-weight: 600; margin: 0; }
+    .card-body { padding: 1.5rem; }
+
+    .chart-container { position: relative; height: 300px; width: 100%; }
+
+    table { width: 100%; border-collapse: separate; border-spacing: 0; }
+    th { background: #f1f5f9; padding: 0.75rem 1rem; text-align: left; font-size: 0.75rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); }
+    td { padding: 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background-color: #f8fafc; }
+
+    .badge { padding: 0.25rem 0.625rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; display: inline-flex; align-items: center; }
+    .badge-success { background: #dcfce7; color: #166534; }
+    .badge-warning { background: #fef9c3; color: #854d0e; }
+    .badge-danger { background: #fee2e2; color: #991b1b; }
+    .badge-neutral { background: #f1f5f9; color: #475569; }
+
+    .progress-bar-container { width: 100%; height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden; margin-top: 4px; }
+    .progress-bar { height: 100%; border-radius: 4px; transition: width 0.3s ease; }
+
+    details { margin-top: 0.5rem; }
+    summary { font-size: 0.875rem; color: var(--primary); cursor: pointer; font-weight: 500; }
+    summary:hover { text-decoration: underline; }
+    
+    .diff-list { font-size: 0.875rem; margin-top: 0.75rem; }
+    .diff-item { background: #f8fafc; border-radius: 0.5rem; padding: 0.75rem; margin-bottom: 0.5rem; border-left: 3px solid var(--primary); }
+    .diff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem; }
+    .diff-label { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; margin-bottom: 0.25rem; }
+    .diff-val { font-family: 'JetBrains Mono', 'Courier New', monospace; font-size: 0.8125rem; word-break: break-all; }
+    .val-gt { color: #059669; }
+    .val-pred { color: #dc2626; }
+
+    pre { background: #1e293b; color: #e2e8f0; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; font-size: 0.75rem; }
+
+    @media (max-width: 1024px) {
+        .dashboard-layout { grid-template-columns: 1fr; }
+    }
+    
+        </style>
+    </head>
+    <body>
+        <div id="dashboard-root">
+            
+    <div class="header">
+        <h1>OCR Benchmark Dashboard</h1>
+        <p>Execution Summary • <strong>2026-02-19 16:12:20</strong></p>
+    </div>
+
+    <div class="container">
+        <div class="grid-4" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));">
+            <div class="stat-card">
+                <div class="stat-icon blue"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+                <div class="stat-info">
+                    <span class="stat-label">Total Cost</span>
+                    <span class="stat-value">$0.155</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon blue" style="background: var(--secondary)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+                <div class="stat-info">
+                    <span class="stat-label">Avg Cost</span>
+                    <span class="stat-value">$0.0387</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon purple"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+                <div class="stat-info">
+                    <span class="stat-label">Total Time</span>
+                    <span class="stat-value">412.2s</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon purple" style="background: var(--secondary)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+                <div class="stat-info">
+                    <span class="stat-label">Avg Time</span>
+                    <span class="stat-value">103.04s</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon orange"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div>
+                <div class="stat-info">
+                    <span class="stat-label">Avg Hallucination</span>
+                    <span class="stat-value">19.20%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon orange" style="background: var(--primary)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div>
+                <div class="stat-info">
+                    <span class="stat-label">Avg Refined</span>
+                    <span class="stat-value">5.96%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon red"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div>
+                <div class="stat-info">
+                    <span class="stat-label">Avg Fabricated</span>
+                    <span class="stat-value">7.61%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon green"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div>
+                <div class="stat-info">
+                    <span class="stat-label">Avg Crossed-out</span>
+                    <span class="stat-value">0.62%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon orange" style="background: #e67e22;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div>
+                <div class="stat-info">
+                    <span class="stat-label">Avg Illegibility</span>
+                    <span class="stat-value">11.05%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon green" style="background: #a855f7;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></div>
+                <div class="stat-info">
+                    <span class="stat-label">Samples Tested</span>
+                    <span class="stat-value">4</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-layout">
+            <div class="card">
+                <div class="card-header"><h3 class="card-title">Hallucination Rates per Sample (%)</h3></div>
+                <div class="card-body">
+                    <div class="chart-container">
+                        <canvas id="halluChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header"><h3 class="card-title">Performance by Question Type (%)</h3></div>
+                <div class="card-body">
+                    <div class="chart-container">
+                        <canvas id="qtypeChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header"><h3 class="card-title">Cost vs Speed Distribution</h3></div>
+                <div class="card-body">
+                    <div class="chart-container">
+                        <canvas id="scatterChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="margin-bottom: 2rem;">
+            <div class="card-header"><h3 class="card-title">Question Type Breakdown</h3></div>
+            <div class="card-body" style="padding: 0;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Question Type</th>
+                            <th>Hallucination Rate</th>
+                            <th>Fabricated</th>
+                            <th>Crossed-out</th>
+                            <th>Illegibility</th>
+                            <th>GT Words</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+            <tr>
+                <td><strong>Fill In The Blanks</strong> <small style="color: var(--text-muted)">(FITB)</small></td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span class="badge badge-warning">5.6%</span>
+                        <small style="color: var(--text-muted); text-decoration: line-through;">15.0%</small>
+                    </div>
+                </td>
+                <td>27 (11.5%)</td>
+                <td>3 (1.3%)</td>
+                <td>49 (20.9%)</td>
+                <td>234</td>
+            </tr>
+            
+            <tr>
+                <td><strong>Writing/Essay</strong> <small style="color: var(--text-muted)">(W)</small></td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span class="badge badge-success">2.9%</span>
+                        <small style="color: var(--text-muted); text-decoration: line-through;">22.6%</small>
+                    </div>
+                </td>
+                <td>10 (2.9%)</td>
+                <td>1 (0.3%)</td>
+                <td>11 (3.2%)</td>
+                <td>349</td>
+            </tr>
+            
+            <tr>
+                <td><strong>Question Answering</strong> <small style="color: var(--text-muted)">(QA)</small></td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span class="badge badge-danger">11.2%</span>
+                        <small style="color: var(--text-muted); text-decoration: line-through;">20.7%</small>
+                    </div>
+                </td>
+                <td>21 (8.7%)</td>
+                <td>1 (0.4%)</td>
+                <td>30 (12.4%)</td>
+                <td>242</td>
+            </tr>
+            
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header"><h3 class="card-title">Detailed Execution Results</h3></div>
+            <div class="card-body" style="padding: 0;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 250px">Sample</th>
+                            <th>Hallucination Metrics</th>
+                            <th style="width: 150px">Efficiency</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+    
+        <tr>
+            <td>
+                <div style="font-weight: 600;">4.pdf</div>
+                <div style="font-size: 0.75rem; color: #64748b;">Original: 20.6%</div>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <span class="badge badge-warning">4.8%</span>
+                    <div class="progress-bar-container" style="flex: 1">
+                        <div class="progress-bar" style="width: 4.761904761904762%; background: #f59e0b"></div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 0.5rem; font-size: 0.75rem; color: #64748b;">
+                    <span>Fab: 1.6%</span>
+                    <span>Cross: 0.0%</span>
+                    <span>Illeg: 5.6%</span>
+                </div>
+            </td>
+            <td>
+                <div style="font-weight: 600;">$0.0300</div>
+                <div style="font-size: 0.75rem; color: #64748b;">90.70s</div>
+            </td>
+            <td><details><summary>Review Discrepancies</summary><div class='diff-list'>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['true']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['✘']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 07 (1.b)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['read']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['head']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 09 (3)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['Flashes']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['flafes', 'flafes']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 11 (1)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['g']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['a']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 12 (2)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['employing']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['girls']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 13 (15)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['ban']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['bar']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 14</div>
+                    </div><h4 style='font-size: 0.875rem'>Raw Output</h4><pre><code>{
+  "paper_title": "Grade 10 - English - Second Term Evaluation - 2016",
+  "questions": [
+    {
+      "test_number": "01",
+      "instruction": "Select the correct word for blank (a) from box A and for blank (b) from box B and fill in the blanks.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "a": {
+            "answer": "bouquet",
+            "is_legible": "true"
+          },
+          "b": {
+            "answer": "flowers",
+            "is_legible": "true"
+          }
+        },
+        "2": {
+          "a": {
+            "answer": "herd",
+            "is_legible": "true"
+          },
+          "b": {
+            "answer": "elephants",
+            "is_legible": "true"
+          }
+        },
+        "3": {
+          "a": {
+            "answer": "gang",
+            "is_legible": "true"
+          },
+          "b": {
+            "answer": "thieves",
+            "is_legible": "true"
+          }
+        },
+        "4": {
+          "a": {
+            "answer": "bowl",
+            "is_legible": "true"
+          },
+          "b": {
+            "answer": "soup",
+            "is_legible": "true"
+          }
+        },
+        "5": {
+          "a": {
+            "answer": "swarm",
+            "is_legible": "true"
+          },
+          "b": {
+            "answer": "bees",
+            "is_legible": "true"
+          }
+        }
+      }
+    },
+    {
+      "test_number": "02",
+      "instruction": "Label the following places on the given map. Write the correct letter in the correct box. One is done for you.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "A",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "E",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "C",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "D",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "f",
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "B",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "03",
+      "instruction": "Read the following advertisement and fill in the grid.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "Western Music a Speech",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "Computer operator / clerk",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "4": {
+          "answer": "25 geare",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "Apply before 25th may 2016",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "04",
+      "instruction": "Write a meaningful sentence for each picture. First one is done for you.",
+      "question_type": "W",
+      "student_answers": {
+        "1": {
+          "answer": "A boy is watering the plants.",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "3": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "4": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "5": {
+          "answer": "mather is cutting the greers",
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "",
+          "is_legible": ""
+        }
+      }
+    },
+    {
+      "test_number": "05",
+      "instruction": "Select words from the box and add suitable prefixes and fill in the blanks. First one is done for you.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "unhappy",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "happy",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "loaded",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "relevant",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "forgettable",
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "begal",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "06",
+      "instruction": "Write a paragraph on one of the following. Use about 50 words.",
+      "question_type": "W",
+      "student_answers": {
+        "answer": "My favourite book\nMy favourite book name is hathpethimala. In the story a little girl named Shenya was given a magic rainbow flower. It ha Seven petals and each one was a colour of the rainbow. The story tells us that helping others is the story tells us that helping others is the key to helping ourselves. because seeing other people's smiling faces will make us happy and grateful. famous actors is shenya, doggy, kevin. Thank you.",
+        "is_legible": "true"
+      }
+    },
+    {
+      "test_number": "07",
+      "instruction": "Read the passage and answer the questions.",
+      "question_type": "QA",
+      "student_answers": {
+        "1": {
+          "a": {
+            "answer": "\u2714",
+            "is_legible": "true"
+          },
+          "b": {
+            "answer": "\u2718",
+            "is_legible": "true"
+          }
+        },
+        "2": {
+          "answer": "It is interesting because of their bright colours and rich variety of shapes and designs.",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "4": {
+          "i": {
+            "answer": "Lavinia",
+            "is_legible": "true"
+          },
+          "ii": {
+            "answer": "Beruwala",
+            "is_legible": "true"
+          },
+          "iii": {
+            "answer": "Bentota",
+            "is_legible": "true"
+          }
+        },
+        "5": {
+          "answer": "Shells have been used for ornaments, tools and coins. Thus they have always been priced by men.",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "08",
+      "instruction": "Imagine that your best friend. Viraj has won the first place from an All Island Arts competition.As he is absent today your elass teacher told you to inform him about his achievement. Write an e-mail wishing him and asking him to meet the teacher in charge of Arts. Use about 50 words.",
+      "question_type": "W",
+      "student_answers": {
+        "answer": "",
+        "is_legible": ""
+      }
+    },
+    {
+      "test_number": "09",
+      "instruction": "Read the following text. In cach line one word is incorrect and it is underlined. Write the correct word in the space provided. The first one is done for you.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "in",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "announce",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "head",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "5": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "6": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "7": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "8": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "9": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "10": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "11": {
+          "answer": "",
+          "is_legible": ""
+        }
+      }
+    },
+    {
+      "test_number": "10",
+      "instruction": "Write the following sentences and questions is passive voice.",
+      "question_type": "W",
+      "student_answers": {
+        "1": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "2": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "3": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "4": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "5": {
+          "answer": "",
+          "is_legible": ""
+        }
+      }
+    },
+    {
+      "test_number": "11",
+      "instruction": "Read the following poem and answer the questions.",
+      "question_type": "QA",
+      "student_answers": {
+        "1": {
+          "answer": "flafes flafes flew forests walked and fig grew upon thorn",
+          "is_legible": "true"
+        },
+        "2": {
+          "a": {
+            "answer": "",
+            "is_legible": ""
+          },
+          "b": {
+            "answer": "",
+            "is_legible": ""
+          }
+        },
+        "3": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "4": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "5": {
+          "i": {
+            "answer": "",
+            "is_legible": ""
+          },
+          "ii": {
+            "answer": "",
+            "is_legible": ""
+          }
+        }
+      }
+    },
+    {
+      "test_number": "12",
+      "instruction": "Match the idioms in column A with the meanings in column B Write the correct lettter in the box. First one is done for you.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "e",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "a",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "f",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "d",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "c",
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "b",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "13",
+      "instruction": "Select the appropriate words from the box and fill in the blanks. First one has been done for you",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "girls",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "of",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "made",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "these",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "in",
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "when",
+          "is_legible": "true"
+        },
+        "7": {
+          "answer": "economic",
+          "is_legible": "true"
+        },
+        "8": {
+          "answer": "their",
+          "is_legible": "true"
+        },
+        "9": {
+          "answer": "only",
+          "is_legible": "true"
+        },
+        "10": {
+          "answer": "child",
+          "is_legible": "true"
+        },
+        "11": {
+          "answer": "households",
+          "is_legible": "true"
+        },
+        "12": {
+          "answer": "avoid",
+          "is_legible": "true"
+        },
+        "13": {
+          "answer": "and",
+          "is_legible": "true"
+        },
+        "14": {
+          "answer": "countries",
+          "is_legible": "true"
+        },
+        "15": {
+          "answer": "girls",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "14",
+      "instruction": "Imagine that you are the president of the Interact club of your school. Your club got immediate actions to help the flood victims in your area. Write a letter to your uncle who lives in Australia describing the recent disaster and requesting donations to help them. Include the following or A survey has been done to find out the personal qualities of grade 10 A students of Vijaya Vidyalaya. The following bar chart shows their responses. Write a description of it. Use the given words.:",
+      "question_type": "W",
+      "student_answers": {
+        "answer": "Shows the bar chart is A survey has been do",
+        "is_legible": "true"
+      }
+    },
+    {
+      "test_number": "15",
+      "instruction": "Read the following text and answer the questions given below it.",
+      "question_type": "QA",
+      "student_answers": {
+        "1": {
+          "answer": "with a strange earthenware construction about",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "3": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "4": {
+          "i": {
+            "answer": "",
+            "is_legible": ""
+          },
+          "ii": {
+            "answer": "",
+            "is_legible": ""
+          }
+        },
+        "5": {
+          "i": {
+            "answer": "",
+            "is_legible": ""
+          },
+          "ii": {
+            "answer": "",
+            "is_legible": ""
+          }
+        },
+        "6": {
+          "i": {
+            "answer": "",
+            "is_legible": ""
+          },
+          "ii": {
+            "answer": "",
+            "is_legible": ""
+          }
+        },
+        "7": {
+          "i": {
+            "answer": "",
+            "is_legible": ""
+          },
+          "ii": {
+            "answer": "",
+            "is_legible": ""
+          }
+        }
+      }
+    },
+    {
+      "test_number": "16",
+      "instruction": "Write on one of the following. Use about 200 words.",
+      "question_type": "W",
+      "student_answers": {
+        "answer": "",
+        "is_legible": ""
+      }
+    }
+  ]
+}</code></pre></div></details></td>
+        </tr>
+        
+        <tr>
+            <td>
+                <div style="font-weight: 600;">2.pdf</div>
+                <div style="font-size: 0.75rem; color: #64748b;">Original: 20.2%</div>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <span class="badge badge-danger">10.6%</span>
+                    <div class="progress-bar-container" style="flex: 1">
+                        <div class="progress-bar" style="width: 10.576923076923077%; background: #ef4444"></div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 0.5rem; font-size: 0.75rem; color: #64748b;">
+                    <span>Fab: 15.4%</span>
+                    <span>Cross: 1.9%</span>
+                    <span>Illeg: 15.4%</span>
+                </div>
+            </td>
+            <td>
+                <div style="font-weight: 600;">$0.0449</div>
+                <div style="font-size: 0.75rem; color: #64748b;">110.76s</div>
+            </td>
+            <td><details><summary>Review Discrepancies</summary><div class='diff-list'>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['d']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['F']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 02 (4)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['f']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['D']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 02 (5)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['8']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['B']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 02 (6)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['7']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['&']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 03 (1)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['milking']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['milk', 'dri']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 04 (6)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['Dear', 'viraj,', 'well', 'done', 'your', 'won', 'a']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['you', 'wana']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 08</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['inertigant']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['navigate']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 08</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['beautiful.chathurika', 'sing']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['beautiful.', '28.07.2023.', 'chathurika.', 'ging']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 08</div>
+                    </div>
+                    <div class="diff-item" style="border-left-color: #f59e0b;">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Unexpected Insertion</div>
+                        <div class="diff-val val-pred">['a']</div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 03</div>
+                    </div>
+                    <div class="diff-item" style="border-left-color: #f59e0b;">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Unexpected Insertion</div>
+                        <div class="diff-val val-pred">['A', 'mother', 'is', 'a', 'cow', 'animal', 'milk', 'in', 'the', 'milk.']</div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 04</div>
+                    </div>
+                    <div class="diff-item" style="border-left-color: #f59e0b;">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Unexpected Insertion</div>
+                        <div class="diff-val val-pred">['haby']</div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 06</div>
+                    </div><h4 style='font-size: 0.875rem'>Raw Output</h4><pre><code>{
+  "paper_title": "Grade 10 - English - Second Term Evaluation - 2016",
+  "questions": [
+    {
+      "test_number": "01",
+      "instruction": "Select the correct word for blank (a) from box A and for blank (b) from box B and fill in the blanks.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "a": {
+            "answer": "bouquet",
+            "is_legible": "true"
+          },
+          "b": {
+            "answer": "flowers",
+            "is_legible": "true"
+          }
+        },
+        "2": {
+          "a": {
+            "answer": "swarm",
+            "is_legible": "true"
+          },
+          "b": {
+            "answer": "bees",
+            "is_legible": "true"
+          }
+        },
+        "3": {
+          "a": {
+            "answer": "gang",
+            "is_legible": "true"
+          },
+          "b": {
+            "answer": "thieves",
+            "is_legible": "true"
+          }
+        },
+        "4": {
+          "a": {
+            "answer": "bowl",
+            "is_legible": "true"
+          },
+          "b": {
+            "answer": "soup",
+            "is_legible": "true"
+          }
+        },
+        "5": {
+          "a": {
+            "answer": "herd",
+            "is_legible": "true"
+          },
+          "b": {
+            "answer": "elephants",
+            "is_legible": "true"
+          }
+        }
+      }
+    },
+    {
+      "test_number": "02",
+      "instruction": "Label the following places on the given map. Write the correct letter in the correct box. One is done for you.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "A",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "e",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "c",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "F",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "D",
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "B",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "03",
+      "instruction": "Read the following advertisement and fill in the grid.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "institute of western musig & speech",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "computer operator / clerk",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "Apply before 05th May 2016 a",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "below 25 yeras Salary nagotible",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "1 No: Kathalawla Gardens Colombo 04",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "04",
+      "instruction": "Write a meaningful sentence for each picture. First one is done for you.",
+      "question_type": "W",
+      "student_answers": {
+        "1": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "2": {
+          "answer": "The boy is rode boat",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "A boy is playing the computer",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "A mother is near the table",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "A mother is cuefad ple",
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "A mother is a cow animal milk in the milk. A mother is cow in the milk dri",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "05",
+      "instruction": "Select words from the box and add suitable prefixes and fill in the blanks. First one is done for you.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "2": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "3": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "4": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "5": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "6": {
+          "answer": "",
+          "is_legible": ""
+        }
+      }
+    },
+    {
+      "test_number": "06",
+      "instruction": "Write a paragraph on one of the following. Use about 50 words.",
+      "question_type": "W",
+      "student_answers": {
+        "answer": "my favourite book is madol duwa. He is very talentet writer The story is very infarent think ge give a children the book is write by mathing wicharmasinha I like read the story my haby hobby is redding books",
+        "is_legible": "true"
+      }
+    },
+    {
+      "test_number": "07",
+      "instruction": "Read the passage and answer the questions.",
+      "question_type": "QA",
+      "student_answers": {
+        "1": {
+          "a": {
+            "answer": "\u2713",
+            "is_legible": "true"
+          },
+          "b": {
+            "answer": "\u2713",
+            "is_legible": "true"
+          }
+        },
+        "2": {
+          "answer": "many parts of the world",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "tools and coins chanks",
+          "is_legible": "true"
+        },
+        "4": {
+          "i": {
+            "answer": "Mt Lavinia",
+            "is_legible": "true"
+          },
+          "ii": {
+            "answer": "Beruwala",
+            "is_legible": "true"
+          },
+          "iii": {
+            "answer": "Bentota",
+            "is_legible": "true"
+          }
+        },
+        "5": {
+          "answer": "been used for ornaments tools and coins",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "08",
+      "instruction": "Imagine that your best friend. Viraj has won the first place from an All Island Arts competition.As he is absent today your elass teacher told you to inform him about his achievement. Write an e-mail wishing him and asking him to meet the teacher in charge of Arts. Use about 50 words.",
+      "question_type": "W",
+      "student_answers": {
+        "answer": "you wana arts complitian place is you the teacher told to all achievement you the teachers and all the students are wish for you are very navigate boy your arts is very beautiful. 28.07.2023. chathurika. ging",
+        "is_legible": "true"
+      }
+    },
+    {
+      "test_number": "09",
+      "instruction": "Read the following text. In cach line one word is incorrect and it is underlined. Write the correct word in the space provided. The first one is done for you.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "in",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "announce",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "writes",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "read",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "6": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "7": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "8": {
+          "answer": "the the",
+          "is_legible": "true"
+        },
+        "9": {
+          "answer": "the",
+          "is_legible": "true"
+        },
+        "10": {
+          "answer": "not",
+          "is_legible": "true"
+        },
+        "11": {
+          "answer": "garnt",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "10",
+      "instruction": "Write the following sentences and questions is passive voice.",
+      "question_type": "W",
+      "student_answers": {
+        "1": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "2": {
+          "answer": "Is she write a long poem?",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "The watcher didn't close the gate.",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "5": {
+          "answer": "",
+          "is_legible": ""
+        }
+      }
+    },
+    {
+      "test_number": "11",
+      "instruction": "Read the following poem and answer the questions.",
+      "question_type": "QA",
+      "student_answers": {
+        "1": {
+          "answer": "the donkey",
+          "is_legible": "true"
+        },
+        "2": {
+          "a": {
+            "answer": "Stare, scourge",
+            "is_legible": "true"
+          },
+          "b": {
+            "answer": "I am dumb",
+            "is_legible": "true"
+          }
+        },
+        "3": {
+          "answer": "sickening cry And ears like errant wings",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "a",
+          "is_legible": "true"
+        },
+        "5": {
+          "i": {
+            "answer": "",
+            "is_legible": ""
+          },
+          "ii": {
+            "answer": "",
+            "is_legible": ""
+          }
+        }
+      }
+    },
+    {
+      "test_number": "12",
+      "instruction": "Match the idioms in column A with the meanings in column B Write the correct lettter in the box. First one is done for you.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "e",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "a",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "b",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "d",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "c",
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "f",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "13",
+      "instruction": "Select the appropriate words from the box and fill in the blanks. First one has been done for you",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "girls",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "paid",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "economic",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "their",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "these",
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "many",
+          "is_legible": "true"
+        },
+        "7": {
+          "answer": "in",
+          "is_legible": "true"
+        },
+        "8": {
+          "answer": "only",
+          "is_legible": "true"
+        },
+        "9": {
+          "answer": "economic",
+          "is_legible": "true"
+        },
+        "10": {
+          "answer": "employing",
+          "is_legible": "true"
+        },
+        "11": {
+          "answer": "countries",
+          "is_legible": "true"
+        },
+        "12": {
+          "answer": "basic",
+          "is_legible": "true"
+        },
+        "13": {
+          "answer": "countries",
+          "is_legible": "true"
+        },
+        "14": {
+          "answer": "economic",
+          "is_legible": "true"
+        },
+        "15": {
+          "answer": "and",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "14",
+      "instruction": "Imagine that you are the president of the Interact club of your school. Your club got immediate actions to help the flood victims in your area. Write a letter to your uncle who lives in Australia describing the recent disaster and requesting donations to help them. Include the following or A survey has been done to find out the personal qualities of grade 10 A students of Vijaya Vidyalaya. The following bar chart shows their responses. Write a description of it. Use the given words.:",
+      "question_type": "W",
+      "student_answers": {
+        "answer": "the grade 10 A students vijaya vidyalaya. the bar chart shows batheir responses. the bar chart sociable sensible moody selfish",
+        "is_legible": "true"
+      }
+    },
+    {
+      "test_number": "15",
+      "instruction": "Read the following text and answer the questions given below it.",
+      "question_type": "QA",
+      "student_answers": {
+        "1": {
+          "answer": "size and shape of a football strange earthenware construction about the",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "of the landscape in west Africa",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "of dried grass roots and hair",
+          "is_legible": "true"
+        },
+        "4": {
+          "i": {
+            "answer": "b",
+            "is_legible": "true"
+          },
+          "ii": {
+            "answer": "d",
+            "is_legible": "true"
+          }
+        },
+        "5": {
+          "i": {
+            "answer": "half and was amazad",
+            "is_legible": "true"
+          },
+          "ii": {
+            "answer": "was rather likea church door",
+            "is_legible": "true"
+          }
+        },
+        "6": {
+          "i": {
+            "answer": "cured",
+            "is_legible": "true"
+          },
+          "ii": {
+            "answer": "eventually",
+            "is_legible": "true"
+          }
+        },
+        "7": {
+          "i": {
+            "answer": "",
+            "is_legible": ""
+          },
+          "ii": {
+            "answer": "",
+            "is_legible": ""
+          }
+        }
+      }
+    },
+    {
+      "test_number": "16",
+      "instruction": "Write on one of the following. Use about 200 words.",
+      "question_type": "W",
+      "student_answers": {
+        "answer": "(2) an essay",
+        "is_legible": "true"
+      }
+    }
+  ]
+}</code></pre></div></details></td>
+        </tr>
+        
+        <tr>
+            <td>
+                <div style="font-weight: 600;">1.pdf</div>
+                <div style="font-size: 0.75rem; color: #64748b;">Original: 12.6%</div>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <span class="badge badge-warning">3.4%</span>
+                    <div class="progress-bar-container" style="flex: 1">
+                        <div class="progress-bar" style="width: 3.428571428571429%; background: #f59e0b"></div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 0.5rem; font-size: 0.75rem; color: #64748b;">
+                    <span>Fab: 13.1%</span>
+                    <span>Cross: 0.6%</span>
+                    <span>Illeg: 16.0%</span>
+                </div>
+            </td>
+            <td>
+                <div style="font-weight: 600;">$0.0403</div>
+                <div style="font-size: 0.75rem; color: #64748b;">102.72s</div>
+            </td>
+            <td><details><summary>Review Discrepancies</summary><div class='diff-list'>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['F']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['D']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 02 (4)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['D']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['f']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 02 (5)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['fales']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['true']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 11 (2.b)</div>
+                    </div>
+                    <div class="diff-item" style="border-left-color: #f59e0b;">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Unexpected Insertion</div>
+                        <div class="diff-val val-pred">['thousand', 'miles']</div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 07</div>
+                    </div>
+                    <div class="diff-item" style="border-left-color: #f59e0b;">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Unexpected Insertion</div>
+                        <div class="diff-val val-pred">['bar']</div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 14</div>
+                    </div><h4 style='font-size: 0.875rem'>Raw Output</h4><pre><code>{
+  "paper_title": "Second Term Evaluation - 2016 English Language",
+  "questions": [
+    {
+      "test_number": "01",
+      "instruction": "Select the correct word for blank (a) from box A and for blank (b) from box B and fill in the blanks.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "a": {
+            "answer": "bouget",
+            "is_legible": "true"
+          },
+          "b": {
+            "answer": "flowers",
+            "is_legible": "true"
+          }
+        },
+        "2": {
+          "a": {
+            "answer": "herd",
+            "is_legible": "true"
+          },
+          "b": {
+            "answer": "elephant",
+            "is_legible": "true"
+          }
+        },
+        "3": {
+          "a": {
+            "answer": "gang",
+            "is_legible": "true"
+          },
+          "b": {
+            "answer": "thieves",
+            "is_legible": "true"
+          }
+        },
+        "4": {
+          "a": {
+            "answer": "bowl",
+            "is_legible": "true"
+          },
+          "b": {
+            "answer": "soup",
+            "is_legible": "true"
+          }
+        },
+        "5": {
+          "a": {
+            "answer": "swarm",
+            "is_legible": "true"
+          },
+          "b": {
+            "answer": "bees",
+            "is_legible": "true"
+          }
+        }
+      }
+    },
+    {
+      "test_number": "02",
+      "instruction": "Label the following places on the given map. Write the correct letter in the correct box. One is done for you.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "A",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "E",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "C",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "D",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "f",
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "B",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "03",
+      "instruction": "Read the following advertisement and fill in the grid.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "Western Music & speach",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "computer operator / clerk",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "?",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "25 years",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "Apply before 05th May 2016",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "04",
+      "instruction": "Write a meaningful sentence for each picture. First one is done for you.",
+      "question_type": "W",
+      "student_answers": {
+        "1": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "2": {
+          "answer": "?",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "?",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "?",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "mother is cutting the greens",
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "?",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "05",
+      "instruction": "Select words from the box and add suitable prefixes and fill in the blanks. First one is done for you.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "2": {
+          "answer": "?",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "?",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "?",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "?",
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "?",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "06",
+      "instruction": "Write a paragraph on one of the following. Use about 50 words.",
+      "question_type": "W",
+      "student_answers": {
+        "answer": "My favourite book name is hathpeththi mala. In the story a little girl named Shenya was given a magic rainbow flower. It he seven ptals. and each one was a colour of the rainbow. The story tells us that helping ourselves. because seeing other people's smilling faces will make us happy and grateful. famous others is snehya, doggy, kevin, Thank you.",
+        "is_legible": "true"
+      }
+    },
+    {
+      "test_number": "07",
+      "instruction": "Read the passage and answer the questions.",
+      "question_type": "QA",
+      "student_answers": {
+        "1": {
+          "a": {
+            "answer": "(\u2713)",
+            "is_legible": "true"
+          },
+          "b": {
+            "answer": "(\u2713)",
+            "is_legible": "true"
+          }
+        },
+        "2": {
+          "answer": "interesting because of their bright colours and rich variety of shapes and desings.",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "?",
+          "is_legible": "true"
+        },
+        "4": {
+          "i": {
+            "answer": "Bentota",
+            "is_legible": "true"
+          },
+          "ii": {
+            "answer": "Lavinia",
+            "is_legible": "true"
+          },
+          "iii": {
+            "answer": "Beruwala",
+            "is_legible": "true"
+          }
+        },
+        "5": {
+          "answer": "thousand miles shells have been used for arnaments toots and coins. Thus they have always been priced by men.",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "08",
+      "instruction": "Imagine that your best friend. Viraj has won the first place from an All Island Arts competition.As he is absent today your elass teacher told you to inform him about his achievement. Write an e-mail wishing him and asking him to meet the teacher in charge of Arts. Use about 50 words.",
+      "question_type": "W",
+      "student_answers": {
+        "answer": "",
+        "is_legible": ""
+      }
+    },
+    {
+      "test_number": "09",
+      "instruction": "Read the following text. In cach line one word is incorrect and it is underlined. Write the correct word in the space provided. The first one is done for you.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "2": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "3": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "4": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "5": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "6": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "7": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "8": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "9": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "10": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "11": {
+          "answer": "",
+          "is_legible": ""
+        }
+      }
+    },
+    {
+      "test_number": "10",
+      "instruction": "Write the following sentences and questions is passive voice.",
+      "question_type": "W",
+      "student_answers": {
+        "1": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "2": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "3": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "4": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "5": {
+          "answer": "",
+          "is_legible": ""
+        }
+      }
+    },
+    {
+      "test_number": "11",
+      "instruction": "Read the following poem and answer the questions.",
+      "question_type": "QA",
+      "student_answers": {
+        "1": {
+          "answer": "fishes flew and forests walked and figs grew upon thorn.",
+          "is_legible": "true"
+        },
+        "2": {
+          "a": {
+            "answer": "false",
+            "is_legible": "true"
+          },
+          "b": {
+            "answer": "true",
+            "is_legible": "true"
+          }
+        },
+        "3": {
+          "answer": "errant wings",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "c",
+          "is_legible": "true"
+        },
+        "5": {
+          "i": {
+            "answer": "?",
+            "is_legible": "true"
+          },
+          "ii": {
+            "answer": "?",
+            "is_legible": "true"
+          }
+        }
+      }
+    },
+    {
+      "test_number": "12",
+      "instruction": "Match the idioms in column A with the meanings in column B Write the correct lettter in the box. First one is done for you.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "2": {
+          "answer": "a",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "f",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "d",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "c",
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "b",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "13",
+      "instruction": "Select the appropriate words from the box and fill in the blanks. First one has been done for you",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "2": {
+          "answer": "when",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "made",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "these",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "child",
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "employing",
+          "is_legible": "true"
+        },
+        "7": {
+          "answer": "households",
+          "is_legible": "true"
+        },
+        "8": {
+          "answer": "avoid",
+          "is_legible": "true"
+        },
+        "9": {
+          "answer": "countries",
+          "is_legible": "true"
+        },
+        "10": {
+          "answer": "their",
+          "is_legible": "true"
+        },
+        "11": {
+          "answer": "only",
+          "is_legible": "true"
+        },
+        "12": {
+          "answer": "of",
+          "is_legible": "true"
+        },
+        "13": {
+          "answer": "and",
+          "is_legible": "true"
+        },
+        "14": {
+          "answer": "economic",
+          "is_legible": "true"
+        },
+        "15": {
+          "answer": "in",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "14",
+      "instruction": "Imagine that you are the president of the Interact club of your school. Your club got immediate actions to help the flood victims in your area. Write a letter to your uncle who lives in Australia describing the recent disaster and requesting donations to help them. Include the following or A survey has been done to find out the personal qualities of grade 10 A students of Vijaya Vidyalaya. The following bar chart shows their responses. Write a description of it. Use the given words.:",
+      "question_type": "W",
+      "student_answers": {
+        "answer": "The shows the bar chart is A survey has been done find out the personal qualities of grade 10 A students of vijaya vidyalaya. It is Ambitious, co-operative, sociable, sensible, moody, selfish. According to the bar chart is most presentage is Ambitious which is 20%. least presentage is selfish presentage is which 04%. equal presentage is sensible, moody which 12%.",
+        "is_legible": "true"
+      }
+    },
+    {
+      "test_number": "15",
+      "instruction": "Read the following text and answer the questions given below it.",
+      "question_type": "QA",
+      "student_answers": {
+        "1": {
+          "answer": "strange earthenware construction about the size and shape of a foot ball.",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "?",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "?",
+          "is_legible": "true"
+        },
+        "4": {
+          "i": {
+            "answer": "c",
+            "is_legible": "true"
+          },
+          "ii": {
+            "answer": "a",
+            "is_legible": "true"
+          }
+        },
+        "5": {
+          "i": {
+            "answer": "?",
+            "is_legible": "true"
+          },
+          "ii": {
+            "answer": "?",
+            "is_legible": "true"
+          }
+        },
+        "6": {
+          "i": {
+            "answer": "?",
+            "is_legible": "true"
+          },
+          "ii": {
+            "answer": "?",
+            "is_legible": "true"
+          }
+        },
+        "7": {
+          "i": {
+            "answer": "?",
+            "is_legible": "true"
+          },
+          "ii": {
+            "answer": "?",
+            "is_legible": "true"
+          }
+        }
+      }
+    },
+    {
+      "test_number": "16",
+      "instruction": "Write on one of the following. Use about 200 words.",
+      "question_type": "W",
+      "student_answers": {
+        "answer": "",
+        "is_legible": ""
+      }
+    }
+  ]
+}</code></pre></div></details></td>
+        </tr>
+        
+        <tr>
+            <td>
+                <div style="font-weight: 600;">3.pdf</div>
+                <div style="font-size: 0.75rem; color: #64748b;">Original: 23.4%</div>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <span class="badge badge-warning">5.1%</span>
+                    <div class="progress-bar-container" style="flex: 1">
+                        <div class="progress-bar" style="width: 5.063291139240507%; background: #f59e0b"></div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 0.5rem; font-size: 0.75rem; color: #64748b;">
+                    <span>Fab: 0.3%</span>
+                    <span>Cross: 0.0%</span>
+                    <span>Illeg: 7.3%</span>
+                </div>
+            </td>
+            <td>
+                <div style="font-weight: 600;">$0.0397</div>
+                <div style="font-size: 0.75rem; color: #64748b;">108.00s</div>
+            </td>
+            <td><details><summary>Review Discrepancies</summary><div class='diff-list'>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['tools,']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['look']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 07 (5)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">[',']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['chants']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 07 (5)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['waste']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['were']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 10 (1)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['upon', 'thar']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['up', 'an', 'thor']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 11 (1)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['Scourge']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['scavage']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 11 (5.ii)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['countries']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['households']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 13 (2)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['thier']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['when']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 13 (13)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['when']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['their']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 13 (14)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['group']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['graph']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 14</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['sociable']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['some', 'able']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 14</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['writer']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['football']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 15 (1)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['ring']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['tiny']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 15 (3)</div>
+                    </div>
+                    <div class="diff-item" style="border-left-color: #f59e0b;">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Unexpected Insertion</div>
+                        <div class="diff-val val-pred">['haritiana']</div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 14</div>
+                    </div><h4 style='font-size: 0.875rem'>Raw Output</h4><pre><code>{
+  "paper_title": "Grade 10 - English - Second Term Evaluation - 2016 Western Provincial Education Department - Colombo Educational Zone",
+  "questions": [
+    {
+      "test_number": "01",
+      "instruction": "Select the correct word for blank (a) from box A and for blank (b) from box B and fill in the blanks.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "a": {
+            "answer": "bouquet",
+            "is_legible": "true"
+          },
+          "b": {
+            "answer": "flowers",
+            "is_legible": "true"
+          }
+        },
+        "2": {
+          "a": {
+            "answer": "herd",
+            "is_legible": "true"
+          },
+          "b": {
+            "answer": "elephants",
+            "is_legible": "true"
+          }
+        },
+        "3": {
+          "a": {
+            "answer": "gang",
+            "is_legible": "true"
+          },
+          "b": {
+            "answer": "thieves",
+            "is_legible": "true"
+          }
+        },
+        "4": {
+          "a": {
+            "answer": "bowl",
+            "is_legible": "true"
+          },
+          "b": {
+            "answer": "soup",
+            "is_legible": "true"
+          }
+        },
+        "5": {
+          "a": {
+            "answer": "swarm",
+            "is_legible": "true"
+          },
+          "b": {
+            "answer": "bees",
+            "is_legible": "true"
+          }
+        }
+      }
+    },
+    {
+      "test_number": "02",
+      "instruction": "Label the following places on the given map. Write the correct letter in the correct box. One is done for you.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "A",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "E",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "C",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "D",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "F",
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "B",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "03",
+      "instruction": "Read the following advertisement and fill in the grid.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "western music and speech",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "computer operator / clerk",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "with computer literacy And 2 years experience",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "Age below 25 years",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "05th May years",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "04",
+      "instruction": "Write a meaningful sentence for each picture. First one is done for you.",
+      "question_type": "W",
+      "student_answers": {
+        "1": {
+          "answer": "A boy is watering the plants.",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "A man is rowing a boat.",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "A man is typing the text.",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "mother is ironing the chashs.",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "mother is cutting the graees.",
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "A mother is lanking the mlik.",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "05",
+      "instruction": "Select words from the box and add suitable prefixes and fill in the blanks. First one is done for you.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "unhappy",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "unloaded",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "disobedient",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "illegal",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "unforgettable",
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "irrelevant",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "06",
+      "instruction": "Write a paragraph on one of the following. Use about 50 words.",
+      "question_type": "W",
+      "student_answers": {
+        "answer": "My favourite book. the Book that I like most is \"Madol Duwa\" It is a very interesting children's novel written by matin wickamasinha upeil and jinna are the main characters. the story tells about life in a small island called \"Madol Duwa\" I like this book because of its characters I read whenever I am free.",
+        "is_legible": "true"
+      }
+    },
+    {
+      "test_number": "07",
+      "instruction": "Read the passage and answer the questions.",
+      "question_type": "QA",
+      "student_answers": {
+        "1": {
+          "a": {
+            "answer": "x",
+            "is_legible": "true"
+          },
+          "b": {
+            "answer": "\u2714",
+            "is_legible": "true"
+          }
+        },
+        "2": {
+          "answer": "collecting sea shells has become a very poupular hobby in in many parts of the world.",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "Lavinia Beruwala Bentato Hikkaduwa and galle",
+          "is_legible": "true"
+        },
+        "4": {
+          "i": {
+            "answer": "petal frozen in stone",
+            "is_legible": "true"
+          },
+          "ii": {
+            "answer": "the paw of a lion or the wing of an angel etc.",
+            "is_legible": "true"
+          },
+          "iii": {
+            "answer": "Each one has an once housed a living creature a mouluse.",
+            "is_legible": "true"
+          }
+        },
+        "5": {
+          "answer": "shells have been used for ornaments look and chants coins.",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "08",
+      "instruction": "Imagine that your best friend. Viraj has won the first place from an All Island Arts competition.As he is absent today your elass teacher told you to inform him about his achievement. Write an e-mail wishing him and asking him to meet the teacher in charge of Arts. Use about 50 words.",
+      "question_type": "W",
+      "student_answers": {
+        "answer": "",
+        "is_legible": ""
+      }
+    },
+    {
+      "test_number": "09",
+      "instruction": "Read the following text. In cach line one word is incorrect and it is underlined. Write the correct word in the space provided. The first one is done for you.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "in",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "announce",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "read",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "announcuement",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "children",
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "from",
+          "is_legible": "true"
+        },
+        "7": {
+          "answer": "were",
+          "is_legible": "true"
+        },
+        "8": {
+          "answer": "a",
+          "is_legible": "true"
+        },
+        "9": {
+          "answer": "them",
+          "is_legible": "true"
+        },
+        "10": {
+          "answer": "hard",
+          "is_legible": "true"
+        },
+        "11": {
+          "answer": "get",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "10",
+      "instruction": "Write the following sentences and questions is passive voice.",
+      "question_type": "W",
+      "student_answers": {
+        "1": {
+          "answer": "the children have not thrown were papers in the classroom",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "Is she writing a long poem",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "the watcher did'n close the gate",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "will the prefects arrange the meeting before the interval",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "Do thees girls draw pictures",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "11",
+      "instruction": "Read the following poem and answer the questions.",
+      "question_type": "QA",
+      "student_answers": {
+        "1": {
+          "answer": "up an thor",
+          "is_legible": "true"
+        },
+        "2": {
+          "a": {
+            "answer": "True",
+            "is_legible": "true"
+          },
+          "b": {
+            "answer": "False",
+            "is_legible": "true"
+          }
+        },
+        "3": {
+          "answer": "errant wings",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "a",
+          "is_legible": "true"
+        },
+        "5": {
+          "i": {
+            "answer": "ancient",
+            "is_legible": "true"
+          },
+          "ii": {
+            "answer": "scavage",
+            "is_legible": "true"
+          }
+        }
+      }
+    },
+    {
+      "test_number": "12",
+      "instruction": "Match the idioms in column A with the meanings in column B Write the correct lettter in the box. First one is done for you.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "e",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "d",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "b",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "f",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "c",
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "a",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "13",
+      "instruction": "Select the appropriate words from the box and fill in the blanks. First one has been done for you",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "girls",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "households",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "in",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "and",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "economic",
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "child",
+          "is_legible": "true"
+        },
+        "7": {
+          "answer": "avoid",
+          "is_legible": "true"
+        },
+        "8": {
+          "answer": "these",
+          "is_legible": "true"
+        },
+        "9": {
+          "answer": "made",
+          "is_legible": "true"
+        },
+        "10": {
+          "answer": "their",
+          "is_legible": "true"
+        },
+        "11": {
+          "answer": "employing",
+          "is_legible": "true"
+        },
+        "12": {
+          "answer": "only",
+          "is_legible": "true"
+        },
+        "13": {
+          "answer": "when",
+          "is_legible": "true"
+        },
+        "14": {
+          "answer": "their",
+          "is_legible": "true"
+        },
+        "15": {
+          "answer": "of",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "14",
+      "instruction": "Imagine that you are the president of the Interact club of your school. Your club got immediate actions to help the flood victims in your area. Write a letter to your uncle who lives in Australia describing the recent disaster and requesting donations to help them. Include the following or A survey has been done to find out the personal qualities of grade 10 A students of Vijaya Vidyalaya. The following bar chart shows their responses. Write a description of it. Use the given words.:",
+      "question_type": "W",
+      "student_answers": {
+        "answer": "The above bar chart graph shows the personal qualities by grade 10 students of vijaya vidyalaya the verfial axis represent nomber of studend and haritiana axis represent numbre of studend personal qualities. They are prsanl qu Responseing Ambitions is highest number of studend of are choce and selfish is lowest number of students are select An equal number of students are select sensible and moody Responsing some able less than responsoning co-operative According to the given bar chart we can seen the most students are reponses Ambitious and studends responss selfish.",
+        "is_legible": "true"
+      }
+    },
+    {
+      "test_number": "15",
+      "instruction": "Read the following text and answer the questions given below it.",
+      "question_type": "QA",
+      "student_answers": {
+        "1": {
+          "answer": "football",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "3": {
+          "answer": "mixed with tiny fragments of birds grass root sand hair",
+          "is_legible": "true"
+        },
+        "4": {
+          "i": {
+            "answer": "b",
+            "is_legible": "true"
+          },
+          "ii": {
+            "answer": "d",
+            "is_legible": "true"
+          }
+        },
+        "5": {
+          "i": {
+            "answer": "unoccupied nest",
+            "is_legible": "true"
+          },
+          "ii": {
+            "answer": "the entrance",
+            "is_legible": "true"
+          }
+        },
+        "6": {
+          "i": {
+            "answer": "uneven",
+            "is_legible": "true"
+          },
+          "ii": {
+            "answer": "At last",
+            "is_legible": "true"
+          }
+        },
+        "7": {
+          "i": {
+            "answer": "Narrow",
+            "is_legible": "true"
+          },
+          "ii": {
+            "answer": "entry",
+            "is_legible": "true"
+          }
+        }
+      }
+    },
+    {
+      "test_number": "16",
+      "instruction": "Write on one of the following. Use about 200 words.",
+      "question_type": "W",
+      "student_answers": {
+        "answer": "",
+        "is_legible": ""
+      }
+    }
+  ]
+}</code></pre></div></details></td>
+        </tr>
+        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+        </div>
+
+        <script>
+            // Hallucination Bar Chart
+            const ctxHallu = document.getElementById('halluChart').getContext('2d');
+            new Chart(ctxHallu, {
+                type: 'bar',
+                data: {
+                    labels: ["4.pdf", "2.pdf", "1.pdf", "3.pdf"],
+                    datasets: [
+                        {
+                            label: 'Refined Rate (%)',
+                            data: [4.761904761904762, 10.576923076923077, 3.428571428571429, 5.063291139240507],
+                            backgroundColor: '#3b82f6',
+                            borderRadius: 6
+                        },
+                        {
+                            label: 'Original Rate (%)',
+                            data: [20.634920634920633, 20.192307692307693, 12.571428571428573, 23.417721518987342],
+                            backgroundColor: '#94a3b8',
+                            borderRadius: 6,
+                            hidden: true
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: true, position: 'top' } },
+                    scales: {
+                        y: { beginAtZero: true, grid: { borderDash: [5, 5] } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+
+            // Question Type Bar Chart
+            const ctxQType = document.getElementById('qtypeChart').getContext('2d');
+            new Chart(ctxQType, {
+                type: 'bar',
+                data: {
+                    labels: ["Fill In The Blanks", "Writing/Essay", "Question Answering"],
+                    datasets: [
+                        {
+                            label: 'Refined Rate (%)',
+                            data: [5.555555555555555, 2.865329512893983, 11.15702479338843],
+                            backgroundColor: '#10b981',
+                            borderRadius: 6
+                        },
+                        {
+                            label: 'Original Rate (%)',
+                            data: [14.957264957264957, 22.636103151862464, 20.66115702479339],
+                            backgroundColor: '#94a3b8',
+                            borderRadius: 6,
+                            hidden: true
+                        }
+                    ]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: true, position: 'top' } },
+                    scales: {
+                        x: { beginAtZero: true, grid: { borderDash: [5, 5] } },
+                        y: { grid: { display: false } }
+                    }
+                }
+            });
+
+            // Scatter Chart (Cost vs Time)
+            const ctxScatter = document.getElementById('scatterChart').getContext('2d');
+            new Chart(ctxScatter, {
+                type: 'scatter',
+                data: {
+                    datasets: [{
+                        label: 'Samples',
+                        data: [{"x": 90.69888544082642, "y": 0.030012}, {"x": 110.75546669960022, "y": 0.044881000000000004}, {"x": 102.72428894042969, "y": 0.0403455}, {"x": 107.99875950813293, "y": 0.0397355}],
+                        backgroundColor: '#8b5cf6',
+                        pointRadius: 6,
+                        pointHoverRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: { title: { display: true, text: 'Recognition Time (s)' }, grid: { borderDash: [5, 5] } },
+                        y: { title: { display: true, text: 'Cost ($)' }, grid: { borderDash: [5, 5] } }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: (context) => {
+                                    const names = ["4.pdf", "2.pdf", "1.pdf", "3.pdf"];
+                                    return names[context.dataIndex] + ': ' + context.parsed.x + 's, $' + context.parsed.y;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+    </body>
+    </html>
+    

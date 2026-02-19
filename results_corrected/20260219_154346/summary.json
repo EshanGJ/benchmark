@@ -1,0 +1,665 @@
+{
+    "total_cost": 0.23348049999999998,
+    "average_cost": 0.029185062499999997,
+    "total_recognition_time": 701.754410982132,
+    "average_recognition_time": 87.7193013727665,
+    "average_word_level_hallucination_rate": 0.1928959255454415,
+    "average_refined_word_level_hallucination_rate": 0.09398730995125587,
+    "average_fabricated_hallucination_rate": 0.03662030647369075,
+    "average_crossed_out_hallucination_rate": 0.03196520933451578,
+    "average_illegibility_hallucination_rate": 0.104900298166851,
+    "question_type_summary": {
+        "FITB": {
+            "fabricated": 15,
+            "crossed": 9,
+            "illegible": 54,
+            "gt_words": 225,
+            "hallu_words": 46,
+            "hallucination_rate": 0.20444444444444446,
+            "fabricated_rate": 0.06666666666666667,
+            "crossed_rate": 0.04,
+            "illegible_rate": 0.24
+        },
+        "U": {
+            "fabricated": 0,
+            "crossed": 1,
+            "illegible": 16,
+            "gt_words": 73,
+            "hallu_words": 13,
+            "hallucination_rate": 0.1780821917808219,
+            "fabricated_rate": 0.0,
+            "crossed_rate": 0.0136986301369863,
+            "illegible_rate": 0.2191780821917808
+        },
+        "QA": {
+            "fabricated": 14,
+            "crossed": 8,
+            "illegible": 39,
+            "gt_words": 211,
+            "hallu_words": 49,
+            "hallucination_rate": 0.23222748815165878,
+            "fabricated_rate": 0.06635071090047394,
+            "crossed_rate": 0.037914691943127965,
+            "illegible_rate": 0.1848341232227488
+        },
+        "W": {
+            "fabricated": 0,
+            "crossed": 14,
+            "illegible": 6,
+            "gt_words": 567,
+            "hallu_words": 105,
+            "hallucination_rate": 0.18518518518518517,
+            "fabricated_rate": 0.0,
+            "crossed_rate": 0.024691358024691357,
+            "illegible_rate": 0.010582010582010581
+        }
+    },
+    "refined_question_type_summary": {
+        "FITB": {
+            "fabricated": 15,
+            "crossed": 9,
+            "illegible": 54,
+            "gt_words": 225,
+            "hallu_words": 38,
+            "hallucination_rate": 0.1688888888888889,
+            "fabricated_rate": 0.06666666666666667,
+            "crossed_rate": 0.04,
+            "illegible_rate": 0.24
+        },
+        "U": {
+            "fabricated": 0,
+            "crossed": 1,
+            "illegible": 16,
+            "gt_words": 73,
+            "hallu_words": 13,
+            "hallucination_rate": 0.1780821917808219,
+            "fabricated_rate": 0.0,
+            "crossed_rate": 0.0136986301369863,
+            "illegible_rate": 0.2191780821917808
+        },
+        "QA": {
+            "fabricated": 14,
+            "crossed": 8,
+            "illegible": 39,
+            "gt_words": 211,
+            "hallu_words": 20,
+            "hallucination_rate": 0.0947867298578199,
+            "fabricated_rate": 0.06635071090047394,
+            "crossed_rate": 0.037914691943127965,
+            "illegible_rate": 0.1848341232227488
+        },
+        "W": {
+            "fabricated": 0,
+            "crossed": 14,
+            "illegible": 6,
+            "gt_words": 567,
+            "hallu_words": 29,
+            "hallucination_rate": 0.05114638447971781,
+            "fabricated_rate": 0.0,
+            "crossed_rate": 0.024691358024691357,
+            "illegible_rate": 0.010582010582010581
+        }
+    },
+    "results": [
+        {
+            "pdf_name": "3.pdf",
+            "word_level_hallucination_rate": 0.17525773195876287,
+            "refined_word_level_hallucination_rate": 0.12371134020618557,
+            "fabricated_hallucination_rate": 0.07216494845360824,
+            "crossed_out_hallucination_rate": 0.041237113402061855,
+            "illegibility_hallucination_rate": 0.13402061855670103,
+            "question_type_metrics": {
+                "FITB": {
+                    "fabricated": 1,
+                    "crossed": 0,
+                    "illegible": 2,
+                    "gt_words": 23,
+                    "hallu_words": 6
+                },
+                "U": {
+                    "fabricated": 0,
+                    "crossed": 0,
+                    "illegible": 5,
+                    "gt_words": 11,
+                    "hallu_words": 1
+                },
+                "QA": {
+                    "fabricated": 6,
+                    "crossed": 0,
+                    "illegible": 6,
+                    "gt_words": 9,
+                    "hallu_words": 0
+                },
+                "W": {
+                    "fabricated": 0,
+                    "crossed": 4,
+                    "illegible": 0,
+                    "gt_words": 54,
+                    "hallu_words": 10
+                }
+            },
+            "refined_question_type_metrics": {
+                "FITB": {
+                    "fabricated": 1,
+                    "crossed": 0,
+                    "illegible": 2,
+                    "gt_words": 23,
+                    "hallu_words": 6
+                },
+                "U": {
+                    "fabricated": 0,
+                    "crossed": 0,
+                    "illegible": 5,
+                    "gt_words": 11,
+                    "hallu_words": 3
+                },
+                "QA": {
+                    "fabricated": 6,
+                    "crossed": 0,
+                    "illegible": 6,
+                    "gt_words": 9,
+                    "hallu_words": 0
+                },
+                "W": {
+                    "fabricated": 0,
+                    "crossed": 4,
+                    "illegible": 0,
+                    "gt_words": 54,
+                    "hallu_words": 3
+                }
+            },
+            "cost": 0.026335,
+            "recognition_time": 71.39016556739807
+        },
+        {
+            "pdf_name": "5.pdf",
+            "word_level_hallucination_rate": 0.19696969696969696,
+            "refined_word_level_hallucination_rate": 0.12121212121212122,
+            "fabricated_hallucination_rate": 0.13636363636363635,
+            "crossed_out_hallucination_rate": 0.07575757575757576,
+            "illegibility_hallucination_rate": 0.15151515151515152,
+            "question_type_metrics": {
+                "FITB": {
+                    "fabricated": 3,
+                    "crossed": 1,
+                    "illegible": 4,
+                    "gt_words": 19,
+                    "hallu_words": 1
+                },
+                "U": {
+                    "fabricated": 0,
+                    "crossed": 0,
+                    "illegible": 0,
+                    "gt_words": 6,
+                    "hallu_words": 1
+                },
+                "W": {
+                    "fabricated": 0,
+                    "crossed": 4,
+                    "illegible": 0,
+                    "gt_words": 41,
+                    "hallu_words": 11
+                },
+                "QA": {
+                    "fabricated": 6,
+                    "crossed": 0,
+                    "illegible": 6,
+                    "gt_words": 0,
+                    "hallu_words": 0
+                }
+            },
+            "refined_question_type_metrics": {
+                "FITB": {
+                    "fabricated": 3,
+                    "crossed": 1,
+                    "illegible": 4,
+                    "gt_words": 19,
+                    "hallu_words": 1
+                },
+                "U": {
+                    "fabricated": 0,
+                    "crossed": 0,
+                    "illegible": 0,
+                    "gt_words": 6,
+                    "hallu_words": 0
+                },
+                "W": {
+                    "fabricated": 0,
+                    "crossed": 4,
+                    "illegible": 0,
+                    "gt_words": 41,
+                    "hallu_words": 7
+                },
+                "QA": {
+                    "fabricated": 6,
+                    "crossed": 0,
+                    "illegible": 6,
+                    "gt_words": 0,
+                    "hallu_words": 0
+                }
+            },
+            "cost": 0.0339025,
+            "recognition_time": 95.71047687530518
+        },
+        {
+            "pdf_name": "6.pdf",
+            "word_level_hallucination_rate": 0.11333333333333333,
+            "refined_word_level_hallucination_rate": 0.06,
+            "fabricated_hallucination_rate": 0.0,
+            "crossed_out_hallucination_rate": 0.006666666666666667,
+            "illegibility_hallucination_rate": 0.006666666666666667,
+            "question_type_metrics": {
+                "FITB": {
+                    "fabricated": 0,
+                    "crossed": 1,
+                    "illegible": 1,
+                    "gt_words": 30,
+                    "hallu_words": 3
+                },
+                "U": {
+                    "fabricated": 0,
+                    "crossed": 0,
+                    "illegible": 0,
+                    "gt_words": 7,
+                    "hallu_words": 1
+                },
+                "QA": {
+                    "fabricated": 0,
+                    "crossed": 0,
+                    "illegible": 0,
+                    "gt_words": 28,
+                    "hallu_words": 4
+                },
+                "W": {
+                    "fabricated": 0,
+                    "crossed": 0,
+                    "illegible": 0,
+                    "gt_words": 85,
+                    "hallu_words": 9
+                }
+            },
+            "refined_question_type_metrics": {
+                "FITB": {
+                    "fabricated": 0,
+                    "crossed": 1,
+                    "illegible": 1,
+                    "gt_words": 30,
+                    "hallu_words": 3
+                },
+                "U": {
+                    "fabricated": 0,
+                    "crossed": 0,
+                    "illegible": 0,
+                    "gt_words": 7,
+                    "hallu_words": 0
+                },
+                "QA": {
+                    "fabricated": 0,
+                    "crossed": 0,
+                    "illegible": 0,
+                    "gt_words": 28,
+                    "hallu_words": 1
+                },
+                "W": {
+                    "fabricated": 0,
+                    "crossed": 0,
+                    "illegible": 0,
+                    "gt_words": 85,
+                    "hallu_words": 5
+                }
+            },
+            "cost": 0.0213225,
+            "recognition_time": 77.92415499687195
+        },
+        {
+            "pdf_name": "2.pdf",
+            "word_level_hallucination_rate": 0.23214285714285715,
+            "refined_word_level_hallucination_rate": 0.09523809523809523,
+            "fabricated_hallucination_rate": 0.02976190476190476,
+            "crossed_out_hallucination_rate": 0.047619047619047616,
+            "illegibility_hallucination_rate": 0.08333333333333333,
+            "question_type_metrics": {
+                "FITB": {
+                    "fabricated": 5,
+                    "crossed": 3,
+                    "illegible": 10,
+                    "gt_words": 36,
+                    "hallu_words": 12
+                },
+                "U": {
+                    "fabricated": 0,
+                    "crossed": 1,
+                    "illegible": 0,
+                    "gt_words": 12,
+                    "hallu_words": 3
+                },
+                "QA": {
+                    "fabricated": 0,
+                    "crossed": 3,
+                    "illegible": 4,
+                    "gt_words": 56,
+                    "hallu_words": 16
+                },
+                "W": {
+                    "fabricated": 0,
+                    "crossed": 1,
+                    "illegible": 0,
+                    "gt_words": 64,
+                    "hallu_words": 8
+                }
+            },
+            "refined_question_type_metrics": {
+                "FITB": {
+                    "fabricated": 5,
+                    "crossed": 3,
+                    "illegible": 10,
+                    "gt_words": 36,
+                    "hallu_words": 8
+                },
+                "U": {
+                    "fabricated": 0,
+                    "crossed": 1,
+                    "illegible": 0,
+                    "gt_words": 12,
+                    "hallu_words": 2
+                },
+                "QA": {
+                    "fabricated": 0,
+                    "crossed": 3,
+                    "illegible": 4,
+                    "gt_words": 56,
+                    "hallu_words": 4
+                },
+                "W": {
+                    "fabricated": 0,
+                    "crossed": 1,
+                    "illegible": 0,
+                    "gt_words": 64,
+                    "hallu_words": 2
+                }
+            },
+            "cost": 0.029901499999999998,
+            "recognition_time": 87.18946027755737
+        },
+        {
+            "pdf_name": "8.pdf",
+            "word_level_hallucination_rate": 0.2616279069767442,
+            "refined_word_level_hallucination_rate": 0.09883720930232558,
+            "fabricated_hallucination_rate": 0.005813953488372093,
+            "crossed_out_hallucination_rate": 0.01744186046511628,
+            "illegibility_hallucination_rate": 0.3546511627906977,
+            "question_type_metrics": {
+                "FITB": {
+                    "fabricated": 0,
+                    "crossed": 2,
+                    "illegible": 27,
+                    "gt_words": 30,
+                    "hallu_words": 8
+                },
+                "U": {
+                    "fabricated": 0,
+                    "crossed": 0,
+                    "illegible": 11,
+                    "gt_words": 13,
+                    "hallu_words": 2
+                },
+                "QA": {
+                    "fabricated": 1,
+                    "crossed": 1,
+                    "illegible": 17,
+                    "gt_words": 32,
+                    "hallu_words": 11
+                },
+                "W": {
+                    "fabricated": 0,
+                    "crossed": 0,
+                    "illegible": 6,
+                    "gt_words": 97,
+                    "hallu_words": 24
+                }
+            },
+            "refined_question_type_metrics": {
+                "FITB": {
+                    "fabricated": 0,
+                    "crossed": 2,
+                    "illegible": 27,
+                    "gt_words": 30,
+                    "hallu_words": 6
+                },
+                "U": {
+                    "fabricated": 0,
+                    "crossed": 0,
+                    "illegible": 11,
+                    "gt_words": 13,
+                    "hallu_words": 0
+                },
+                "QA": {
+                    "fabricated": 1,
+                    "crossed": 1,
+                    "illegible": 17,
+                    "gt_words": 32,
+                    "hallu_words": 10
+                },
+                "W": {
+                    "fabricated": 0,
+                    "crossed": 0,
+                    "illegible": 6,
+                    "gt_words": 97,
+                    "hallu_words": 1
+                }
+            },
+            "cost": 0.028952500000000003,
+            "recognition_time": 85.28550815582275
+        },
+        {
+            "pdf_name": "4.pdf",
+            "word_level_hallucination_rate": 0.14457831325301204,
+            "refined_word_level_hallucination_rate": 0.04819277108433735,
+            "fabricated_hallucination_rate": 0.012048192771084338,
+            "crossed_out_hallucination_rate": 0.0,
+            "illegibility_hallucination_rate": 0.024096385542168676,
+            "question_type_metrics": {
+                "FITB": {
+                    "fabricated": 0,
+                    "crossed": 0,
+                    "illegible": 1,
+                    "gt_words": 20,
+                    "hallu_words": 3
+                },
+                "U": {
+                    "fabricated": 0,
+                    "crossed": 0,
+                    "illegible": 0,
+                    "gt_words": 7,
+                    "hallu_words": 1
+                },
+                "QA": {
+                    "fabricated": 1,
+                    "crossed": 0,
+                    "illegible": 1,
+                    "gt_words": 16,
+                    "hallu_words": 0
+                },
+                "W": {
+                    "fabricated": 0,
+                    "crossed": 0,
+                    "illegible": 0,
+                    "gt_words": 40,
+                    "hallu_words": 8
+                }
+            },
+            "refined_question_type_metrics": {
+                "FITB": {
+                    "fabricated": 0,
+                    "crossed": 0,
+                    "illegible": 1,
+                    "gt_words": 20,
+                    "hallu_words": 3
+                },
+                "U": {
+                    "fabricated": 0,
+                    "crossed": 0,
+                    "illegible": 0,
+                    "gt_words": 7,
+                    "hallu_words": 1
+                },
+                "QA": {
+                    "fabricated": 1,
+                    "crossed": 0,
+                    "illegible": 1,
+                    "gt_words": 16,
+                    "hallu_words": 0
+                },
+                "W": {
+                    "fabricated": 0,
+                    "crossed": 0,
+                    "illegible": 0,
+                    "gt_words": 40,
+                    "hallu_words": 0
+                }
+            },
+            "cost": 0.036592,
+            "recognition_time": 100.26787257194519
+        },
+        {
+            "pdf_name": "1.pdf",
+            "word_level_hallucination_rate": 0.11864406779661017,
+            "refined_word_level_hallucination_rate": 0.04519774011299435,
+            "fabricated_hallucination_rate": 0.0,
+            "crossed_out_hallucination_rate": 0.005649717514124294,
+            "illegibility_hallucination_rate": 0.011299435028248588,
+            "question_type_metrics": {
+                "FITB": {
+                    "fabricated": 0,
+                    "crossed": 0,
+                    "illegible": 1,
+                    "gt_words": 32,
+                    "hallu_words": 1
+                },
+                "U": {
+                    "fabricated": 0,
+                    "crossed": 0,
+                    "illegible": 0,
+                    "gt_words": 6,
+                    "hallu_words": 2
+                },
+                "QA": {
+                    "fabricated": 0,
+                    "crossed": 1,
+                    "illegible": 1,
+                    "gt_words": 29,
+                    "hallu_words": 3
+                },
+                "W": {
+                    "fabricated": 0,
+                    "crossed": 0,
+                    "illegible": 0,
+                    "gt_words": 110,
+                    "hallu_words": 15
+                }
+            },
+            "refined_question_type_metrics": {
+                "FITB": {
+                    "fabricated": 0,
+                    "crossed": 0,
+                    "illegible": 1,
+                    "gt_words": 32,
+                    "hallu_words": 1
+                },
+                "U": {
+                    "fabricated": 0,
+                    "crossed": 0,
+                    "illegible": 0,
+                    "gt_words": 6,
+                    "hallu_words": 2
+                },
+                "QA": {
+                    "fabricated": 0,
+                    "crossed": 1,
+                    "illegible": 1,
+                    "gt_words": 29,
+                    "hallu_words": 0
+                },
+                "W": {
+                    "fabricated": 0,
+                    "crossed": 0,
+                    "illegible": 0,
+                    "gt_words": 110,
+                    "hallu_words": 5
+                }
+            },
+            "cost": 0.026059000000000002,
+            "recognition_time": 74.4274754524231
+        },
+        {
+            "pdf_name": "7.pdf",
+            "word_level_hallucination_rate": 0.3006134969325153,
+            "refined_word_level_hallucination_rate": 0.15950920245398773,
+            "fabricated_hallucination_rate": 0.03680981595092025,
+            "crossed_out_hallucination_rate": 0.06134969325153374,
+            "illegibility_hallucination_rate": 0.0736196319018405,
+            "question_type_metrics": {
+                "FITB": {
+                    "fabricated": 6,
+                    "crossed": 2,
+                    "illegible": 8,
+                    "gt_words": 35,
+                    "hallu_words": 12
+                },
+                "U": {
+                    "fabricated": 0,
+                    "crossed": 0,
+                    "illegible": 0,
+                    "gt_words": 11,
+                    "hallu_words": 2
+                },
+                "W": {
+                    "fabricated": 0,
+                    "crossed": 5,
+                    "illegible": 0,
+                    "gt_words": 76,
+                    "hallu_words": 20
+                },
+                "QA": {
+                    "fabricated": 0,
+                    "crossed": 3,
+                    "illegible": 4,
+                    "gt_words": 41,
+                    "hallu_words": 15
+                }
+            },
+            "refined_question_type_metrics": {
+                "FITB": {
+                    "fabricated": 6,
+                    "crossed": 2,
+                    "illegible": 8,
+                    "gt_words": 35,
+                    "hallu_words": 10
+                },
+                "U": {
+                    "fabricated": 0,
+                    "crossed": 0,
+                    "illegible": 0,
+                    "gt_words": 11,
+                    "hallu_words": 5
+                },
+                "W": {
+                    "fabricated": 0,
+                    "crossed": 5,
+                    "illegible": 0,
+                    "gt_words": 76,
+                    "hallu_words": 6
+                },
+                "QA": {
+                    "fabricated": 0,
+                    "crossed": 3,
+                    "illegible": 4,
+                    "gt_words": 41,
+                    "hallu_words": 5
+                }
+            },
+            "cost": 0.030415499999999998,
+            "recognition_time": 109.55929708480835
+        }
+    ]
+}

@@ -1,0 +1,1183 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OCR Benchmark Dashboard</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <style>
+            
+    :root {
+        --primary: #2563eb;
+        --primary-light: #dbeafe;
+        --secondary: #64748b;
+        --success: #22c55e;
+        --warning: #f59e0b;
+        --danger: #ef4444;
+        --bg: #f8fafc;
+        --card-bg: #ffffff;
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+        --border: #e2e8f0;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background-color: var(--bg);
+        color: var(--text-main);
+        margin: 0;
+        padding: 0;
+        line-height: 1.5;
+    }
+    .header {
+        background: white;
+        padding: 2rem;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 2rem;
+    }
+    .header h1 { margin: 0; font-size: 1.875rem; font-weight: 700; color: var(--text-main); }
+    .header p { margin: 0.5rem 0 0; color: var(--text-muted); font-size: 0.875rem; }
+
+    .container { max-width: 1400px; margin: 0 auto; padding: 0 2rem 4rem; }
+
+    .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+    
+    .stat-card {
+        background: var(--card-bg);
+        padding: 1.5rem;
+        border-radius: 1rem;
+        border: 1px solid var(--border);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+    }
+    .stat-icon {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+    .stat-icon.blue { background: var(--primary); }
+    .stat-icon.green { background: var(--success); }
+    .stat-icon.orange { background: var(--warning); }
+    .stat-icon.red { background: var(--danger); }
+    .stat-icon.purple { background: #8b5cf6; }
+
+    .stat-info { display: flex; flex-direction: column; }
+    .stat-label { font-size: 0.875rem; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.025em; }
+    .stat-value { font-size: 1.5rem; font-weight: 700; color: var(--text-main); }
+
+    .dashboard-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+    .card { background: var(--card-bg); border-radius: 1rem; border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .card-header { padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+    .card-title { font-size: 1.125rem; font-weight: 600; margin: 0; }
+    .card-body { padding: 1.5rem; }
+
+    .chart-container { position: relative; height: 300px; width: 100%; }
+
+    table { width: 100%; border-collapse: separate; border-spacing: 0; }
+    th { background: #f1f5f9; padding: 0.75rem 1rem; text-align: left; font-size: 0.75rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); }
+    td { padding: 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background-color: #f8fafc; }
+
+    .badge { padding: 0.25rem 0.625rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; display: inline-flex; align-items: center; }
+    .badge-success { background: #dcfce7; color: #166534; }
+    .badge-warning { background: #fef9c3; color: #854d0e; }
+    .badge-danger { background: #fee2e2; color: #991b1b; }
+    .badge-neutral { background: #f1f5f9; color: #475569; }
+
+    .progress-bar-container { width: 100%; height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden; margin-top: 4px; }
+    .progress-bar { height: 100%; border-radius: 4px; transition: width 0.3s ease; }
+
+    details { margin-top: 0.5rem; }
+    summary { font-size: 0.875rem; color: var(--primary); cursor: pointer; font-weight: 500; }
+    summary:hover { text-decoration: underline; }
+    
+    .diff-list { font-size: 0.875rem; margin-top: 0.75rem; }
+    .diff-item { background: #f8fafc; border-radius: 0.5rem; padding: 0.75rem; margin-bottom: 0.5rem; border-left: 3px solid var(--primary); }
+    .diff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 0.5rem; }
+    .diff-label { font-size: 0.75rem; color: var(--text-muted); font-weight: 600; margin-bottom: 0.25rem; }
+    .diff-val { font-family: 'JetBrains Mono', 'Courier New', monospace; font-size: 0.8125rem; word-break: break-all; }
+    .val-gt { color: #059669; }
+    .val-pred { color: #dc2626; }
+
+    pre { background: #1e293b; color: #e2e8f0; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; font-size: 0.75rem; }
+
+    @media (max-width: 1024px) {
+        .dashboard-layout { grid-template-columns: 1fr; }
+    }
+    
+        </style>
+    </head>
+    <body>
+        <div id="dashboard-root">
+            
+    <div class="header">
+        <h1>OCR Benchmark Dashboard</h1>
+        <p>Execution Summary • <strong>2026-02-19 16:01:38</strong></p>
+    </div>
+
+    <div class="container">
+        <div class="grid-4" style="grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));">
+            <div class="stat-card">
+                <div class="stat-icon blue"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+                <div class="stat-info">
+                    <span class="stat-label">Total Cost</span>
+                    <span class="stat-value">$0.036</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon blue" style="background: var(--secondary)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+                <div class="stat-info">
+                    <span class="stat-label">Avg Cost</span>
+                    <span class="stat-value">$0.0179</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon purple"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+                <div class="stat-info">
+                    <span class="stat-label">Total Time</span>
+                    <span class="stat-value">70.7s</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon purple" style="background: var(--secondary)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+                <div class="stat-info">
+                    <span class="stat-label">Avg Time</span>
+                    <span class="stat-value">35.33s</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon orange"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div>
+                <div class="stat-info">
+                    <span class="stat-label">Avg Hallucination</span>
+                    <span class="stat-value">16.82%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon orange" style="background: var(--primary)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div>
+                <div class="stat-info">
+                    <span class="stat-label">Avg Refined</span>
+                    <span class="stat-value">5.95%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon red"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div>
+                <div class="stat-info">
+                    <span class="stat-label">Avg Fabricated</span>
+                    <span class="stat-value">0.75%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon green"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div>
+                <div class="stat-info">
+                    <span class="stat-label">Avg Crossed-out</span>
+                    <span class="stat-value">0.75%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon orange" style="background: #e67e22;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div>
+                <div class="stat-info">
+                    <span class="stat-label">Avg Illegibility</span>
+                    <span class="stat-value">2.80%</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon green" style="background: #a855f7;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></div>
+                <div class="stat-info">
+                    <span class="stat-label">Samples Tested</span>
+                    <span class="stat-value">2</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard-layout">
+            <div class="card">
+                <div class="card-header"><h3 class="card-title">Hallucination Rates per Sample (%)</h3></div>
+                <div class="card-body">
+                    <div class="chart-container">
+                        <canvas id="halluChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header"><h3 class="card-title">Performance by Question Type (%)</h3></div>
+                <div class="card-body">
+                    <div class="chart-container">
+                        <canvas id="qtypeChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header"><h3 class="card-title">Cost vs Speed Distribution</h3></div>
+                <div class="card-body">
+                    <div class="chart-container">
+                        <canvas id="scatterChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="margin-bottom: 2rem;">
+            <div class="card-header"><h3 class="card-title">Question Type Breakdown</h3></div>
+            <div class="card-body" style="padding: 0;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Question Type</th>
+                            <th>Hallucination Rate</th>
+                            <th>Fabricated</th>
+                            <th>Crossed-out</th>
+                            <th>Illegibility</th>
+                            <th>GT Words</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+            <tr>
+                <td><strong>Writing/Essay</strong> <small style="color: var(--text-muted)">(W)</small></td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span class="badge badge-warning">5.3%</span>
+                        <small style="color: var(--text-muted); text-decoration: line-through;">19.9%</small>
+                    </div>
+                </td>
+                <td>0 (0.0%)</td>
+                <td>1 (0.6%)</td>
+                <td>0 (0.0%)</td>
+                <td>171</td>
+            </tr>
+            
+            <tr>
+                <td><strong>Fill In The Blanks</strong> <small style="color: var(--text-muted)">(FITB)</small></td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span class="badge badge-warning">5.4%</span>
+                        <small style="color: var(--text-muted); text-decoration: line-through;">10.8%</small>
+                    </div>
+                </td>
+                <td>0 (0.0%)</td>
+                <td>1 (2.7%)</td>
+                <td>0 (0.0%)</td>
+                <td>37</td>
+            </tr>
+            
+            <tr>
+                <td><strong>Circling</strong> <small style="color: var(--text-muted)">(C)</small></td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span class="badge badge-success">0.0%</span>
+                        <small style="color: var(--text-muted); text-decoration: line-through;">11.1%</small>
+                    </div>
+                </td>
+                <td>2 (22.2%)</td>
+                <td>0 (0.0%)</td>
+                <td>2 (22.2%)</td>
+                <td>9</td>
+            </tr>
+            
+            <tr>
+                <td><strong>Question Answering</strong> <small style="color: var(--text-muted)">(QA)</small></td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span class="badge badge-warning">3.2%</span>
+                        <small style="color: var(--text-muted); text-decoration: line-through;">3.2%</small>
+                    </div>
+                </td>
+                <td>0 (0.0%)</td>
+                <td>0 (0.0%)</td>
+                <td>5 (16.1%)</td>
+                <td>31</td>
+            </tr>
+            
+            <tr>
+                <td><strong>Matching</strong> <small style="color: var(--text-muted)">(M)</small></td>
+                <td>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span class="badge badge-danger">30.0%</span>
+                        <small style="color: var(--text-muted); text-decoration: line-through;">30.0%</small>
+                    </div>
+                </td>
+                <td>0 (0.0%)</td>
+                <td>0 (0.0%)</td>
+                <td>0 (0.0%)</td>
+                <td>10</td>
+            </tr>
+            
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header"><h3 class="card-title">Detailed Execution Results</h3></div>
+            <div class="card-body" style="padding: 0;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width: 250px">Sample</th>
+                            <th>Hallucination Metrics</th>
+                            <th style="width: 150px">Efficiency</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+    
+        <tr>
+            <td>
+                <div style="font-weight: 600;">2.pdf</div>
+                <div style="font-size: 0.75rem; color: #64748b;">Original: 12.0%</div>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <span class="badge badge-success">1.5%</span>
+                    <div class="progress-bar-container" style="flex: 1">
+                        <div class="progress-bar" style="width: 1.5037593984962405%; background: #22c55e"></div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 0.5rem; font-size: 0.75rem; color: #64748b;">
+                    <span>Fab: 1.5%</span>
+                    <span>Cross: 1.5%</span>
+                    <span>Illeg: 0.0%</span>
+                </div>
+            </td>
+            <td>
+                <div style="font-weight: 600;">$0.0177</div>
+                <div style="font-size: 0.75rem; color: #64748b;">40.06s</div>
+            </td>
+            <td><details><summary>Review Discrepancies</summary><div class='diff-list'>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['they']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['There']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 03 (4)</div>
+                    </div>
+                    <div class="diff-item" style="border-left-color: #f59e0b;">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Unexpected Insertion</div>
+                        <div class="diff-val val-pred">['please']</div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 05</div>
+                    </div><h4 style='font-size: 0.875rem'>Raw Output</h4><pre><code>{
+  "paper_title": "Grade 08 - English Monthly Evaluation Paper",
+  "questions": [
+    {
+      "test_number": "01",
+      "instruction": "Rearrange the words to form correct sentences.",
+      "question_type": "W",
+      "student_answers": {
+        "1": {
+          "answer": "He cooks always food by himself",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "I painted the house myself",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "My mother prepares tea herself",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "The students formed groups themselves",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "The teacher wrote the list herself",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "02",
+      "instruction": "Rewrite with punctuation marks.",
+      "question_type": "W",
+      "student_answers": {
+        "1": {
+          "answer": "hello! aunty good afternoon!",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "yes he's here.",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "hello! everybody",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "I've already written the list",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "wow! did you do It yourself",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "03",
+      "instruction": "Make questions for the following below given answers. First one is done for you",
+      "question_type": "W",
+      "student_answers": {
+        "1": {
+          "answer": "has she two brothers",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "Is he walking around the table",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "don't they have money",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "Are There thirty two boys",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "will i come tomorrow",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "04",
+      "instruction": "Write these sentences in plural.",
+      "question_type": "W",
+      "student_answers": {
+        "1": {
+          "answer": "pupils are not teachers",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "camels are big animals",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "donkeys are bigger than cats",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "eggs are whites",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "classrooms are cleans",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "05",
+      "instruction": "Write two suitable words for each sound",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "please please",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "blunch",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "brush",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "brush",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "06",
+      "instruction": "Read the poem and circle the correct answer.",
+      "question_type": "C",
+      "student_answers": {
+        "1": {
+          "answer": "Local food",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "Strong",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "Fair",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "Mango",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "Sweet",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "07",
+      "instruction": "Given below is Ruwan's plan for the week.",
+      "question_type": "QA",
+      "student_answers": {
+        "1": {
+          "answer": "Tuesday Afternoon",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "He is waching Tv",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "Monday Afternoon",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "play chess with kamal",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "Go to library and study English",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "08",
+      "instruction": "Match the expressions in B with the situation in A",
+      "question_type": "M",
+      "student_answers": {
+        "1": {
+          "answer": "C",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "A",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "E",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "B",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "D",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "09",
+      "instruction": "Complete the following to form present perfect sentences",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "completed",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "woned",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "punished",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "gown",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "polished",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "10",
+      "instruction": "Put a word from the box into the blank spaces to complete the sentences.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "is",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "am",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "is",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "is",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "were",
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "has",
+          "is_legible": "true"
+        },
+        "7": {
+          "answer": "have",
+          "is_legible": "true"
+        },
+        "8": {
+          "answer": "was",
+          "is_legible": "true"
+        },
+        "9": {
+          "answer": "are",
+          "is_legible": "true"
+        },
+        "10": {
+          "answer": "are",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "11",
+      "instruction": "As the secretary of the science society of your school, you are going to organize a science exhibition in your school. Write a letter to the principal asking permission to have it in the school main-hall.",
+      "question_type": "W",
+      "student_answers": {
+        "answer": "",
+        "is_legible": ""
+      }
+    }
+  ]
+}</code></pre></div></details></td>
+        </tr>
+        
+        <tr>
+            <td>
+                <div style="font-weight: 600;">1.pdf</div>
+                <div style="font-size: 0.75rem; color: #64748b;">Original: 21.6%</div>
+            </td>
+            <td>
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                    <span class="badge badge-danger">10.4%</span>
+                    <div class="progress-bar-container" style="flex: 1">
+                        <div class="progress-bar" style="width: 10.4%; background: #ef4444"></div>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 1rem; margin-top: 0.5rem; font-size: 0.75rem; color: #64748b;">
+                    <span>Fab: 0.0%</span>
+                    <span>Cross: 0.0%</span>
+                    <span>Illeg: 5.6%</span>
+                </div>
+            </td>
+            <td>
+                <div style="font-weight: 600;">$0.0181</div>
+                <div style="font-size: 0.75rem; color: #64748b;">30.60s</div>
+            </td>
+            <td><details><summary>Review Discrepancies</summary><div class='diff-list'>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['he', 'self', 'prepare']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['herself', 'prepares']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 01 (3)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['A', 'pupil']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['pupils']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 04 (1)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['animal.']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['animals']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 04 (2)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['white.']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['whites']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 04 (4)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['clean.']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['cleans']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 04 (5)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['B']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['C']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 08 (1)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['C']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['A']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 08 (2)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['A']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['B']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 08 (4)</div>
+                    </div>
+                    <div class="diff-item">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Word Mismatch</div>
+                        <div class="diff-grid">
+                            <div><div class="diff-label">EXPECTED (GT)</div><div class="diff-val val-gt">['won']</div></div>
+                            <div><div class="diff-label">PREDICTED</div><div class="diff-val val-pred">['wan']</div></div>
+                        </div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 09 (2)</div>
+                    </div>
+                    <div class="diff-item" style="border-left-color: #f59e0b;">
+                        <div style="font-weight: 600; margin-bottom: 4px;">Unexpected Insertion</div>
+                        <div class="diff-val val-pred">['and']</div>
+                        <div style="font-size: 0.75rem; color: #64748b; margin-top: 4px;">Ref: 07</div>
+                    </div><h4 style='font-size: 0.875rem'>Raw Output</h4><pre><code>{
+  "paper_title": "Grade 08 - English Monthly Evaluation Paper",
+  "questions": [
+    {
+      "test_number": "01",
+      "instruction": "Rearrange the words to form correct sentences.",
+      "question_type": "W",
+      "student_answers": {
+        "1": {
+          "answer": "He always cooks food by himself",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "I myself the house painted",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "My mother tea herself prepares",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "The students groups formed themselves",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "The teacher wrote the list herself",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "02",
+      "instruction": "Rewrite with punctuation marks.",
+      "question_type": "W",
+      "student_answers": {
+        "1": {
+          "answer": "Hello, aunty good afternoon.",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "yes' he s. here!",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "hello everybody?",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "5": {
+          "answer": "",
+          "is_legible": ""
+        }
+      }
+    },
+    {
+      "test_number": "03",
+      "instruction": "Make questions for the following below given answers. First one is done for you",
+      "question_type": "W",
+      "student_answers": {
+        "1": {
+          "answer": "Has she two brothers?",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "Is he walking around the table?",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "Don't they have money?",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "Are there thirty two boys?",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "Will I come tomorrow?",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "04",
+      "instruction": "Write these sentences in plural.",
+      "question_type": "W",
+      "student_answers": {
+        "1": {
+          "answer": "pupils are not teachers",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "camels are big animals",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "donkeys are bigger than cats.",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "eggs are whites",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "Classrooms are cleans",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "05",
+      "instruction": "Write two suitable words for each sound",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "papl",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "blanch",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "",
+          "is_legible": ""
+        },
+        "4": {
+          "answer": "she",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "06",
+      "instruction": "Read the poem and circle the correct answer.",
+      "question_type": "C",
+      "student_answers": {
+        "1": {
+          "answer": "Food",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "Strong",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "Good",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "Starfruit",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "Sweet",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "07",
+      "instruction": "Given below is Ruwan's plan for the week.",
+      "question_type": "QA",
+      "student_answers": {
+        "1": {
+          "answer": "Tuesday",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "watch Tv",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "Monday",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "play chess with kamal",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "Go to library and study English",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "08",
+      "instruction": "Match the expressions in B with the situation in A",
+      "question_type": "M",
+      "student_answers": {
+        "1": {
+          "answer": "C",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "A",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "E",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "B",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "D",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "09",
+      "instruction": "Complete the following to form present perfect sentences",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "completed",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "wan",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "punished",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "goe",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "polished",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "10",
+      "instruction": "Put a word from the box into the blank spaces to complete the sentences.",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "is",
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "am",
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "were",
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "is",
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "was",
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "were",
+          "is_legible": "true"
+        },
+        "7": {
+          "answer": "am",
+          "is_legible": "true"
+        },
+        "8": {
+          "answer": "am",
+          "is_legible": "true"
+        },
+        "9": {
+          "answer": "has",
+          "is_legible": "true"
+        },
+        "10": {
+          "answer": "ars",
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "11",
+      "instruction": "As the secretary of the science society of your school, you are going to organize a science exhibition in your school. Write a letter to the principal asking permission to have it in the school main-hall.",
+      "question_type": "W",
+      "student_answers": {
+        "answer": "",
+        "is_legible": ""
+      }
+    }
+  ]
+}</code></pre></div></details></td>
+        </tr>
+        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+        </div>
+
+        <script>
+            // Hallucination Bar Chart
+            const ctxHallu = document.getElementById('halluChart').getContext('2d');
+            new Chart(ctxHallu, {
+                type: 'bar',
+                data: {
+                    labels: ["2.pdf", "1.pdf"],
+                    datasets: [
+                        {
+                            label: 'Refined Rate (%)',
+                            data: [1.5037593984962405, 10.4],
+                            backgroundColor: '#3b82f6',
+                            borderRadius: 6
+                        },
+                        {
+                            label: 'Original Rate (%)',
+                            data: [12.030075187969924, 21.6],
+                            backgroundColor: '#94a3b8',
+                            borderRadius: 6,
+                            hidden: true
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: true, position: 'top' } },
+                    scales: {
+                        y: { beginAtZero: true, grid: { borderDash: [5, 5] } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+
+            // Question Type Bar Chart
+            const ctxQType = document.getElementById('qtypeChart').getContext('2d');
+            new Chart(ctxQType, {
+                type: 'bar',
+                data: {
+                    labels: ["Writing/Essay", "Fill In The Blanks", "Circling", "Question Answering", "Matching"],
+                    datasets: [
+                        {
+                            label: 'Refined Rate (%)',
+                            data: [5.263157894736842, 5.405405405405405, 0.0, 3.225806451612903, 30.0],
+                            backgroundColor: '#10b981',
+                            borderRadius: 6
+                        },
+                        {
+                            label: 'Original Rate (%)',
+                            data: [19.883040935672515, 10.81081081081081, 11.11111111111111, 3.225806451612903, 30.0],
+                            backgroundColor: '#94a3b8',
+                            borderRadius: 6,
+                            hidden: true
+                        }
+                    ]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: { legend: { display: true, position: 'top' } },
+                    scales: {
+                        x: { beginAtZero: true, grid: { borderDash: [5, 5] } },
+                        y: { grid: { display: false } }
+                    }
+                }
+            });
+
+            // Scatter Chart (Cost vs Time)
+            const ctxScatter = document.getElementById('scatterChart').getContext('2d');
+            new Chart(ctxScatter, {
+                type: 'scatter',
+                data: {
+                    datasets: [{
+                        label: 'Samples',
+                        data: [{"x": 40.06131196022034, "y": 0.0176775}, {"x": 30.596566200256348, "y": 0.0181295}],
+                        backgroundColor: '#8b5cf6',
+                        pointRadius: 6,
+                        pointHoverRadius: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: { title: { display: true, text: 'Recognition Time (s)' }, grid: { borderDash: [5, 5] } },
+                        y: { title: { display: true, text: 'Cost ($)' }, grid: { borderDash: [5, 5] } }
+                    },
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: (context) => {
+                                    const names = ["2.pdf", "1.pdf"];
+                                    return names[context.dataIndex] + ': ' + context.parsed.x + 's, $' + context.parsed.y;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+    </body>
+    </html>
+    

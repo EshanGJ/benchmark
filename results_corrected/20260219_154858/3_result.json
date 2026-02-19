@@ -1,0 +1,1277 @@
+{
+    "pdf_name": "3.pdf",
+    "metrics": {
+        "fabricated_hallucinations": 0,
+        "fabricated_hallucination_rate": 0.0,
+        "crossed_out_hallucinations": 14,
+        "crossed_out_hallucination_rate": 0.02204724409448819,
+        "illegibility_hallucinations": 1,
+        "illegibility_hallucination_rate": 0.0015748031496062992,
+        "word_level_hallucination_rate": 0.12913385826771653,
+        "total_hallucinated_words": 82,
+        "total_gt_words": 635,
+        "replaced_word_pairs": [
+            {
+                "question": "3",
+                "sub_question": "2",
+                "gt_words": [
+                    "aporn"
+                ],
+                "pred_words": [
+                    "apron"
+                ]
+            },
+            {
+                "question": "3",
+                "sub_question": "5",
+                "gt_words": [
+                    "dust-pan"
+                ],
+                "pred_words": [
+                    "dust",
+                    "pan"
+                ]
+            },
+            {
+                "question": "4",
+                "sub_question": "4",
+                "gt_words": [
+                    "work"
+                ],
+                "pred_words": [
+                    "packing"
+                ]
+            },
+            {
+                "question": "4",
+                "sub_question": "5",
+                "gt_words": [
+                    "came"
+                ],
+                "pred_words": [
+                    "come"
+                ]
+            },
+            {
+                "question": "5",
+                "sub_question": "5",
+                "gt_words": [
+                    "Vehical"
+                ],
+                "pred_words": [
+                    "vehicle"
+                ]
+            },
+            {
+                "question": "6",
+                "sub_question": "",
+                "gt_words": [
+                    "studdies"
+                ],
+                "pred_words": [
+                    "studies"
+                ]
+            },
+            {
+                "question": "6",
+                "sub_question": "",
+                "gt_words": [
+                    "presen."
+                ],
+                "pred_words": [
+                    "present."
+                ]
+            },
+            {
+                "question": "6",
+                "sub_question": "",
+                "gt_words": [
+                    "studies"
+                ],
+                "pred_words": [
+                    "studies.",
+                    "Tharushi"
+                ]
+            },
+            {
+                "question": "8",
+                "sub_question": "",
+                "gt_words": [
+                    "most."
+                ],
+                "pred_words": [
+                    "most"
+                ]
+            },
+            {
+                "question": "8",
+                "sub_question": "",
+                "gt_words": [
+                    "Willinam"
+                ],
+                "pred_words": [
+                    "William"
+                ]
+            },
+            {
+                "question": "8",
+                "sub_question": "",
+                "gt_words": [
+                    "8,1942"
+                ],
+                "pred_words": [
+                    "8,",
+                    "1942"
+                ]
+            },
+            {
+                "question": "8",
+                "sub_question": "",
+                "gt_words": [
+                    "reseacher"
+                ],
+                "pred_words": [
+                    "researcher"
+                ]
+            },
+            {
+                "question": "8",
+                "sub_question": "",
+                "gt_words": [
+                    "Ureged"
+                ],
+                "pred_words": [
+                    "urged"
+                ]
+            },
+            {
+                "question": "8",
+                "sub_question": "",
+                "gt_words": [
+                    "science"
+                ],
+                "pred_words": [
+                    "sciences."
+                ]
+            },
+            {
+                "question": "8",
+                "sub_question": "",
+                "gt_words": [
+                    "Albants"
+                ],
+                "pred_words": [
+                    "Alban's"
+                ]
+            },
+            {
+                "question": "9",
+                "sub_question": "4",
+                "gt_words": [
+                    "belive"
+                ],
+                "pred_words": [
+                    "believe"
+                ]
+            },
+            {
+                "question": "11",
+                "sub_question": "5",
+                "gt_words": [
+                    "photogrph"
+                ],
+                "pred_words": [
+                    "photograph"
+                ]
+            },
+            {
+                "question": "11",
+                "sub_question": "13",
+                "gt_words": [
+                    "stay"
+                ],
+                "pred_words": [
+                    "story"
+                ]
+            },
+            {
+                "question": "12",
+                "sub_question": "1",
+                "gt_words": [
+                    "situaed"
+                ],
+                "pred_words": [
+                    "situated"
+                ]
+            },
+            {
+                "question": "13",
+                "sub_question": "1",
+                "gt_words": [
+                    "toes"
+                ],
+                "pred_words": [
+                    "toes."
+                ]
+            },
+            {
+                "question": "13",
+                "sub_question": "2",
+                "gt_words": [
+                    "playground"
+                ],
+                "pred_words": [
+                    "play",
+                    "ground"
+                ]
+            },
+            {
+                "question": "13",
+                "sub_question": "3.1",
+                "gt_words": [
+                    "ear-rear",
+                    "neck-wreck"
+                ],
+                "pred_words": [
+                    "ear",
+                    "-",
+                    "rear"
+                ]
+            },
+            {
+                "question": "13",
+                "sub_question": "3.2",
+                "gt_words": [
+                    "accidentaly"
+                ],
+                "pred_words": [
+                    "neck",
+                    "-",
+                    "wreck"
+                ]
+            },
+            {
+                "question": "13",
+                "sub_question": "4",
+                "gt_words": [
+                    "youself"
+                ],
+                "pred_words": [
+                    "yourself"
+                ]
+            },
+            {
+                "question": "13",
+                "sub_question": "5",
+                "gt_words": [
+                    "nose,knee,",
+                    "eye,",
+                    "toes,"
+                ],
+                "pred_words": [
+                    "nose",
+                    ",",
+                    "knee",
+                    ",",
+                    "eye",
+                    ",",
+                    "toes",
+                    ","
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "b",
+                "gt_words": [
+                    "household"
+                ],
+                "pred_words": [
+                    "house",
+                    "hold"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.1",
+                "gt_words": [
+                    "T"
+                ],
+                "pred_words": [
+                    "True"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.2",
+                "gt_words": [
+                    "F"
+                ],
+                "pred_words": [
+                    "False"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.3",
+                "gt_words": [
+                    "T"
+                ],
+                "pred_words": [
+                    "False"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.4",
+                "gt_words": [
+                    "T"
+                ],
+                "pred_words": [
+                    "True"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "3.a",
+                "gt_words": [
+                    "color"
+                ],
+                "pred_words": [
+                    "colour"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "3.b",
+                "gt_words": [
+                    "couple"
+                ],
+                "pred_words": [
+                    "couples"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "5",
+                "gt_words": [
+                    "probobly",
+                    "emaotionally",
+                    "disturbed"
+                ],
+                "pred_words": [
+                    "probably",
+                    "emotionally",
+                    "disturbed."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "ood"
+                ],
+                "pred_words": [
+                    "Tharushi",
+                    "Good"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "11",
+                    "-",
+                    "G."
+                ],
+                "pred_words": [
+                    "11-G."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "Taking"
+                ],
+                "pred_words": [
+                    "\"Taking"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "school."
+                ],
+                "pred_words": [
+                    "School.\""
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "What",
+                    "is",
+                    "school."
+                ],
+                "pred_words": [
+                    "\"What",
+                    "is",
+                    "school?\""
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "School",
+                    "is"
+                ],
+                "pred_words": [
+                    "Every",
+                    "students",
+                    "has"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "that"
+                ],
+                "pred_words": [
+                    "that."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "practices"
+                ],
+                "pred_words": [
+                    "practicles"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "etc...."
+                ],
+                "pred_words": [
+                    "etc..."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "NowNow"
+                ],
+                "pred_words": [
+                    "Now",
+                    "my",
+                    "speech",
+                    "is",
+                    "Now"
+                ]
+            }
+        ],
+        "inserted_words": [
+            {
+                "question": "6",
+                "sub_question": "",
+                "words": [
+                    "to"
+                ]
+            },
+            {
+                "question": "8",
+                "sub_question": "",
+                "words": [
+                    "a"
+                ]
+            },
+            {
+                "question": "8",
+                "sub_question": "",
+                "words": [
+                    "Scientific"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "b",
+                "words": [
+                    "in",
+                    "2022"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "we",
+                    "do",
+                    "some",
+                    "practicles"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "should"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "another"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "have"
+                ]
+            }
+        ],
+        "question_type_metrics": {
+            "FITB": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 59,
+                "hallu_words": 7
+            },
+            "U": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 10,
+                "hallu_words": 2
+            },
+            "W": {
+                "fabricated": 0,
+                "crossed": 14,
+                "illegible": 1,
+                "gt_words": 531,
+                "hallu_words": 46
+            },
+            "QA": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 35,
+                "hallu_words": 27
+            }
+        }
+    },
+    "refined_metrics": {
+        "fabricated_hallucinations": 0,
+        "fabricated_hallucination_rate": 0.0,
+        "crossed_out_hallucinations": 14,
+        "crossed_out_hallucination_rate": 0.02204724409448819,
+        "illegibility_hallucinations": 1,
+        "illegibility_hallucination_rate": 0.0015748031496062992,
+        "word_level_hallucination_rate": 0.06771653543307087,
+        "total_hallucinated_words": 43,
+        "total_gt_words": 635,
+        "replaced_word_pairs": [
+            {
+                "question": "4",
+                "sub_question": "4",
+                "gt_words": [
+                    "work"
+                ],
+                "pred_words": [
+                    "packing"
+                ]
+            },
+            {
+                "question": "4",
+                "sub_question": "5",
+                "gt_words": [
+                    "came"
+                ],
+                "pred_words": [
+                    "come"
+                ]
+            },
+            {
+                "question": "6",
+                "sub_question": "",
+                "gt_words": [
+                    "studies"
+                ],
+                "pred_words": [
+                    "studies.",
+                    "Tharushi"
+                ]
+            },
+            {
+                "question": "11",
+                "sub_question": "13",
+                "gt_words": [
+                    "stay"
+                ],
+                "pred_words": [
+                    "story"
+                ]
+            },
+            {
+                "question": "13",
+                "sub_question": "3.2",
+                "gt_words": [
+                    "accidentaly"
+                ],
+                "pred_words": [
+                    "neck",
+                    "-",
+                    "wreck"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.3",
+                "gt_words": [
+                    "T"
+                ],
+                "pred_words": [
+                    "False"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "ood"
+                ],
+                "pred_words": [
+                    "Tharushi",
+                    "Good"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "School",
+                    "is"
+                ],
+                "pred_words": [
+                    "Every",
+                    "students",
+                    "has"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "practices"
+                ],
+                "pred_words": [
+                    "practicles"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "NowNow"
+                ],
+                "pred_words": [
+                    "Now",
+                    "my",
+                    "speech",
+                    "is",
+                    "Now"
+                ]
+            }
+        ],
+        "inserted_words": [
+            {
+                "question": "6",
+                "sub_question": "",
+                "words": [
+                    "to"
+                ]
+            },
+            {
+                "question": "8",
+                "sub_question": "",
+                "words": [
+                    "a"
+                ]
+            },
+            {
+                "question": "8",
+                "sub_question": "",
+                "words": [
+                    "Scientific"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "b",
+                "words": [
+                    "in",
+                    "2022"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "we",
+                    "do",
+                    "some",
+                    "practicles"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "should"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "another"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "have"
+                ]
+            }
+        ],
+        "question_type_metrics": {
+            "FITB": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 59,
+                "hallu_words": 2
+            },
+            "U": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 10,
+                "hallu_words": 0
+            },
+            "W": {
+                "fabricated": 0,
+                "crossed": 14,
+                "illegible": 1,
+                "gt_words": 531,
+                "hallu_words": 34
+            },
+            "QA": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 35,
+                "hallu_words": 7
+            }
+        }
+    },
+    "usage": {
+        "prompt_tokens": 19724,
+        "candidate_tokens": 4409,
+        "thought_tokens": 4426
+    },
+    "cost": 0.036367,
+    "recognition_time": 102.39595437049866,
+    "prediction": {
+        "paper_title": "SECOND TERM EVALUATION - 2023 GRADE 11 ENGLISH LANGUAGE",
+        "questions": [
+            {
+                "test_number": "1",
+                "instruction": "Select the correct response from column B to the statement or question in column A and write the letter of the response in the given space.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "c",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "d",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "f",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "a",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "b",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "e",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "2",
+                "instruction": "Fill in the blanks in the invitation below. Use the words given in the box. Write the letter of the correct word in the blank.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "B",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "D",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "A",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "C",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "F",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "E",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "3",
+                "instruction": "Study the picture and fill in the blanks in the text given below. Use only one word in each blank.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "cleaning",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "apron",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "floor",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "sweeping",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "dust pan",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "table",
+                        "is_legible": "true"
+                    },
+                    "7": {
+                        "answer": "book rack",
+                        "is_legible": "true"
+                    },
+                    "8": {
+                        "answer": "beautiful",
+                        "is_legible": "true"
+                    },
+                    "9": {
+                        "answer": "window sill",
+                        "is_legible": "true"
+                    },
+                    "10": {
+                        "answer": "watering can",
+                        "is_legible": "true"
+                    },
+                    "11": {
+                        "answer": "curtains",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "4",
+                "instruction": "Underline the most suitable word given within brackets to fill in each blank.",
+                "question_type": "U",
+                "student_answers": {
+                    "1": {
+                        "answer": "is",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "leaves",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "4": {
+                        "answer": "packing",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "come",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "finish",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "5",
+                "instruction": "Read the following dialogue and fill in the blanks in the newspaper bulletin given below.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "collided",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "killed",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "cleaner",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "head",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "vehicle",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "coroner",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "6",
+                "instruction": "Your friend Upulka is going abroad for higher studies this weekend. You are unable to see her before her departure. Write a note to be sent to her with a small present. Use about 40-50 words.",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "Dear Upulka,\n\tI was very happy about to hear that you're abroad for higher studies in this weekend. but I was unable to see you before your departure. I was packed some gifts to you and please accept the present. I wish you to go safely and do your best for the higher studies.\n\t\t\t\t\t\t\tTharushi",
+                    "is_legible": "true"
+                }
+            },
+            {
+                "test_number": "7",
+                "instruction": "Read the story given below and answer the questions.",
+                "question_type": "U",
+                "student_answers": {
+                    "1": {
+                        "answer": "a",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "a",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "b",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "a",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "c",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "8",
+                "instruction": "Write a paragraph on one of the given topics.",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "The person whom I admired most\n\tStephan William Hawking is a person I admired most. He is very famous scientist. Stephan William Hawking was born on January 8, 1942 in Oxford, England. His father is a well known researcher in tropical medicine. urged son to seek a career in the sciences. Therefore, he studied in Mathematics and Physics at ST. Alban's school. Stephan William Hawking is a person that I admired most because he has a good knowledge about the Scientific Physics.",
+                    "is_legible": "true"
+                }
+            },
+            {
+                "test_number": "9",
+                "instruction": "Read the text and underline the most suitable word given within brackets.",
+                "question_type": "W",
+                "student_answers": {
+                    "1": {
+                        "answer": "difficulties",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "educated",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "mysterious",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "believe",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "responsible",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "10",
+                "instruction": "Complete the following passage using the correct form of the verb given within each bracket.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "saw",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "said",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "was",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "said",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "was taken",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "11",
+                "instruction": "Fill in the blanks with the words given in the box. There is one extra word.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "office",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "road-way",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "armchairs",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "impatient",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "photograph",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "advertisement",
+                        "is_legible": "true"
+                    },
+                    "7": {
+                        "answer": "job",
+                        "is_legible": "true"
+                    },
+                    "8": {
+                        "answer": "overseas",
+                        "is_legible": "true"
+                    },
+                    "9": {
+                        "answer": "work",
+                        "is_legible": "true"
+                    },
+                    "10": {
+                        "answer": "librarian",
+                        "is_legible": "true"
+                    },
+                    "11": {
+                        "answer": "heard",
+                        "is_legible": "true"
+                    },
+                    "12": {
+                        "answer": "adventure",
+                        "is_legible": "true"
+                    },
+                    "13": {
+                        "answer": "story",
+                        "is_legible": "true"
+                    },
+                    "14": {
+                        "answer": "beach",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "12",
+                "instruction": "Complete the following passage using the most appropriate form of the verb given within brackets",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "is situated",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "visited",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "give up",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "get",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "is",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "13",
+                "instruction": "Read the poem and answer the questions given.",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "answer": "because he accidentally stubbed his toes.",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "play ground",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "1": {
+                            "answer": "ear - rear",
+                            "is_legible": "true"
+                        },
+                        "2": {
+                            "answer": "neck - wreck",
+                            "is_legible": "true"
+                        }
+                    },
+                    "4": {
+                        "answer": "Care about yourself",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "nose , knee , eye , toes , shoulder",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "14",
+                "instruction": " You are the secretary of the Environmental Society of your school. You have planned to launch programme called Keep the City Clean in your area with all the members of the society.Write a letter to get the permission from the authority of the municipal council, to remove the unnecessary posters and advertisements in the area. Use about 100 words. or The following pie chart shows the percentage of household waste in 2022. Study it and write a description of it. Use about 100 words. The following words will help you.",
+                "question_type": "W",
+                "student_answers": {
+                    "a": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "b": {
+                        "answer": "The above pie chart shows the percentage of household waste in 2022. Paper and cardboard, Food and garden materials, Plastic, metal, glass and other are the house hold waste in 2022.\nAccording to the above information, the highest percentage of household waste is food and garden materials. The lowest percentage of household waste is metal. An equal percentage of household waste are plastic and glass. The percentage of household waste of paper and cardboard is more than the percentage of plastic. The percentage of household waste of metal is less than the percentage of glass.\nAccording to the above facts, it is obvious that the most percentage of household waste in 2022 is food and garden materials in 2022.",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "15",
+                "instruction": "Read the following text and answer the questions given below.",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "1": {
+                            "answer": "True",
+                            "is_legible": "true"
+                        },
+                        "2": {
+                            "answer": "False",
+                            "is_legible": "true"
+                        },
+                        "3": {
+                            "answer": "False",
+                            "is_legible": "true"
+                        },
+                        "4": {
+                            "answer": "True",
+                            "is_legible": "true"
+                        }
+                    },
+                    "2": {
+                        "a": {
+                            "answer": "Fashion",
+                            "is_legible": "true"
+                        },
+                        "b": {
+                            "answer": "probably",
+                            "is_legible": "true"
+                        }
+                    },
+                    "3": {
+                        "a": {
+                            "answer": "Purple colour",
+                            "is_legible": "true"
+                        },
+                        "b": {
+                            "answer": "some married couples",
+                            "is_legible": "true"
+                        }
+                    },
+                    "4": {
+                        "answer": "b",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "Purple colour is probably emotionally disturbed.",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "16",
+                "instruction": "Write on one of the following topics. Use about 200 words.",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "Tharushi\nGood Morning everyone, respect principle madam, Honourable thero, my dear teachers and my dear friends. I am Tharushi in grade 11-G. Today, I'm going to talk about the \"Taking care of School.\"\n\nFirst, I'm going to talk about the \"What is school?\" You know what is school. Ok I explain this. School is a place that the students studied. Every students has a good place to the every students. There are some school properties we should to protect. You know what are the school properties in our school. School properties such as buildings, laboratories, play ground, library etc... These school properties we should protect because these are very important to our school.\n\nSo, I ask a question? What are the uses of these school properties? Ok I also explain that. school property like laboratories. What are the uses of laboratories. we do some practicles in science subject we have to do some practicles in science laboratories. In ICT subject we have to do some practicles in a computer in ICT laboratories. Therefore we should must to protect the laboratories.\n\nTherefore, another library is an school property for every schools. In library we can get good knowledge and more important things about the persons, countries etc... so, we go to a library, we should silent. Therefore we must to protect the libraries in the school.\n\nNow, you can understand the importance and uses for the school properties. Therefore you have understand the how these properties are important to us? so, we have a responsibilities to protect the school properties. I think that you should protect our school and school properties as your own property. Now my speech is Now I'm going to stop my speech. Thank you for listening.",
+                    "is_legible": "true"
+                }
+            }
+        ]
+    }
+}

@@ -337,8 +337,8 @@ def generate_html_report(summary_data: Dict[str, Any], detailed_results: List[Di
         badge_cls, bar_color = get_status_props(main_rate)
         
         # Hallucination details
-        replaced = metrics.get("replaced_word_pairs", [])
-        inserted = metrics.get("inserted_words", [])
+        replaced = refined.get("replaced_word_pairs", [])
+        inserted = refined.get("inserted_words", [])
         
         hallucination_details = ""
         if replaced or inserted:
@@ -383,9 +383,9 @@ def generate_html_report(summary_data: Dict[str, Any], detailed_results: List[Di
                     </div>
                 </div>
                 <div style="display: flex; gap: 1rem; margin-top: 0.5rem; font-size: 0.75rem; color: #64748b;">
-                    <span>Fab: {metrics.get('fabricated_hallucination_rate', 0)*100:.1f}%</span>
-                    <span>Cross: {metrics.get('crossed_out_hallucination_rate', 0)*100:.1f}%</span>
-                    <span>Illeg: {metrics.get('illegibility_hallucination_rate', 0)*100:.1f}%</span>
+                    <span>Fab: {refined.get('fabricated_hallucination_rate', 0)*100:.1f}%</span>
+                    <span>Cross: {refined.get('crossed_out_hallucination_rate', 0)*100:.1f}%</span>
+                    <span>Illeg: {refined.get('illegibility_hallucination_rate', 0)*100:.1f}%</span>
                 </div>
             </td>
             <td>

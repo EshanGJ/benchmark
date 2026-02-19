@@ -13,7 +13,7 @@ class Gemini3Model(ModelInterface):
         self.client = genai.Client(http_options={'api_version': 'v1alpha'}, api_key=self.api_key)
         
         # Default config from dev.ipynb
-        self.thinking_level = types.ThinkingLevel.MEDIUM
+        self.thinking_level = types.ThinkingLevel.HIGH
         self.temperature = 1
         self.top_p = 0.95
         self.media_resolution = types.MediaResolution.MEDIA_RESOLUTION_HIGH

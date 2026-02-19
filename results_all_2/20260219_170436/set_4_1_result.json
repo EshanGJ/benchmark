@@ -1,0 +1,672 @@
+{
+    "pdf_name": "set_4_1.pdf",
+    "metrics": {
+        "fabricated_hallucinations": 0,
+        "fabricated_hallucination_rate": 0.0,
+        "crossed_out_hallucinations": 0,
+        "crossed_out_hallucination_rate": 0.0,
+        "illegibility_hallucinations": 3,
+        "illegibility_hallucination_rate": 0.021739130434782608,
+        "word_level_hallucination_rate": 0.18115942028985507,
+        "total_hallucinated_words": 25,
+        "total_gt_words": 138,
+        "replaced_word_pairs": [
+            {
+                "question": "01",
+                "sub_question": "4",
+                "gt_words": [
+                    "incorrect:",
+                    "his",
+                    ",",
+                    "correct:is"
+                ],
+                "pred_words": [
+                    "is"
+                ]
+            },
+            {
+                "question": "03",
+                "sub_question": "1",
+                "gt_words": [
+                    "envionment"
+                ],
+                "pred_words": [
+                    "environment."
+                ]
+            },
+            {
+                "question": "03",
+                "sub_question": "3",
+                "gt_words": [
+                    "domy"
+                ],
+                "pred_words": [
+                    "do",
+                    "my",
+                    "best."
+                ]
+            },
+            {
+                "question": "03",
+                "sub_question": "4",
+                "gt_words": [
+                    "best"
+                ],
+                "pred_words": [
+                    "H"
+                ]
+            },
+            {
+                "question": "03",
+                "sub_question": "4",
+                "gt_words": [
+                    "truth"
+                ],
+                "pred_words": [
+                    "truth."
+                ]
+            },
+            {
+                "question": "03",
+                "sub_question": "5",
+                "gt_words": [
+                    "Everyoody"
+                ],
+                "pred_words": [
+                    "Everybody"
+                ]
+            },
+            {
+                "question": "03",
+                "sub_question": "6",
+                "gt_words": [
+                    "Australians"
+                ],
+                "pred_words": [
+                    "Australians."
+                ]
+            },
+            {
+                "question": "05",
+                "sub_question": "5",
+                "gt_words": [
+                    "lady"
+                ],
+                "pred_words": [
+                    "ladies"
+                ]
+            },
+            {
+                "question": "06",
+                "sub_question": "2",
+                "gt_words": [
+                    "lhose"
+                ],
+                "pred_words": [
+                    "Those"
+                ]
+            },
+            {
+                "question": "06",
+                "sub_question": "2",
+                "gt_words": [
+                    "childen"
+                ],
+                "pred_words": [
+                    "children"
+                ]
+            },
+            {
+                "question": "06",
+                "sub_question": "3",
+                "gt_words": [
+                    "Writen",
+                    "bhree"
+                ],
+                "pred_words": [
+                    "written",
+                    "three"
+                ]
+            },
+            {
+                "question": "06",
+                "sub_question": "6",
+                "gt_words": [
+                    "today"
+                ],
+                "pred_words": [
+                    "today."
+                ]
+            },
+            {
+                "question": "07",
+                "sub_question": "1",
+                "gt_words": [
+                    "chalk."
+                ],
+                "pred_words": [
+                    "chalk"
+                ]
+            },
+            {
+                "question": "07",
+                "sub_question": "2",
+                "gt_words": [
+                    "money."
+                ],
+                "pred_words": [
+                    "of",
+                    "money"
+                ]
+            },
+            {
+                "question": "07",
+                "sub_question": "3.1",
+                "gt_words": [
+                    "ink"
+                ],
+                "pred_words": [
+                    "paper"
+                ]
+            },
+            {
+                "question": "09",
+                "sub_question": "1",
+                "gt_words": [
+                    "Garde"
+                ],
+                "pred_words": [
+                    "Grade"
+                ]
+            },
+            {
+                "question": "09",
+                "sub_question": "5",
+                "gt_words": [
+                    "ovember"
+                ],
+                "pred_words": [
+                    "November"
+                ]
+            }
+        ],
+        "inserted_words": [
+            {
+                "question": "03",
+                "sub_question": "2",
+                "words": [
+                    "we"
+                ]
+            },
+            {
+                "question": "03",
+                "sub_question": "2",
+                "words": [
+                    "the",
+                    "train."
+                ]
+            },
+            {
+                "question": "07",
+                "sub_question": "3.2",
+                "words": [
+                    "ink"
+                ]
+            }
+        ],
+        "question_type_metrics": {
+            "FITB": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 3,
+                "gt_words": 54,
+                "hallu_words": 8
+            },
+            "W": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 78,
+                "hallu_words": 16
+            },
+            "U": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 6,
+                "hallu_words": 1
+            }
+        }
+    },
+    "refined_metrics": {
+        "fabricated_hallucinations": 0,
+        "fabricated_hallucination_rate": 0.0,
+        "crossed_out_hallucinations": 0,
+        "crossed_out_hallucination_rate": 0.0,
+        "illegibility_hallucinations": 3,
+        "illegibility_hallucination_rate": 0.021739130434782608,
+        "word_level_hallucination_rate": 0.08695652173913043,
+        "total_hallucinated_words": 12,
+        "total_gt_words": 138,
+        "replaced_word_pairs": [
+            {
+                "question": "03",
+                "sub_question": "3",
+                "gt_words": [
+                    "domy"
+                ],
+                "pred_words": [
+                    "do",
+                    "my",
+                    "best."
+                ]
+            },
+            {
+                "question": "03",
+                "sub_question": "4",
+                "gt_words": [
+                    "best"
+                ],
+                "pred_words": [
+                    "H"
+                ]
+            },
+            {
+                "question": "05",
+                "sub_question": "5",
+                "gt_words": [
+                    "lady"
+                ],
+                "pred_words": [
+                    "ladies"
+                ]
+            },
+            {
+                "question": "07",
+                "sub_question": "2",
+                "gt_words": [
+                    "money."
+                ],
+                "pred_words": [
+                    "of",
+                    "money"
+                ]
+            },
+            {
+                "question": "07",
+                "sub_question": "3.1",
+                "gt_words": [
+                    "ink"
+                ],
+                "pred_words": [
+                    "paper"
+                ]
+            }
+        ],
+        "inserted_words": [
+            {
+                "question": "03",
+                "sub_question": "2",
+                "words": [
+                    "we"
+                ]
+            },
+            {
+                "question": "03",
+                "sub_question": "2",
+                "words": [
+                    "the",
+                    "train."
+                ]
+            },
+            {
+                "question": "07",
+                "sub_question": "3.2",
+                "words": [
+                    "ink"
+                ]
+            }
+        ],
+        "question_type_metrics": {
+            "FITB": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 3,
+                "gt_words": 54,
+                "hallu_words": 8
+            },
+            "W": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 78,
+                "hallu_words": 4
+            },
+            "U": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 6,
+                "hallu_words": 0
+            }
+        }
+    },
+    "usage": {
+        "prompt_tokens": 6518,
+        "candidate_tokens": 2308,
+        "thought_tokens": 2817
+    },
+    "cost": 0.018633999999999998,
+    "recognition_time": 30.152225971221924,
+    "prediction": {
+        "paper_title": "Grade 08 - English Monthly Evaluation Paper",
+        "questions": [
+            {
+                "test_number": "01",
+                "instruction": "There are six mistakes in the passage. Re-write the correct word in the given space",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "was",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "is",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "4": {
+                        "answer": "is",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "6": {
+                        "answer": "",
+                        "is_legible": ""
+                    }
+                }
+            },
+            {
+                "test_number": "02",
+                "instruction": "Fill in the blanks. Use as, since so,",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "as",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "as",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "so",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "so",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "since",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "03",
+                "instruction": "Rewrite these sentences using contracted form.",
+                "question_type": "W",
+                "student_answers": {
+                    "1": {
+                        "answer": "We shouldn't throw polythene to the environment.",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "Next time we we'll go by the train.",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "I promise you I'll do my best.",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "H wouldn't tell the truth.",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "Everybody says it's a beautiful drawing.",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "They aren't Australians.",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "04",
+                "instruction": "Join two sentences using 'since' and 'as'.",
+                "question_type": "W",
+                "student_answers": {
+                    "1": {
+                        "answer": "Piyal couldn't take the",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "3": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "answer": "",
+                        "is_legible": ""
+                    }
+                }
+            },
+            {
+                "test_number": "05",
+                "instruction": " Underline the right word.",
+                "question_type": "U",
+                "student_answers": {
+                    "1": {
+                        "answer": "lady",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "men",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "thief",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "women",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "ladies",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "buses",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "06",
+                "instruction": "Rewrite the following sentences with the Past Tense of the verb in brackets.",
+                "question_type": "W",
+                "student_answers": {
+                    "1": {
+                        "answer": "sunil's father spends a lot of money lest year.",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "Those poor children ate nothing today.",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "I written three lettrs this afternoon.",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "Nobody came to see me this evening.",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "We had three English lessons this week.",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "The lazy servant did very little work today.",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "07",
+                "instruction": " Use the below words to complete the sentences.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "pieces of chalk",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "a lot of money",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "1": {
+                            "answer": "piece of paper",
+                            "is_legible": "true"
+                        },
+                        "2": {
+                            "answer": "cups of coffee ink",
+                            "is_legible": "true"
+                        }
+                    },
+                    "4": {
+                        "answer": "piece of Paper",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "piece of soap",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "a glass of water",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "08",
+                "instruction": "Complete the following dialogue by writing the questions you ask him.",
+                "question_type": "W",
+                "student_answers": {
+                    "1": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "2": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "3": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "6": {
+                        "answer": "",
+                        "is_legible": ""
+                    }
+                }
+            },
+            {
+                "test_number": "09",
+                "instruction": "Complete the following notice using the given words/phrases in the box.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "Grade 8",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "class Room",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "11.30 am",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "Annual fair",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "10th November 2017",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "10",
+                "instruction": "Use past tense form of the verb.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "2": {
+                        "answer": "had",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "4": {
+                        "answer": "followed",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "tried",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "11",
+                "instruction": "essay",
+                "question_type": "W",
+                "student_answers": ""
+            }
+        ]
+    }
+}

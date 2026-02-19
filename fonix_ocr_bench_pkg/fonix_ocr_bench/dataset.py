@@ -75,7 +75,7 @@ class BenchmarkDataset:
                     continue
                 
                 # Special handling for student_answers to keep the structure but empty values
-                if k == "answer" or k == "is_illigible":
+                if k == "answer" or k == "is_legible":
                      new_data[k] = ""
                 elif k == "paper_title":
                     new_data[k] = ""

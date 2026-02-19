@@ -9,10 +9,11 @@ from fonix_ocr_bench import Gemini3Model, BenchmarkDataset, BenchmarkRunner, log
 dotenv.load_dotenv()
 
 # Configuration
-SYSTEM_INSTRUCTION = "You are a experienced annotater who can identify student answers for a student's paper and complete the given JSON."
+SYSTEM_INSTRUCTION = "You are an experienced annotator. Your primary goal is to extract the student's original handwritten answers. Focus on identifying and transcribing the raw student input into the provided JSON structure, distinguishing it from any surrounding grading marks or secondary annotations. For tasks where an answer is underlined, provide the corresponding option indicator (e.g., the letter or number) rather than the full text of the underlined option."
 PROMPT_TEMPLATE = """
 1. Read the uploaded document and extarct the answers and reshape according to the following structure.
-2. For is is_illigible use "true" if the answer is redable and not empty otherwise "false". If empty, keep blank is_illigible: ""
+2. For is_legible: set "true" if the answer is present and readable, "false" if present but not readable (illegible), or leave blank "" if the answer is empty.
+3. If both the 'answer' field and 'is_legible' field are left empty (\"\"), it indicates that the student did not provide an answer for that question.
 
 Here is the Sturcture that you should complete:
 ```
@@ -26,7 +27,7 @@ PAGE_BY_PAGE_PROMPT_TEMPLATE = """
 1. You are provided with a single page from a student's exam paper and a previously completed JSON structure.
 2. Your task is to update the JSON structure with any new answers found on this page.
 3. If an answer is already present in the JSON and you find a better or more complete version on this page, update it.
-4. For is_illigible use "true" if the answer is readable and not empty otherwise "false". If empty, keep blank is_illigible: ""
+4. For is_legible: set "true" if the answer is present and readable, "false" if present but not readable (illegible), or leave blank "" if the answer is empty.
 
 Previously completed JSON:
 ```
@@ -53,7 +54,15 @@ def main():
 
     # Initialize Components
     # Note: You can replace GeminiModel with your own custom model class here.
-    model = Gemini3Model(api_key=args.api_key, model_name=args.model)
+    model = Gemini3Model(
+        api_key=args.api_key, 
+        model_name=args.model,
+        )
+
+    model.thinking_level = types.ThinkingLevel.HIGH
+    model.temperature = 1
+    model.top_p = 0.95
+    model.media_resolution = types.MediaResolution.MEDIA_RESOLUTION_HIGH
     
     dataset = BenchmarkDataset(data_dir=args.data_dir)
     runner = BenchmarkRunner(

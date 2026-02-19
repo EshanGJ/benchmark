@@ -1,0 +1,232 @@
+{
+    "data": [
+        {
+            "question_type": "FITB",
+            "sets": {
+                "Set 1": [
+                    1,
+                    4,
+                    11,
+                    3,
+                    5
+                ],
+                "Set 2": [
+                    3,
+                    10,
+                    11,
+                    12,
+                    1,
+                    2,
+                    5
+                ],
+                "Set 3": null,
+                "Set 4": [
+                    2,
+                    7,
+                    9,
+                    10,
+                    1
+                ],
+                "Set 5": [
+                    10,
+                    5,
+                    9
+                ],
+                "Set 6": [
+                    7,
+                    4,
+                    9,
+                    10,
+                    5,
+                    6,
+                    8
+                ],
+                "Set 7": [
+                    9,
+                    10,
+                    2,
+                    4,
+                    7,
+                    8
+                ],
+                "Set 8": null,
+                "Set 9": [
+                    1,
+                    5,
+                    9,
+                    13,
+                    2,
+                    12,
+                    3
+                ],
+                "Set 10": [
+                    1,
+                    2,
+                    4,
+                    11,
+                    12,
+                    3,
+                    5
+                ]
+            }
+        },
+        {
+            "question_type": "U",
+            "sets": {
+                "Set 1": [
+                    2,
+                    9
+                ],
+                "Set 2": [
+                    4,
+                    7
+                ],
+                "Set 3": null,
+                "Set 4": [
+                    5
+                ],
+                "Set 5": null,
+                "Set 6": null,
+                "Set 7": [
+                    3
+                ],
+                "Set 8": null,
+                "Set 9": null,
+                "Set 10": [
+                    9
+                ]
+            }
+        },
+        {
+            "major_question_type": "W",
+            "sets": {
+                "Set 1": [
+                    6,
+                    8,
+                    10,
+                    14
+                ],
+                "Set 2": [
+                    6,
+                    8,
+                    9,
+                    14,
+                    16
+                ],
+                "Set 3": null,
+                "Set 4": [
+                    3,
+                    6,
+                    4,
+                    8,
+                    11
+                ],
+                "Set 5": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    11
+                ],
+                "Set 6": null,
+                "Set 7": [
+                    1,
+                    5,
+                    11
+                ],
+                "Set 8": null,
+                "Set 9": [
+                    10,
+                    4,
+                    6,
+                    8,
+                    14,
+                    16,
+                    7,
+                    11,
+                    15
+                ],
+                "Set 10": [
+                    10,
+                    6,
+                    8,
+                    14,
+                    16
+                ]
+            }
+        },
+        {
+            "major_question_type": "QA",
+            "sets": {
+                "Set 1": [
+                    7,
+                    12,
+                    13
+                ],
+                "Set 2": [
+                    13,
+                    15
+                ],
+                "Set 3": null,
+                "Set 4": null,
+                "Set 5": [
+                    7
+                ],
+                "Set 6": null,
+                "Set 7": [
+                    6
+                ],
+                "Set 8": null,
+                "Set 9": [
+                    7,
+                    11,
+                    15
+                ],
+                "Set 10": [
+                    7,
+                    13,
+                    15
+                ]
+            }
+        },
+        {
+            "major_question_type": "C",
+            "sets": {
+                "Set 1": null,
+                "Set 2": null,
+                "Set 3": null,
+                "Set 4": null,
+                "Set 5": [
+                    6
+                ],
+                "Set 6": [
+                    3
+                ],
+                "Set 7": null,
+                "Set 8": null,
+                "Set 9": null,
+                "Set 10": null
+            }
+        },
+        {
+            "major_question_type": "M",
+            "sets": {
+                "Set 1": null,
+                "Set 2": null,
+                "Set 3": null,
+                "Set 4": null,
+                "Set 5": [
+                    8
+                ],
+                "Set 6": [
+                    1,
+                    2
+                ],
+                "Set 7": null,
+                "Set 8": null,
+                "Set 9": null,
+                "Set 10": null
+            }
+        }
+    ]
+}
