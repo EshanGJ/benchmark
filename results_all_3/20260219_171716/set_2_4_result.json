@@ -1,0 +1,1187 @@
+{
+    "pdf_name": "set_2_4.pdf",
+    "metrics": {
+        "fabricated_hallucinations": 0,
+        "fabricated_hallucination_rate": 0.0,
+        "crossed_out_hallucinations": 3,
+        "crossed_out_hallucination_rate": 0.004739336492890996,
+        "illegibility_hallucinations": 88,
+        "illegibility_hallucination_rate": 0.13902053712480253,
+        "word_level_hallucination_rate": 0.1406003159557662,
+        "total_hallucinated_words": 89,
+        "total_gt_words": 633,
+        "replaced_word_pairs": [
+            {
+                "question": "3",
+                "sub_question": "5",
+                "gt_words": [
+                    "dust-pan"
+                ],
+                "pred_words": [
+                    "dust",
+                    "pan"
+                ]
+            },
+            {
+                "question": "3",
+                "sub_question": "7",
+                "gt_words": [
+                    "book-rack"
+                ],
+                "pred_words": [
+                    "book",
+                    "-",
+                    "rack"
+                ]
+            },
+            {
+                "question": "3",
+                "sub_question": "9",
+                "gt_words": [
+                    "window"
+                ],
+                "pred_words": [
+                    "window-sill"
+                ]
+            },
+            {
+                "question": "4",
+                "sub_question": "5",
+                "gt_words": [
+                    "came"
+                ],
+                "pred_words": [
+                    "come"
+                ]
+            },
+            {
+                "question": "4",
+                "sub_question": "6",
+                "gt_words": [
+                    "finish"
+                ],
+                "pred_words": [
+                    "finishes"
+                ]
+            },
+            {
+                "question": "6",
+                "sub_question": "",
+                "gt_words": [
+                    "Upulka,I"
+                ],
+                "pred_words": [
+                    "Upulka,",
+                    "I"
+                ]
+            },
+            {
+                "question": "6",
+                "sub_question": "",
+                "gt_words": [
+                    "departure."
+                ],
+                "pred_words": [
+                    "departure"
+                ]
+            },
+            {
+                "question": "6",
+                "sub_question": "",
+                "gt_words": [
+                    "future.Umesha."
+                ],
+                "pred_words": [
+                    "Future.",
+                    "Umesha."
+                ]
+            },
+            {
+                "question": "8",
+                "sub_question": "",
+                "gt_words": [
+                    "It\u2019s"
+                ],
+                "pred_words": [
+                    "It's"
+                ]
+            },
+            {
+                "question": "8",
+                "sub_question": "",
+                "gt_words": [
+                    "it\u2019s"
+                ],
+                "pred_words": [
+                    "it's"
+                ]
+            },
+            {
+                "question": "9",
+                "sub_question": "4",
+                "gt_words": [
+                    "belive"
+                ],
+                "pred_words": [
+                    "believe"
+                ]
+            },
+            {
+                "question": "13",
+                "sub_question": "1",
+                "gt_words": [
+                    "tose"
+                ],
+                "pred_words": [
+                    "toes."
+                ]
+            },
+            {
+                "question": "13",
+                "sub_question": "2",
+                "gt_words": [
+                    "playground"
+                ],
+                "pred_words": [
+                    "playground."
+                ]
+            },
+            {
+                "question": "13",
+                "sub_question": "3.1",
+                "gt_words": [
+                    "lip-hip,",
+                    "shin-chin"
+                ],
+                "pred_words": [
+                    "lip",
+                    "-",
+                    "hip",
+                    ",",
+                    "shin",
+                    "-",
+                    "chin"
+                ]
+            },
+            {
+                "question": "13",
+                "sub_question": "3.2",
+                "gt_words": [
+                    "roten,"
+                ],
+                "pred_words": [
+                    "rotten",
+                    ","
+                ]
+            },
+            {
+                "question": "13",
+                "sub_question": "4",
+                "gt_words": [
+                    "life"
+                ],
+                "pred_words": [
+                    "life."
+                ]
+            },
+            {
+                "question": "13",
+                "sub_question": "5",
+                "gt_words": [
+                    "nose,",
+                    "ear,",
+                    "eye,"
+                ],
+                "pred_words": [
+                    "nose",
+                    ",",
+                    "ear",
+                    ",",
+                    "eye",
+                    ","
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "b",
+                "gt_words": [
+                    "plastic,"
+                ],
+                "pred_words": [
+                    "plastic",
+                    ","
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "b",
+                "gt_words": [
+                    "cardboard,"
+                ],
+                "pred_words": [
+                    "Cardboard",
+                    ","
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "b",
+                "gt_words": [
+                    "materials,",
+                    "Other,"
+                ],
+                "pred_words": [
+                    "materials",
+                    ",",
+                    "Other",
+                    ","
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "b",
+                "gt_words": [
+                    "metal.According"
+                ],
+                "pred_words": [
+                    "Metal.",
+                    "According"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "b",
+                "gt_words": [
+                    "that"
+                ],
+                "pred_words": [
+                    "that,"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "b",
+                "gt_words": [
+                    "46%."
+                ],
+                "pred_words": [
+                    "46",
+                    "%",
+                    "."
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "b",
+                "gt_words": [
+                    "6%."
+                ],
+                "pred_words": [
+                    "6%",
+                    "."
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "b",
+                "gt_words": [
+                    "8%."
+                ],
+                "pred_words": [
+                    "8%",
+                    "."
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "b",
+                "gt_words": [
+                    "11%."
+                ],
+                "pred_words": [
+                    "11",
+                    "%",
+                    "."
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "b",
+                "gt_words": [
+                    "11%.According"
+                ],
+                "pred_words": [
+                    "11%",
+                    ".",
+                    "According"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.1",
+                "gt_words": [
+                    "T"
+                ],
+                "pred_words": [
+                    "True"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.2",
+                "gt_words": [
+                    "F"
+                ],
+                "pred_words": [
+                    "False"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.3",
+                "gt_words": [
+                    "T"
+                ],
+                "pred_words": [
+                    "True"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.4",
+                "gt_words": [
+                    "T"
+                ],
+                "pred_words": [
+                    "True"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "2.b",
+                "gt_words": [
+                    "brobably"
+                ],
+                "pred_words": [
+                    "probb",
+                    "probably"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "4",
+                "gt_words": [
+                    "b"
+                ],
+                "pred_words": [
+                    "a"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "5",
+                "gt_words": [
+                    "because,"
+                ],
+                "pred_words": [
+                    "because",
+                    ","
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "5",
+                "gt_words": [
+                    "probbly"
+                ],
+                "pred_words": [
+                    "probably"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "5",
+                "gt_words": [
+                    "disturbed"
+                ],
+                "pred_words": [
+                    "disturbed."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "I\u2019m"
+                ],
+                "pred_words": [
+                    "I'm"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "\u201cTaking"
+                ],
+                "pred_words": [
+                    "\"Taking"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "School\u201d"
+                ],
+                "pred_words": [
+                    "School\""
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "I\u2019m"
+                ],
+                "pred_words": [
+                    "I'm"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "buildings,"
+                ],
+                "pred_words": [
+                    "bulidings,"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "example"
+                ],
+                "pred_words": [
+                    "example."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "them"
+                ],
+                "pred_words": [
+                    "them-"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "student."
+                ],
+                "pred_words": [
+                    "students."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "it\u2019s"
+                ],
+                "pred_words": [
+                    "it's"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "I\u2019m"
+                ],
+                "pred_words": [
+                    "I'm"
+                ]
+            }
+        ],
+        "inserted_words": [
+            {
+                "question": "8",
+                "sub_question": "",
+                "words": [
+                    "Let's",
+                    "protect",
+                    "our",
+                    "public",
+                    "property"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "public"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "thes-"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "Thanks",
+                    "for",
+                    "the..."
+                ]
+            }
+        ],
+        "question_type_metrics": {
+            "FITB": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 52,
+                "gt_words": 58,
+                "hallu_words": 6
+            },
+            "U": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 11,
+                "gt_words": 11,
+                "hallu_words": 2
+            },
+            "W": {
+                "fabricated": 0,
+                "crossed": 2,
+                "illegible": 9,
+                "gt_words": 521,
+                "hallu_words": 52
+            },
+            "QA": {
+                "fabricated": 0,
+                "crossed": 1,
+                "illegible": 16,
+                "gt_words": 43,
+                "hallu_words": 29
+            }
+        }
+    },
+    "refined_metrics": {
+        "fabricated_hallucinations": 0,
+        "fabricated_hallucination_rate": 0.0,
+        "crossed_out_hallucinations": 3,
+        "crossed_out_hallucination_rate": 0.004739336492890996,
+        "illegibility_hallucinations": 88,
+        "illegibility_hallucination_rate": 0.13902053712480253,
+        "word_level_hallucination_rate": 0.02211690363349131,
+        "total_hallucinated_words": 14,
+        "total_gt_words": 633,
+        "replaced_word_pairs": [
+            {
+                "question": "3",
+                "sub_question": "9",
+                "gt_words": [
+                    "window"
+                ],
+                "pred_words": [
+                    "window-sill"
+                ]
+            },
+            {
+                "question": "4",
+                "sub_question": "5",
+                "gt_words": [
+                    "came"
+                ],
+                "pred_words": [
+                    "come"
+                ]
+            },
+            {
+                "question": "4",
+                "sub_question": "6",
+                "gt_words": [
+                    "finish"
+                ],
+                "pred_words": [
+                    "finishes"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "4",
+                "gt_words": [
+                    "b"
+                ],
+                "pred_words": [
+                    "a"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "student."
+                ],
+                "pred_words": [
+                    "students."
+                ]
+            }
+        ],
+        "inserted_words": [
+            {
+                "question": "8",
+                "sub_question": "",
+                "words": [
+                    "Let's",
+                    "protect",
+                    "our",
+                    "public",
+                    "property"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "public"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "Thanks",
+                    "for",
+                    "the..."
+                ]
+            }
+        ],
+        "question_type_metrics": {
+            "FITB": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 52,
+                "gt_words": 58,
+                "hallu_words": 3
+            },
+            "U": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 11,
+                "gt_words": 11,
+                "hallu_words": 0
+            },
+            "W": {
+                "fabricated": 0,
+                "crossed": 2,
+                "illegible": 9,
+                "gt_words": 521,
+                "hallu_words": 10
+            },
+            "QA": {
+                "fabricated": 0,
+                "crossed": 1,
+                "illegible": 16,
+                "gt_words": 43,
+                "hallu_words": 1
+            }
+        }
+    },
+    "usage": {
+        "prompt_tokens": 20041,
+        "candidate_tokens": 4455,
+        "thought_tokens": 7448
+    },
+    "cost": 0.0457295,
+    "recognition_time": 72.5261242389679,
+    "prediction": {
+        "paper_title": "SECOND TERM EVALUATION - 2023 Grade 11 ENGLISH LANGUAGE",
+        "questions": [
+            {
+                "test_number": "1",
+                "instruction": "Select the correct response from column B to the statement or question in column A and write the letter of the response in the given space. ",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "c",
+                        "is_illigible": "true"
+                    },
+                    "2": {
+                        "answer": "d",
+                        "is_illigible": "true"
+                    },
+                    "3": {
+                        "answer": "f",
+                        "is_illigible": "true"
+                    },
+                    "4": {
+                        "answer": "a",
+                        "is_illigible": "true"
+                    },
+                    "5": {
+                        "answer": "b",
+                        "is_illigible": "true"
+                    },
+                    "6": {
+                        "answer": "e",
+                        "is_illigible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "2",
+                "instruction": "Fill in the blanks in the invitation below. Use the words given in the box. Write the letter of the correct word in the blank.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "B",
+                        "is_illigible": "true"
+                    },
+                    "2": {
+                        "answer": "D",
+                        "is_illigible": "true"
+                    },
+                    "3": {
+                        "answer": "A",
+                        "is_illigible": "true"
+                    },
+                    "4": {
+                        "answer": "C",
+                        "is_illigible": "true"
+                    },
+                    "5": {
+                        "answer": "F",
+                        "is_illigible": "true"
+                    },
+                    "6": {
+                        "answer": "E",
+                        "is_illigible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "3",
+                "instruction": "Study the picture and fill in the blanks in the text given below. Use only one word in each blank.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "cleaning",
+                        "is_illigible": "true"
+                    },
+                    "2": {
+                        "answer": "apron",
+                        "is_illigible": "true"
+                    },
+                    "3": {
+                        "answer": "floor",
+                        "is_illigible": "true"
+                    },
+                    "4": {
+                        "answer": "Sweeping",
+                        "is_illigible": "true"
+                    },
+                    "5": {
+                        "answer": "dust pan",
+                        "is_illigible": "true"
+                    },
+                    "6": {
+                        "answer": "table",
+                        "is_illigible": "true"
+                    },
+                    "7": {
+                        "answer": "book - rack",
+                        "is_illigible": "true"
+                    },
+                    "8": {
+                        "answer": "beautiful",
+                        "is_illigible": "true"
+                    },
+                    "9": {
+                        "answer": "window-sill",
+                        "is_illigible": "true"
+                    },
+                    "10": {
+                        "answer": "watering Can",
+                        "is_illigible": "true"
+                    },
+                    "11": {
+                        "answer": "Curtains",
+                        "is_illigible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "4",
+                "instruction": "Underline the most suitable word given within brackets to fill in each blank.",
+                "question_type": "U",
+                "student_answers": {
+                    "1": {
+                        "answer": "is",
+                        "is_illigible": "true"
+                    },
+                    "2": {
+                        "answer": "leave",
+                        "is_illigible": "true"
+                    },
+                    "3": {
+                        "answer": "packing",
+                        "is_illigible": "true"
+                    },
+                    "4": {
+                        "answer": "work",
+                        "is_illigible": "true"
+                    },
+                    "5": {
+                        "answer": "come",
+                        "is_illigible": "true"
+                    },
+                    "6": {
+                        "answer": "finishes",
+                        "is_illigible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "5",
+                "instruction": " Read the following dialogue and fill in the blanks in the newspaper bulletin given below. ",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "collided",
+                        "is_illigible": "true"
+                    },
+                    "2": {
+                        "answer": "killed",
+                        "is_illigible": "true"
+                    },
+                    "3": {
+                        "answer": "cleaner",
+                        "is_illigible": "true"
+                    },
+                    "4": {
+                        "answer": "head",
+                        "is_illigible": "true"
+                    },
+                    "5": {
+                        "answer": "vehicle",
+                        "is_illigible": "true"
+                    },
+                    "6": {
+                        "answer": "Coroner",
+                        "is_illigible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "6",
+                "instruction": "Your friend Upulka is going abroad for higher studies this weekend. You are unable to see her before her departure. Write a note to be sent to her with a small present. Use about 40-50 words.",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "Dear Upulka, I was very happy to hear that you're abroad for higher Studies this weekend. but I was unable to see you before the departure I packed Small gift for you and please accept that present and I wish you For the good Future. Umesha.",
+                    "is_illigible": "true"
+                }
+            },
+            {
+                "test_number": "7",
+                "instruction": "Read the story given below and answer the questions.",
+                "question_type": "U",
+                "student_answers": {
+                    "1": {
+                        "answer": "a",
+                        "is_illigible": "true"
+                    },
+                    "2": {
+                        "answer": "a",
+                        "is_illigible": "true"
+                    },
+                    "3": {
+                        "answer": "b",
+                        "is_illigible": "true"
+                    },
+                    "4": {
+                        "answer": "a",
+                        "is_illigible": "true"
+                    },
+                    "5": {
+                        "answer": "c",
+                        "is_illigible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "8",
+                "instruction": " Write a paragraph on one of the given topics.",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "Let's protect our public property Public property is common for all the people in our society. Bus stop, school, Temple, road, bank and the buses are some examples For the public property. These public properties are given for the our purposes. Therefore, we must protect them but, nowadays most of people are destroy these public properties. we must protect this public property as our own property. It's very important for our new generation. Therefore it's our own responsible for protect these public property for the new generation.",
+                    "is_illigible": "true"
+                }
+            },
+            {
+                "test_number": "9",
+                "instruction": "Read the text and underline the most suitable word given within brackets.",
+                "question_type": "W",
+                "student_answers": {
+                    "1": {
+                        "answer": "difficulties",
+                        "is_illigible": "true"
+                    },
+                    "2": {
+                        "answer": "educated",
+                        "is_illigible": "true"
+                    },
+                    "3": {
+                        "answer": "mysterious",
+                        "is_illigible": "true"
+                    },
+                    "4": {
+                        "answer": "believe",
+                        "is_illigible": "true"
+                    },
+                    "5": {
+                        "answer": "responsible",
+                        "is_illigible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "10",
+                "instruction": "Complete the following passage using the correct form of the verb given within each bracket.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "Saw",
+                        "is_illigible": "true"
+                    },
+                    "2": {
+                        "answer": "Said",
+                        "is_illigible": "true"
+                    },
+                    "3": {
+                        "answer": "was",
+                        "is_illigible": "true"
+                    },
+                    "4": {
+                        "answer": "Said",
+                        "is_illigible": "true"
+                    },
+                    "5": {
+                        "answer": "was taken",
+                        "is_illigible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "11",
+                "instruction": "Fill in the blanks with the words given in the box. There is one extra word",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "office",
+                        "is_illigible": "true"
+                    },
+                    "2": {
+                        "answer": "roadway",
+                        "is_illigible": "true"
+                    },
+                    "3": {
+                        "answer": "arm chair",
+                        "is_illigible": "true"
+                    },
+                    "4": {
+                        "answer": "impatient",
+                        "is_illigible": "true"
+                    },
+                    "5": {
+                        "answer": "photography",
+                        "is_illigible": "true"
+                    },
+                    "6": {
+                        "answer": "advertisement",
+                        "is_illigible": "true"
+                    },
+                    "7": {
+                        "answer": "job",
+                        "is_illigible": "true"
+                    },
+                    "8": {
+                        "answer": "overseas",
+                        "is_illigible": "true"
+                    },
+                    "9": {
+                        "answer": "work",
+                        "is_illigible": "true"
+                    },
+                    "10": {
+                        "answer": "",
+                        "is_illigible": ""
+                    },
+                    "11": {
+                        "answer": "evening",
+                        "is_illigible": "true"
+                    },
+                    "12": {
+                        "answer": "adventure",
+                        "is_illigible": "true"
+                    },
+                    "13": {
+                        "answer": "story",
+                        "is_illigible": "true"
+                    },
+                    "14": {
+                        "answer": "beach",
+                        "is_illigible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "12",
+                "instruction": "Complete the following passage using the most appropriate form of the verb given within brackets.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "is Situated",
+                        "is_illigible": "true"
+                    },
+                    "2": {
+                        "answer": "was visited",
+                        "is_illigible": "true"
+                    },
+                    "3": {
+                        "answer": "give up",
+                        "is_illigible": "true"
+                    },
+                    "4": {
+                        "answer": "get",
+                        "is_illigible": "true"
+                    },
+                    "5": {
+                        "answer": "is",
+                        "is_illigible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "13",
+                "instruction": "Read the poem and answer the questions given.",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "answer": "because he accidentally stubbed his toes.",
+                        "is_illigible": "true"
+                    },
+                    "2": {
+                        "answer": "In the playground.",
+                        "is_illigible": "true"
+                    },
+                    "3": {
+                        "1": {
+                            "answer": "lip - hip , shin - chin",
+                            "is_illigible": "true"
+                        },
+                        "2": {
+                            "answer": "rotten , my",
+                            "is_illigible": "true"
+                        }
+                    },
+                    "4": {
+                        "answer": "Carefull is very important to life.",
+                        "is_illigible": "true"
+                    },
+                    "5": {
+                        "answer": "nose , ear , eye , neck",
+                        "is_illigible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "14",
+                "instruction": "You are the secretary of the Environmental Society of your school. You have planned to launch programme called Keep the City Clean in your area with all the members of the society.Write a letter to get the permission from the authority of the municipal council, to remove the unnecessary posters and advertisements in the area. Use about 100 words. or The following pie chart shows the percentage of household waste in 2022. Study it and write a description of it. Use about 100 words. The following words will help you",
+                "question_type": "W",
+                "student_answers": {
+                    "a": {
+                        "answer": "",
+                        "is_illigible": ""
+                    },
+                    "b": {
+                        "answer": "The above pie chart shows the percentage of household waste in 2022. This pie chart illustrates the house hold waste such as plastic , paper and Cardboard , Food and garden materials , Other , and glass and Metal. According to the above pie chart, The highest percentage of household waste in 2022 is Food and garden materials that, is 46 % . The lowest percentage of household waste in 2022 is metal that is 6% . The equal percentage of waste in 2022 is plastic and glass that is 8% . The percentage of household waste of paper and Cardboard is greater than the percentage of household waste of other that is 11 % . The percentage of household waste of other is 11% . According to the above information, It is clear that the percentage of household waste of food and garden materials are higher than the percentage of household waste of Metal.",
+                        "is_illigible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "15",
+                "instruction": "Read the following text and answer the questions given below.",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "1": {
+                            "answer": "True",
+                            "is_illigible": "true"
+                        },
+                        "2": {
+                            "answer": "False",
+                            "is_illigible": "true"
+                        },
+                        "3": {
+                            "answer": "True",
+                            "is_illigible": "true"
+                        },
+                        "4": {
+                            "answer": "True",
+                            "is_illigible": "true"
+                        }
+                    },
+                    "2": {
+                        "a": {
+                            "answer": "fashion",
+                            "is_illigible": "true"
+                        },
+                        "b": {
+                            "answer": "probb probably",
+                            "is_illigible": "true"
+                        }
+                    },
+                    "3": {
+                        "a": {
+                            "answer": "purple",
+                            "is_illigible": "true"
+                        },
+                        "b": {
+                            "answer": "married couples",
+                            "is_illigible": "true"
+                        }
+                    },
+                    "4": {
+                        "answer": "a",
+                        "is_illigible": "true"
+                    },
+                    "5": {
+                        "answer": "because , purple as a favourite colour is probably emotionally disturbed.",
+                        "is_illigible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "16",
+                "instruction": "Write on one of the following topics. Use about 200 words.",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "Good morning everyone, Respect principle madam, Honorable thero, and my dear teachers and my dear friends, Today I'm going to talk about \"Taking Care of School\" First, I'm going to explain what is the school. Ok.. School is the place that all the students are learn and the place that give us a good Future. Therefore school is good place to students. There are many types of school property, such as bulidings, Science laboratory, library, and playground etc. These are public common property for the all students. These school from grade 01 to grade 13. These school property is very usefull to us for our learning. As a example. the Science laboratory is very important to us for do Science practicales. The playground is important for the do sports. According to that these school property is very import for our learning and these properties are provide us for give good learning. It is our own responsible to protect these school property. we can protect thes- this school property by using them carefully. we can use them carefully and protect them- For the other students. Now, you can understand the importance of these school property. Now, you can understand how these properties are important to us? Therefore it's our responsible for protect these propertise for the other students who are in the school. we must protect them as our own property. Thanks for the... Now I'm going to Stop my Speech. Thanks for the listening.",
+                    "is_illigible": "true"
+                }
+            }
+        ]
+    }
+}

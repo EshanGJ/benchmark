@@ -1,0 +1,999 @@
+{
+    "pdf_name": "set_1_8.pdf",
+    "metrics": {
+        "fabricated_hallucinations": 1,
+        "fabricated_hallucination_rate": 0.005988023952095809,
+        "crossed_out_hallucinations": 4,
+        "crossed_out_hallucination_rate": 0.023952095808383235,
+        "illegibility_hallucinations": 56,
+        "illegibility_hallucination_rate": 0.33532934131736525,
+        "word_level_hallucination_rate": 0.2634730538922156,
+        "total_hallucinated_words": 44,
+        "total_gt_words": 167,
+        "replaced_word_pairs": [
+            {
+                "question": "01",
+                "sub_question": "4",
+                "gt_words": [
+                    "b"
+                ],
+                "pred_words": [
+                    "interesting"
+                ]
+            },
+            {
+                "question": "01",
+                "sub_question": "5",
+                "gt_words": [
+                    "a"
+                ],
+                "pred_words": [
+                    "story"
+                ]
+            },
+            {
+                "question": "01",
+                "sub_question": "6",
+                "gt_words": [
+                    "g"
+                ],
+                "pred_words": [
+                    "story"
+                ]
+            },
+            {
+                "question": "05",
+                "sub_question": "1",
+                "gt_words": [
+                    "heritage",
+                    "club"
+                ],
+                "pred_words": [
+                    "Colombo",
+                    "museum"
+                ]
+            },
+            {
+                "question": "05",
+                "sub_question": "2",
+                "gt_words": [
+                    "Colombo",
+                    "Museum"
+                ],
+                "pred_words": [
+                    "heritage",
+                    "club"
+                ]
+            },
+            {
+                "question": "07",
+                "sub_question": "2",
+                "gt_words": [
+                    "Mrs."
+                ],
+                "pred_words": [
+                    "Mrs"
+                ]
+            },
+            {
+                "question": "07",
+                "sub_question": "3",
+                "gt_words": [
+                    "didn't"
+                ],
+                "pred_words": [
+                    "didnot"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "Country."
+                ],
+                "pred_words": [
+                    "Country"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "Lanka,"
+                ],
+                "pred_words": [
+                    "Lanka"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "cantry"
+                ],
+                "pred_words": [
+                    "country"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "Island."
+                ],
+                "pred_words": [
+                    "island"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "the.Indian",
+                    "ocean."
+                ],
+                "pred_words": [
+                    "the",
+                    "indian",
+                    "ocean"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "pear"
+                ],
+                "pred_words": [
+                    "pearl"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "ocean."
+                ],
+                "pred_words": [
+                    "ocean"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "kotte."
+                ],
+                "pred_words": [
+                    "Kotte"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "it",
+                    "s"
+                ],
+                "pred_words": [
+                    "its"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "center,"
+                ],
+                "pred_words": [
+                    "center"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "popu",
+                    "lation"
+                ],
+                "pred_words": [
+                    "population"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "people."
+                ],
+                "pred_words": [
+                    "people"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "coun",
+                    "try"
+                ],
+                "pred_words": [
+                    "country"
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "2",
+                "gt_words": [
+                    "Mr."
+                ],
+                "pred_words": [
+                    "Mr"
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "2",
+                "gt_words": [
+                    "piano"
+                ],
+                "pred_words": [
+                    "piano."
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "4",
+                "gt_words": [
+                    "tried."
+                ],
+                "pred_words": [
+                    "tired."
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "5",
+                "gt_words": [
+                    "pawvan"
+                ],
+                "pred_words": [
+                    "Pavan"
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "5",
+                "gt_words": [
+                    "beauiful"
+                ],
+                "pred_words": [
+                    "beautiful"
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "6",
+                "gt_words": [
+                    "lived"
+                ],
+                "pred_words": [
+                    "live"
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "6",
+                "gt_words": [
+                    "colombo."
+                ],
+                "pred_words": [
+                    "Colombo"
+                ]
+            },
+            {
+                "question": "11",
+                "sub_question": "9",
+                "gt_words": [
+                    "which"
+                ],
+                "pred_words": [
+                    "the"
+                ]
+            },
+            {
+                "question": "12",
+                "sub_question": "1",
+                "gt_words": [
+                    "c"
+                ],
+                "pred_words": [
+                    "a"
+                ]
+            },
+            {
+                "question": "12",
+                "sub_question": "3",
+                "gt_words": [
+                    "mournfull"
+                ],
+                "pred_words": [
+                    "mournful"
+                ]
+            },
+            {
+                "question": "13",
+                "sub_question": "2.i",
+                "gt_words": [
+                    "gethin"
+                ],
+                "pred_words": [
+                    "in",
+                    "their"
+                ]
+            },
+            {
+                "question": "13",
+                "sub_question": "4",
+                "gt_words": [
+                    "Albeait"
+                ],
+                "pred_words": [
+                    "Albert"
+                ]
+            },
+            {
+                "question": "13",
+                "sub_question": "4",
+                "gt_words": [
+                    "in",
+                    "copable"
+                ],
+                "pred_words": [
+                    "incapable"
+                ]
+            }
+        ],
+        "inserted_words": [
+            {
+                "question": "05",
+                "sub_question": "6",
+                "words": [
+                    "at",
+                    "6.30",
+                    "in",
+                    "the",
+                    "morning"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "words": [
+                    "a"
+                ]
+            }
+        ],
+        "question_type_metrics": {
+            "FITB": {
+                "fabricated": 0,
+                "crossed": 3,
+                "illegible": 27,
+                "gt_words": 30,
+                "hallu_words": 13
+            },
+            "U": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 6,
+                "gt_words": 8,
+                "hallu_words": 0
+            },
+            "QA": {
+                "fabricated": 1,
+                "crossed": 1,
+                "illegible": 17,
+                "gt_words": 32,
+                "hallu_words": 8
+            },
+            "W": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 6,
+                "gt_words": 97,
+                "hallu_words": 23
+            }
+        }
+    },
+    "refined_metrics": {
+        "fabricated_hallucinations": 1,
+        "fabricated_hallucination_rate": 0.005988023952095809,
+        "crossed_out_hallucinations": 4,
+        "crossed_out_hallucination_rate": 0.023952095808383235,
+        "illegibility_hallucinations": 56,
+        "illegibility_hallucination_rate": 0.33532934131736525,
+        "word_level_hallucination_rate": 0.11377245508982035,
+        "total_hallucinated_words": 19,
+        "total_gt_words": 167,
+        "replaced_word_pairs": [
+            {
+                "question": "01",
+                "sub_question": "4",
+                "gt_words": [
+                    "b"
+                ],
+                "pred_words": [
+                    "interesting"
+                ]
+            },
+            {
+                "question": "01",
+                "sub_question": "5",
+                "gt_words": [
+                    "a"
+                ],
+                "pred_words": [
+                    "story"
+                ]
+            },
+            {
+                "question": "01",
+                "sub_question": "6",
+                "gt_words": [
+                    "g"
+                ],
+                "pred_words": [
+                    "story"
+                ]
+            },
+            {
+                "question": "05",
+                "sub_question": "1",
+                "gt_words": [
+                    "heritage",
+                    "club"
+                ],
+                "pred_words": [
+                    "Colombo",
+                    "museum"
+                ]
+            },
+            {
+                "question": "05",
+                "sub_question": "2",
+                "gt_words": [
+                    "Colombo",
+                    "Museum"
+                ],
+                "pred_words": [
+                    "heritage",
+                    "club"
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "4",
+                "gt_words": [
+                    "tried."
+                ],
+                "pred_words": [
+                    "tired."
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "6",
+                "gt_words": [
+                    "lived"
+                ],
+                "pred_words": [
+                    "live"
+                ]
+            },
+            {
+                "question": "11",
+                "sub_question": "9",
+                "gt_words": [
+                    "which"
+                ],
+                "pred_words": [
+                    "the"
+                ]
+            },
+            {
+                "question": "12",
+                "sub_question": "1",
+                "gt_words": [
+                    "c"
+                ],
+                "pred_words": [
+                    "a"
+                ]
+            },
+            {
+                "question": "13",
+                "sub_question": "2.i",
+                "gt_words": [
+                    "gethin"
+                ],
+                "pred_words": [
+                    "in",
+                    "their"
+                ]
+            },
+            {
+                "question": "13",
+                "sub_question": "4",
+                "gt_words": [
+                    "Albeait"
+                ],
+                "pred_words": [
+                    "Albert"
+                ]
+            }
+        ],
+        "inserted_words": [
+            {
+                "question": "05",
+                "sub_question": "6",
+                "words": [
+                    "at",
+                    "6.30",
+                    "in",
+                    "the",
+                    "morning"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "words": [
+                    "a"
+                ]
+            }
+        ],
+        "question_type_metrics": {
+            "FITB": {
+                "fabricated": 0,
+                "crossed": 3,
+                "illegible": 27,
+                "gt_words": 30,
+                "hallu_words": 4
+            },
+            "U": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 6,
+                "gt_words": 8,
+                "hallu_words": 2
+            },
+            "QA": {
+                "fabricated": 1,
+                "crossed": 1,
+                "illegible": 17,
+                "gt_words": 32,
+                "hallu_words": 12
+            },
+            "W": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 6,
+                "gt_words": 97,
+                "hallu_words": 1
+            }
+        }
+    },
+    "usage": {
+        "prompt_tokens": 12666,
+        "candidate_tokens": 3184,
+        "thought_tokens": 5274
+    },
+    "cost": 0.031707,
+    "recognition_time": 52.942582845687866,
+    "prediction": {
+        "paper_title": "Grade 10 - English - First Term Evaluation - 2018",
+        "questions": [
+            {
+                "test_number": "01",
+                "instruction": "Fill in the blanks in the following dialogue. Use the words given in the box. There is one extra word. The first one is done for you.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "d",
+                        "is_illigible": "true"
+                    },
+                    "2": {
+                        "answer": "f",
+                        "is_illigible": "true"
+                    },
+                    "3": {
+                        "answer": "jungle",
+                        "is_illigible": "true"
+                    },
+                    "4": {
+                        "answer": "interesting",
+                        "is_illigible": "true"
+                    },
+                    "5": {
+                        "answer": "story",
+                        "is_illigible": "true"
+                    },
+                    "6": {
+                        "answer": "story",
+                        "is_illigible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "02",
+                "instruction": "Underline the correct answer . The first one is done for you.",
+                "question_type": "U",
+                "student_answers": {
+                    "1": {
+                        "answer": "didn't",
+                        "is_illigible": "true"
+                    },
+                    "2": {
+                        "answer": "was",
+                        "is_illigible": "true"
+                    },
+                    "3": {
+                        "answer": "was suffering",
+                        "is_illigible": "true"
+                    },
+                    "4": {
+                        "answer": "was",
+                        "is_illigible": "true"
+                    },
+                    "5": {
+                        "answer": "asked",
+                        "is_illigible": "true"
+                    },
+                    "6": {
+                        "answer": "will visit",
+                        "is_illigible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "03",
+                "instruction": "Study the picture and fill in the blanks in the text given below. Use only one word in each blank.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "",
+                        "is_illigible": ""
+                    },
+                    "2": {
+                        "answer": "",
+                        "is_illigible": ""
+                    },
+                    "3": {
+                        "answer": "",
+                        "is_illigible": ""
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_illigible": ""
+                    },
+                    "5": {
+                        "answer": "",
+                        "is_illigible": ""
+                    },
+                    "6": {
+                        "answer": "",
+                        "is_illigible": ""
+                    },
+                    "7": {
+                        "answer": "",
+                        "is_illigible": ""
+                    },
+                    "8": {
+                        "answer": "",
+                        "is_illigible": ""
+                    },
+                    "9": {
+                        "answer": "",
+                        "is_illigible": ""
+                    },
+                    "10": {
+                        "answer": "",
+                        "is_illigible": ""
+                    }
+                }
+            },
+            {
+                "test_number": "04",
+                "instruction": "Match the extracts with the headings. Write the correct letter in the blank provided. The first one is done for you.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "b",
+                        "is_illigible": "true"
+                    },
+                    "2": {
+                        "answer": "f",
+                        "is_illigible": "true"
+                    },
+                    "3": {
+                        "answer": "a",
+                        "is_illigible": "true"
+                    },
+                    "4": {
+                        "answer": "e",
+                        "is_illigible": "true"
+                    },
+                    "5": {
+                        "answer": "d",
+                        "is_illigible": "true"
+                    },
+                    "6": {
+                        "answer": "c",
+                        "is_illigible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "05",
+                "instruction": "Read the following notice and complete the dialogue. Use only one word in each blank. The first one is done for you.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "Colombo museum",
+                        "is_illigible": "true"
+                    },
+                    "2": {
+                        "answer": "heritage club",
+                        "is_illigible": "true"
+                    },
+                    "3": {
+                        "answer": "permission",
+                        "is_illigible": "true"
+                    },
+                    "4": {
+                        "answer": "water",
+                        "is_illigible": "true"
+                    },
+                    "5": {
+                        "answer": "",
+                        "is_illigible": ""
+                    },
+                    "6": {
+                        "answer": "main gate at 6.30 in the morning",
+                        "is_illigible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "06",
+                "instruction": "You are going on a trip and you want to borrow your friend's camera. Write a note asking him to lend you his camera. Use about 50 words.",
+                "question_type": "W",
+                "student_answers": ""
+            },
+            {
+                "test_number": "07",
+                "instruction": "Read the following text and answer the questions.",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "answer": "Henry",
+                        "is_illigible": "true"
+                    },
+                    "2": {
+                        "answer": "Mrs Brown",
+                        "is_illigible": "true"
+                    },
+                    "3": {
+                        "answer": "Henry still didnot hear",
+                        "is_illigible": "true"
+                    },
+                    "4": {
+                        "answer": "D",
+                        "is_illigible": "true"
+                    },
+                    "5": {
+                        "answer": "a",
+                        "is_illigible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "08",
+                "instruction": "Write on one of the following topics. Use about 40-50 words.",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "My Country Sri Lanka My country is a beautiful island It is in the indian ocean sometimes it is called the pearl of the indian ocean The capital of Sri Lanka is Sri Jayawardana pura Kotte Colombo is its business center Sri Lanka has a population of more than 21 million people Sri Lanka is an agricultural country",
+                    "is_illigible": "true"
+                }
+            },
+            {
+                "test_number": "09",
+                "instruction": "Complete the paragraph selecting a word. Underline the correct words within brackets.",
+                "question_type": "U",
+                "student_answers": {
+                    "1": {
+                        "answer": "immediately",
+                        "is_illigible": "true"
+                    },
+                    "2": {
+                        "answer": "transplantation",
+                        "is_illigible": "true"
+                    },
+                    "3": {
+                        "answer": "conditioning",
+                        "is_illigible": "true"
+                    },
+                    "4": {
+                        "answer": "Donate",
+                        "is_illigible": "true"
+                    },
+                    "5": {
+                        "answer": "contact",
+                        "is_illigible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "10",
+                "instruction": "Write the following utterances in the reported speech. One is done for you.",
+                "question_type": "W",
+                "student_answers": {
+                    "2": {
+                        "answer": "Mr Silva said that He played the piano.",
+                        "is_illigible": "true"
+                    },
+                    "3": {
+                        "answer": "Anne said that she missed the bus",
+                        "is_illigible": "true"
+                    },
+                    "4": {
+                        "answer": "Dilshan said that he am tired.",
+                        "is_illigible": "true"
+                    },
+                    "5": {
+                        "answer": "Pavan said that picture is beautiful",
+                        "is_illigible": "true"
+                    },
+                    "6": {
+                        "answer": "Jasmin said that she live in Colombo",
+                        "is_illigible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "11",
+                "instruction": "Fill in the blanks with the words given within the box.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "rice",
+                        "is_illigible": "true"
+                    },
+                    "2": {
+                        "answer": "consider",
+                        "is_illigible": "true"
+                    },
+                    "3": {
+                        "answer": "plant",
+                        "is_illigible": "true"
+                    },
+                    "4": {
+                        "answer": "sacred",
+                        "is_illigible": "true"
+                    },
+                    "5": {
+                        "answer": "the",
+                        "is_illigible": "true"
+                    },
+                    "6": {
+                        "answer": "bean",
+                        "is_illigible": "true"
+                    },
+                    "7": {
+                        "answer": "of",
+                        "is_illigible": "true"
+                    },
+                    "8": {
+                        "answer": "wich",
+                        "is_illigible": "true"
+                    },
+                    "9": {
+                        "answer": "the",
+                        "is_illigible": "true"
+                    },
+                    "10": {
+                        "answer": "rich",
+                        "is_illigible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "12",
+                "instruction": "Read the poem and answer the questions.",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "answer": "a",
+                        "is_illigible": "true"
+                    },
+                    "2": {
+                        "answer": "on the concrete",
+                        "is_illigible": "true"
+                    },
+                    "3": {
+                        "answer": "By the mournful cry",
+                        "is_illigible": "true"
+                    },
+                    "4": {
+                        "answer": "Alone",
+                        "is_illigible": "true"
+                    },
+                    "5": {
+                        "a": {
+                            "answer": "",
+                            "is_illigible": ""
+                        },
+                        "b": {
+                            "answer": "",
+                            "is_illigible": ""
+                        }
+                    }
+                }
+            },
+            {
+                "test_number": "13",
+                "instruction": "Read the passage and answer the questions.",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "i": {
+                            "answer": "c",
+                            "is_illigible": "true"
+                        },
+                        "ii": {
+                            "answer": "b",
+                            "is_illigible": "true"
+                        }
+                    },
+                    "2": {
+                        "i": {
+                            "answer": "tried to in their",
+                            "is_illigible": "true"
+                        },
+                        "ii": {
+                            "answer": "scientist",
+                            "is_illigible": "true"
+                        }
+                    },
+                    "3": {
+                        "i": {
+                            "answer": "science",
+                            "is_illigible": "true"
+                        },
+                        "ii": {
+                            "answer": "games",
+                            "is_illigible": "true"
+                        }
+                    },
+                    "4": {
+                        "answer": "Albert the incapable",
+                        "is_illigible": "true"
+                    },
+                    "5": {
+                        "answer": "history and geography",
+                        "is_illigible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "14",
+                "instruction": "Write on one of the following. Use 150-200 words.",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "",
+                    "is_illigible": ""
+                }
+            }
+        ]
+    }
+}

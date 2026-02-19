@@ -1,0 +1,1553 @@
+{
+    "pdf_name": "set_10_8.pdf",
+    "metrics": {
+        "fabricated_hallucinations": 0,
+        "fabricated_hallucination_rate": 0.0,
+        "crossed_out_hallucinations": 14,
+        "crossed_out_hallucination_rate": 0.016203703703703703,
+        "illegibility_hallucinations": 7,
+        "illegibility_hallucination_rate": 0.008101851851851851,
+        "word_level_hallucination_rate": 0.11805555555555555,
+        "total_hallucinated_words": 102,
+        "total_gt_words": 864,
+        "replaced_word_pairs": [
+            {
+                "question": "01",
+                "sub_question": "4",
+                "gt_words": [
+                    "encourage"
+                ],
+                "pred_words": [
+                    "encouraged"
+                ]
+            },
+            {
+                "question": "01",
+                "sub_question": "6",
+                "gt_words": [
+                    "source"
+                ],
+                "pred_words": [
+                    "Sources"
+                ]
+            },
+            {
+                "question": "03",
+                "sub_question": "3",
+                "gt_words": [
+                    "permises"
+                ],
+                "pred_words": [
+                    "premises"
+                ]
+            },
+            {
+                "question": "03",
+                "sub_question": "4",
+                "gt_words": [
+                    "3.30p.m"
+                ],
+                "pred_words": [
+                    "3:30",
+                    "p.m"
+                ]
+            },
+            {
+                "question": "03",
+                "sub_question": "4",
+                "gt_words": [
+                    "7.30"
+                ],
+                "pred_words": [
+                    "07:30",
+                    "p.m"
+                ]
+            },
+            {
+                "question": "03",
+                "sub_question": "5",
+                "gt_words": [
+                    "event"
+                ],
+                "pred_words": [
+                    "event."
+                ]
+            },
+            {
+                "question": "05",
+                "sub_question": "5",
+                "gt_words": [
+                    "Nalani"
+                ],
+                "pred_words": [
+                    "Nalini"
+                ]
+            },
+            {
+                "question": "06",
+                "sub_question": "",
+                "gt_words": [
+                    "R/Sumana"
+                ],
+                "pred_words": [
+                    "R/",
+                    "Sumana"
+                ]
+            },
+            {
+                "question": "06",
+                "sub_question": "",
+                "gt_words": [
+                    "fFrom",
+                    "10.30a.m"
+                ],
+                "pred_words": [
+                    "From",
+                    "10.30",
+                    "a.m"
+                ]
+            },
+            {
+                "question": "06",
+                "sub_question": "",
+                "gt_words": [
+                    "am"
+                ],
+                "pred_words": [
+                    "a.m"
+                ]
+            },
+            {
+                "question": "07",
+                "sub_question": "1",
+                "gt_words": [
+                    "member"
+                ],
+                "pred_words": [
+                    "members"
+                ]
+            },
+            {
+                "question": "07",
+                "sub_question": "1",
+                "gt_words": [
+                    "Females"
+                ],
+                "pred_words": [
+                    "Females."
+                ]
+            },
+            {
+                "question": "07",
+                "sub_question": "2",
+                "gt_words": [
+                    "spend"
+                ],
+                "pred_words": [
+                    "spends"
+                ]
+            },
+            {
+                "question": "07",
+                "sub_question": "2",
+                "gt_words": [
+                    "water."
+                ],
+                "pred_words": [
+                    "water"
+                ]
+            },
+            {
+                "question": "07",
+                "sub_question": "3.2",
+                "gt_words": [
+                    "automaticaly"
+                ],
+                "pred_words": [
+                    "automatically"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "Country"
+                ],
+                "pred_words": [
+                    "country."
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "battles",
+                    "."
+                ],
+                "pred_words": [
+                    "bottles."
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "plagers."
+                ],
+                "pred_words": [
+                    "6",
+                    "players."
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "Volleyballand"
+                ],
+                "pred_words": [
+                    "volleyball",
+                    "and"
+                ]
+            },
+            {
+                "question": "09",
+                "sub_question": "4",
+                "gt_words": [
+                    "fast"
+                ],
+                "pred_words": [
+                    "fastly"
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "1",
+                "gt_words": [
+                    "jobs",
+                    "advertised"
+                ],
+                "pred_words": [
+                    "Job",
+                    "advertised."
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "2",
+                "gt_words": [
+                    "expoted"
+                ],
+                "pred_words": [
+                    "exported"
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "2",
+                "gt_words": [
+                    "company"
+                ],
+                "pred_words": [
+                    "company."
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "3",
+                "gt_words": [
+                    "taken"
+                ],
+                "pred_words": [
+                    "token"
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "3",
+                "gt_words": [
+                    "advisars"
+                ],
+                "pred_words": [
+                    "advisors."
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "4",
+                "gt_words": [
+                    "wark"
+                ],
+                "pred_words": [
+                    "work"
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "4",
+                "gt_words": [
+                    "student"
+                ],
+                "pred_words": [
+                    "students"
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "4",
+                "gt_words": [
+                    "quickly"
+                ],
+                "pred_words": [
+                    "quickly."
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "5",
+                "gt_words": [
+                    "employee"
+                ],
+                "pred_words": [
+                    "employees"
+                ]
+            },
+            {
+                "question": "11",
+                "sub_question": "2",
+                "gt_words": [
+                    "delibeately"
+                ],
+                "pred_words": [
+                    "deliberately"
+                ]
+            },
+            {
+                "question": "11",
+                "sub_question": "3",
+                "gt_words": [
+                    "gluped"
+                ],
+                "pred_words": [
+                    "gulped"
+                ]
+            },
+            {
+                "question": "12",
+                "sub_question": "15",
+                "gt_words": [
+                    "new"
+                ],
+                "pred_words": [
+                    "educational"
+                ]
+            },
+            {
+                "question": "13",
+                "sub_question": "3",
+                "gt_words": [
+                    "oil"
+                ],
+                "pred_words": [
+                    "all"
+                ]
+            },
+            {
+                "question": "13",
+                "sub_question": "3",
+                "gt_words": [
+                    "pain"
+                ],
+                "pred_words": [
+                    "plain"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "as"
+                ],
+                "pred_words": [
+                    "as,",
+                    "most"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "3.1",
+                "gt_words": [
+                    "The"
+                ],
+                "pred_words": [
+                    "Trees"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "3.1",
+                "gt_words": [
+                    "green"
+                ],
+                "pred_words": [
+                    "green."
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "3.2",
+                "gt_words": [
+                    "brids"
+                ],
+                "pred_words": [
+                    "birds"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "3.2",
+                "gt_words": [
+                    "tones"
+                ],
+                "pred_words": [
+                    "tones."
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "5.2",
+                "gt_words": [
+                    "singharaja"
+                ],
+                "pred_words": [
+                    "teh"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "6",
+                "gt_words": [
+                    "conusins"
+                ],
+                "pred_words": [
+                    "cousins"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "Children"
+                ],
+                "pred_words": [
+                    "Children."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "thero"
+                ],
+                "pred_words": [
+                    "there"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "sisters,"
+                ],
+                "pred_words": [
+                    "sisters."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "The"
+                ],
+                "pred_words": [
+                    "'The"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "Children"
+                ],
+                "pred_words": [
+                    "children'"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "Umesha"
+                ],
+                "pred_words": [
+                    "Umesha."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "somany"
+                ],
+                "pred_words": [
+                    "many"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "internet"
+                ],
+                "pred_words": [
+                    "information"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "O/L,Revision"
+                ],
+                "pred_words": [
+                    "O/L,",
+                    "Revision"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "is,"
+                ],
+                "pred_words": [
+                    "is"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "explaine"
+                ],
+                "pred_words": [
+                    "explain"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "Internet."
+                ],
+                "pred_words": [
+                    "internet"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "also,"
+                ],
+                "pred_words": [
+                    "also."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "issues,"
+                ],
+                "pred_words": [
+                    "issues."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "Acctually,",
+                    "The",
+                    "internet",
+                    "is",
+                    "a",
+                    "goodSource"
+                ],
+                "pred_words": [
+                    "Actually,",
+                    "the",
+                    "internet",
+                    "is",
+                    "good",
+                    "source"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "advantages"
+                ],
+                "pred_words": [
+                    "'advantages"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "Acctually,",
+                    "Itis",
+                    "notour",
+                    "elders"
+                ],
+                "pred_words": [
+                    "Actually,",
+                    "we",
+                    "It",
+                    "is",
+                    "not",
+                    "a",
+                    "our",
+                    "elder's"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "usefuly."
+                ],
+                "pred_words": [
+                    "usefully."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "you"
+                ],
+                "pred_words": [
+                    "we"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "imporatnt"
+                ],
+                "pred_words": [
+                    "important"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "listening."
+                ],
+                "pred_words": [
+                    "listening"
+                ]
+            }
+        ],
+        "inserted_words": [
+            {
+                "question": "06",
+                "sub_question": "",
+                "words": [
+                    "NOTICE"
+                ]
+            },
+            {
+                "question": "06",
+                "sub_question": "",
+                "words": [
+                    "27/04/2025",
+                    "Health",
+                    "Society"
+                ]
+            },
+            {
+                "question": "12",
+                "sub_question": "10",
+                "words": [
+                    "new"
+                ]
+            },
+            {
+                "question": "13",
+                "sub_question": "3",
+                "words": [
+                    "of",
+                    "lif"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "In"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "most"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "internet"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "It",
+                    "is"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "Everything",
+                    "has",
+                    "advantages."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "these"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "suit"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "to"
+                ]
+            }
+        ],
+        "question_type_metrics": {
+            "FITB": {
+                "fabricated": 0,
+                "crossed": 1,
+                "illegible": 0,
+                "gt_words": 84,
+                "hallu_words": 13
+            },
+            "W": {
+                "fabricated": 0,
+                "crossed": 12,
+                "illegible": 0,
+                "gt_words": 686,
+                "hallu_words": 73
+            },
+            "QA": {
+                "fabricated": 0,
+                "crossed": 1,
+                "illegible": 7,
+                "gt_words": 89,
+                "hallu_words": 15
+            },
+            "U": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 5,
+                "hallu_words": 1
+            }
+        }
+    },
+    "refined_metrics": {
+        "fabricated_hallucinations": 0,
+        "fabricated_hallucination_rate": 0.0,
+        "crossed_out_hallucinations": 14,
+        "crossed_out_hallucination_rate": 0.016203703703703703,
+        "illegibility_hallucinations": 7,
+        "illegibility_hallucination_rate": 0.008101851851851851,
+        "word_level_hallucination_rate": 0.06018518518518518,
+        "total_hallucinated_words": 52,
+        "total_gt_words": 864,
+        "replaced_word_pairs": [
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "battles",
+                    "."
+                ],
+                "pred_words": [
+                    "bottles."
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "plagers."
+                ],
+                "pred_words": [
+                    "6",
+                    "players."
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "3",
+                "gt_words": [
+                    "taken"
+                ],
+                "pred_words": [
+                    "token"
+                ]
+            },
+            {
+                "question": "12",
+                "sub_question": "15",
+                "gt_words": [
+                    "new"
+                ],
+                "pred_words": [
+                    "educational"
+                ]
+            },
+            {
+                "question": "13",
+                "sub_question": "3",
+                "gt_words": [
+                    "oil"
+                ],
+                "pred_words": [
+                    "all"
+                ]
+            },
+            {
+                "question": "13",
+                "sub_question": "3",
+                "gt_words": [
+                    "pain"
+                ],
+                "pred_words": [
+                    "plain"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "as"
+                ],
+                "pred_words": [
+                    "as,",
+                    "most"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "3.1",
+                "gt_words": [
+                    "The"
+                ],
+                "pred_words": [
+                    "Trees"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "5.2",
+                "gt_words": [
+                    "singharaja"
+                ],
+                "pred_words": [
+                    "teh"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "internet"
+                ],
+                "pred_words": [
+                    "information"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "Acctually,",
+                    "Itis",
+                    "notour",
+                    "elders"
+                ],
+                "pred_words": [
+                    "Actually,",
+                    "we",
+                    "It",
+                    "is",
+                    "not",
+                    "a",
+                    "our",
+                    "elder's"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "you"
+                ],
+                "pred_words": [
+                    "we"
+                ]
+            }
+        ],
+        "inserted_words": [
+            {
+                "question": "06",
+                "sub_question": "",
+                "words": [
+                    "NOTICE"
+                ]
+            },
+            {
+                "question": "06",
+                "sub_question": "",
+                "words": [
+                    "27/04/2025",
+                    "Health",
+                    "Society"
+                ]
+            },
+            {
+                "question": "12",
+                "sub_question": "10",
+                "words": [
+                    "new"
+                ]
+            },
+            {
+                "question": "13",
+                "sub_question": "3",
+                "words": [
+                    "of",
+                    "lif"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "In"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "most"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "internet"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "It",
+                    "is"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "Everything",
+                    "has",
+                    "advantages."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "these"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "suit"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "to"
+                ]
+            }
+        ],
+        "question_type_metrics": {
+            "FITB": {
+                "fabricated": 0,
+                "crossed": 1,
+                "illegible": 0,
+                "gt_words": 84,
+                "hallu_words": 6
+            },
+            "W": {
+                "fabricated": 0,
+                "crossed": 12,
+                "illegible": 0,
+                "gt_words": 686,
+                "hallu_words": 27
+            },
+            "QA": {
+                "fabricated": 0,
+                "crossed": 1,
+                "illegible": 7,
+                "gt_words": 89,
+                "hallu_words": 19
+            },
+            "U": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 5,
+                "hallu_words": 0
+            }
+        }
+    },
+    "usage": {
+        "prompt_tokens": 18654,
+        "candidate_tokens": 4628,
+        "thought_tokens": 6496
+    },
+    "cost": 0.042699,
+    "recognition_time": 75.01234269142151,
+    "prediction": {
+        "paper_title": "Second Term Test Evaluation - 2019, English Language Paper I & II",
+        "questions": [
+            {
+                "test_number": "01",
+                "instruction": "Complete the dialogue using the words given in the box. Write the correct letter in the blank. The first one is done for you.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "2": {
+                        "answer": "quiz",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "excellent",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "encouraged",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "get",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "Sources",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "02",
+                "instruction": "Following are some exercises you do. Complete the blanks with the most suitable words given in the box. The first one is done for you.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "2": {
+                        "answer": "warm up",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "Hold",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "Bend down",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "Strech out",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "Release",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "03",
+                "instruction": "Read the announcement and complete the following.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "Cultural Show",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "To celebrate the 50th anniversary of the school",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "At the Subavi Hall in school premises",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "On 10th Sunday From 3:30 p.m to 07:30 p.m",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "A web site will be opened to commemorate the event.",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "04",
+                "instruction": "Study the picture and complete the text appropriately. First one is done for you.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "2": {
+                        "answer": "around",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "reading",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "vacant",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "kept",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "bookshelf",
+                        "is_legible": "true"
+                    },
+                    "7": {
+                        "answer": "girl",
+                        "is_legible": "true"
+                    },
+                    "8": {
+                        "answer": "borrow",
+                        "is_legible": "true"
+                    },
+                    "9": {
+                        "answer": "librarian",
+                        "is_legible": "true"
+                    },
+                    "10": {
+                        "answer": "window",
+                        "is_legible": "true"
+                    },
+                    "11": {
+                        "answer": "infront of",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "05",
+                "instruction": "Read the telephone conversation and complete the massage given below.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "Shani",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "there",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "on",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "Sister",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "Nalini",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "come",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "06",
+                "instruction": "Health society of your school is going to have a Medical camp. Design a banner to be put up at the school gate to inform the public. Use about 50-60 words.",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "NOTICE\nThe Health Society of R/ Sumana Balika Vidyalaya has organized a Medical Camp For Check the health of people.\nIt will be held On 17th May 2025 From 10.30 a.m to 1.30 a.m at School Main hall.\nAll are invited!\n27/04/2025\nHealth Society",
+                    "is_legible": "true"
+                }
+            },
+            {
+                "test_number": "07",
+                "instruction": "Read this text and answer the questions.",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "answer": "one male and other members are Females.",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "The Family group of hippos spends most of the day in the water",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "1": {
+                            "answer": "hippo",
+                            "is_legible": "true"
+                        },
+                        "2": {
+                            "answer": "automatically",
+                            "is_legible": "true"
+                        }
+                    },
+                    "4": {
+                        "answer": "At dusk",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "By returning to a river or lake before sunrise",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "08",
+                "instruction": "Write a paragraph on one of the following. Use about 50-60 words",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "The game I like most is volleyball because volleyball is a national game of our country. This game is played by two bottles. Each battle has 6 players. To play this game the players use volleyball and the net. Volleyball is a game I like most",
+                    "is_legible": "true"
+                }
+            },
+            {
+                "test_number": "09",
+                "instruction": "Underline the suitable word given in the brackets.",
+                "question_type": "U",
+                "student_answers": {
+                    "1": {
+                        "answer": "joyful",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "badly",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "completely",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "fastly",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "well",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "10",
+                "instruction": "Rewrite the sentences in the passive voice. An example is given.",
+                "question_type": "W",
+                "student_answers": {
+                    "1": {
+                        "answer": "The applications has been Sent by the applications to the Job advertised.",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "All the manufactured ites has been exported by the company.",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "The decisions token hasn't been revealed by the advisors.",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "The work has been done by students properly and quickly.",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "A general strike has been launched by the employees in the company",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "11",
+                "instruction": "Select the word from the box which has similar meaning to the word / phrase given in the bracket. Write them in the blanks.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "nightmare",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "deliberately",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "gulped",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "ragged",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "scampered",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "12",
+                "instruction": "Fill in the blanks with the words given in the box. First one is done for you.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "2": {
+                        "answer": "showed",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "educational",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "on",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "given",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "warmth it",
+                        "is_legible": "true"
+                    },
+                    "7": {
+                        "answer": "young",
+                        "is_legible": "true"
+                    },
+                    "8": {
+                        "answer": "resulted",
+                        "is_legible": "true"
+                    },
+                    "9": {
+                        "answer": "role",
+                        "is_legible": "true"
+                    },
+                    "10": {
+                        "answer": "isolation new",
+                        "is_legible": "true"
+                    },
+                    "11": {
+                        "answer": "them",
+                        "is_legible": "true"
+                    },
+                    "12": {
+                        "answer": "this",
+                        "is_legible": "true"
+                    },
+                    "13": {
+                        "answer": "they",
+                        "is_legible": "true"
+                    },
+                    "14": {
+                        "answer": "them",
+                        "is_legible": "true"
+                    },
+                    "15": {
+                        "answer": "educational",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "13",
+                "instruction": "Read the poem and answer the question given below.",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "answer": "In Time of Silver Rain",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "Earth",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "of lif over all the plain",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "To catch a rainbow cry",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "1": {
+                            "answer": "new",
+                            "is_legible": "true"
+                        },
+                        "2": {
+                            "answer": "Silken",
+                            "is_legible": "true"
+                        }
+                    }
+                }
+            },
+            {
+                "test_number": "14",
+                "instruction": "Write on one of the following. Use about 100 words.",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "The above pie chart shows the results of a survey conducted among 100 grade 10 students about the places they like to visit. The places they like to visit is such as, most Nuwara Eliya, Anuradhapura, Kandy, Sigiriya and Trincomalee. According to the above, The majority of students are like to visit Nuwara Eliya that is 30%. The minority of students who are like to visit Trincomalee is 5%. An equal percentage of grade 10 students are like to visit Anuradhapura and Kandy that is 25%. The students who like to visit Sigiriya is more than the students who like to visit Trincomalee that is 5%. The students who like to visit Sigiriya is 15%. According to the above information, It is clear that the highest percentage of students like to visit Nuwara Eliya that is 30% while the lowest percentage of students who like to visite Trincomalee is 5%.",
+                    "is_legible": "true"
+                }
+            },
+            {
+                "test_number": "15",
+                "instruction": "Read the passage and answer the questions.",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "1": {
+                            "answer": "T",
+                            "is_legible": "true"
+                        },
+                        "2": {
+                            "answer": "F",
+                            "is_legible": "true"
+                        },
+                        "3": {
+                            "answer": "T",
+                            "is_legible": "true"
+                        },
+                        "4": {
+                            "answer": "F",
+                            "is_legible": "true"
+                        }
+                    },
+                    "2": {
+                        "answer": "several times",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "1": {
+                            "answer": "Trees were in deeper shade of green.",
+                            "is_legible": "true"
+                        },
+                        "2": {
+                            "answer": "The birds chirped in different tones.",
+                            "is_legible": "true"
+                        }
+                    },
+                    "4": {
+                        "answer": "b",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "1": {
+                            "answer": "left",
+                            "is_legible": "true"
+                        },
+                        "2": {
+                            "answer": "teh",
+                            "is_legible": "true"
+                        }
+                    },
+                    "6": {
+                        "answer": "narrator and two cousins",
+                        "is_legible": "true"
+                    },
+                    "7": {
+                        "answer": "Everything in the forest seemed to be different in that area",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "16",
+                "instruction": "Write on one of the following. Use about 200 words.",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "The importance of the internet For School Children.\nGood morning everyone, Respect principle madam, Honnerable there and my dear sisters. Today I'm going to talk about the 'The importance of the internet For the school children' I'm Umesha.\nAt present, In the internet is most important source of our life. As we are school children, there are so many advantages that can get From the internet. Actually internet is good source of information. There are so many benefits of using internet. As a examples, we can use internet For our school activities, such as engaging revision exercises, we can use internet and can study our self by using previous lessons in the internet. And also we can use internet For watched difficult lessons and then we can study different questions From that lessons by using the internet. According to these there are so many benefits of using internet. Nowadays, There are Provide many websites to school children to make easy their education. And also the most one of internet most important advantage of information is we can watch the previous lessons and the other lessons to easy our lessons. At present, Internet provide us past papers of O/L, Revision exercises, provincial papers etc. Another advantage of internet is it provide us so many subject knowledge to us. It is There are so many subjects and languages all these are the benefits of using internet. Everything has advantages. Everything has two sides; they are advantages and disadvantages. That means good side and bad side. According to above I had explain the some advantages of internet As the advantages, there are disadvantages also. Such as Addiction to the internet, Health problems, eye issues. Sometimes these most of school children are use internet and they become addict to the internet. In that situations, the Sometime they become to suit suicide. So you can understand that the how these disadvantages are affect to our life. Actually, the internet is good source of information and it provide us 'advantages and disadvantages. All these disadvantages are affect our life badly. Therefore it is our duty to use the internet very carefully. Now our elders have taken steps to take to control misuse of it. Actually, we It is not a our elder's duty. It's only the our duty to use the internet carefully and usefully. According to above we can understand that how the internet important For our life. Therefore we must use internet very usefully and carefully. Thank you For listening",
+                    "is_legible": "true"
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,1058 @@
+{
+    "pdf_name": "set_9_2.pdf",
+    "metrics": {
+        "fabricated_hallucinations": 32,
+        "fabricated_hallucination_rate": 0.15384615384615385,
+        "crossed_out_hallucinations": 8,
+        "crossed_out_hallucination_rate": 0.038461538461538464,
+        "illegibility_hallucinations": 32,
+        "illegibility_hallucination_rate": 0.15384615384615385,
+        "word_level_hallucination_rate": 0.16826923076923078,
+        "total_hallucinated_words": 35,
+        "total_gt_words": 208,
+        "replaced_word_pairs": [
+            {
+                "question": "01",
+                "sub_question": "1.a",
+                "gt_words": [
+                    "bouquet"
+                ],
+                "pred_words": [
+                    "flowers"
+                ]
+            },
+            {
+                "question": "01",
+                "sub_question": "1.b",
+                "gt_words": [
+                    "flowers"
+                ],
+                "pred_words": [
+                    "bouquet"
+                ]
+            },
+            {
+                "question": "01",
+                "sub_question": "4.a",
+                "gt_words": [
+                    "bowl"
+                ],
+                "pred_words": [
+                    "elephants"
+                ]
+            },
+            {
+                "question": "02",
+                "sub_question": "4",
+                "gt_words": [
+                    "d"
+                ],
+                "pred_words": [
+                    "F"
+                ]
+            },
+            {
+                "question": "02",
+                "sub_question": "5",
+                "gt_words": [
+                    "f"
+                ],
+                "pred_words": [
+                    "E"
+                ]
+            },
+            {
+                "question": "02",
+                "sub_question": "6",
+                "gt_words": [
+                    "8"
+                ],
+                "pred_words": [
+                    "B"
+                ]
+            },
+            {
+                "question": "03",
+                "sub_question": "1",
+                "gt_words": [
+                    "7",
+                    "speesh"
+                ],
+                "pred_words": [
+                    "&",
+                    "speech"
+                ]
+            },
+            {
+                "question": "03",
+                "sub_question": "4",
+                "gt_words": [
+                    "years"
+                ],
+                "pred_words": [
+                    "yeras"
+                ]
+            },
+            {
+                "question": "03",
+                "sub_question": "4",
+                "gt_words": [
+                    "negotiable"
+                ],
+                "pred_words": [
+                    "nagotible"
+                ]
+            },
+            {
+                "question": "04",
+                "sub_question": "2",
+                "gt_words": [
+                    "boy"
+                ],
+                "pred_words": [
+                    "buy"
+                ]
+            },
+            {
+                "question": "04",
+                "sub_question": "3",
+                "gt_words": [
+                    "compute"
+                ],
+                "pred_words": [
+                    "computer"
+                ]
+            },
+            {
+                "question": "04",
+                "sub_question": "5",
+                "gt_words": [
+                    "cuepadple"
+                ],
+                "pred_words": [
+                    "cuepas",
+                    "ple"
+                ]
+            },
+            {
+                "question": "04",
+                "sub_question": "6",
+                "gt_words": [
+                    "milking"
+                ],
+                "pred_words": [
+                    "milk",
+                    "dri..."
+                ]
+            },
+            {
+                "question": "06",
+                "sub_question": "",
+                "gt_words": [
+                    "he"
+                ],
+                "pred_words": [
+                    "ge"
+                ]
+            },
+            {
+                "question": "06",
+                "sub_question": "",
+                "gt_words": [
+                    "marthing"
+                ],
+                "pred_words": [
+                    "mathing"
+                ]
+            },
+            {
+                "question": "07",
+                "sub_question": "1.a",
+                "gt_words": [
+                    "true"
+                ],
+                "pred_words": [
+                    "\u2713"
+                ]
+            },
+            {
+                "question": "07",
+                "sub_question": "1.b",
+                "gt_words": [
+                    "true"
+                ],
+                "pred_words": [
+                    "x"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "is"
+                ],
+                "pred_words": [
+                    "in"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "ali"
+                ],
+                "pred_words": [
+                    "all"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "teacher"
+                ],
+                "pred_words": [
+                    "teachers"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "inertigant"
+                ],
+                "pred_words": [
+                    "navigent"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "beautiful.chathurika",
+                    "sing"
+                ],
+                "pred_words": [
+                    "beautiful.",
+                    "As",
+                    "1.07.2023",
+                    "Chathurika",
+                    "ging"
+                ]
+            },
+            {
+                "question": "09",
+                "sub_question": "3",
+                "gt_words": [
+                    "write"
+                ],
+                "pred_words": [
+                    "writes"
+                ]
+            },
+            {
+                "question": "09",
+                "sub_question": "4",
+                "gt_words": [
+                    "read"
+                ],
+                "pred_words": [
+                    "dead"
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "2",
+                "gt_words": [
+                    "she",
+                    "write"
+                ],
+                "pred_words": [
+                    "the",
+                    "cute"
+                ]
+            }
+        ],
+        "inserted_words": [
+            {
+                "question": "01",
+                "sub_question": "4.b",
+                "words": [
+                    "herd"
+                ]
+            },
+            {
+                "question": "06",
+                "sub_question": "",
+                "words": [
+                    "haby"
+                ]
+            }
+        ],
+        "question_type_metrics": {
+            "FITB": {
+                "fabricated": 21,
+                "crossed": 8,
+                "illegible": 21,
+                "gt_words": 51,
+                "hallu_words": 13
+            },
+            "W": {
+                "fabricated": 2,
+                "crossed": 0,
+                "illegible": 2,
+                "gt_words": 120,
+                "hallu_words": 20
+            },
+            "QA": {
+                "fabricated": 9,
+                "crossed": 0,
+                "illegible": 9,
+                "gt_words": 37,
+                "hallu_words": 2
+            }
+        }
+    },
+    "refined_metrics": {
+        "fabricated_hallucinations": 32,
+        "fabricated_hallucination_rate": 0.15384615384615385,
+        "crossed_out_hallucinations": 8,
+        "crossed_out_hallucination_rate": 0.038461538461538464,
+        "illegibility_hallucinations": 32,
+        "illegibility_hallucination_rate": 0.15384615384615385,
+        "word_level_hallucination_rate": 0.08653846153846154,
+        "total_hallucinated_words": 18,
+        "total_gt_words": 208,
+        "replaced_word_pairs": [
+            {
+                "question": "01",
+                "sub_question": "4.a",
+                "gt_words": [
+                    "bowl"
+                ],
+                "pred_words": [
+                    "elephants"
+                ]
+            },
+            {
+                "question": "02",
+                "sub_question": "4",
+                "gt_words": [
+                    "d"
+                ],
+                "pred_words": [
+                    "F"
+                ]
+            },
+            {
+                "question": "02",
+                "sub_question": "5",
+                "gt_words": [
+                    "f"
+                ],
+                "pred_words": [
+                    "E"
+                ]
+            },
+            {
+                "question": "02",
+                "sub_question": "6",
+                "gt_words": [
+                    "8"
+                ],
+                "pred_words": [
+                    "B"
+                ]
+            },
+            {
+                "question": "03",
+                "sub_question": "1",
+                "gt_words": [
+                    "7"
+                ],
+                "pred_words": [
+                    "&"
+                ]
+            },
+            {
+                "question": "04",
+                "sub_question": "2",
+                "gt_words": [
+                    "boy"
+                ],
+                "pred_words": [
+                    "buy"
+                ]
+            },
+            {
+                "question": "04",
+                "sub_question": "6",
+                "gt_words": [
+                    "milking"
+                ],
+                "pred_words": [
+                    "milk",
+                    "dri..."
+                ]
+            },
+            {
+                "question": "07",
+                "sub_question": "1.b",
+                "gt_words": [
+                    "true"
+                ],
+                "pred_words": [
+                    "x"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "is"
+                ],
+                "pred_words": [
+                    "in"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "ali"
+                ],
+                "pred_words": [
+                    "all"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "inertigant"
+                ],
+                "pred_words": [
+                    "navigent"
+                ]
+            },
+            {
+                "question": "08",
+                "sub_question": "",
+                "gt_words": [
+                    "beautiful.chathurika",
+                    "sing"
+                ],
+                "pred_words": [
+                    "beautiful.",
+                    "As",
+                    "1.07.2023",
+                    "Chathurika",
+                    "ging"
+                ]
+            },
+            {
+                "question": "09",
+                "sub_question": "4",
+                "gt_words": [
+                    "read"
+                ],
+                "pred_words": [
+                    "dead"
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "2",
+                "gt_words": [
+                    "she",
+                    "write"
+                ],
+                "pred_words": [
+                    "the",
+                    "cute"
+                ]
+            }
+        ],
+        "inserted_words": [
+            {
+                "question": "01",
+                "sub_question": "4.b",
+                "words": [
+                    "herd"
+                ]
+            },
+            {
+                "question": "06",
+                "sub_question": "",
+                "words": [
+                    "haby"
+                ]
+            }
+        ],
+        "question_type_metrics": {
+            "FITB": {
+                "fabricated": 21,
+                "crossed": 8,
+                "illegible": 21,
+                "gt_words": 51,
+                "hallu_words": 12
+            },
+            "W": {
+                "fabricated": 2,
+                "crossed": 0,
+                "illegible": 2,
+                "gt_words": 120,
+                "hallu_words": 5
+            },
+            "QA": {
+                "fabricated": 9,
+                "crossed": 0,
+                "illegible": 9,
+                "gt_words": 37,
+                "hallu_words": 1
+            }
+        }
+    },
+    "usage": {
+        "prompt_tokens": 16941,
+        "candidate_tokens": 4262,
+        "thought_tokens": 4939
+    },
+    "cost": 0.036073499999999994,
+    "recognition_time": 57.909451723098755,
+    "prediction": {
+        "paper_title": "Grade 10 - English - Second Term Evaluation - 2016",
+        "questions": [
+            {
+                "test_number": "01",
+                "instruction": "Select the correct word for blank (a) from box A and for blank (b) from box B and fill in the blanks.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "a": {
+                            "answer": "flowers",
+                            "is_legible": "true"
+                        },
+                        "b": {
+                            "answer": "bouquet",
+                            "is_legible": "true"
+                        }
+                    },
+                    "2": {
+                        "a": {
+                            "answer": "swarm",
+                            "is_legible": "true"
+                        },
+                        "b": {
+                            "answer": "bees",
+                            "is_legible": "true"
+                        }
+                    },
+                    "3": {
+                        "a": {
+                            "answer": "gang",
+                            "is_legible": "true"
+                        },
+                        "b": {
+                            "answer": "thieves",
+                            "is_legible": "true"
+                        }
+                    },
+                    "4": {
+                        "a": {
+                            "answer": "elephants",
+                            "is_legible": "true"
+                        },
+                        "b": {
+                            "answer": "herd soup",
+                            "is_legible": "true"
+                        }
+                    },
+                    "5": {
+                        "a": {
+                            "answer": "herd",
+                            "is_legible": "true"
+                        },
+                        "b": {
+                            "answer": "elephants",
+                            "is_legible": "true"
+                        }
+                    }
+                }
+            },
+            {
+                "test_number": "02",
+                "instruction": "Label the following places on the given map. Write the correct letter in the correct box. One is done for you.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "A",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "e",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "c",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "F",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "E",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "B",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "03",
+                "instruction": "Read the following advertisement and fill in the grid.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "Institute of western music & speech",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "Computer operator / clerk",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "Apply before 05th may 2016",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "below 25 yeras Salary nagotible",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "1 No: kathalawla Gardens Colombo 04",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "04",
+                "instruction": "Write a meaningful sentence for each picture. First one is done for you.",
+                "question_type": "W",
+                "student_answers": {
+                    "1": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "2": {
+                        "answer": "The buy is rode boat",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "A boy is playing the computer",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "A mother is near the table",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "A mother is cuepas ple",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "A mother is cow in the milk dri...",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "05",
+                "instruction": "Select words from the box and add suitable prefixes and fill in the blanks. First one is done for you.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "2": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "3": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "6": {
+                        "answer": "",
+                        "is_legible": ""
+                    }
+                }
+            },
+            {
+                "test_number": "06",
+                "instruction": "Write a paragraph on one of the following. Use about 50 words.",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "my favourite book is madol duwa. He is very talentet writer The story is very infarent think ge give a children the book is write by mathing wicharmasinha I like read the story my haby hobby is redding books",
+                    "is_legible": "true"
+                }
+            },
+            {
+                "test_number": "07",
+                "instruction": "Read the passage and answer the questions.",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "a": {
+                            "answer": "\u2713",
+                            "is_legible": "true"
+                        },
+                        "b": {
+                            "answer": "x",
+                            "is_legible": "true"
+                        }
+                    },
+                    "2": {
+                        "answer": "many parts of the world",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "tools and coins chanks",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "i": {
+                            "answer": "mt Lavinia",
+                            "is_legible": "true"
+                        },
+                        "ii": {
+                            "answer": "Beruwala",
+                            "is_legible": "true"
+                        },
+                        "iii": {
+                            "answer": "Bentota",
+                            "is_legible": "true"
+                        }
+                    },
+                    "5": {
+                        "answer": "been used for ornaments tools and coins",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "08",
+                "instruction": "Imagine that your best friend. Viraj has won the first place from an All Island Arts competition.As he is absent today your elass teacher told you to inform him about his achievement. Write an e-mail wishing him and asking him to meet the teacher in charge of Arts. Use about 50 words.",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "your won a arts comptition place in you the teacher told to all achievement you the teachers and all the students are wish for you are very navigent boy your arts is very beautiful. As 1.07.2023 Chathurika ging",
+                    "is_legible": "true"
+                }
+            },
+            {
+                "test_number": "09",
+                "instruction": "Read the following text. In cach line one word is incorrect and it is underlined. Write the correct word in the space provided. The first one is done for you.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "in",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "announce",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "writes",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "dead",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "6": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "7": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "8": {
+                        "answer": "the the",
+                        "is_legible": "true"
+                    },
+                    "9": {
+                        "answer": "the",
+                        "is_legible": "true"
+                    },
+                    "10": {
+                        "answer": "not",
+                        "is_legible": "true"
+                    },
+                    "11": {
+                        "answer": "garnt",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "10",
+                "instruction": "Write the following sentences and questions is passive voice.",
+                "question_type": "W",
+                "student_answers": {
+                    "1": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "2": {
+                        "answer": "Is the cute a long poem?",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "The watcher didn't close the gate",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "answer": "",
+                        "is_legible": ""
+                    }
+                }
+            },
+            {
+                "test_number": "11",
+                "instruction": "Read the following poem and answer the questions.",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "answer": "The donkey",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "a": {
+                            "answer": "stare scourge",
+                            "is_legible": "true"
+                        },
+                        "b": {
+                            "answer": "I am dumb",
+                            "is_legible": "true"
+                        }
+                    },
+                    "3": {
+                        "answer": "Sickening cry And ears like errant wings",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "a",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "i": {
+                            "answer": "",
+                            "is_legible": ""
+                        },
+                        "ii": {
+                            "answer": "",
+                            "is_legible": ""
+                        }
+                    }
+                }
+            },
+            {
+                "test_number": "12",
+                "instruction": "Match the idioms in column A with the meanings in column B Write the correct lettter in the box. First one is done for you.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "c",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "a",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "b",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "f",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "e",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "d",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "13",
+                "instruction": "Select the appropriate words from the box and fill in the blanks. First one has been done for you",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "girls",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "also",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "school",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "and",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "these",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "in",
+                        "is_legible": "true"
+                    },
+                    "7": {
+                        "answer": "never",
+                        "is_legible": "true"
+                    },
+                    "8": {
+                        "answer": "more",
+                        "is_legible": "true"
+                    },
+                    "9": {
+                        "answer": "those",
+                        "is_legible": "true"
+                    },
+                    "10": {
+                        "answer": "of",
+                        "is_legible": "true"
+                    },
+                    "11": {
+                        "answer": "countries",
+                        "is_legible": "true"
+                    },
+                    "12": {
+                        "answer": "basic",
+                        "is_legible": "true"
+                    },
+                    "13": {
+                        "answer": "to go to",
+                        "is_legible": "true"
+                    },
+                    "14": {
+                        "answer": "world",
+                        "is_legible": "true"
+                    },
+                    "15": {
+                        "answer": "and",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "14",
+                "instruction": "Imagine that you are the president of the Interact club of your school. Your club got immediate actions to help the flood victims in your area. Write a letter to your uncle who lives in Australia describing the recent disaster and requesting donations to help them. Include the following or A survey has been done to find out the personal qualities of grade 10 A students of Vijaya Vidyalaya. The following bar chart shows their responses. Write a description of it. Use the given words.:",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "The grade 10 A Students Vijaya Vidyalaya The bar chart shows their responses. The bar chart sociable sensible moody selfish",
+                    "is_legible": "true"
+                }
+            },
+            {
+                "test_number": "15",
+                "instruction": "Read the following text and answer the questions given below it.",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "answer": "size and shape of a football strange earthenware construction about the",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "of the landscape in west Africa",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "of dried grass roots and hair",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "i": {
+                            "answer": "oven birds",
+                            "is_legible": "true"
+                        },
+                        "ii": {
+                            "answer": "d",
+                            "is_legible": "true"
+                        }
+                    },
+                    "5": {
+                        "i": {
+                            "answer": "half and was amazad",
+                            "is_legible": "true"
+                        },
+                        "ii": {
+                            "answer": "was rather like a church door",
+                            "is_legible": "true"
+                        }
+                    },
+                    "6": {
+                        "i": {
+                            "answer": "cured",
+                            "is_legible": "true"
+                        },
+                        "ii": {
+                            "answer": "eventually",
+                            "is_legible": "true"
+                        }
+                    },
+                    "7": {
+                        "i": {
+                            "answer": "",
+                            "is_legible": ""
+                        },
+                        "ii": {
+                            "answer": "",
+                            "is_legible": ""
+                        }
+                    }
+                }
+            },
+            {
+                "test_number": "16",
+                "instruction": "Write on one of the following. Use about 200 words.",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "(2) an essay",
+                    "is_legible": "true"
+                }
+            }
+        ]
+    }
+}
