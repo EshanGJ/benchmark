@@ -1,0 +1,736 @@
+{
+    "pdf_name": "set_13_5.pdf",
+    "metrics": {
+        "fabricated_hallucinations": 0,
+        "fabricated_hallucination_rate": 0.0,
+        "crossed_out_hallucinations": 4,
+        "crossed_out_hallucination_rate": 0.007285974499089253,
+        "illegibility_hallucinations": 0,
+        "illegibility_hallucination_rate": 0.0,
+        "word_level_hallucination_rate": 0.06557377049180328,
+        "total_hallucinated_words": 36,
+        "total_gt_words": 549,
+        "replaced_word_pairs": [
+            {
+                "question": "09",
+                "sub_question": "2",
+                "gt_words": [
+                    "growing,"
+                ],
+                "pred_words": [
+                    "growing"
+                ]
+            },
+            {
+                "question": "09",
+                "sub_question": "4",
+                "gt_words": [
+                    "obedience,"
+                ],
+                "pred_words": [
+                    "obedience"
+                ]
+            },
+            {
+                "question": "09",
+                "sub_question": "5",
+                "gt_words": [
+                    "Lastly"
+                ],
+                "pred_words": [
+                    "Lasting"
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "5",
+                "gt_words": [
+                    "learned"
+                ],
+                "pred_words": [
+                    "learnt"
+                ]
+            },
+            {
+                "question": "11",
+                "sub_question": "4",
+                "gt_words": [
+                    "truthfull"
+                ],
+                "pred_words": [
+                    "thruthfull"
+                ]
+            },
+            {
+                "question": "11",
+                "sub_question": "9",
+                "gt_words": [
+                    "resposible"
+                ],
+                "pred_words": [
+                    "responsible"
+                ]
+            },
+            {
+                "question": "11",
+                "sub_question": "12",
+                "gt_words": [
+                    "things"
+                ],
+                "pred_words": [
+                    "thing"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "Gr.",
+                    "11"
+                ],
+                "pred_words": [
+                    "Gr.11"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "news",
+                    "."
+                ],
+                "pred_words": [
+                    "news."
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "40%",
+                    "."
+                ],
+                "pred_words": [
+                    "40%."
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "channels",
+                    "."
+                ],
+                "pred_words": [
+                    "channels."
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "websites",
+                    "."
+                ],
+                "pred_words": [
+                    "websites."
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "20%",
+                    "."
+                ],
+                "pred_words": [
+                    "20%."
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "tube",
+                    "."
+                ],
+                "pred_words": [
+                    "tube."
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "tube",
+                    ","
+                ],
+                "pred_words": [
+                    "tube.",
+                    "and"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "decreased",
+                    "."
+                ],
+                "pred_words": [
+                    "decreased."
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.1",
+                "gt_words": [
+                    "T"
+                ],
+                "pred_words": [
+                    "True"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.2",
+                "gt_words": [
+                    "T"
+                ],
+                "pred_words": [
+                    "True"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.3",
+                "gt_words": [
+                    "F"
+                ],
+                "pred_words": [
+                    "False"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.4",
+                "gt_words": [
+                    "T"
+                ],
+                "pred_words": [
+                    "True"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "you"
+                ],
+                "pred_words": [
+                    "you."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "I\u2019m",
+                    "good."
+                ],
+                "pred_words": [
+                    "I'm",
+                    "good"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "didn\u2019t"
+                ],
+                "pred_words": [
+                    "didn't"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "I\u2019ll"
+                ],
+                "pred_words": [
+                    "I'll"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "hugged"
+                ],
+                "pred_words": [
+                    "huged"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "scard"
+                ],
+                "pred_words": [
+                    "scard."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "hugged"
+                ],
+                "pred_words": [
+                    "huged"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "childho"
+                ],
+                "pred_words": [
+                    "childhood"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "locked"
+                ],
+                "pred_words": [
+                    "loched"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "halle."
+                ],
+                "pred_words": [
+                    "hall."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "you!"
+                ],
+                "pred_words": [
+                    "you"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "quatis"
+                ],
+                "pred_words": [
+                    "qustis"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "told",
+                    "!"
+                ],
+                "pred_words": [
+                    "told!"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "sit"
+                ],
+                "pred_words": [
+                    "her"
+                ]
+            }
+        ],
+        "inserted_words": [],
+        "question_type_metrics": {
+            "U": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 14,
+                "hallu_words": 3
+            },
+            "FITB": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 27,
+                "hallu_words": 4
+            },
+            "W": {
+                "fabricated": 0,
+                "crossed": 4,
+                "illegible": 0,
+                "gt_words": 498,
+                "hallu_words": 25
+            },
+            "QA": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 10,
+                "hallu_words": 4
+            }
+        }
+    },
+    "refined_metrics": {
+        "fabricated_hallucinations": 0,
+        "fabricated_hallucination_rate": 0.0,
+        "crossed_out_hallucinations": 4,
+        "crossed_out_hallucination_rate": 0.007285974499089253,
+        "illegibility_hallucinations": 0,
+        "illegibility_hallucination_rate": 0.0,
+        "word_level_hallucination_rate": 0.007285974499089253,
+        "total_hallucinated_words": 4,
+        "total_gt_words": 549,
+        "replaced_word_pairs": [
+            {
+                "question": "09",
+                "sub_question": "5",
+                "gt_words": [
+                    "Lastly"
+                ],
+                "pred_words": [
+                    "Lasting"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    ","
+                ],
+                "pred_words": [
+                    "and"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "childho"
+                ],
+                "pred_words": [
+                    "childhood"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "sit"
+                ],
+                "pred_words": [
+                    "her"
+                ]
+            }
+        ],
+        "inserted_words": [],
+        "question_type_metrics": {
+            "U": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 14,
+                "hallu_words": 1
+            },
+            "FITB": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 27,
+                "hallu_words": 0
+            },
+            "W": {
+                "fabricated": 0,
+                "crossed": 4,
+                "illegible": 0,
+                "gt_words": 498,
+                "hallu_words": 3
+            },
+            "QA": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 10,
+                "hallu_words": 0
+            }
+        }
+    },
+    "usage": {
+        "prompt_tokens": 10566,
+        "candidate_tokens": 2429,
+        "thought_tokens": 6337
+    },
+    "cost": 0.031581,
+    "recognition_time": 86.47506904602051,
+    "prediction": {
+        "paper_title": "English Language",
+        "questions": [
+            {
+                "test_number": "09",
+                "instruction": "Answer all the questions",
+                "question_type": "U",
+                "student_answers": {
+                    "1": {
+                        "answer": "leads",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "growing",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "valuable",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "obedience",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "Lasting",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "10",
+                "instruction": "Read the text given below and fill in the blanks with the correct form of the verb given within the brackets.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "soaked",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "decided",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "has been hiding",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "was taken",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "learnt",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "11",
+                "instruction": "Fill in the blanks of the following passage with the words given in the box. There is one extra word.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "belive",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "safe",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "truth",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "thruthfull",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "it",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "good",
+                        "is_legible": "true"
+                    },
+                    "7": {
+                        "answer": "but",
+                        "is_legible": "true"
+                    },
+                    "8": {
+                        "answer": "later",
+                        "is_legible": "true"
+                    },
+                    "9": {
+                        "answer": "responsible",
+                        "is_legible": "true"
+                    },
+                    "10": {
+                        "answer": "better",
+                        "is_legible": "true"
+                    },
+                    "11": {
+                        "answer": "we",
+                        "is_legible": "true"
+                    },
+                    "12": {
+                        "answer": "thing",
+                        "is_legible": "true"
+                    },
+                    "13": {
+                        "answer": "or",
+                        "is_legible": "true"
+                    },
+                    "14": {
+                        "answer": "people",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "12",
+                "instruction": "Underline the correct verb phrase within brackets.",
+                "question_type": "U",
+                "student_answers": {
+                    "1": {
+                        "answer": "will stay",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "hadn't gone",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "hadn't overslept",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "would win",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "deliver",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "13",
+                "instruction": "Read the following extracts of different types of hobbies and match them with the headings given below. Write the relevant letter of the heading in the box given against each extract. There is one extra heading.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "C",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "f",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "A",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "G",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "B",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "14",
+                "instruction": "Write only one of the following. Use the space provided.",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "The above bar chart shows how Gr.11 students of prince collage find current news. Most of the student find new by U Tube percent wise 40%. 5% of the students find current new by TV channels. Equal number of students find news by TV chanels and New websites. students find current news by massaging apps is more than social media which is 20%. students find current news using massaging apps less than U tube.\n\nIt is seen that most of the students prefer U tube. and finding new by news websites and TV channels has been decreased.",
+                    "is_legible": "true"
+                }
+            },
+            {
+                "test_number": "15",
+                "instruction": "Read the following text and answer the questions given below.",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "1": {
+                            "answer": "True",
+                            "is_legible": "true"
+                        },
+                        "2": {
+                            "answer": "True",
+                            "is_legible": "true"
+                        },
+                        "3": {
+                            "answer": "False",
+                            "is_legible": "true"
+                        },
+                        "4": {
+                            "answer": "True",
+                            "is_legible": "true"
+                        }
+                    },
+                    "2": {
+                        "answer": "b",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "d",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "c",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "father",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "1": {
+                            "answer": "iii",
+                            "is_legible": "true"
+                        },
+                        "2": {
+                            "answer": "i",
+                            "is_legible": "true"
+                        }
+                    }
+                }
+            },
+            {
+                "test_number": "16",
+                "instruction": "Write on one of the following topics. Use about 200 words",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "I was walking alone the road and I met my old friend sasindhi who was my neibor 7 years before. And I said Hi sasindhi How are you. she replied me I'm good who are you. I was shocked because she was my best friend in my childhood days. I missed her so much but she didn't even smile at me. I was so disspointed and without replying her I went home. And my mother asked me to wash my clothes. As ussual I told I'll wash my clothes later but this time mama strictly told me to wash my clothes so I took all my clothes and went near the washing machine and put all my clothes to the washing machine. I was sreaching for ditergent powder. Mama told It is in the washroom. I opened the wash room.\n\nA girl came inside the wash room and huged me. I got scard. I soon pushed her and ran to the hall. My mama was laughing at me. I was so angry and scremed suddenly that girl who huged me came from the kitchen and I saw her face she was my childhood friend sasindhi. I nicely scolded her and told mama what happen in the road. And without listening to sasindhi or Mama I went the room and loched the door. I started to weep. After 2 hours I opened the door and went to the hall. To girls were sitting they both were looking the same. I asked mama What is this are you playing with me. Am I a joke for you. I was asking many qustis like this. Mama told little wait allow others to talk. I told now what you want to talk tell. she told!\n\nShe pointed at one girl and told this is not sasindhi is her twin sister, kasundhi. And she pointed the other girl and told this is Sasindhi. It was such a embrasing movement for me infront of sasindhi's parents and her sister. I can only remember about sasindhi but not about her sister who was in Anuradhapura. And the one who I met in the road was kasundhi. The one who hugged me was sasindhi. I asked sorry from everyone and all of them started to laught and Mama told Sasid will stay with us for this Holidays.",
+                    "is_legible": "true"
+                }
+            }
+        ]
+    }
+}

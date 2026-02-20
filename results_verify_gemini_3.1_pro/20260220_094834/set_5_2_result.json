@@ -1,0 +1,553 @@
+{
+    "pdf_name": "set_5_2.pdf",
+    "metrics": {
+        "fabricated_hallucinations": 2,
+        "fabricated_hallucination_rate": 0.015037593984962405,
+        "crossed_out_hallucinations": 2,
+        "crossed_out_hallucination_rate": 0.015037593984962405,
+        "illegibility_hallucinations": 0,
+        "illegibility_hallucination_rate": 0.0,
+        "word_level_hallucination_rate": 0.13533834586466165,
+        "total_hallucinated_words": 18,
+        "total_gt_words": 133,
+        "replaced_word_pairs": [
+            {
+                "question": "01",
+                "sub_question": "3",
+                "gt_words": [
+                    "motherp",
+                    "repares"
+                ],
+                "pred_words": [
+                    "mother",
+                    "prepares"
+                ]
+            },
+            {
+                "question": "01",
+                "sub_question": "3",
+                "gt_words": [
+                    "hersef"
+                ],
+                "pred_words": [
+                    "herself"
+                ]
+            },
+            {
+                "question": "02",
+                "sub_question": "1",
+                "gt_words": [
+                    "hello!"
+                ],
+                "pred_words": [
+                    "hello",
+                    "!"
+                ]
+            },
+            {
+                "question": "02",
+                "sub_question": "1",
+                "gt_words": [
+                    "aftemoon"
+                ],
+                "pred_words": [
+                    "afternoon"
+                ]
+            },
+            {
+                "question": "02",
+                "sub_question": "2",
+                "gt_words": [
+                    "here"
+                ],
+                "pred_words": [
+                    "here."
+                ]
+            },
+            {
+                "question": "02",
+                "sub_question": "4",
+                "gt_words": [
+                    "writtenthe"
+                ],
+                "pred_words": [
+                    "written",
+                    "the"
+                ]
+            },
+            {
+                "question": "02",
+                "sub_question": "5",
+                "gt_words": [
+                    "do,It"
+                ],
+                "pred_words": [
+                    "do",
+                    ",",
+                    "It"
+                ]
+            },
+            {
+                "question": "03",
+                "sub_question": "4",
+                "gt_words": [
+                    "they"
+                ],
+                "pred_words": [
+                    "There"
+                ]
+            },
+            {
+                "question": "03",
+                "sub_question": "4",
+                "gt_words": [
+                    "boys?"
+                ],
+                "pred_words": [
+                    "boys"
+                ]
+            },
+            {
+                "question": "03",
+                "sub_question": "5",
+                "gt_words": [
+                    "tomorrow."
+                ],
+                "pred_words": [
+                    "tomorrow"
+                ]
+            },
+            {
+                "question": "09",
+                "sub_question": "1",
+                "gt_words": [
+                    "campleted"
+                ],
+                "pred_words": [
+                    "completed"
+                ]
+            }
+        ],
+        "inserted_words": [
+            {
+                "question": "02",
+                "sub_question": "3",
+                "words": [
+                    "!"
+                ]
+            },
+            {
+                "question": "02",
+                "sub_question": "5",
+                "words": [
+                    "!"
+                ]
+            }
+        ],
+        "question_type_metrics": {
+            "W": {
+                "fabricated": 0,
+                "crossed": 1,
+                "illegible": 0,
+                "gt_words": 87,
+                "hallu_words": 17
+            },
+            "FITB": {
+                "fabricated": 0,
+                "crossed": 1,
+                "illegible": 0,
+                "gt_words": 19,
+                "hallu_words": 1
+            },
+            "C": {
+                "fabricated": 2,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 4,
+                "hallu_words": 0
+            },
+            "QA": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 18,
+                "hallu_words": 0
+            },
+            "M": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 5,
+                "hallu_words": 0
+            }
+        }
+    },
+    "refined_metrics": {
+        "fabricated_hallucinations": 2,
+        "fabricated_hallucination_rate": 0.015037593984962405,
+        "crossed_out_hallucinations": 2,
+        "crossed_out_hallucination_rate": 0.015037593984962405,
+        "illegibility_hallucinations": 0,
+        "illegibility_hallucination_rate": 0.0,
+        "word_level_hallucination_rate": 0.007518796992481203,
+        "total_hallucinated_words": 1,
+        "total_gt_words": 133,
+        "replaced_word_pairs": [
+            {
+                "question": "03",
+                "sub_question": "4",
+                "gt_words": [
+                    "they"
+                ],
+                "pred_words": [
+                    "There"
+                ]
+            }
+        ],
+        "inserted_words": [],
+        "question_type_metrics": {
+            "W": {
+                "fabricated": 0,
+                "crossed": 1,
+                "illegible": 0,
+                "gt_words": 87,
+                "hallu_words": 1
+            },
+            "FITB": {
+                "fabricated": 0,
+                "crossed": 1,
+                "illegible": 0,
+                "gt_words": 19,
+                "hallu_words": 0
+            },
+            "C": {
+                "fabricated": 2,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 4,
+                "hallu_words": 0
+            },
+            "QA": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 18,
+                "hallu_words": 0
+            },
+            "M": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 5,
+                "hallu_words": 0
+            }
+        }
+    },
+    "usage": {
+        "prompt_tokens": 6538,
+        "candidate_tokens": 2294,
+        "thought_tokens": 2847
+    },
+    "cost": 0.018692,
+    "recognition_time": 61.0079448223114,
+    "prediction": {
+        "paper_title": "Grade 08 - English Monthly Evaluation Paper",
+        "questions": [
+            {
+                "test_number": "01",
+                "instruction": "Rearrange the words to form correct sentences.",
+                "question_type": "W",
+                "student_answers": {
+                    "1": {
+                        "answer": "He cooks always food by himself",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "I painted the house myself",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "My mother prepares tea herself",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "The students formed groups themselves",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "The teacher wrote the list herself",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "02",
+                "instruction": "Rewrite with punctuation marks.",
+                "question_type": "W",
+                "student_answers": {
+                    "1": {
+                        "answer": "hello ! aunty good afternoon",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "yes he's here.",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "hello ! everybody",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "I've already written the list",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "wow ! did you do , It yourself",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "03",
+                "instruction": "Make questions for the following below given answers. First one is done for you",
+                "question_type": "W",
+                "student_answers": {
+                    "1": {
+                        "answer": "has she two brothers",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "Is he walking around the table",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "don't they have money",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "Are There thirty two boys",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "will i come tomorrow",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "04",
+                "instruction": "Write these sentences in plural.",
+                "question_type": "W",
+                "student_answers": {
+                    "1": {
+                        "answer": "pupils are not teachers",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "camels are big animals",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "donkeys are bigger than cats",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "eggs are whites",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "classrooms are cleans",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "05",
+                "instruction": "Write two suitable words for each sound",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "please",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "blunch",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "brush",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "brush",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "06",
+                "instruction": "Read the poem and circle the correct answer.",
+                "question_type": "C",
+                "student_answers": {
+                    "1": {
+                        "answer": "Local food",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "Strong",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "Fair",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "Mango",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "Sweet",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "07",
+                "instruction": "Given below is Ruwan's plan for the week.",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "answer": "Tuesday Afternoon",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "He is waching Tv",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "Monday Afternoon",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "play chess with kamal",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "Go to library and study English",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "08",
+                "instruction": "Match the expressions in B with the situation in A",
+                "question_type": "M",
+                "student_answers": {
+                    "1": {
+                        "answer": "C",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "A",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "E",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "B",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "D",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "09",
+                "instruction": "Complete the following to form present perfect sentences",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "completed",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "woned",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "punished",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "gown",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "polished",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "10",
+                "instruction": "Put a word from the box into the blank spaces to complete the sentences.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "is",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "am",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "is",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "is",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "were",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "has",
+                        "is_legible": "true"
+                    },
+                    "7": {
+                        "answer": "have",
+                        "is_legible": "true"
+                    },
+                    "8": {
+                        "answer": "was",
+                        "is_legible": "true"
+                    },
+                    "9": {
+                        "answer": "are",
+                        "is_legible": "true"
+                    },
+                    "10": {
+                        "answer": "are",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "11",
+                "instruction": "As the secretary of the science society of your school, you are going to organize a science exhibition in your school. Write a letter to the principal asking permission to have it in the school main-hall.",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "",
+                    "is_legible": ""
+                }
+            }
+        ]
+    }
+}

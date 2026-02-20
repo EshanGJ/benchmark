@@ -1,0 +1,930 @@
+{
+    "pdf_name": "set_13_3.pdf",
+    "metrics": {
+        "fabricated_hallucinations": 0,
+        "fabricated_hallucination_rate": 0.0,
+        "crossed_out_hallucinations": 5,
+        "crossed_out_hallucination_rate": 0.012658227848101266,
+        "illegibility_hallucinations": 5,
+        "illegibility_hallucination_rate": 0.012658227848101266,
+        "word_level_hallucination_rate": 0.14177215189873418,
+        "total_hallucinated_words": 56,
+        "total_gt_words": 395,
+        "replaced_word_pairs": [
+            {
+                "question": "09",
+                "sub_question": "1",
+                "gt_words": [
+                    "leading,"
+                ],
+                "pred_words": [
+                    "leads"
+                ]
+            },
+            {
+                "question": "09",
+                "sub_question": "4",
+                "gt_words": [
+                    "obedience,"
+                ],
+                "pred_words": [
+                    "obedience"
+                ]
+            },
+            {
+                "question": "10",
+                "sub_question": "1",
+                "gt_words": [
+                    "sooking"
+                ],
+                "pred_words": [
+                    "soaking"
+                ]
+            },
+            {
+                "question": "11",
+                "sub_question": "1",
+                "gt_words": [
+                    "believe,"
+                ],
+                "pred_words": [
+                    "believe"
+                ]
+            },
+            {
+                "question": "11",
+                "sub_question": "2",
+                "gt_words": [
+                    "safe,"
+                ],
+                "pred_words": [
+                    "safe"
+                ]
+            },
+            {
+                "question": "11",
+                "sub_question": "4",
+                "gt_words": [
+                    "responsible,"
+                ],
+                "pred_words": [
+                    "responsible"
+                ]
+            },
+            {
+                "question": "11",
+                "sub_question": "8",
+                "gt_words": [
+                    "later,"
+                ],
+                "pred_words": [
+                    "later"
+                ]
+            },
+            {
+                "question": "11",
+                "sub_question": "9",
+                "gt_words": [
+                    "truthful,"
+                ],
+                "pred_words": [
+                    "truthful"
+                ]
+            },
+            {
+                "question": "11",
+                "sub_question": "14",
+                "gt_words": [
+                    "poblem"
+                ],
+                "pred_words": [
+                    "problem"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "Lavinia"
+                ],
+                "pred_words": [
+                    "Lavania"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "school"
+                ],
+                "pred_words": [
+                    "school."
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "panal."
+                ],
+                "pred_words": [
+                    "panal"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "mininize"
+                ],
+                "pred_words": [
+                    "minimize"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "ago"
+                ],
+                "pred_words": [
+                    "a",
+                    "go"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "project."
+                ],
+                "pred_words": [
+                    "project"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "classmate",
+                    "everyone"
+                ],
+                "pred_words": [
+                    "class",
+                    "mate",
+                    "every",
+                    "one"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "without"
+                ],
+                "pred_words": [
+                    "without."
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.1",
+                "gt_words": [
+                    "T"
+                ],
+                "pred_words": [
+                    "True"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.2",
+                "gt_words": [
+                    "F"
+                ],
+                "pred_words": [
+                    "False"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.3",
+                "gt_words": [
+                    "F"
+                ],
+                "pred_words": [
+                    "False"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.4",
+                "gt_words": [
+                    "T"
+                ],
+                "pred_words": [
+                    "True"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "6.2",
+                "gt_words": [
+                    "ii"
+                ],
+                "pred_words": [
+                    "iii"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "sumhan",
+                    "."
+                ],
+                "pred_words": [
+                    "Sumhan."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "him"
+                ],
+                "pred_words": [
+                    "him."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "brother",
+                    "."
+                ],
+                "pred_words": [
+                    "brother."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "him",
+                    "."
+                ],
+                "pred_words": [
+                    "him."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "3",
+                    "friends",
+                    "."
+                ],
+                "pred_words": [
+                    "friends.",
+                    "3",
+                    "friends."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "matter",
+                    "."
+                ],
+                "pred_words": [
+                    "matter."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "him",
+                    "."
+                ],
+                "pred_words": [
+                    "him."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "it",
+                    "."
+                ],
+                "pred_words": [
+                    "it."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "came",
+                    "."
+                ],
+                "pred_words": [
+                    "came."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "clothing"
+                ],
+                "pred_words": [
+                    "clothin",
+                    "pant"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "pants",
+                    "."
+                ],
+                "pred_words": [
+                    "pants."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "cover",
+                    "."
+                ],
+                "pred_words": [
+                    "cover."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "manage",
+                    "to",
+                    "cover",
+                    ".",
+                    "He",
+                    "put"
+                ],
+                "pred_words": [
+                    "magayer",
+                    "to",
+                    "cover.",
+                    "He",
+                    "took"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "home",
+                    "."
+                ],
+                "pred_words": [
+                    "home."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "see"
+                ],
+                "pred_words": [
+                    "sea"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "everything."
+                ],
+                "pred_words": [
+                    "every",
+                    "thing."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "hearing"
+                ],
+                "pred_words": [
+                    "hereing"
+                ]
+            }
+        ],
+        "inserted_words": [
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "at",
+                    "first"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "pants.",
+                    "When",
+                    "they"
+                ]
+            }
+        ],
+        "question_type_metrics": {
+            "U": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 14,
+                "hallu_words": 2
+            },
+            "FITB": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 5,
+                "gt_words": 27,
+                "hallu_words": 7
+            },
+            "W": {
+                "fabricated": 0,
+                "crossed": 5,
+                "illegible": 0,
+                "gt_words": 344,
+                "hallu_words": 42
+            },
+            "QA": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 10,
+                "hallu_words": 5
+            }
+        }
+    },
+    "refined_metrics": {
+        "fabricated_hallucinations": 0,
+        "fabricated_hallucination_rate": 0.0,
+        "crossed_out_hallucinations": 5,
+        "crossed_out_hallucination_rate": 0.012658227848101266,
+        "illegibility_hallucinations": 5,
+        "illegibility_hallucination_rate": 0.012658227848101266,
+        "word_level_hallucination_rate": 0.06329113924050633,
+        "total_hallucinated_words": 25,
+        "total_gt_words": 395,
+        "replaced_word_pairs": [
+            {
+                "question": "09",
+                "sub_question": "1",
+                "gt_words": [
+                    "leading,"
+                ],
+                "pred_words": [
+                    "leads"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "Lavinia"
+                ],
+                "pred_words": [
+                    "Lavania"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "ago"
+                ],
+                "pred_words": [
+                    "a",
+                    "go"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "classmate",
+                    "everyone"
+                ],
+                "pred_words": [
+                    "class",
+                    "mate",
+                    "every",
+                    "one"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "6.2",
+                "gt_words": [
+                    "ii"
+                ],
+                "pred_words": [
+                    "iii"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "3",
+                    "friends",
+                    "."
+                ],
+                "pred_words": [
+                    "friends.",
+                    "3",
+                    "friends."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "clothing"
+                ],
+                "pred_words": [
+                    "clothin",
+                    "pant"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "manage"
+                ],
+                "pred_words": [
+                    "magayer"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "put"
+                ],
+                "pred_words": [
+                    "took"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "see"
+                ],
+                "pred_words": [
+                    "sea"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "everything."
+                ],
+                "pred_words": [
+                    "every",
+                    "thing."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "hearing"
+                ],
+                "pred_words": [
+                    "hereing"
+                ]
+            }
+        ],
+        "inserted_words": [
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "at",
+                    "first"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "pants.",
+                    "When",
+                    "they"
+                ]
+            }
+        ],
+        "question_type_metrics": {
+            "U": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 14,
+                "hallu_words": 1
+            },
+            "FITB": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 5,
+                "gt_words": 27,
+                "hallu_words": 0
+            },
+            "W": {
+                "fabricated": 0,
+                "crossed": 5,
+                "illegible": 0,
+                "gt_words": 344,
+                "hallu_words": 23
+            },
+            "QA": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 10,
+                "hallu_words": 1
+            }
+        }
+    },
+    "usage": {
+        "prompt_tokens": 9474,
+        "candidate_tokens": 2247,
+        "thought_tokens": 6804
+    },
+    "cost": 0.03189,
+    "recognition_time": 113.62395000457764,
+    "prediction": {
+        "paper_title": "English Language",
+        "questions": [
+            {
+                "test_number": "09",
+                "instruction": "Answer all the questions",
+                "question_type": "U",
+                "student_answers": {
+                    "1": {
+                        "answer": "leads",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "growing",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "valuable",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "obedience",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "Lastly",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "10",
+                "instruction": "Read the text given below and fill in the blanks with the correct form of the verb given within the brackets.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "were soaking",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "decided",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "was hiding",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "was taken",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "learned",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "11",
+                "instruction": "Fill in the blanks of the following passage with the words given in the box. There is one extra word.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "believe",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "safe",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "truth",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "responsible",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "It",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "people",
+                        "is_legible": "true"
+                    },
+                    "7": {
+                        "answer": "but",
+                        "is_legible": "true"
+                    },
+                    "8": {
+                        "answer": "later",
+                        "is_legible": "true"
+                    },
+                    "9": {
+                        "answer": "truthful",
+                        "is_legible": "true"
+                    },
+                    "10": {
+                        "answer": "better",
+                        "is_legible": "true"
+                    },
+                    "11": {
+                        "answer": "we",
+                        "is_legible": "true"
+                    },
+                    "12": {
+                        "answer": "thing",
+                        "is_legible": "true"
+                    },
+                    "13": {
+                        "answer": "or",
+                        "is_legible": "true"
+                    },
+                    "14": {
+                        "answer": "problem",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "12",
+                "instruction": "Underline the correct verb phrase within brackets.",
+                "question_type": "U",
+                "student_answers": {
+                    "1": {
+                        "answer": "will stay",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "don't go",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "hadn't overslept",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "would win",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "deliver",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "13",
+                "instruction": "Read the following extracts of different types of hobbies and match them with the headings given below. Write the relevant letter of the heading in the box given against each extract. There is one extra heading.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "C",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "F",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "A",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "G",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "B",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "14",
+                "instruction": "Write only one of the following. Use the space provided.",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "No. 113 3rd stage\nBadowita\nmount Lavania\n\nDear Sam\n\nHi, How are you? I hope you are doing good. I wanted to share the community project did at school. Project is solar panal\n\nWe did this project to our school to minimize electricity bill in oure school. We planed this long time a go and finally we started this project\n\nOur class mate every one joined this project except you. To honest it boring without. I got know that you got sick. get well soon without you class seems to be empty and boring\nso get well soon\nTank you\nYour faithful",
+                    "is_legible": "true"
+                }
+            },
+            {
+                "test_number": "15",
+                "instruction": "Read the following text and answer the questions given below.",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "1": {
+                            "answer": "True",
+                            "is_legible": "true"
+                        },
+                        "2": {
+                            "answer": "False",
+                            "is_legible": "true"
+                        },
+                        "3": {
+                            "answer": "False",
+                            "is_legible": "true"
+                        },
+                        "4": {
+                            "answer": "True",
+                            "is_legible": "true"
+                        }
+                    },
+                    "2": {
+                        "answer": "b",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "d",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "d",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "father",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "1": {
+                            "answer": "ii",
+                            "is_legible": "true"
+                        },
+                        "2": {
+                            "answer": "iii",
+                            "is_legible": "true"
+                        }
+                    }
+                }
+            },
+            {
+                "test_number": "16",
+                "instruction": "Write on one of the following topics. Use about 200 words",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "in the street I saw person getting shots by 3 boy. When I was getting near when I seeing it was my friend Sumhan. I ran near to him. the 3 boy ran away. Then I picked up Sumhan and asked him why did they hit you. He didn't replay at first he did replay I got angry and gave a shot to him. Then he started to replay that he said when going shop he have his friends brother. He has started tease him. Because he has got hair fall. He got angry and he has call his friends. 3 friends. They have come and They have what's the matter the brother have said the matter. They got to gather and put a plan to hit him and insult him. As they put plan they did it. They have got gather and start to beat him and torn his pants. When they pants are tearing pants I so and ran and I came. Sumhan is on anger on that 3 boy he stood up and asked a clothin pant or anything to cover him pants. So I gave my tissue paper to cover. He took tissue paper and how ever he magayer to cover. He took pick me whent to his home. His mother got shocked to sea asked what happened he said every thing. After his mother hereing this his mother also started to beat him.",
+                    "is_legible": "true"
+                }
+            }
+        ]
+    }
+}

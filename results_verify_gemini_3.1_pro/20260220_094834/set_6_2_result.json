@@ -1,0 +1,633 @@
+{
+    "pdf_name": "set_6_2.pdf",
+    "metrics": {
+        "fabricated_hallucinations": 0,
+        "fabricated_hallucination_rate": 0.0,
+        "crossed_out_hallucinations": 0,
+        "crossed_out_hallucination_rate": 0.0,
+        "illegibility_hallucinations": 4,
+        "illegibility_hallucination_rate": 0.057971014492753624,
+        "word_level_hallucination_rate": 0.2318840579710145,
+        "total_hallucinated_words": 16,
+        "total_gt_words": 69,
+        "replaced_word_pairs": [
+            {
+                "question": "01",
+                "sub_question": "2",
+                "gt_words": [
+                    "b"
+                ],
+                "pred_words": [
+                    "a"
+                ]
+            },
+            {
+                "question": "01",
+                "sub_question": "3",
+                "gt_words": [
+                    "a"
+                ],
+                "pred_words": [
+                    "e"
+                ]
+            },
+            {
+                "question": "01",
+                "sub_question": "4",
+                "gt_words": [
+                    "e"
+                ],
+                "pred_words": [
+                    "b"
+                ]
+            },
+            {
+                "question": "02",
+                "sub_question": "1",
+                "gt_words": [
+                    "smail",
+                    "face"
+                ],
+                "pred_words": [
+                    "3"
+                ]
+            },
+            {
+                "question": "02",
+                "sub_question": "2",
+                "gt_words": [
+                    "cup"
+                ],
+                "pred_words": [
+                    "1"
+                ]
+            },
+            {
+                "question": "02",
+                "sub_question": "3",
+                "gt_words": [
+                    "pillow"
+                ],
+                "pred_words": [
+                    "4"
+                ]
+            },
+            {
+                "question": "02",
+                "sub_question": "4",
+                "gt_words": [
+                    "sad",
+                    "face"
+                ],
+                "pred_words": [
+                    "5"
+                ]
+            },
+            {
+                "question": "02",
+                "sub_question": "5",
+                "gt_words": [
+                    "plate"
+                ],
+                "pred_words": [
+                    "2"
+                ]
+            },
+            {
+                "question": "04",
+                "sub_question": "1",
+                "gt_words": [
+                    "slee"
+                ],
+                "pred_words": [
+                    "sleep"
+                ]
+            },
+            {
+                "question": "05",
+                "sub_question": "3",
+                "gt_words": [
+                    "drtret"
+                ],
+                "pred_words": [
+                    "bytret"
+                ]
+            },
+            {
+                "question": "05",
+                "sub_question": "7",
+                "gt_words": [
+                    "carot"
+                ],
+                "pred_words": [
+                    "Carrot"
+                ]
+            },
+            {
+                "question": "06",
+                "sub_question": "1",
+                "gt_words": [
+                    "hand",
+                    "drawing",
+                    "of",
+                    "a",
+                    "knife"
+                ],
+                "pred_words": [
+                    "[drawing]"
+                ]
+            },
+            {
+                "question": "06",
+                "sub_question": "2",
+                "gt_words": [
+                    "hand",
+                    "drawing",
+                    "of",
+                    "a",
+                    "saucer"
+                ],
+                "pred_words": [
+                    "[drawing]"
+                ]
+            },
+            {
+                "question": "06",
+                "sub_question": "3",
+                "gt_words": [
+                    "hand",
+                    "drawing",
+                    "of",
+                    "a",
+                    "fork"
+                ],
+                "pred_words": [
+                    "[drawing]"
+                ]
+            },
+            {
+                "question": "06",
+                "sub_question": "4",
+                "gt_words": [
+                    "hand",
+                    "drawing",
+                    "of",
+                    "a",
+                    "spoon"
+                ],
+                "pred_words": [
+                    "[drawing]"
+                ]
+            },
+            {
+                "question": "06",
+                "sub_question": "5",
+                "gt_words": [
+                    "hand",
+                    "drawing",
+                    "of",
+                    "a",
+                    "plate"
+                ],
+                "pred_words": [
+                    "[drawing]"
+                ]
+            }
+        ],
+        "inserted_words": [],
+        "question_type_metrics": {
+            "M": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 3,
+                "gt_words": 12,
+                "hallu_words": 8
+            },
+            "C": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 5,
+                "hallu_words": 0
+            },
+            "FITB": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 1,
+                "gt_words": 52,
+                "hallu_words": 8
+            }
+        }
+    },
+    "refined_metrics": {
+        "fabricated_hallucinations": 0,
+        "fabricated_hallucination_rate": 0.0,
+        "crossed_out_hallucinations": 0,
+        "crossed_out_hallucination_rate": 0.0,
+        "illegibility_hallucinations": 4,
+        "illegibility_hallucination_rate": 0.057971014492753624,
+        "word_level_hallucination_rate": 0.13043478260869565,
+        "total_hallucinated_words": 9,
+        "total_gt_words": 69,
+        "replaced_word_pairs": [
+            {
+                "question": "01",
+                "sub_question": "2",
+                "gt_words": [
+                    "b"
+                ],
+                "pred_words": [
+                    "a"
+                ]
+            },
+            {
+                "question": "01",
+                "sub_question": "3",
+                "gt_words": [
+                    "a"
+                ],
+                "pred_words": [
+                    "e"
+                ]
+            },
+            {
+                "question": "01",
+                "sub_question": "4",
+                "gt_words": [
+                    "e"
+                ],
+                "pred_words": [
+                    "b"
+                ]
+            },
+            {
+                "question": "02",
+                "sub_question": "1",
+                "gt_words": [
+                    "smail",
+                    "face"
+                ],
+                "pred_words": [
+                    "3"
+                ]
+            },
+            {
+                "question": "02",
+                "sub_question": "2",
+                "gt_words": [
+                    "cup"
+                ],
+                "pred_words": [
+                    "1"
+                ]
+            },
+            {
+                "question": "02",
+                "sub_question": "3",
+                "gt_words": [
+                    "pillow"
+                ],
+                "pred_words": [
+                    "4"
+                ]
+            },
+            {
+                "question": "02",
+                "sub_question": "4",
+                "gt_words": [
+                    "sad",
+                    "face"
+                ],
+                "pred_words": [
+                    "5"
+                ]
+            },
+            {
+                "question": "02",
+                "sub_question": "5",
+                "gt_words": [
+                    "plate"
+                ],
+                "pred_words": [
+                    "2"
+                ]
+            },
+            {
+                "question": "05",
+                "sub_question": "3",
+                "gt_words": [
+                    "drtret"
+                ],
+                "pred_words": [
+                    "bytret"
+                ]
+            }
+        ],
+        "inserted_words": [],
+        "question_type_metrics": {
+            "M": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 3,
+                "gt_words": 12,
+                "hallu_words": 8
+            },
+            "C": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 5,
+                "hallu_words": 0
+            },
+            "FITB": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 1,
+                "gt_words": 52,
+                "hallu_words": 1
+            }
+        }
+    },
+    "usage": {
+        "prompt_tokens": 6267,
+        "candidate_tokens": 1931,
+        "thought_tokens": 5148
+    },
+    "cost": 0.0243705,
+    "recognition_time": 96.24041938781738,
+    "prediction": {
+        "paper_title": "Grade 04 - English Monthly Evaluation Test Third Term",
+        "questions": [
+            {
+                "test_number": "01",
+                "instruction": "Match the second half",
+                "question_type": "M",
+                "student_answers": {
+                    "1": {
+                        "answer": "c",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "a",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "e",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "b",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "d",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "02",
+                "instruction": "Read and match",
+                "question_type": "M",
+                "student_answers": {
+                    "1": {
+                        "answer": "3",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "1",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "4",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "5",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "2",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "03",
+                "instruction": "Circle the pronouns",
+                "question_type": "C",
+                "student_answers": {
+                    "1": {
+                        "answer": "She",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "he",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "They",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "We",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "It",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "04",
+                "instruction": "Complete the puzzle",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "sleep",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "3": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "answer": "",
+                        "is_legible": ""
+                    }
+                }
+            },
+            {
+                "test_number": "05",
+                "instruction": "Name the vegitable in the bucket",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "2": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "3": {
+                        "answer": "bytret",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "5": {
+                        "answer": "",
+                        "is_legible": ""
+                    },
+                    "6": {
+                        "answer": "Patatoes",
+                        "is_legible": "true"
+                    },
+                    "7": {
+                        "answer": "Carrot",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "06",
+                "instruction": "Draw the picture in the box",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "[drawing]",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "[drawing]",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "[drawing]",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "[drawing]",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "[drawing]",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "07",
+                "instruction": "Use I, we, she, it they in the blanks",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "I",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "it",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "they",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "we",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "she",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "08",
+                "instruction": "Name the part of a house. One is done for you",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "roof",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "Window",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "door",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "09",
+                "instruction": "Write the plural form",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "BOOKS",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "apples",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "ducks",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "Eggs",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "guns",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "10",
+                "instruction": "Give a topic for these essays",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "MY School",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "My pet",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "My teacher",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "My self",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "My friend",
+                        "is_legible": "true"
+                    }
+                }
+            }
+        ]
+    }
+}

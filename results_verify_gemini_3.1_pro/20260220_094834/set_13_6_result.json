@@ -1,0 +1,635 @@
+{
+    "pdf_name": "set_13_6.pdf",
+    "metrics": {
+        "fabricated_hallucinations": 0,
+        "fabricated_hallucination_rate": 0.0,
+        "crossed_out_hallucinations": 6,
+        "crossed_out_hallucination_rate": 0.015228426395939087,
+        "illegibility_hallucinations": 0,
+        "illegibility_hallucination_rate": 0.0,
+        "word_level_hallucination_rate": 0.07614213197969544,
+        "total_hallucinated_words": 30,
+        "total_gt_words": 394,
+        "replaced_word_pairs": [
+            {
+                "question": "09",
+                "sub_question": "4",
+                "gt_words": [
+                    "obedience,"
+                ],
+                "pred_words": [
+                    "obedience"
+                ]
+            },
+            {
+                "question": "09",
+                "sub_question": "5",
+                "gt_words": [
+                    "Lastly,"
+                ],
+                "pred_words": [
+                    "Lastly"
+                ]
+            },
+            {
+                "question": "11",
+                "sub_question": "1",
+                "gt_words": [
+                    "believe,"
+                ],
+                "pred_words": [
+                    "believe"
+                ]
+            },
+            {
+                "question": "12",
+                "sub_question": "4",
+                "gt_words": [
+                    "won,"
+                ],
+                "pred_words": [
+                    "won"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "Rd"
+                ],
+                "pred_words": [
+                    "Rd,"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "lavania"
+                ],
+                "pred_words": [
+                    "lavinia."
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "Hi"
+                ],
+                "pred_words": [
+                    "Hi,"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "project."
+                ],
+                "pred_words": [
+                    "project"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "energy",
+                    "AR."
+                ],
+                "pred_words": [
+                    "energy.",
+                    "AR.,"
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "project,"
+                ],
+                "pred_words": [
+                    "project."
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "doubt"
+                ],
+                "pred_words": [
+                    "doubt."
+                ]
+            },
+            {
+                "question": "14",
+                "sub_question": "",
+                "gt_words": [
+                    "friend."
+                ],
+                "pred_words": [
+                    "friend"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.1",
+                "gt_words": [
+                    "T"
+                ],
+                "pred_words": [
+                    "True"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.2",
+                "gt_words": [
+                    "F"
+                ],
+                "pred_words": [
+                    "False"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.3",
+                "gt_words": [
+                    "F"
+                ],
+                "pred_words": [
+                    "False"
+                ]
+            },
+            {
+                "question": "15",
+                "sub_question": "1.4",
+                "gt_words": [
+                    "T"
+                ],
+                "pred_words": [
+                    "True"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "."
+                ],
+                "pred_words": [
+                    "of",
+                    "F1."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "maclearn"
+                ],
+                "pred_words": [
+                    "maclaren"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "because",
+                    "lando"
+                ],
+                "pred_words": [
+                    "becaus",
+                    "land"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "funny"
+                ],
+                "pred_words": [
+                    "funny."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "crashing"
+                ],
+                "pred_words": [
+                    "carashing"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "hilarious"
+                ],
+                "pred_words": [
+                    "halarious"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "laughter"
+                ],
+                "pred_words": [
+                    "laughter."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "celebration,"
+                ],
+                "pred_words": [
+                    "celebration."
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "incident"
+                ],
+                "pred_words": [
+                    "inchident"
+                ]
+            },
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "unforgettable."
+                ],
+                "pred_words": [
+                    "unforgetable..."
+                ]
+            }
+        ],
+        "inserted_words": [
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "and"
+                ]
+            }
+        ],
+        "question_type_metrics": {
+            "U": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 14,
+                "hallu_words": 3
+            },
+            "FITB": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 28,
+                "hallu_words": 1
+            },
+            "W": {
+                "fabricated": 0,
+                "crossed": 6,
+                "illegible": 0,
+                "gt_words": 342,
+                "hallu_words": 22
+            },
+            "QA": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 10,
+                "hallu_words": 4
+            }
+        }
+    },
+    "refined_metrics": {
+        "fabricated_hallucinations": 0,
+        "fabricated_hallucination_rate": 0.0,
+        "crossed_out_hallucinations": 6,
+        "crossed_out_hallucination_rate": 0.015228426395939087,
+        "illegibility_hallucinations": 0,
+        "illegibility_hallucination_rate": 0.0,
+        "word_level_hallucination_rate": 0.007614213197969543,
+        "total_hallucinated_words": 3,
+        "total_gt_words": 394,
+        "replaced_word_pairs": [
+            {
+                "question": "16",
+                "sub_question": "",
+                "gt_words": [
+                    "."
+                ],
+                "pred_words": [
+                    "of",
+                    "F1."
+                ]
+            }
+        ],
+        "inserted_words": [
+            {
+                "question": "16",
+                "sub_question": "",
+                "words": [
+                    "and"
+                ]
+            }
+        ],
+        "question_type_metrics": {
+            "U": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 14,
+                "hallu_words": 0
+            },
+            "FITB": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 28,
+                "hallu_words": 0
+            },
+            "W": {
+                "fabricated": 0,
+                "crossed": 6,
+                "illegible": 0,
+                "gt_words": 342,
+                "hallu_words": 3
+            },
+            "QA": {
+                "fabricated": 0,
+                "crossed": 0,
+                "illegible": 0,
+                "gt_words": 10,
+                "hallu_words": 0
+            }
+        }
+    },
+    "usage": {
+        "prompt_tokens": 10566,
+        "candidate_tokens": 2365,
+        "thought_tokens": 4933
+    },
+    "cost": 0.027177,
+    "recognition_time": 96.54954695701599,
+    "prediction": {
+        "paper_title": "Year End Evaluation - 2025, English Language, Paper II, Grade 11",
+        "questions": [
+            {
+                "test_number": "09",
+                "instruction": "Answer all the questions",
+                "question_type": "U",
+                "student_answers": {
+                    "1": {
+                        "answer": "leads",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "grew",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "valuable",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "obedience",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "Lastly",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "10",
+                "instruction": "Read the text given below and fill in the blanks with the correct form of the verb given within the brackets.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "were soaking",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "decided",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "was hiding",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "was taken",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "had learnt",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "11",
+                "instruction": "Fill in the blanks of the following passage with the words given in the box. There is one extra word.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "believe",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "safe",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "truth",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "responsible",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "it",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "answer": "people",
+                        "is_legible": "true"
+                    },
+                    "7": {
+                        "answer": "but",
+                        "is_legible": "true"
+                    },
+                    "8": {
+                        "answer": "later",
+                        "is_legible": "true"
+                    },
+                    "9": {
+                        "answer": "thankful",
+                        "is_legible": "true"
+                    },
+                    "10": {
+                        "answer": "better",
+                        "is_legible": "true"
+                    },
+                    "11": {
+                        "answer": "we",
+                        "is_legible": "true"
+                    },
+                    "12": {
+                        "answer": "thing",
+                        "is_legible": "true"
+                    },
+                    "13": {
+                        "answer": "or",
+                        "is_legible": "true"
+                    },
+                    "14": {
+                        "answer": "problem",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "12",
+                "instruction": "Underline the correct verb phrase within brackets.",
+                "question_type": "U",
+                "student_answers": {
+                    "1": {
+                        "answer": "will stay",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "don't go",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "hadn't overslept",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "had won",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "deliver",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "13",
+                "instruction": "Read the following extracts of different types of hobbies and match them with the headings given below. Write the relevant letter of the heading in the box given against each extract. There is one extra heading.",
+                "question_type": "FITB",
+                "student_answers": {
+                    "1": {
+                        "answer": "C",
+                        "is_legible": "true"
+                    },
+                    "2": {
+                        "answer": "F",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "A",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "G",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "B",
+                        "is_legible": "true"
+                    }
+                }
+            },
+            {
+                "test_number": "14",
+                "instruction": "Write only one of the following. Use the space provided.",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "19, Rupasinghe Rd,\nNedimala Rd, hill street\nmount lavinia.\n\nDear Max,\n\nHi, How are you, Hope your doing good.\nI wanted share my experience about my school\ncommunity project. The project was about to\nmake a creative innovation and testing it. I\nmade a 'arc reactor' for my project It's\nfunction was supplying pure unlimited energy. AR.,\nMe and Amaan and Murshid helped me in the\nproject. without their help it was never possible.\nThat creation was top notch and we won the\nbest creative inovation award without a doubt. and\nschooled every other competitor. I want to show the\n'arc reactor' to you, let's meet on Sunday. Bye!\n\nThank you\nyour best friend",
+                    "is_legible": "true"
+                }
+            },
+            {
+                "test_number": "15",
+                "instruction": "Read the following text and answer the questions given below.",
+                "question_type": "QA",
+                "student_answers": {
+                    "1": {
+                        "1": {
+                            "answer": "True",
+                            "is_legible": "true"
+                        },
+                        "2": {
+                            "answer": "False",
+                            "is_legible": "true"
+                        },
+                        "3": {
+                            "answer": "False",
+                            "is_legible": "true"
+                        },
+                        "4": {
+                            "answer": "True",
+                            "is_legible": "true"
+                        }
+                    },
+                    "2": {
+                        "answer": "b",
+                        "is_legible": "true"
+                    },
+                    "3": {
+                        "answer": "d",
+                        "is_legible": "true"
+                    },
+                    "4": {
+                        "answer": "d",
+                        "is_legible": "true"
+                    },
+                    "5": {
+                        "answer": "father",
+                        "is_legible": "true"
+                    },
+                    "6": {
+                        "1": {
+                            "answer": "ii",
+                            "is_legible": "true"
+                        },
+                        "2": {
+                            "answer": "iii",
+                            "is_legible": "true"
+                        }
+                    }
+                }
+            },
+            {
+                "test_number": "16",
+                "instruction": "Write on one of the following topics. Use about 200 words",
+                "question_type": "W",
+                "student_answers": {
+                    "answer": "in the streets of monaco and I was in a hurry\nto go and watch the F1 Italian Grand prix\nhappening at 6:00 pm. As I did arrive in time and\n'it was lights out, away we go' and the race\nwent on. The Italian Grand prix 2025.\nIt was the most funniest Race in the history of\nF1.\n\nThe funniest part which left all the fans and me in\nunbearable laughter was maclaren swaping Cars\njust becaus land Norris had a slow pit stop and\nwas too funny. and other funny part was liam\nlawson and Isack Hadjar carashing into each other\nlanding on top of each other's car upside down.\nThat was halarious and too funny that fans\nwere dying out of laughter. It will be rembered\nas the most funniest race in F1 history.\n\nAlso after Max Verstappen Won and went on to the\npodium for celebration. Lando Norris unintentionally\nbroke Charles leclre's trophy while opening a\nbottle which fell and that also was a funny\npart for the fans but for him it was mistake.\n\nAfter crashing out from laughing all day\nme and my friends left the stadium and still\nwe didn't stop laughing as it was too funny\nand couldn't stop laughing about it I mean\nwhenever that inchident comes to my mind even now\nI still laugh aloud. That Saturday evening\nwas unforgetable...",
+                    "is_legible": "true"
+                }
+            }
+        ]
+    }
+}
