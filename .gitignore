@@ -212,5 +212,4 @@ __marimo__/
 # Project specific
 .env
 results/
-dev.ipynb
 .ipynb_checkpoints/
