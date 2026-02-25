@@ -1,1 +1,0 @@
-Object of type MagicMock is not JSON serializable
