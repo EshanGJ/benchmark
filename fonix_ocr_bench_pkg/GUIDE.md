@@ -4,59 +4,6 @@
 
 `fonix_ocr_bench` is a Python package for benchmarking OCR models, specifically designed for evaluating handwritten text extraction and structure filling.
 
-## Setup
-
-1.  **Environment**:
-    Ensure you have the `eng` conda environment activated:
-    ```bash
-    conda activate eng
-    ```
-
-2.  **Installation**:
-    Go to the package directory and install:
-    ```bash
-    cd fonix_ocr_bench_pkg
-    pip install -e .
-    cd ..
-    ```
-
-3.  **Dependencies**:
-    Install required packages for Gemini:
-    ```bash
-    pip install google-genai python-dotenv
-    ```
-
-4.  **API Key**:
-    Set your Google API Key:
-    ```bash
-    set GOOGLE_API_KEY=your_api_key_here
-    ```
-
-## Usage
-
-Run the benchmark using the provided script `run_benchmark.py`:
-
-```bash
-python run_benchmark.py --data_dir ./data/all_together --output_dir ./results
-```
-
-### Arguments
-- `--data_dir`: Directory containing PDF and JSON pairs (default: `./data/all_together`)
-- `--output_dir`: Directory to save results (default: `./results`)
-- `--model`: Gemini model name (default: `gemini-3-flash-preview`)
-- `--api_key`: Google API Key (optional if env var set)
-
-## Output Structure
-
-Results are saved in timestamped directories containing detailed per-file results (`*_result.json`), raw predictions (`*_prediction.json`), and an overall `summary.json`.
-
-Detailed metrics include:
-- `fabricated_hallucinations`
-- `crossed_out_hallucinations`
-- `illegibility_hallucinations`
-- `word_level_hallucination_rate`
-- **Question-Level Error Tracking**: `replaced_word_pairs` and `inserted_words` now include `question` and `sub_question` IDs.
-
 ## Advanced Customization
 
 This section details how to extend the benchmark with custom models and cost functions.

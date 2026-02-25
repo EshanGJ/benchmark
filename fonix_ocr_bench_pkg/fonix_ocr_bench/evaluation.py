@@ -1,15 +1,6 @@
 from .utils import word_diff
 
 class Evaluator:
-    QUESTION_TYPE_LABELS = {
-        "QA": "Question Answering",
-        "FITB": "Fill In The Blanks",
-        "W": "Writing/Essay",
-        "U": "Underline",
-        "C": "Circling",
-        "M": "Matching"
-    }
-
     def __init__(self):
         pass
 
