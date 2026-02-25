@@ -211,7 +211,6 @@ __marimo__/
 
 # Project specific
 .env
-data/
 results/
 *.pdf
 dev.ipynb
