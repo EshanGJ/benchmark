@@ -1,5 +1,6 @@
 import logging
 import sys
+from pathlib import Path
 
 # ANSI escape codes for colors
 class Colors:
@@ -30,10 +31,21 @@ def setup_logger(name="fonix_ocr_bench", level=logging.INFO):
     
     # Check if handlers already exist to avoid duplicate logs
     if not logger.handlers:
-        handler = logging.StreamHandler(sys.stdout)
-        handler.setFormatter(ColoredFormatter())
-        logger.addHandler(handler)
-    
+        # Console handler (coloured)
+        console_handler = logging.StreamHandler(sys.stdout)
+        console_handler.setFormatter(ColoredFormatter())
+        logger.addHandler(console_handler)
+
+        # File handler — writes to fonix_ocr_bench.log in the CWD at runtime,
+        # so it always lands next to wherever run_benchmark.py is invoked from.
+        log_file = Path.cwd() / "fonix_ocr_bench.log"
+        file_handler = logging.FileHandler(log_file, encoding="utf-8")
+        file_handler.setFormatter(logging.Formatter(
+            "%(asctime)s [%(levelname)s] %(message)s",
+            datefmt="%Y-%m-%d %H:%M:%S"
+        ))
+        logger.addHandler(file_handler)
+
     return logger
 
 # Create a default logger instance

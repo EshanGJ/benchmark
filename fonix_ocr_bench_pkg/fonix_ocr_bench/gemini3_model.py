@@ -72,10 +72,15 @@ class Gemini3Model(ModelInterface):
         prompt_tokens = usage.prompt_token_count
         candidates_tokens = usage.candidates_token_count
         thoughts_token_count = usage.thoughts_token_count if hasattr(usage, 'thoughts_token_count') else 0
-        
-        # Pricing from dev.ipynb for gemini-3-flash-preview
-        IMPUT_PRICE = 0.5 / 1000000
-        OUTPUT_PRICE = 3 / 1000000
+
+        if self.model_name == "gemini-3-flash-preview":
+            IMPUT_PRICE = 0.5 / 1000000
+            OUTPUT_PRICE = 3 / 1000000
+        elif self.model_name == "gemini-3.1-pro-preview":
+            IMPUT_PRICE = 2 / 1000000
+            OUTPUT_PRICE = 12 / 1000000
+        else:
+            raise ValueError(f"Unknown model name: {self.model_name}")
 
         if thoughts_token_count:
             total_cost = (prompt_tokens) * IMPUT_PRICE + (candidates_tokens + thoughts_token_count) * OUTPUT_PRICE
