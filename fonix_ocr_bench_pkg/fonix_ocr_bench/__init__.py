@@ -1,4 +1,4 @@
-from .model_interface import ModelInterface, PredictionResult
+from .model_interface import ModelInterface, PredictionResult, UsageStats
 from .gemini3_model import Gemini3Model
 from .dataset import BenchmarkDataset
 from .runner import BenchmarkRunner
@@ -10,6 +10,7 @@ from .logger import logger
 __all__ = [
     "ModelInterface",
     "PredictionResult",
+    "UsageStats",
     "Gemini3Model",
     "BenchmarkDataset",
     "BenchmarkRunner",

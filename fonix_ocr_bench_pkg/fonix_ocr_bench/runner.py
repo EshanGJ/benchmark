@@ -83,13 +83,13 @@ class BenchmarkRunner:
 
                     # Track usage
                     u = prediction_result.usage
-                    sample_prompt_tokens += u.prompt_token_count
-                    sample_candidate_tokens += u.candidates_token_count
-                    sample_thought_tokens += (u.thoughts_token_count if hasattr(u, 'thoughts_token_count') else 0)
+                    sample_prompt_tokens += u.prompt_tokens
+                    sample_candidate_tokens += u.completion_tokens
+                    sample_thought_tokens += u.thinking_tokens
                     
                     cost = self.model.calculate_cost(u)
                     sample_cost += cost
-                    logger.debug(f"Page {page_index + 1} cost: ${cost:.6f} (Tokens: P:{u.prompt_token_count}, C:{u.candidates_token_count})")
+                    logger.debug(f"Page {page_index + 1} cost: ${cost:.6f} (Tokens: P:{u.prompt_tokens}, C:{u.completion_tokens})")
                 
                 doc.close()
                 pred_json = json.loads(current_json)
@@ -126,11 +126,11 @@ class BenchmarkRunner:
                         pred_json = {"error": "Failed to parse JSON", "raw": prediction_result.text}
                 
                 u = prediction_result.usage
-                sample_prompt_tokens = u.prompt_token_count
-                sample_candidate_tokens = u.candidates_token_count
-                sample_thought_tokens = (u.thoughts_token_count if hasattr(u, 'thoughts_token_count') else 0)
+                sample_prompt_tokens = u.prompt_tokens
+                sample_candidate_tokens = u.completion_tokens
+                sample_thought_tokens = u.thinking_tokens
                 sample_cost = self.model.calculate_cost(u)
-                logger.debug(f"Sample cost: ${sample_cost:.6f} (Tokens: P:{u.prompt_token_count}, C:{u.candidates_token_count})")
+                logger.debug(f"Sample cost: ${sample_cost:.6f} (Tokens: P:{u.prompt_tokens}, C:{u.completion_tokens})")
             
             # Evaluation
             logger.info(f"Evaluating results against ground truth for {pdf_name}...")

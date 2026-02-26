@@ -1,11 +1,18 @@
 from abc import ABC, abstractmethod
 from typing import Any, Dict, Optional
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+
+@dataclass
+class UsageStats:
+    """Provider-agnostic usage statistics."""
+    prompt_tokens: int = 0
+    completion_tokens: int = 0
+    thinking_tokens: int = 0
 
 @dataclass
 class PredictionResult:
     text: str
-    usage: Any
+    usage: UsageStats
     raw_response: Any = None
 
 class ModelInterface(ABC):

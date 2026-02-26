@@ -2,7 +2,7 @@ import os
 import pathlib
 from google import genai
 from google.genai import types
-from .model_interface import ModelInterface, PredictionResult
+from .model_interface import ModelInterface, PredictionResult, UsageStats
 from .logger import logger
 
 class Gemini3Model(ModelInterface):
@@ -46,7 +46,7 @@ class Gemini3Model(ModelInterface):
                     media_resolution={"level": self.media_resolution}
                 )
             )
-
+        
         response = self.client.models.generate_content(
             model=self.model_name,
             config=types.GenerateContentConfig(
@@ -59,32 +59,31 @@ class Gemini3Model(ModelInterface):
         )
         logger.debug("Gemini response received")
         
+        u = response.usage_metadata
+        usage = UsageStats(
+            prompt_tokens=u.prompt_token_count,
+            completion_tokens=u.candidates_token_count,
+            thinking_tokens=u.thoughts_token_count if hasattr(u, 'thoughts_token_count') and u.thoughts_token_count else 0
+        )
+
         return PredictionResult(
             text=response.text,
-            usage=response.usage_metadata,
+            usage=usage,
             raw_response=response
         )
 
-    def calculate_cost(self, usage) -> float:
+    def calculate_cost(self, usage: UsageStats) -> float:
         """
         Calculate cost based on dev.ipynb implementation for gemini-3-flash-preview.
         """
-        prompt_tokens = usage.prompt_token_count
-        candidates_tokens = usage.candidates_token_count
-        thoughts_token_count = usage.thoughts_token_count if hasattr(usage, 'thoughts_token_count') else 0
-
         if self.model_name == "gemini-3-flash-preview":
-            IMPUT_PRICE = 0.5 / 1000000
+            INPUT_PRICE = 0.5 / 1000000
             OUTPUT_PRICE = 3 / 1000000
         elif self.model_name == "gemini-3.1-pro-preview":
-            IMPUT_PRICE = 2 / 1000000
+            INPUT_PRICE = 2 / 1000000
             OUTPUT_PRICE = 12 / 1000000
         else:
             raise ValueError(f"Unknown model name: {self.model_name}")
 
-        if thoughts_token_count:
-            total_cost = (prompt_tokens) * IMPUT_PRICE + (candidates_tokens + thoughts_token_count) * OUTPUT_PRICE
-        else:
-            total_cost = (prompt_tokens) * IMPUT_PRICE + (candidates_tokens) * OUTPUT_PRICE
-             
+        total_cost = usage.prompt_tokens * INPUT_PRICE + (usage.completion_tokens + usage.thinking_tokens) * OUTPUT_PRICE
         return total_cost
