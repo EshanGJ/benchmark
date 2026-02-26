@@ -51,14 +51,6 @@ class BenchmarkDataset:
         
         return samples
 
-    def get_prompt_data(self, idx: int) -> Tuple[str, str, str]:
-        """
-        Returns (pdf_path, structure_injected, full_prompt) for a given index.
-        """
-        pdf_path, _, gt = self.samples[idx]
-        structure_injected = self.create_structure_injected(gt)
-        return pdf_path, structure_injected
-
     def create_structure_injected(self, answer_json: Dict) -> str:
         """
         Creates the STRUCTURE_INJECTED JSON string from the answer JSON.
