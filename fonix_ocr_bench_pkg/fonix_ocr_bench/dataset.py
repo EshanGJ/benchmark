@@ -8,7 +8,7 @@ class BenchmarkDataset:
     def __init__(self, data_dir: str):
         self.data_dir = pathlib.Path(data_dir)
         self.samples = self._load_samples()
-
+    
     def _load_samples(self) -> List[Tuple[str, str, Dict]]:
         """
         Loads PDF and JSON pairs from the data directory.

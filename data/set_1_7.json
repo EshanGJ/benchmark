@@ -1,0 +1,506 @@
+{
+  "paper_title": "First term Evaluation -2018",
+  "questions": [
+    {
+      "test_number": "01",
+      "instruction": "Fill in the blanks",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "d",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "g",
+          "crossedout_text": [],
+          "is_legible": "ture"
+        },
+        "3": {
+          "answer": "f",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "e",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "d",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "a",
+          "crossedout_text": [],
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "02",
+      "instruction": "Underline the correct answer",
+      "question_type": "U",
+      "student_answers": {
+        "1": {
+          "answer": "didn't",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "was",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "suffering",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "is",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "askks",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "will",
+          "crossedout_text": [],
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "03",
+      "instruction": "Fill in the blanks",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "",
+          "crossedout_text": [],
+          "is_legible": ""
+        },
+        "2": {
+          "answer": "",
+          "crossedout_text": [],
+          "is_legible": ""
+        },
+        "3": {
+          "answer": "griad",
+          "crossedout_text": [
+            "mango"
+          ],
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "",
+          "crossedout_text": [],
+          "is_legible": ""
+        },
+        "5": {
+          "answer": "mango",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "book",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "7": {
+          "answer": "lunch",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "8": {
+          "answer": "",
+          "crossedout_text": [],
+          "is_legible": ""
+        },
+        "9": {
+          "answer": "",
+          "crossedout_text": [],
+          "is_legible": ""
+        },
+        "10": {
+          "answer": "bauti",
+          "crossedout_text": [],
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "04",
+      "instruction": "Write correct letter in the lank provided",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "b",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "d",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "a",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "c",
+          "crossedout_text": [
+            "b"
+          ],
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "e",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "f",
+          "crossedout_text": [],
+          "is_legible": ""
+        }
+      }
+    },
+    {
+      "test_number": "05",
+      "instruction": "Fill in the blanks",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "heritage club",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "colombo museum",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "permission",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "water",
+          "crossedout_text": [
+            "Rs.200",
+            "who"
+          ],
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "Rs.200",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "main gate",
+          "crossedout_text": [],
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "06",
+      "instruction": "",
+      "question_type": "W",
+      "student_answers": "you are going on a trip and your want to borow your friends camara"
+    },
+    {
+      "test_number": "07",
+      "instruction": "Answer the question",
+      "question_type": "QA",
+      "student_answers": {
+        "1": {
+          "answer": "again",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "about flying rocket",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "flying rockets",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "Henry williams",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "c",
+          "crossedout_text": [],
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "08",
+      "instruction": "write on following tics",
+      "question_type": "W",
+      "student_answers": {
+        "answer": "my country. my country is Sri Lanka.  It is very beutiful. This is a small country. national sport is volly ball. I Love my country",
+        "crossedout_text": [
+          "the person i like most",
+          "country",
+          "is",
+          "sinhala",
+          "tamil",
+          "in mi"
+        ],
+        "is_legible": "true"
+      }
+    },
+    {
+      "test_number": "9",
+      "instruction": "Underline",
+      "question_type": "U",
+      "student_answers": {
+        "1": {
+          "answer": "immediate",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "transplant",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "conditioning",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "Donated",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "contacted",
+          "crossedout_text": [],
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "10",
+      "instruction": "reported speech",
+      "question_type": "W",
+      "student_answers": {
+        "2": {
+          "answer": "Mr. Siva said he had played the Piano",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "Anne said that she missed the bus",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "Dilshan said that He had am tried.",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "pavan said that she had picture is beauiful",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "Jasmin said that she live in colombo.",
+          "crossedout_text": [],
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "11",
+      "instruction": "Fill in the blanks",
+      "question_type": "FITB",
+      "student_answers": {
+        "1": {
+          "answer": "bean",
+          "crossedout_text": [
+            "pla,"
+          ],
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "plant",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "consider",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "4": {
+          "answer": "which",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "5": {
+          "answer": "Sacred",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "6": {
+          "answer": "the",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "7": {
+          "answer": "rich",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "8": {
+          "answer": "of",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "9": {
+          "answer": "",
+          "crossedout_text": [],
+          "is_legible": ""
+        },
+        "10": {
+          "answer": "rice",
+          "crossedout_text": [
+            "w"
+          ],
+          "is_legible": "true"
+        }
+      }
+    },
+    {
+      "test_number": "12",
+      "instruction": "",
+      "question_type": "QA",
+      "student_answers": {
+        "1": {
+          "answer": "a",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "2": {
+          "answer": "on the concrete",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "3": {
+          "answer": "By the mournfull cry",
+          "crossedout_text": [],
+          "is_legible": ""
+        },
+        "4": {
+          "answer": "alone, afraid, abandaned",
+          "crossedout_text": [],
+          "is_legible": "true"
+        },
+        "5": {
+          "a": {
+            "answer": "forever, friend, forever",
+            "crossedout_text": [],
+            "is_legible": "true"
+          },
+          "b": {
+            "answer": "going home",
+            "crossedout_text": [],
+            "is_legible": "true"
+          }
+        }
+      }
+    },
+    {
+      "test_number": "13",
+      "instruction": "Answer the question",
+      "question_type": "QA",
+      "student_answers": {
+        "1": {
+          "i": {
+            "answer": "a",
+            "crossedout_text": [],
+            "is_legible": "true"
+          },
+          "ii": {
+            "answer": "a",
+            "crossedout_text": [],
+            "is_legible": "true"
+          }
+        },
+        "2": {
+          "i": {
+            "answer": "join",
+            "crossedout_text": [
+              "get",
+              "inthe"
+            ],
+            "is_legible": ""
+          },
+          "ii": {
+            "answer": "Scientist",
+            "crossedout_text": [
+              "g"
+            ],
+            "is_legible": "true"
+          }
+        },
+        "3": {
+          "i": {
+            "answer": "play marbles, just",
+            "crossedout_text": [],
+            "is_legible": "true"
+          },
+          "ii": {
+            "answer": "ball, drops of water",
+            "crossedout_text": [
+              "h"
+            ],
+            "is_legible": "true"
+          }
+        },
+        "4": {
+          "answer": "Albert the incapable",
+          "crossedout_text": [],
+          "is_legible": ""
+        },
+        "5": {
+          "answer": "history, geography",
+          "crossedout_text": [],
+          "is_legible": ""
+        }
+      }
+    },
+    {
+      "test_number": "",
+      "instruction": "",
+      "question_type": "",
+      "student_answers": {
+        "answer": "",
+        "crossedout_text": [],
+        "is_legible": ""
+      }
+    }
+  ]
+}

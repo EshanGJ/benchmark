@@ -172,6 +172,7 @@ def generate_html_report(summary_data: Dict[str, Any], detailed_results: List[Di
     # Prepare data for charts
     chart_labels = [res.get("pdf_name", "N/A") for res in detailed_results]
     chart_hallu_data = [res.get("metrics", {}).get("word_level_hallucination_rate", 0) * 100 for res in detailed_results]
+    chart_refined_hallu_data = [res.get("refined_metrics", {}).get("word_level_hallucination_rate", 0) * 100 for res in detailed_results]
     chart_cost_data = [res.get("cost", 0) for res in detailed_results]
     chart_time_data = [res.get("recognition_time", 0) for res in detailed_results]
 
@@ -285,6 +286,15 @@ def generate_html_report(summary_data: Dict[str, Any], detailed_results: List[Di
                     <div class="chart-container">
                         <canvas id="scatterChart"></canvas>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="margin-bottom: 2rem;">
+            <div class="card-header"><h3 class="card-title">Refined Hallucination Score Distribution</h3></div>
+            <div class="card-body">
+                <div class="chart-container">
+                    <canvas id="boxPlotChart"></canvas>
                 </div>
             </div>
         </div>
@@ -413,6 +423,7 @@ def generate_html_report(summary_data: Dict[str, Any], detailed_results: List[Di
         <title>OCR Benchmark Dashboard</title>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@sgratzl/chartjs-chart-boxplot"></script>
         <style>
             {css}
         </style>
@@ -519,6 +530,64 @@ def generate_html_report(summary_data: Dict[str, Any], detailed_results: List[Di
                                 }}
                             }}
                         }}
+                    }}
+                }}
+            }});
+
+            // Box Plot - Refined Hallucination Score Distribution
+            const ctxBox = document.getElementById('boxPlotChart').getContext('2d');
+            new Chart(ctxBox, {{
+                type: 'boxplot',
+                data: {{
+                    labels: ['Refined Hallucination Rate (%)'],
+                    datasets: [{{
+                        label: 'Score Distribution',
+                        data: [{json.dumps(chart_refined_hallu_data)}],
+                        backgroundColor: 'rgba(59, 130, 246, 0.3)',
+                        borderColor: '#3b82f6',
+                        borderWidth: 2,
+                        outlierBackgroundColor: '#ef4444',
+                        outlierBorderColor: '#ef4444',
+                        outlierRadius: 4,
+                        meanBackgroundColor: '#f59e0b',
+                        meanBorderColor: '#f59e0b',
+                        meanRadius: 5,
+                        itemRadius: 3,
+                        itemBackgroundColor: '#8b5cf6'
+                    }}]
+                }},
+                options: {{
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    plugins: {{
+                        legend: {{ display: false }},
+                        tooltip: {{
+                            callbacks: {{
+                                label: function(context) {{
+                                    const v = context.parsed;
+                                    if (v && v.min !== undefined) {{
+                                        return [
+                                            'Min: ' + v.min.toFixed(2) + '%',
+                                            'Q1: ' + v.q1.toFixed(2) + '%',
+                                            'Median: ' + v.median.toFixed(2) + '%',
+                                            'Mean: ' + v.mean.toFixed(2) + '%',
+                                            'Q3: ' + v.q3.toFixed(2) + '%',
+                                            'Max: ' + v.max.toFixed(2) + '%'
+                                        ];
+                                    }}
+                                    return '';
+                                }}
+                            }}
+                        }}
+                    }},
+                    scales: {{
+                        x: {{
+                            beginAtZero: true,
+                            title: {{ display: true, text: 'Hallucination Rate (%)' }},
+                            grid: {{ borderDash: [5, 5] }}
+                        }},
+                        y: {{ grid: {{ display: false }} }}
                     }}
                 }}
             }});

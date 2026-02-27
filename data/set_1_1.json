@@ -419,26 +419,26 @@
       "question_type": "QA",
       "student_answers": {
         "1": {
-          "i": {
+          "1": {
             "answer": "c",
             "crossedout_text": [],
             "is_legible": "true"
           },
-          "ii": {
+          "2": {
             "answer": "b",
             "crossedout_text": [],
             "is_legible": "true"
           }
         },
         "2": {
-          "i": {
+          "1": {
             "answer": "join",
             "crossedout_text": [
               "to"
             ],
             "is_legible": ""
           },
-          "ii": {
+          "2": {
             "answer": "Scientist",
             "crossedout_text": [],
             "is_legible": "true"
@@ -469,9 +469,9 @@
       }
     },
     {
-      "test_number": "",
+      "test_number": "14",
       "instruction": "",
-      "question_type": "",
+      "question_type": "W",
       "student_answers": {
         "answer": "",
         "crossedout_text": [],
